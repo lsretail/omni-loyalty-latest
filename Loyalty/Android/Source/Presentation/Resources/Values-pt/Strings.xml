@@ -1,0 +1,504 @@
+<resources>
+  <!-- APPLICATION -->
+  <string name="ApplicationCancel">"Cancelar"</string>
+  <string name="ApplicationDone">"Efectuado"</string>
+  <string name="ApplicationYes">"Sim"</string>
+  <string name="ApplicationNo">"Não"</string>
+  <string name="ApplicationOk">"Ok"</string>
+  <string name="ApplicationTitle">"LS Retail Fidelidade "</string>
+  
+  <!-- ACTIVITIES -->
+  
+  <!-- DASHBOARD VIEW -->
+  <string name="DashboardViewAccountTierButtonText">"Você tem {0} pontos"</string>
+  <string name="DashboardViewOfferButtonText">"Promoção"</string>
+  <string name="DashboardViewCouponsButtonText">"Cupões"</string>
+  <string name="DashboardViewNotificationsButtonText">"Notificações"</string>
+  <string name="DashboardViewShoppingListsButtonText">"Listas de compras"</string>
+  <string name="DashboardViewStoreLocatorButtonText">"Localizador de lojas"</string>
+  <string name="DashboardViewSettingsButtonText">"Configurações"</string>
+  <string name="DashboardViewAccountManagementButtonText">"Gestão de contas"</string>
+  <string name="DashboardViewScanBarcodeButtonText">"Scanização do código de barras"</string>
+  <string name="DashboardViewSearchButtonText">"Pesquisar"</string>
+  <string name="DashboardViewLogoutButtonText">"Sair"</string>
+  <string name="DashboardViewQrButtonText">"Gerar QR"</string>
+  <string name="DashboardViewWelcomeToYourAccount">"Bem vindo à sua conta \n"</string>
+  
+  <!-- SCANNER VIEW -->
+
+  <string name="ScannerViewScannerTopText">"Segure a câmera por cima código de barras \nA cerca de 15 centímetros de distância"</string>
+  <string name="ScannerViewScannerBottomText">"Aguarde até que o código de barras seja scaneado automaticamente!"</string>
+
+  <!-- LOGIN VIEW -->
+  <!--<string name="LoginViewErrorTitle">Login</string>-->
+  <string name="LoginViewUsername">"Utilizador"</string>
+  <string name="LoginViewPassword">"Senha"</string>
+  <string name="LoginViewLoginButton">"Login"</string>
+  <string name="LoginViewCreateAccountButton">"Criar conta"</string>
+  <string name="LoginViewUserNameEmpty">"O Nome do utilizador não pode ser vazio"</string>
+  <string name="LoginViewPasswordEmpty">"A Senha não pode estar vazia"</string>
+  <string name="LoginViewInvalidSecurityToken">"O login expirou, por favor faça login novamente"</string>
+  <!--<string name="LoginViewRegisterError">Could not register device</string>-->
+
+
+  <!-- TRANSACTION VIEW -->
+  <!--<string name="TransactionViewTitle">TRANSACTIONS</string>-->
+  <string name="TransactionViewNoTransactions">"Não existem transacções associadas a si"</string>
+  
+  <!-- CHECKED THIS FAR -->
+  
+  <!-- TRANSACTION DETAIL VIEW -->
+  <string name="TransactionDetailViewItemNameHeaderText">"Produto"</string>
+  <string name="TransactionDetailViewItemQtyHeaderText">"Qtd."</string>
+  <string name="TransactionDetailViewItemAmountHeaderText">"Quantidade"</string>
+  <string name="TransactionDetailViewTransaction">"Transação"</string>
+  <string name="TransactionDetailViewErrorTitle">"Transação"</string>
+  <string name="TransactionDetailViewTotalWithoutVAT">"Total sem IVA:"</string>
+  <string name="TransactionDetailViewVATTotal">"Total IVA :"</string>
+  <string name="TransactionDetailViewDiscountTotal">"Total de Descontos:"</string>
+  <string name="TransactionDetailViewTotal">"Total:"</string>
+  <string name="TransactionDetailViewDiscount">"Desconto: \u0020 \u0020 \u0020 \u0020 \u0020"</string>
+
+  <!-- SETTINGS VIEW -->
+  <string name="SettingsViewBannerText">"Configurações"</string>
+  <string name="SettingsViewResetPinSuccess">"Pin alterado com sucesso"</string>
+  <string name="SettingsViewResetPinError">"Não foi possível alterar o Pin"</string>
+  <string name="SettingsViewNewPinToShort">"O novo Pin deve ter 4 dígitos"</string>
+  <string name="SettingsViewNewPinTitle">"Redefinir Pin"</string>
+  <string name="SettingsViewNewPinMessage">"Redefinindo novo Pin "</string>
+  <string name="SettingsViewNewPinDialogMessage">"Digite o novo código Pin de 4 dígitos"</string>
+  <string name="SettingsViewNewPinSubtitle">"Clique para escolher um novo código Pin"</string>
+
+  <!-- CONTACT US VIEW -->
+  <string name="ContactUsViewOpenAppError">"Não existe nenhum aplicativo para abrir esta extensão"</string>
+  
+  <!-- ACCOUNT TIER VIEW -->
+  <string name="AccountTierViewCurrentTier">"Você é um {0} membro."</string>
+  <string name="AccountTierViewNextTier">"Você precisa de mais {0} pontos para se tornar um membro {1}."</string>
+  <string name="AccountTierViewPointsBalance">"Você tem {0} pontos."</string>
+  <string name="AccountTierViewCurrentLevel">"Nível actual"</string>
+  <string name="AccountTierViewNextLevel">"Próximo nível"</string>
+
+  <!-- ITEM CATEGORY VIEW -->
+  <string name="ItemCategoryViewFailed">"Erro ao recuperar Categorias de Produto"</string>
+  <string name="ItemCategoryViewRetry">"Tentar novamente"</string>
+  
+  <!-- ITEM VIEW -->
+  <string name="ItemViewVariant">"Variante"</string>
+  <string name="ItemViewUnitOfMeasure">"Unidade"</string>
+  <string name="ItemViewDescription">"Descrição"</string>
+  <string name="ItemViewNotANumber">"Não é um número"</string>
+  <string name="ItemViewAddToShoppingList">"Adicionar à lista de compras"</string>
+  <string name="ItemViewPickShoppingList">"Por favor seleccione uma lista de compras"</string>
+  <string name="ItemViewAddToNewList">"Criar uma nova lista de compras"</string>
+  <string name="ItemViewNewListName">"Nome da lista de Compras"</string>
+
+  <!-- ITEM SEARCH VIEW -->
+  <string name="ItemSearchViewSearchHint">"Pesquisar"</string>
+  <string name="ItemSearchViewItemSearch">"Pesquisa Produtos"</string>
+  <string name="ItemSearchViewSearching">"Pesquisando"</string>
+  <string name="ItemSearchViewSearchToShortError">"Devem existir pelo menos 3 letras para uma pesquisa"</string>
+  <string name="ItemSearchViewErrorTitle">"Pesquisa Produtos"</string>
+  <string name="ItemSearchViewNoItemsFound">"Não foi encontrado nenhum Produto"</string>
+  
+  <!-- SHOPPING LISTS VIEW -->
+  <string name="ShoppingListViewBannerText">"Listas de compras"</string>
+  <string name="ShoppingListViewDeleteConfirmation">"Tem certeza de que deseja eliminar a lista?"</string>
+  <string name="ShoppingListViewClearConfirmation">"Você tem certeza que quer limpar a lista?"</string>
+  <string name="ShoppingListViewClearList">"Limpar lista"</string>
+  <string name="ShoppingListViewDeleteList">"Eliminar lista"</string>
+  <string name="ShoppingListViewCancel">"Cancelar"</string>
+  <string name="ShoppingListViewShoppingLists">"Listas de compras"</string>
+  <string name="ShoppingListViewDeletingList">"Eliminando {0}"</string>
+  <string name="ShoppingListViewDeviceBlocked">"Este dispositivo foi bloqueado!"</string>
+  <string name="ShoppingListViewGenericException">"Erro ao processar o pedido."</string>
+  <string name="ShoppingListViewNetworkException">"Sem conexão de rede."</string>
+  <string name="ShoppingListViewErrorTitle">"Listas de compras"</string>
+  
+  
+  <!-- SHOPPING LIST DETAIL VIEW -->
+  <string name="ShoppingListDetailViewItemName">"Produto"</string>
+  <string name="ShoppingListDetailViewItemQty">"Qtd."</string>
+  <string name="ShoppingListDetailViewDeviceBlocked">"Este dispositivo foi bloqueado!"</string>
+  <string name="ShoppingListDetailViewGenericException">"Erro ao processar o pedido."</string>
+  <string name="ShoppingListDetailViewNetworkException">"Sem conexão de rede."</string>
+  <string name="ShoppingListDetailViewManyItemsAdded">"Produtos"</string>
+  <string name="ShoppingListDetailViewItemAddedToast">"{0} adicionado a {1}"</string>
+  <string name="ShoppingListDetailViewQuantityChangeSuccessful">"Quantidade alterada com sucesso"</string>
+  <string name="ShoppingListDetailViewDeleteSuccessful">"{0} eliminado de {1}"</string>
+  <string name="ShoppingListDetailViewSkipItem">"Ignorar artigo"</string>
+  <string name="ShoppingListDetailViewCancel">"Cancelar"</string>
+  <string name="ShoppingListDetailViewAddLineOverWrite">"Substituir entrada existente \nPara um total de {0} {1}"</string>
+  <string name="ShoppingListDetailViewPickShoppingList">"Por favor, seleccione a lista de compras"</string>
+  <string name="ShoppingListDetailViewAddLineAddQty">"Adicionar {0} a entrada existente \nPara um total de {1} {2}"</string>
+  <string name="ShoppingListDetailViewAddLineCollisionTitle">"\"O Produto já existe na lista \nPor favor, escolha uma acção a efectuar"</string>
+  <string name="ShoppingListDetailViewAddToShoppingList">"Adicionar à lista de compras"</string>
+  <string name="ShoppingListDetailViewQtyNonNumber">"Não é um número"</string>
+  <string name="ShoppingListDetailViewChangeQuantity">"Alterar quantidade"</string>
+  <string name="ShoppingListDetailViewEnterNewQuantity">"Por favor insira uma nova quantidade"</string>
+  <string name="ShoppingListDetailViewDeleteConfirmation">"Tem certeza de que deseja eliminar o produto?"</string>
+  <string name="ShoppingListDetailViewChangeQty">"Alterar quantidade"</string>
+  <string name="ShoppingListDetailViewAddToAnotherList">"Adicionar à outra lista de compras"</string>
+  <string name="ShoppingListDetailViewDeleteItemFromList">"Eliminar produto da lista"</string>
+  <string name="ShoppingListDetailViewSaveShoppingList">"Gravar lista de compras"</string>
+  <string name="ShoppingListDetailViewEnterShoppingListName">"Por favor, introduza o nome da lista de compras"</string>
+  <string name="ShoppingListDetailViewNameCannotBeEmpty">"O Nome não pode ser vazio"</string>
+  <string name="ShoppingListDetailViewSaveAsNewList">"Gravar como nova lista"</string>
+  <string name="ShoppingListDetailViewClearList">"Limpar lista"</string>
+  <string name="ShoppingListDetailViewAddAllItemsToCurrent">"Adicionar todos os itens à lista atual"</string>
+  <string name="ShoppingListDetailViewDeleteList">"Eliminar lista"</string>
+  <string name="ShoppingListDetailViewDeleteListConfirmation">"Tem certeza de que deseja eliminar a lista?"</string>
+  <string name="ShoppingListDetailViewClearListConfirmation">"Você tem certeza que quer limpar a lista?"</string>
+  <string name="ShoppingListDetailViewSavingList">"Gravando lista"</string>
+  <string name="ShoppingListDetailViewDeletingList">"Eliminado lista"</string>
+  <string name="ShoppingListDetailViewDeletingItem">"Eliminando produto"</string>
+  <string name="ShoppingListDetailViewChangingItemQty">"Alterarando quantidade do Produto"</string>
+  <string name="ShoppingListDetailViewAddingToList">"Adicionando {0} para a lista"</string>
+  <string name="ShoppingListDetailViewErrorTitle">"Lista de compras"</string>
+  <string name="ShoppingListDetailViewGoToItemInfo">"Informações do Produto"</string>
+  <string name="ShoppingListDetailViewNoItemsInShoppingList">"Não existem Produtos na lista de compras"</string>
+  <string name="ShoppingListDetailViewItemExistsAndWillBeOverwritten">"{0} já existe em {1} e será substituído"</string>
+  <string name="ShoppingListDetailViewItemsExistAndWillBeOverwritten">"O Produto já existe em {0} e será substituído"</string>
+
+
+  <!--NOTIFICATIONS VIEW -->
+  <string name="NotificationViewExpires">"Expira em: "</string>
+  <string name="NotificationViewDeleteNotification">"Eliminar notificação?"</string>
+  <string name="NotificationViewNotificationationWillBeDeleted">"A notificação será eliminada permanentemente"</string>
+  <string name="NotificationViewDeleteNotifications">"Eliminar notificações?"</string>
+  <string name="NotificationViewNotificationationsWillBeDeleted">"As notificações serão eliminadas permanentemente"</string>
+
+
+  <!--WELCOME VIEW -->
+  <string name="WelcomeViewWelcomeText">"Para inicar, clique no botão abaixo para efetuar logon ou para adicionar uma nova conta e configurar o seu perfil pessoal. \r \n \n \nSer um membro permite-lhe beneficiar de ofertas pessoais e cupões, bem como acumular pontos , que podem ser utilizados como Meio de Pagamento durante as suas compras."</string>
+  <string name="WelcomeViewPageTitle">" Bem Vindo"</string>
+  <string name="WelcomeViewLoginButtonText">"Logon"</string>
+  
+  <!-- STORE LOCATOR VIEW -->
+  <string name="StorelocatorViewStoreLocator">"Localizador de lojas"</string>
+  <string name="StorelocatorViewGettingStores">"A obter lista de lojas"</string>
+  <string name="StorelocatorViewShowStoresOnMap">"Mostrar as lojas no mapa"</string>
+  <string name="StorelocatorViewErrorTitle">"Lojas"</string>
+  
+  <!-- STORE LOCATOR DETAIL VIEW -->
+  <string name="StorelocatorDetailViewWeekdayOpening">"{0} durante a semana"</string>
+  <string name="StorelocatorDetailViewSaturdayOpening">"{0} aos sábados"</string>
+  <string name="StorelocatorDetailViewSundayOpening">"{0} aos domingos"</string>
+  <string name="StorelocatorDetailViewClosed">"Fechado"</string>
+  <string name="StorelocatorDetailViewOpeningHours">"Horário de funcionamento"</string>
+  <string name="StorelocatorDetailViewShowOnMap">"Mostrar no mapa"</string>
+  <string name="StorelocatorDetailViewGetDirections">"Obter direcções"</string>
+  <string name="StorelocatorDetailViewErrorTitle">"Loja"</string>
+  <string name="StorelocatorDetailViewLocationErrorTitle">"Localização"</string>
+  <string name="StorelocatorDetailViewNoLocationFound">"Não foi encontrada a Localização"</string>
+  <string name="StorelocatorDetailViewNoProvider">"Localização desligada"</string>
+  <string name="StorelocatorDetailViewOpeningHourDay">"{0} - {1} as {2}"</string>
+  <string name="StorelocatorDetailViewSundays">"Domingos"</string>
+  <string name="StorelocatorDetailViewMonday">"Segundas-feiras"</string>
+  <string name="StorelocatorDetailViewTuesday">"Terças-feiras"</string>
+  <string name="StorelocatorDetailViewWednesday">"Quartas-feiras"</string>
+  <string name="StorelocatorDetailViewThursday">"Quintas-feiras"</string>
+  <string name="StorelocatorDetailViewFriday">"Sextas-feiras"</string>
+  <string name="StorelocatorDetailViewSaturday">"Sábados"</string>
+  <string name="StorelocatorDetailViewPhone">"Tel. {0}"</string>
+
+  <!-- STARTUP VIEW -->
+  <string name="StartUpViewLogin">"Login"</string>
+  <string name="StartUpViewLoggingInUser">"Login do Utilizador: {0}"</string>
+  <string name="StartUpViewErrorTitle">"Erro no Login "</string>
+  <string name="StartUpViewNoNetwork">"Sem ligação à rede"</string>
+  <string name="StartUpViewDeviceBlocked">"Este dispositivo foi bloqueado!"</string>
+  <string name="StartUpViewAuthenticationFailed">"Falha na autenticação"</string>
+  <string name="StartUpViewGenericException">"Falha no Login"</string>
+  <string name="StartUpViewTryAgain">"Tente novamente"</string>
+  <string name="StartUpViewGoToLogin">"Ir para Login"</string>
+  <string name="StartUpViewExitApplication">"Sair da aplicação"</string>
+  
+  
+  <!-- OFFER COUPON NOTIFICATION DETAIL SCREENS -->
+  <string name="DetailViewExpires">"Expira em: {0} - {1}"</string>
+  <string name="DetailViewNeverExpires">"Nunca expira"</string>
+  <string name="DetailViewDetails">"Detalhes"</string>
+  
+  <!--COUPON VIEW-->
+  <string name="CouponViewAddedToQRCode">"Cupão adicionado ao código QR"</string>
+  <string name="CouponViewAddToQRCode">"Adicionar cupão ao código QR"</string>
+  <string name="CouponViewRemoveFromQRCode">"Remover cupão do código QR"</string>
+
+  <!--OFFER VIEW-->
+  <string name="OfferViewAddedToQRCode">"Promoção adicionada ao código QR"</string>
+  <string name="OfferViewAddToQRCode">"Adicionar Promoção ao código QR"</string>
+  <string name="OfferViewRemoveFromQRCode">"Remover Promoção ao código QR"</string>
+  
+  <!--OFFERS GROUP NAME-->
+  <string name="GeneralOffers">"Promoções Gerais"</string>
+  <string name="MemberOffers">"Promoções Membros"</string>
+  <string name="PointOffers">"Promoções Pontos Produtos"</string>
+  
+  <!-- QR CODE VIEW -->
+  <string name="QRCodeViewNoSelected">"Não foram seleccionados nenhuns Cupões ou Promoções."</string>
+  
+  <!-- SITE MAP -->
+  <string name="SiteMapViewWelcomeText">"Bem vindo à sua conta"</string>
+  <string name="SiteMapViewSearch">"Pesquisar"</string>
+  <string name="SiteMapViewScanBarcode">"Scanizar código de barras"</string>
+  <string name="SiteMapViewOffer">"Promoções"</string>
+  <string name="SiteMapViewCoupon">"Cupão"</string>
+  <string name="SiteMapViewNotification">"Notificação"</string>
+  <string name="SiteMapViewShoppingList">"Listas de compras"</string>
+  <string name="SiteMapViewStorelocator">"Localizador de lojas"</string>
+  <string name="SiteMapViewAccountManagement">"Gestão de conta"</string>
+  <string name="SiteMapViewSetting">"Configurações"</string>
+  <string name="SiteMapViewLogout">"Sair"</string>
+  <string name="SiteMapViewQR">"Gerar código QR"</string>
+  
+
+  <!-- SETTINGS -->
+  <string-array name="ImageSizes">
+    <item name="Automatic">"Automático"</item>
+    <item name="None">"Nenhuma imagem"</item>
+    <item name="Tiny">"Imagem muito pequena"</item>
+    <item name="Small">"Imagem pequena "</item>
+    <item name="Medium">"Imagem média"</item>
+    <item name="Large">"Imagem grande"</item>
+    <item name="XLarge">"Imagem muito grande"</item>
+    <item name="XXLarge">"Imagem muito muito grande"</item>
+  </string-array>
+
+  <string-array name="ImageSizesValues">
+    <item name="Automatic">"999"</item>
+    <item name="None">"0"</item>
+    <item name="Tiny">"5"</item>
+    <item name="Small">"4"</item>
+    <item name="Medium">"3"</item>
+    <item name="Large">"2"</item>
+    <item name="XLarge">"6"</item>
+    <item name="XXLarge">"7"</item>
+  </string-array>
+
+  <string name="SettingsViewImageSettings">"Configurações das Imagens"</string>
+  <string name="SettingsViewImageSizeTitle">"Tamanho da imagem"</string>
+  <string name="SettingsViewImageSizeSummary">"Qual o tamanho que as imagens carregadas através da internet devem ter "</string>
+  <string name="SettingsViewNotifications">"Configurações de notificação"</string>
+  <string name="SettingsViewReceiveNotificationsTitle">"Notificações"</string>
+  <string name="SettingsViewReceiveNotificationsSummary">"Permitir á aplicação notificá-lo quando houver novas notificações"</string>
+  
+  <!-- CREATE ACCOUNT INFORMATION -->
+  <string name="AccountInformationViewUserName">"Utilizador"</string>
+  <string name="AccountInformationViewPassword">"Senha"</string>
+  <string name="AccountInformationViewPasswordConfirmation">"Confirmação Senha"</string>
+  <string name="AccountInformationViewChangePassword">"Alterar senha"</string>
+  <string name="AccountInformationViewEmail">"E-mail"</string>
+  <string name="AccountInformationViewFirstName">"Primeiro nome"</string>
+  <string name="AccountInformationViewMiddleName">"Nome do meio"</string>
+  <string name="AccountInformationViewLastName">"Apelido"</string>
+  <string name="AccountInformationViewPhone">"Telefone"</string>
+  <string name="AccountInformationViewAddressOne">"Endereço 1"</string>
+  <string name="AccountInformationViewAddressTwo">"Endereço 2"</string>
+  <string name="AccountInformationViewCity">"Cidade"</string>
+  <string name="AccountInformationViewPostCode">"Código postal"</string>
+  <string name="AccountInformationViewState">"Estado"</string>
+  <string name="AccountInformationViewCountry">"País"</string>
+  <string name="AccountInformationAccountInformation">"Informações da conta"</string>
+  <string name="AccountInformationPersonalInformation">"Informações pessoais"</string>
+
+  <!-- CREATE ACCOUNT PROFILES -->
+  <string name="AccountProfilesViewCreateAccount">"Criar conta"</string>
+  <string name="AccountProfilesViewProfiles">"Perfis"</string>
+  <string name="AccountProfilesViewFailed">"Erro na recuperação do Perfil"</string>
+  <string name="AccountProfilesViewRetry">"Tentar novamente"</string>
+
+  <!-- ACCOUNT -->
+  <string name="AccountViewCancel">"Cancelar"</string>
+  <string name="AccountViewNext">"Próximo"</string>
+  <string name="AccountViewBack">"Atrás"</string>
+  <string name="AccountViewCreate">"Criar"</string>
+  <string name="AccountViewUpdate">"Actualizar"</string>
+  <string name="AccountViewUserNameEmpty">"Nome do Utilizador não pode ser vazio"</string>
+  <string name="AccountViewPasswordEmpty">"A senha não pode ser vazia"</string>
+  <string name="AccountViewPasswordConfirmEmpty">"A confirmação da senha não pode ser vazia"</string>
+  <string name="AccountViewPasswordAndPasswordConfirmDifferent">"A confirmação da senha e a senha não coincidem"</string>
+  <string name="AccountViewEmailEmpty">"O E-mail não pode ser vazio"</string>
+  <string name="AccountViewFirstNameEmpty">"O Nome não pode ser vazio"</string>
+  <string name="AccountViewLastNameEmpty">"O Apelido não pode ser vazio"</string>
+  <string name="AccountViewAddressOneEmpty">"O Endereço não pode estar vazio"</string>
+  <string name="AccountViewCityEmpty">"A Cidade não pode ser vazia"</string>
+  <string name="AccountViewPostCodeEmpty">"O Código postal não pode ser vazio"</string>
+  <string name="AccountViewStateEmpty">"O Estado não pode ser vazio"</string>
+  <string name="AccountViewCountryEmpty">"O País não pode estar vazio"</string>
+  <string name="AccountViewCreateAccount">"Criar conta"</string>
+  <string name="AccountViewCreatingNewAccount">"Criar nova conta"</string>
+  <string name="AccountViewUpdateAccount">"Actualizar conta"</string>
+  <string name="AccountViewUpdatingExistingAccount">"Actualizando conta actual"</string>
+  <string name="AccountViewUpdateSuccess">"A Conta foi actualizada com sucesso"</string>
+  <string name="AccountViewDeviceBlocked">"Este dispositivo foi bloqueado!"</string>
+  <string name="AccountViewEmailExists">"O endereço de e-mail introdudizo já se encontra registado."</string>
+  <string name="AccountViewEmailInvalid">"Por favor, forneça um endereço de e-mail válido."</string>
+  <string name="AccountViewGenericException">"Erro ao recuperar os dados de registo do servidor."</string>
+  <string name="AccountViewNetworkException">"Sem conexão de rede."</string>
+  <string name="AccountViewPasswordInvalid">"Por favor insira uma senha válida."</string>
+  <string name="AccountViewUserNameExists">"Este utilizador já está a ser utilizado. \nPor favor, escolha outro nome de utilizador."</string>
+  <string name="AccountViewUserNameInvalid">"Por favor insira um utilizador válido."</string>
+  <string name="AccountViewErrorTitle">"Criar conta"</string>
+  
+  <!-- ACCOUNT MANAGEMENT -->
+  <string name="AccountManagementViewEditInformation">"Editar conta"</string>
+  <string name="AccountManagementViewChangePassword">"Alterar senha"</string>
+  <string name="AccountManagementViewInstructions">"Para alterar as informações básicas da conta ou alterar perfis conectados à conta, escolha \"{0}\" \ n \n \nPara alterar a senha, Escolha \"{1}\""</string>
+
+  <!-- CHANGE PASSWORD -->
+  <string name="ChangePasswordViewOldPassword">"Senha actual"</string>
+  <string name="ChangePasswordViewPassword">"Nova senha"</string>
+  <string name="ChangePasswordViewPasswordConfirmation">"Confirmação da nova senha"</string>
+  <string name="ChangePasswordCancel">"Cancelar"</string>
+  <string name="ChangePasswordChange">"Alterar"</string>
+  <string name="ChangePasswordErrorTitle">"Alterar senha"</string>
+  <string name="ChangePasswordChangePassword">"Alterar senha"</string>
+  <string name="ChangePasswordChangingPassword">"Alterando senha"</string>
+  <string name="ChangePasswordChangePasswordSuccess">"Alteração da senha efectuada com sucesso"</string>
+  <string name="ChangePasswordOldPasswordEmpty">">A senha antiga não pode ser vazia"</string>
+  <string name="ChangePasswordNewPasswordEmpty">"A nova senha não pode estar vazia"</string>
+  <string name="ChangePasswordPasswordsDontMatch">"A confirmação da senha e a senha não coincidem"</string>
+  <string name="ChangePasswordDeviceBlocked">"Este dispositivo foi bloqueado!"</string>
+  <string name="ChangePasswordErrorChangingPassword">"Não é possível alterar a senha"</string>
+  <string name="ChangePasswordInvalidPasswordException">"Por favor, forneça uma senha válida"</string>
+  <string name="ChangePasswordNetworkException">"Sem conexão de rede."</string>
+
+  <!-- GENERAL SEARCH -->
+  <string name="GeneralSearchViewDeviceBlocked">"Este dispositivo foi bloced!"</string>
+  <string name="GeneralSearchViewNetworkException">"Sem conexão de rede."</string>
+  <string name="GeneralSearchViewGenericException">"Não foi possível processar o pedido de procura."</string>
+  <string name="GeneralSearchViewSearchStringToShort">"Devem existir pelo menos 3 letras para uma pesquisa."</string>
+  <string name="GeneralSearchViewChooseCategories">"Por favor, seleccione em que categorias deseja pesquisar "</string>
+  <string name="GeneralSearchViewOffersGroupHeader">"Promoções ({0})"</string>
+  <string name="GeneralSearchViewCouponsGroupHeader">"Cupões ({0})"</string>
+  <string name="GeneralSearchViewNotificationsGroupHeader">"Notificações ({0})"</string>
+  <string name="GeneralSearchViewTransactionsGroupHeader">"Transacções ({0})"</string>
+  <string name="GeneralSearchViewShoppingGroupHeader">"Listas de compras ({0})"</string>
+  <string name="GeneralSearchViewStoresGroupHeader">"Lojas ({0})"</string>
+  <string name="GeneralSearchViewItemsGroupHeader">"Produtos ({0})"</string>
+  <string name="GeneralSearchViewCoupon">"Cupão"</string>
+  <string name="GeneralSearchViewOffer">"Promoções"</string>
+  <string name="GeneralSearchViewNotification">"Notificação"</string>
+  <string name="GeneralSearchViewItem">"Produto"</string>
+  <string name="GeneralSearchViewTransaction">"Transacção"</string>
+  <string name="GeneralSearchViewShoppingList">"Lista de compras"</string>
+  <string name="GeneralSearchViewStore">"Loja</string>
+  <string name="GeneralSearchViewErrorTitle">"Pesquisar"</string>
+  <string name="GeneralSearchViewSearch">"Pesquisar"</string>
+  <string name="GeneralSearchViewSearching">"Pesquisando"</string>
+  
+  <!-- MENU -->
+  <string name="MenuViewSettingsTitle">"Configurações"</string>
+  <string name="MenuViewRefreshTitle">"Actualizar Dados"</string>
+  <string name="MenuViewAccountManagementTitle">"Gestão de contas"</string>
+  <string name="MenuViewLogout">"Sair"</string>
+  <string name="MenuViewHelp">"Ajuda"</string>
+  <string name="MenuViewScanBarcodeTitle">"Scanear código de barras"</string>
+  <string name="MenuViewSearchTitle">"Pesquisar"</string>
+  <string name="MenuViewRefreshTitle">"Actualizar"</string>
+  <string name="MenuViewQRTitle">"Gerar código QR"</string>
+  <string name="MenuViewDeleteTitle">"Eliminar"</string>
+  <string name="MenuViewNewShoppingList">"Criar uma nova lista de compras"</string>
+  <string name="MenuViewClearTitle">"Limpar"</string>
+  <string name="MenuViewAddToCurrentTitle">"Adicionar todos os produtos à lista atual"</string>
+  <string name="MenuViewSaveAsNewListTitle">"Gravar como nova lista"</string>
+  <string name="MenuViewShowStoresOnMap">"Ver todas as lojas no mapa"</string>
+  <string name="MenuViewShowStoreOnMap">"Ver loja no mapa"</string>
+  <string name="MenuViewShowDirections">"Mostrar direcções"</string>
+  <string name="MenuViewMarkAsReadTitle">"Marcar como lida"</string>
+  <string name="MenuViewMarkAsUnreadTitle">"Marcar como não lida"</string>
+  <string name="MenuViewViewStock">"Verifique onde o Produto se encontra com stock"</string>
+  <string name="MenuViewContactUs">"Contate-nos"</string>
+  
+  <!-- NOTIFICATION BAR -->
+  <string name="NotificationBarNotification">"Notificação"</string>
+  <string name="NotificationBarNotifications">"Notificações"</string>
+  <string name="NotificationBarTitle">"LS Retail Fidelidade"</string>
+  <string name="NotificationBarContentText">"Você tem {0} {1} nova"</string>
+  
+  
+  <!-- ACTION BAR -->
+  <string name="ActionbarOffers">"Promoções"</string>
+  <string name="ActionbarCoupons">"Cupões"</string>
+  <string name="ActionbarNotifications">"Notificações"</string>
+  <string name="ActionbarNotification">"Notificação"</string>
+  <string name="ActionbarSearch">"Pesquisar"</string>
+  <string name="ActionbarShoppingLists">"Listas de compras"</string>
+  <string name="ActionbarShoppingList">"Lista de compras"</string>
+  <string name="ActionbarQrCode">"Códigos QR"</string>
+  <string name="ActionbarStores">"Lojas"</string>
+  <string name="ActionbarMap">"Mapa"</string>
+  <string name="ActionbarCoupon">"Cupão"</string>
+  <string name="ActionbarStore">"Loja"</string>
+  <string name="ActionbarOffer">"Promoção"</string>
+  <string name="ActionbarTransaction">"Transacção"</string>
+  <string name="ActionbarSettings">"Configurações"</string>
+  <string name="ActionbarItem">"Produto"</string>
+  <string name="ActionbarContactUs">"Conctate-nos"</string>
+
+
+  <string name="ActionbarHome">"Home"</string>
+  <string name="ActionbarLogin">"Login"</string>
+  <string name="ActionbarItems">"Produtos"</string>
+  
+  <!-- SLIDER VIEW -->
+  <string name="SliderControlViewRefreshing">"Actualizando"</string>
+  <string name="SliderControlViewRefreshingForUser">"Actualizando dados do utilizador: {0}"</string>
+  <string name="SliderControlViewExit">"Tem certeza que deseja sair da aplicação?"</string>
+  <string name="SliderControlViewRefreshFailed">"Não foi possível actualizar os dados \nPor favor, tente novamente mais tarde."</string>
+  <string name="SliderControlViewRefreshFailedTitle">"Actualizando dados"</string>
+  <string name="SliderControlViewSiteMap">"Mapa do site"</string>
+  <string name="SliderControlViewHome">"Home"</string>
+  <string name="SliderControlViewShop">"Loja"</string>
+  <string name="SliderControlViewTransactions">"Histórico"</string>
+
+  <!-- APPLICATION -->
+  <string name="ApplicationName">"LS Retail Fidelidade"</string>
+  
+  <!-- PLAY SERVICE UTIL -->
+  <string name="PlayServiceUtilRequiresPlayService">"O mapa requer os serviços Google Play para ser instalado."</string>
+  <string name="PlayServiceUtilCancel">"Cancelar"</string>
+  <string name="PlayServiceUtilInstall">"Instalar"</string>
+  <string name="PlayServiceUtilPlayServices">"Serviços Google Play"</string>
+
+  <!-- MODELS -->
+
+  <!-- BASEMODEL -->
+  <string name="ModelErrorTitle">"Erro"</string>
+  <string name="ModelAuthenticationFailed">"Utilizador ou senha incorrectos. \nPor favor, tente novamente."</string>
+  <string name="ModelDeviceBlocked">"Este dispositivo foi bloqueado"</string>
+  <string name="ModelGenericException">"Erro, por favor tente novamente"</string>
+  <string name="ModelNetworkException">"Sem ligação à rede"</string>
+  <string name="ModelEmailExists">"O E-mail já existe"</string>
+  <string name="ModelSecurityToken">"Acesso negado"</string>
+  <string name="ModelAccessNotAllowed">"Acesso negado"</string>
+
+  <!-- MEMBERCONTACTMODEL -->
+  <string name="MemberContactModelRegisterDevice">"Registe dispositivo"</string>
+  <string name="MemberContactModelRegisteringDevice">"Registando dispositivo"</string>
+  <string name="MemberContactModelLogout">"Logout"</string>
+  <string name="MemberContactModelLoggingOutUser">"Efectuando Logout do utilizador: {0}"</string>
+  <string name="MemberContactModelLogin">"Login"</string>
+  <string name="MemberContactModelLoggingInUser">"Efectuando Login do utilizador: {0}"</string>
+
+  <!-- STORE MODEL -->
+  <string name="StoreModelStoreLocator">"Localizador de lojas"</string>
+  <string name="StoreModelGettingStores">"Obtendo lojas"</string>
+  
+  <!-- NOTIFICATION MODEL -->
+  <string name="NotificationModelNotifications">"Notificações"</string>
+  <string name="NotificationModelMarkingCheckedAsRead">"Marcar notificações seleccionadas como lidas"</string>
+  <string name="NotificationModelMarkingCheckedAsUnread">"Marcar notificações seleccionadas como não lidas"</string>
+  <string name="NotificationModelDeletingChecked">"Eliminar notificações marcadas"</string>
+  <string name="NotificationModelMarkingAsRead">"Marcando {0} como lido"</string>
+  <string name="NotificationModelMarkingAsUnread">"Marcando{0} como não lida"</string>
+  <string name="NotificationModelDelete">"Eliminando {0}"</string>
+  
+  <!-- SHOPPING LIST MODEL -->
+  <string name="ShoppingListModelItemAddedToShoppingList">"Produto Gravado"</string>
+  <string name="ShoppingListModelItemsAddedToShoppingList">"Produtos Gravados"</string>
+
+  <!-- ITEM MODEL -->
+  <string name="ItemModelItemNotFound">"Produto não encontrado"</string>
+</resources>

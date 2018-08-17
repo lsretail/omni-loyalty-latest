@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             style="@style/SelectableListItem"
+             android:layout_height="wrap_content"
+             android:layout_width="fill_parent">
+
+  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                style="@style/ListItem"
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/BasePadding"
+                android:minHeight="@dimen/TwoLineListItemHeight"
+                android:background="@drawable/list_cell_background">
+
+    <TextView style="@style/Subhead"
+              android:id="@+id/BasketItemDescription"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content" />
+
+    <TextView style="@style/Body1"
+              android:id="@+id/BasketItemVariants"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:textColor="@color/black54"
+              android:visibility="gone" />
+
+    <LinearLayout android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal">
+      
+      <TextView style="@style/Body1"
+                android:id="@+id/BasketItemQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:textColor="@color/black54" />
+
+      <ProgressBar android:id="@+id/BasketItemPriceProgressBar"
+                   style="?android:progressBarStyleSmall"
+                   android:layout_width="wrap_content"
+                   android:layout_height="match_parent"
+                   android:layout_weight="0"
+                   android:layout_gravity="center"
+                   android:paddingLeft="@dimen/TextPadding"
+                   android:paddingRight="@dimen/TextPadding"
+                   android:gravity="center" />
+
+      <TextView style="@style/Body1"
+                android:id="@+id/BasketItemPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:gravity="center_vertical"
+                android:visibility="gone" />
+    </LinearLayout>
+
+  </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                                    style="@style/SelectableListItem"
+                                    android:id="@+id/card_view"
+                                    android:layout_gravity="center"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    card_view:cardCornerRadius="@dimen/CardCornerRadius"
+                                    card_view:cardPreventCornerOverlap="true"
+                                    card_view:cardBackgroundColor="@color/white"
+                                    card_view:cardUseCompatPadding="true">
+
+  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                style="@style/SelectableListItem"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+    
+  <presentation.views.SquareLayout android:id="@+id/OfferListItemViewItemImageContainer"
+                                   android:layout_gravity="center"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="match_parent">
+
+    <ImageView android:id="@+id/OfferListItemViewItemImage"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:scaleType="centerCrop" />
+
+  </presentation.views.SquareLayout>
+
+    <LinearLayout android:orientation="vertical"
+                  android:layout_width="fill_parent"
+                  android:layout_height="@dimen/CardTwoLineTextHeight"
+                  android:background="@color/white"
+                  android:paddingLeft="16dp"
+                  android:paddingRight="16dp"
+                  android:gravity="center_vertical">
+
+      <TextView android:id="@+id/OfferListItemViewTitle"
+                style="@style/Subhead"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:ellipsize="end" />
+
+      <TextView android:id="@+id/OfferListItemViewSubtitle"
+                style="@style/Caption"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:ellipsize="end" />
+
+    </LinearLayout>
+
+  </LinearLayout>
+
+</android.support.v7.widget.CardView>

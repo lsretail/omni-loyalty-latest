@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              style="@style/SelectableListItem"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+  
+  
+
+  <presentation.views.SquareLayout android:id="@+id/MenuNodeListItemViewItemImageContainer"
+                                   android:layout_gravity="center"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="match_parent"
+                                   android:background="@color/white">
+
+    <ImageView android:id="@+id/MenuNodeListItemViewItemImage"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:scaleType="centerCrop" />
+
+    <ImageButton style="@style/CustomBorderlessTransparentButton"
+                 android:id="@+id/MenuNodeListItemViewAddToBasket"
+                 android:layout_width="@dimen/MinTouchSize"
+                 android:layout_height="@dimen/MinTouchSize"
+                 android:layout_alignParentRight="true"
+                 android:background="@drawable/overlay_selecteble_background"
+                 android:padding="@dimen/BaseListPadding"
+                 android:src="@drawable/ic_add_shopping_cart_white_24dp"
+                 android:focusable="false"
+                 android:focusableInTouchMode="false" />
+
+  </presentation.views.SquareLayout>
+
+  <LinearLayout android:id="@+id/BaseCardLayoutTextContainer"
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/CardTwoLineTextHeight"
+                android:background="@color/white"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:gravity="center_vertical">
+
+    <TextView android:id="@+id/MenuNodeListItemViewTitle"
+              style="@style/Subhead"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:singleLine="true"
+              android:ellipsize="end" />
+
+    <TextView android:id="@+id/MenuNodeListItemViewSubtitle"
+              style="@style/Caption"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:singleLine="true"
+              android:ellipsize="end" />
+
+  </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+  <PreferenceCategory
+    android:title="Webservice Settings">
+    <EditTextPreference
+                android:key="WebserviceBaseUrl"
+                android:title="Set a base url"
+                android:summary="The app has to be restarted after changing the web service"
+                android:dialogTitle="Enter new webservice base url"
+                android:dialogMessage="Example path: 'http://lsretail.cloudapp.net/'"/>
+    <EditTextPreference
+                android:key="WebserviceResource"
+                android:title="Set a custom web service"
+                android:summary="The app has to be restarted after changing the web service"
+                android:dialogTitle="Enter new webservice resource"
+                android:dialogMessage="Example path: '/MemberMgt/Json.svc/'"/>
+  </PreferenceCategory>
+</PreferenceScreen>
+

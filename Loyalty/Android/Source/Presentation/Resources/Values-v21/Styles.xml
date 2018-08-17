@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <!--<style name="BaseStyleLightNoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="android:windowBackground">@color/backgroundcolor</item>
+
+    <item name="android:listChoiceBackgroundIndicator">@drawable/selecteble_background</item>
+    <item name="android:activatedBackgroundIndicator">@drawable/lsandroidlibrary_activated_background_holo_light</item>
+  </style>-->
+</resources>

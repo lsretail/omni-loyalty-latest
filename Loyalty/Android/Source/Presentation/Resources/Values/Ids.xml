@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <item name="CardOne" type="id"/>
+  <item name="CardTwo" type="id"/>
+  <item name="CardThree" type="id"/>
+  <item name="CardFour" type="id"/>
+  <item name="CardFive" type="id"/>
+  <item name="CardSix" type="id"/>
+  <item name="CardSeven" type="id"/>
+  <item name="CardEight" type="id"/>
+  <item name="CardNine" type="id"/>
+  <item name="CardTen" type="id"/>
+  <item name="CardEleven" type="id"/>
+</resources>

@@ -1,0 +1,294 @@
+//GENERAL
+"General_OK" = "OK"; //[Term:456]
+"General_Cancel" = "Peruuta"; //[Term:367]
+"General_Back" = "Edellinen"; //[Term:363]
+"General_Error" = "Virhe";
+"General_ErrorTryAgain" = "Virhe, yritä uudelleen";
+"General_Yes" = "Kyllä"; //[Term:514]
+"General_No" = "Ei"; //[Term:454]
+"General_Info" = "Info";
+"General_Done" = "Valmis";
+"General_Apply" = "Käytä";
+"General_Retry" = "Yritä uudelleen";
+"General_Refresh" = "Päivitä";
+"General_Attention" = "Huomio";
+"General_Proceed" = "Jatka"; //[Term:24117]
+"General_GetDataErrorMessage" = "Jokin meni vikaan...\r\nPäivitä ja yritä uudelleen."; //[Term:24121]
+
+//Base Model UI Exceptions
+"Model_AuthenticationFailedException" = "Virheellinen käyttäjätunnus tai salasana. Yritä uudelleen.";
+"Model_GenericException" = "Virhe, yritä uudelleen";
+"Model_NetworkException" = "Verkkovirhe";
+"Model_DeviceBlocked" = "Tämä laite on estetty.";
+"Model_AccessNotAllowed" = "Käyttö estetty"; //[Term:24103]
+"Model_EmailExists" = "Sähköpostiosoitetta ei ole.";
+"Model_SecurityToken" = "Käyttö estetty"; //[Term:24103]
+"Model_InvalidPassword" = "Salasana ei kelpaa";
+"Model_InvalidOldPassword" = "Vanha salasana ei kelpaa";
+"Model_InvalidUsername" = "Käyttäjätunnus ei kelpaa";
+"Model_ItemNotFound" = "Nimikettä ei löytynyt";
+"Model_EmailInvalidException" = "Sähköpostiosoite ei kelpaa.";
+
+//Welcome Screen
+"Welcome_ApplicationTitle" = "Laatukauppa";
+"Welcome_Title" = "Tervetuloa";
+"Welcome_WelcomeText" = "To get started, tap the button below to log in or to create a new account and configure your personal profile.
+
+Being a member allows you to benefit from personal offers and coupons as well as collecting points, which can be used for tendering during your shopping experience.";
+
+// Home
+"Home_Home" = "Koti";
+"Home_HomeScreen" = "Aloitusikkuna";
+"Home_Points_Lowercase" = "pisteet";
+
+// History
+"History_History" = "Historia";
+"History_Item_Lowercase" = "nimike";
+"History_Items_Lowercase" = "nimikkeet";
+"History_NoData" = "Ei aiempia tapahtumia"; //[Term:24137]
+"History_SearchScreen" = "Ostoshistoria alkaen ";
+
+
+"TransactionView_Expire" = "Vanhenee: ";
+"TransactionView_Total" = "Loppusumma:";
+"TransactionView_Discount" = "Alennus:";
+"TransactionView_Vat" = "ALV:";
+"TransactionView_Net" = "Nettosumma:"; //[Term:24131]
+"TransactionView_ItemName" = "Nimikkeen nimi";
+"TransactionView_Qty" = "Lkm";
+"TransactionView_Amount" = "Määrä";
+"TransactionView_TransactionUnavailable" = "Tapahtuma ei käytettävissä"; //[Term:24127]
+"TransactionView_TransactionUnavailableMsg" = "Tapahtuma ei ole juuri nyt käytettävissä."; //[Term:24122]
+
+// Location/Store/Restaurant details
+"Location_Locations" = "Sijainnit";
+"Locations_MapOfAllLocations" = "Kartta kaikista sijainneista";
+"Location_Details_Phone" = "Puhelin";
+"Location_Details_OpeningHours" = "Aukioloajat";
+"Location_CouldNotGetLocation" = "Nykyisen sijainnin nouto epäonnistui."; //[Term:24130]
+"Location_CouldNotGetLocationInstructions" = "Varmista, että paikannuspalvelut ovat käytössä. Ota ne käyttöön tämän sovelluksen yksityisyysasetusten kohdassa Paikannuspalvelut.";
+
+// Offers & coupons
+"OffersAndCoupons_OffersAndCoupons" = "Tarjoukset ja kupongit";
+"OffersAndCoupons_Offers" = "Tarjoukset"; //[Term:8320]
+"OffersAndCoupons_Coupons" = "Kupongit"; //[Term:22509]
+"OffersAndCoupons_NoOffersAndCoupons" = "Ei kuponkeja tai tarjouksia";
+"OffersAndCoupons_NoOffers" = "Ei tarjouksia";
+"OffersAndCoupons_NoCoupons" = "Ei kuponkeja";
+"OffersAndCoupons_NoOffersPleaseLogIn" = "Ei tarjouksia. Kokeile sisäänkirjautumista."; //[Term:24136]
+"OffersAndCoupons_NoCouponsPleaseLogIn" = "Ei kuponkeja. Kokeile sisäänkirjautumista."; //[Term:24132]
+"OffersAndCoupons_PointOffers" = "Pistetarjoukset";
+"OffersAndCoupons_MemberOffers" = "Jäsentarjoukset";
+"OffersAndCoupons_GeneralOffers" = "Yleiset tarjoukset"; //[Term:24116]
+
+// Offer details
+
+// Coupon details
+"Coupon_Details_Close" = "Sulje";
+"Coupon_Details_QRCode" = "QR-koodi"; //[Term:24114]
+"Coupon_Details_PleaseScan" = "Skannaa QR-koodi.";
+"Coupon_Details_AddToBasket" = "Lisää koriin";
+"Coupon_Details_RemoveFromBasket" = "Poista korista";
+"Coupon_Details_ValidUntil" = "Voimassa;";
+
+// Checkout
+"Checkout_Checkout" = "Kassa"; //[Term:24111]
+"Checkout_PlaceOrder" = "Tee tilaus"; //[Term:24113]
+"Checkout_ClearBasket" = "Tyhjennä kori"; //[Term:24139]
+"Checkout_RemoveItem" = "Poista nimike";
+"Checkout_Total" = "Yhteensä";
+"Checkout_AreYouSureClearBasket" = "Haluatko varmasti tyhjentää korin?"; //[Term:24106]
+"Checkout_AreYouSurePlaceOrder" = "Haluatko varmasti tehdä tilauksen?"; //[Term:24108]
+"Checkout_AreYouSureRemoveItem" = "Haluatko varmasti poistaa tämän nimikkeen?"; //[Term:15254]
+"Checkout_ErrorPlacingOrder" = "Tilausta ei voitu tehdä.\r\nYritä uudelleen.";
+"Checkout_ThankYou" = "Kiitos!";
+"Checkout_ShippingMethod" = "Valitse toimitustapa"; //[Term:24120]
+"Checkout_HomeDelivery" = "Kotiinkuljetus";
+"Checkout_HomeDeliveryTitle" = "Kotiinkuljetus - demoikkuna";
+"Checkout_HomeDeliveryMsg" = "Prosessi on lokalisoitava kullekin alueelle.";
+"Checkout_ConfirmOrder" = "Vahvista tilaus"; //[Term:24141]
+"Checkout_Verify" = "Tarkista tilauksesi ennen jatkamista."; //[Term:24129]
+"Checkout_SubTotal" = "Välisumma:";
+"Checkout_Discount" = "Alennus:";
+"Checkout_VAT" = "ALV:";
+"Checkout_HomeDeliveryDescription" = "Voimme lähettää tilauksesi";
+"Checkout_ClickCollectDescription" = "Nouda tilauksesi valitsemastasi myymälästä, kun sinulle sopii";
+
+//Click & Collect
+"ClickCollect_NotAvailableTitle" = "Ei saatavilla tästä kaupasta"; //[Term:24138]
+"ClickCollect_NotAvailableMsg" = "Nimikkeitä ei saatavilla, kokeile toista kauppaa";
+"ClickCollect_Stores" = "Kaupat"; //[Term:14629]
+"ClickCollect_Shipping" = "Toimitus";
+"ClickCollect_ClickCollect" = "Klikkaa ja kerää";
+"ClickCollect_SendOrderDetails" = "Tilauksen tiedot lähetetään osoitteeseen:";
+"ClickCollect_Attention" = "Huomio!";
+"ClickCollect_Proceed" = "Valitse \"Jatka\", jos haluat jatkaa alla olevaa tilausta."; //[Term:24140]
+"ClickCollect_ItemNotAvailable" = "Tätä nimikettä ei ole saatavilla kohteessa ";
+"ClickCollect_ItemsNotAvailable" = "Näitä nimikkeitä ei ole saatavilla kohteessa ";
+"ClickCollect_Qty" = "Lkm:";
+"ClickCollect_StoreDistance" = "km päässä täältä";
+
+// Account
+"Account_Account" = "Tili";
+"Account_CreateAccount" = "Luo tili";
+"Account_ManageAccount" = "Tilin hallinta";
+"Account_UpdateAccount" = "Päivitä tili"; //[Term:24123]
+"Account_Login" = "Kirjaudu sisään";
+"Account_Logout" = "Kirjaudu ulos";
+"Account_AreYouSureLogout" = "Haluatko varmasti kirjautua ulos?"; //[Term:24107]
+"Account_Points_Lowercase" = "pisteet";
+"Account_Email" = "Sähköpostiosoite";
+"Account_Password" = "Salasana";
+"Account_ConfirmPassword" = "Vahvista salasana";
+"Account_PleaseFillAllFields" = "Täytä kaikki kentät."; //[Term:24142]
+"Account_InvalidEmail" = "Sähköpostiosoite ei kelpaa";
+"Account_EmptyUsernameError" = "Käyttäjätunnus ei voi olla tyhjä";
+"Account_ForgotPassword" = "Unohtuiko salasana?";
+"Account_PasswordMismatch" = "Salasana ei täsmää.";
+"Account_ResetPasswordTitle" = "Palauta salasana"; //[Term:24128]
+"Account_NewPassword" = "Uusi salasana"; //[Term:447]
+"Account_ConfirmNewPassword" = "Vahvista uusi salasana";
+"Account_OldPassword" = "Vanha salasana";
+"Account_PasswordSuccess" = "Salasanan vaihto onnistui.";
+"Account_AccountUpdated" = "Tilin päivitys onnistui.";
+"Account_ResetPasswordMsg" = "Anna käyttäjätunnuksesi, niin saat uuden salasanan sähköpostitse.";
+"Account_ProvidedPasswordsDontMatch" = "Annetut salasanat eivät täsmää.";
+"Account_AlreadyHaveAnAccountLogIn" = "Onko sinulla jo tili? Kirjaudu sisään."; //[Term:24115]
+"Account_NewUserCreateAnAccount" = "Uusi käyttäjä? Luo tili.";
+"Account_Username" = "Käyttäjätunnus";
+"Account_Name" = "Nimi";
+"Account_AddressOne" = "Osoite 1"; //[Term:24104]
+"Account_AddressTwo" = "Osoite 2"; //[Term:24105]
+"Account_City" = "Kaupunki";
+"Account_State" = "Tila";
+"Account_Country" = "Maa";
+"Account_PostCode" = "Postinumero";
+"Account_Change" = "Vaihda";
+"Account_ChangePassword" = "Vaihda salasana";
+"Account_PhoneNumber" = "Puhelin";
+"Account_Optional" = "Valinnainen";
+"Account_ChooseProfiles" = "Valitse profiilit";
+"Account_EmptyError" = " ei voi olla tyhjä";
+"Account_Continue" = "Jatka"; //[Term:3618]
+"Account_ErrorChangePassword" = "Virhe vaihdettaessa salasanaa";
+"Account_Member" = "jäsen";
+"Account_Profiles" = "Valitse profiilit";
+"Account_SignUp" = "Rekisteröidy";
+
+//Notifications
+"Notification_RemoveNotifications" = "Poista kaikki ilmoitukset";
+"Notification_AreYouSureRemoveNotifications" = "Haluatko varmasti poistaa kaikki ilmoitukset?"; //[Term:24109]
+"Notification_NoNotifications" = "Ei ilmoituksia"; //[Term:24135]
+
+// QR Code
+"QRCode_QRCode" = "QR-koodi"; //[Term:24114]
+"QRCode_Identify" = "Tunnistaudu näyttämällä tämä QR-koodi.";
+
+//Barcode Scanner
+"ScanBarcode_btnLight" = "Valo";
+"ScanBarcode_Error" = "Skannerin käynnistys epäonnistui."; //[Term:24118]
+
+// Slideout basket
+"SlideoutBasket_Checkout" = "Kassa"; //[Term:24111]
+"SlideoutBasket_YourOrder" = "Tilauksesi";
+"SlideoutBasket_BasketEmpty" = "Korisi on tyhjä. Kun lisäät nimikkeitä, ne ilmestyvät tähän.";
+"SlideoutBasket_BasketEmptyAndNotLoggedIn" = "Korisi on tyhjä. Kirjaudu sisään ja ala lisätä nimikkeitä.";
+"SlideoutBasket_Total" = "Yhteensä";
+"SlideoutBasket_Coupons" = "Kupongit"; //[Term:22509]
+"SlideoutBasket_Offers" = "Tarjoukset"; //[Term:8320]
+"SlideoutBasket_QuantityAbbreviation" = "Lkm";
+"SlideoutBasket_Multiplier" = "x";
+"SlideoutBasket_ExtraLineFormatStringModifier" = "{0}";
+"SlideoutBasket_ExtraLineFormatStringPlus" = "+ {0} {1}";
+"SlideoutBasket_ExtraLineFormatStringMinus" = "- {0} {1}";
+"SlideoutBasket_ExtraLineFormatStringPlusUom" = "+ {0} {1} {2}";
+"SlideoutBasket_ExtraLineFormatStringMinusUom" = "- {0} {1} {2}";
+
+// Basket
+"Basket_Checkout" = "Kassa"; //[Term:24111]
+
+// Edit basket item
+"EditBasketItem_EditItem" = "Muokkaa nimikettä";
+
+// Add to basket
+"AddToBasket_AddToBasket" = "Lisää koriin";
+
+//Slideout Menu
+"SlideoutMenu_Items" = "Nimikkeet";
+"SlideoutMenu_ScanBarcode" = "Skannaa viivakoodi";
+"SlideoutMenu_Notifications" = "Ilmoitukset"; //[Term:24112]
+"SlideoutMenu_WishList" = "Toivomuslista";
+"SlideoutMenu_Search" = "Etsi";
+"SlideoutMenu_ContactUs" = "Ota yhteyttä";
+
+//Item
+"Item_NotFoundTitle" = "Nimikettä ei löytynyt";
+"Item_NotFoundMsg" = "Tätä nimikettä ei ole tietokannassa.";
+"Item_Variant" = "Variantti";
+"Item_UOM" = "Mittayksikkö";
+
+// Item details
+"ItemDetails_AddToBasket" = "Lisää koriin";
+"ItemDetails_Modify" = "Muokkaa";
+"ItemDetails_Quantity" = "Lukumäärä";
+"ItemDetails_Per" = "per";
+"ItemDetails_ItemAddedToWishList" = " lisätty toivomuslistalle!";
+"ItemDetails_ItemNotInStock" = "Nimikettä ei varastossa";
+"ItemDetails_NoItems" = "Ei näytettäviä nimikkeitä"; //[Term:24134]
+"ItemDetails_Availability" = "Näytä saatavuus"; //[Term:24119]
+"ItemDetails_SelectVariant" = "Valitse variantti"; //[Term:23628]
+
+// Image zoom screen
+
+// Transaction details
+"TransactionDetails_Multiplier" = "x";
+"TransactionDetails_Transaction" = "Tapahtuma"; //[Term:8012]
+"TransactionDetails_ErrorAddingItemToBasket" = "Nimikettä ei voitu lisätä koriin.";
+"TransactionDetails_ErrorAddingSomeItemsToBasket" = "Kaikkia nimikkeitä ei voitu lisätä koriin.";
+
+//Wish List
+"WishList_WishList" = "Toivomuslista";
+"WishList_RemoveFromWishList" = "Poista toivomuslistalta";
+"WishList_AreYouSureRemoveItem" = "Haluatko varmasti poistaa tämän nimikkeen toivomuslistalta?"; //[Term:24110]
+"WishList_AddToBasket" = "Lisää toivomuslista koriin";
+"WishList_AddToWishList" = "Lisää toivomuslistalle";
+"WishList_NoItems" = "Ei nimikkeitä toivomuslistalla"; //[Term:24133]
+
+//Notifications
+"Notifications_Notifications" = "Ilmoitukset"; //[Term:24112]
+"Notifications_DeleteAll" = "Poista kaikki ilmoitukset";
+
+//Search
+"Search_NoResults" = "Haku ei tuottanut tulosta.";
+"Search_Instruction" = "Käytä yleishaussa hakupalkkia."; //[Term:24124]
+"SearchScreen_Coupons" = "Kupongit"; //[Term:22509]
+"SearchScreen_Notifications" = "Ilmoitukset"; //[Term:24112]
+"SearchScreen_Offers" = "Tarjoukset"; //[Term:8320]
+"SearchScreen_Stores" = "Kaupat"; //[Term:14629]
+
+// Map view
+"MapView_AllLocations" = "Kaikki sijainnit";
+
+// Hidden settings
+"Hidden_Settings_HiddenSettings" = "Piilotetut asetukset";
+"Hidden_Settings_URL" = "URL"; //[Term:2282]
+"Hidden_Settings_Resource" = "Resurssi";
+"Hidden_Settings_WebserviceChanged" = "Verkkopalvelu vaihdettu"; //[Term:24125]
+"Hidden_Settings_WebserviceChangeSuccessMessage" = "HUOMIO\r\n Sulje sovellus KOKONAAN painamalla kotipainiketta ja pyyhkäisemällä sovellus pois. Käynnistä sovellus sitten uudelleen.";
+
+// Custom more controller
+
+// Weekdays
+"Weekday_Monday" = "Maanantai";
+"Weekday_Tuesday" = "Tiistai"; //[Term:3815]
+"Weekday_Wednesday" = "Keskiviikko"; //[Term:3810]
+"Weekday_Thursday" = "Torstai"; //[Term:3819]
+"Weekday_Friday" = "Perjantai";
+"Weekday_Saturday" = "Lauantai"; //[Term:3826]
+"Weekday_Sunday" = "Sunnuntai"; //[Term:3821]
+
+// SearchPopUp
+
+//ChangeVariantQtyPopUpView
+
+//Related

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="fill_parent"
+             android:layout_height="fill_parent">
+
+  <ImageView android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:adjustViewBounds="true"
+             android:paddingLeft="64dp"
+             android:paddingRight="64dp"
+             android:paddingTop="64dp"
+             android:maxWidth="384dp"
+             android:maxHeight="384dp"
+             android:src="@drawable/SplashLogo"/>
+
+</FrameLayout>

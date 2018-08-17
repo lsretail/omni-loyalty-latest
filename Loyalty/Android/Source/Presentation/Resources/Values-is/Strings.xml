@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!-- APPLICATION -->
+  <string name="ApplicationCancel">Hætta við</string>
+  <string name="ApplicationDone">Lokið</string>
+  <string name="ApplicationDelete">Eyða</string>
+  <string name="ApplicationYes">Já</string>
+  <string name="ApplicationNo">Nei</string>
+  <string name="ApplicationOk">Í lagi</string>
+  <string name="ApplicationRequired">Krafist</string>
+  <string name ="ApplicationNext">Næst</string>
+  <string name ="ApplicationQty">Magn</string>
+  <string name ="ApplicationQtyN">Magn: {0}</string>
+  <string name ="ApplicationOr">Eða</string>
+  <string name ="ApplicationEmail">Tölvupóstfang</string>
+  <string name ="ApplicationBasket">Karfa</string>
+  <string name ="ApplicationTotal">Samtals</string>
+  <string name="ApplicationUndo">Afturkalla</string>
+  <string name="ApplicatioItemDeleted">Eyðing tókst</string>
+  <string name ="ApplicationAddToBasket">Bæta í körfu</string>
+  <string name ="ApplicationAddedToBasket">Bætt í körfu</string>
+  <string name ="ApplicationAddToWishList">Bæta á óskalista</string>
+  <string name="ApplicationMustBeLoggedIn">Innskráning nauðsinleg til að nota fítus.</string>
+  <string name ="ApplicationTitle">LS Retail Vildarkerfi</string>
+
+  <!-- ACTIVITIES -->
+  
+  <!-- CHECKOUT VIEW -->
+  <string name="CheckoutViewInStorePickup">Afhending í verslun</string>
+  <string name="CheckoutViewHomeDelivery">Heimsending</string>
+  <string name="CheckoutViewClickCollect">Smella &amp; sækja</string>
+  <string name="CheckoutViewShippingMethod">Afhendingarmáti</string>
+  <string name="CheckoutViewStoreToPickup">Verslun sem sótt er í</string>
+  <string name="CheckoutViewShippingAddress">Heimilisfang afhendingar</string>
+  <string name="CheckoutViewName">Nafn</string>
+  <string name="CheckoutViewAddressOne">Heimilisfang 1</string>
+  <string name="CheckoutViewAddressTwo">Heimilisfang 2</string>
+  <string name="CheckoutViewCity">Borg</string>
+  <string name="CheckoutViewState">Fylki</string>
+  <string name="CheckoutViewPostCode">Póstnúmer</string>
+  <string name="CheckoutViewCountry">Land</string>
+  <string name="CheckoutViewPaymentOptions">Greiðsluleiðir</string>
+  <string name="CheckoutViewPayOnDelivery">Greiða við afhendingu</string>
+  <string name="CheckoutViewPayCreditCard">Kreditkort</string>
+  <string name="CheckoutViewPayment">Greiðsla</string>
+  <string name="CheckoutViewBillingAddress">Heimilisfang greiðanda</string>
+  <string name="CheckoutViewCardNumber">Kortanúmer</string>
+  <string name="CheckoutViewMM">MM</string>
+  <string name="CheckoutViewYYYY">ÁÁÁÁ</string>
+  <string name="CheckoutViewCVV">CVV</string>
+  <string name="CheckoutViewSameAsShippingAddress">Sama og heimilisfang afhendingar</string>
+  <string name="CheckoutViewTotalHeader">SAMTALS</string>
+  <string name="CheckoutViewSubtotal">Millisamtala:</string>
+  <string name="CheckoutViewShipping">Afhending:</string>
+  <string name="CheckoutViewTotalWithoutVAT">Samtals án VSK:</string>
+  <string name="CheckoutViewVAT">VSK:</string>
+  <string name="CheckoutViewDiscount">Afsláttur:</string>
+  <string name="CheckoutViewTotal">Samtals:</string>
+  <string name="CheckoutViewOrder">Pöntun</string>
+  <string name="CheckoutViewCalculateTotal">Reikna heildarupphæð</string>
+  <string name="CheckoutViewExpires">Rennur út {0}/{1}</string>
+  <string name="CheckoutViewOrderSuccess">Pöntun lokið</string>
+  <string name="CheckoutViewCantHaveZeroQty">{0} geta ekki haft magnið 0 </string>
+  <string name="CheckoutViewAllRequiredFieldsMustBeFilled">Fylla verður út alla áskilda reiti</string>
+  <string name="CheckoutViewMustEnterCreditCardInfo">Fylla verður út allar kreditkortaupplýsingar</string>
+  <string name="CheckoutViewNoItemsAvailable">Engin varanna er til í</string>
+  <string name="CheckoutViewItemNotAvailable">Eftirfarandi vara er ekki til</string>
+  <string name="CheckoutViewItemsNotAvailable">Eftirfarandi vörur eru ekki til</string>
+  <string name="CheckoutViewEmailToSendReceipt">Kvittun verður send á eftirfarandi tölvupóstfang</string>
+  
+  <!-- SCANNER VIEW -->
+
+  <string name="ScannerViewScannerTopText">Haldið myndavélinni upp að strikamerkinu\nÍ um 15 cm fjarlægð</string>
+  <string name="ScannerViewScannerBottomText">Bíðið þar til sjálfvirk skönnun strikamerkis er lokið!</string>
+
+  <!-- LOGIN VIEW -->
+  <string name="LoginViewUsername">Notandanafn</string>
+  <string name="LoginViewPassword">Aðgangsorð</string>
+  <string name="LoginViewLoginButton">Innskráning</string>
+  <string name="LoginViewCreateAccountButton">Stofna aðgang</string>
+  <string name="LoginViewUserNameEmpty">Notandanafn má ekki vera autt</string>
+  <string name="LoginViewPasswordEmpty">Aðgangsorð má ekki vera autt</string>
+  <string name="LoginViewInvalidSecurityToken">Innskráning er útrunnin. Skráðu þig aftur inn</string>
+  <string name="LoginViewForgotPassword"><u>Gleymt aðgangsorð?</u></string>
+  
+  <!-- FORGOT PASSWORD VIEW -->
+  <string name="ForgotPasswordInstructions">Sláið inn notandanafn til þess að fá sendan kóða til þess að endurstilla aðgangsorð.</string>
+  <string name="ForgotPasswordSendCode">Senda kóða</string>
+  <string name="ForgotPasswordAlreadyHaveCode">Þegar með endurstillingarkóða?</string>
+  
+  <string name="ResetPasswordInstructions">Sláið inn tölvupóstfang, endurstillingarkóða og nýtt aðgangsorð til þess að endurstilla aðgangsorð.</string>
+  <string name="ResetPasswordResetCodeEmpty">Endurstillingarkóði má ekki vera auður.</string>
+  <string name="ResetPasswordResetCode">Endurstillingarkóði</string>
+  <string name="ResetPasswordResetPassword">Endurstilla aðgangsorð</string>
+
+
+  <!-- HISTORY VIEW -->
+  <string name="TransactionViewNoTransactions">Þú átt engar færslur</string>
+  <string name="TransactionViewTransactionCannotBeOpened">Ekki er hægt að opna færslu</string>
+  
+  <!-- HISTORY DETAIL VIEW -->
+  <string name="TransactionDetailViewItemNameHeaderText">Vara</string>
+  <string name="TransactionDetailViewItemAmountHeaderText">Upphæð</string>
+  <string name="TransactionDetailViewTotalWithoutVAT">Samtals án VSK:</string>
+  <string name="TransactionDetailViewDiscountTotal">Afsláttur samtals:</string>
+  <string name="TransactionDetailViewTotal">Samtals:</string>
+
+  <!-- CONTACT US VIEW -->
+  <string name="ContactUsViewOpenAppError">Ekkert app finnst sem getur opnað þessa skrártegund.</string>
+  
+  <!-- ACCOUNT TIER VIEW -->
+  <string name="AccountTierViewIdentify">Skannið þennan kóða á kassa til auðkenningar.</string>
+  <string name="AccountTierViewCurrentTier">Þú ert {0} meðlimur.</string>
+  <string name="AccountTierViewNextTier">Þig vantar {0} punkta í viðbót til þess að verða {1} meðlimur.</string>
+  <string name="AccountTierViewPointsBalance">Þú átt {0} punkta.</string>
+  <string name="AccountTierViewCurrentLevel">Núverandi stig</string>
+  <string name="AccountTierViewNextLevel">Næsta stig</string>
+
+  <!-- ITEM CATEGORY VIEW -->
+  <string name="ItemCategoryViewFailed">Villa við að sækja vöruflokka</string>
+  <string name="ItemCategoryViewRetry">Reyna aftur</string>
+  
+  <!-- ITEM VIEW -->
+  <string name="ItemViewVariant">Afbrigði</string>
+  <string name="ItemViewUnitOfMeasure">Eining</string>
+  <string name="ItemViewAddToShoppingList">Bæta í</string>
+  <string name="ItemViewPickShoppingList">Veljið innkaupalista</string>
+  <string name="ItemViewAddToNewList">Búa til nýjan innkaupalista</string>
+  <string name="ItemViewNewListName">Heiti innkaupalista</string>
+  <string name="ItemViewPickVariant">Veljið einingu</string>
+
+  <!-- ITEM SEARCH VIEW -->
+  <string name="ItemSearchViewSearchToShortError">Við leit þarf að slá inn minnst 3 stafi</string>
+  <string name="ItemSearchViewNoItemsFound">Engar vörur fundust</string>
+
+  <!-- BASKET VIEW -->
+  <string name="BasketViewBasketIsEmpty">Karfan er tóm.</string>
+  <string name="BasketViewGoToCheckout">Ljúka kaupum</string>
+  <string name="BasketViewClearBasketPrompt">Hreinsa körfu?</string>
+  
+  <!-- SHOPPING LISTS VIEW -->
+  <string name="ShoppingListViewDeleteConfirmation">Viltu örugglega eyða listanum?</string>
+  <string name="ShoppingListViewClearConfirmation">Viltu örugglega hreinsa listann?</string>
+  <string name="ShoppingListViewClearList">Hreinsa lista</string>
+  <string name="ShoppingListViewDeleteList">Eyða lista</string>
+  
+  <!-- SHOPPING LIST DETAIL VIEW -->
+  <string name="ShoppingListDetailViewItemName">Vara</string>
+  <string name="ShoppingListDetailViewEnterNewQuantity">Sláið inn nýtt magn</string>
+  <string name="ShoppingListDetailViewDeleteConfirmation">Viltu örugglega eyða vörunni?</string>
+  <string name="ShoppingListDetailViewChangeQty">Breyta magni</string>
+  <string name="ShoppingListDetailViewAddToAnotherList">Bæta á annan innkaupalista</string>
+  <string name="ShoppingListDetailViewDeleteItemFromList">Eyða vöru úr lista</string>
+  <string name="ShoppingListDetailViewSaveShoppingList">Vista innkaupalista</string>
+  <string name="ShoppingListDetailViewEnterShoppingListName">Sláið inn heiti innkaupalista</string>
+  <string name="ShoppingListDetailViewNameCannotBeEmpty">Heiti má ekki vera autt</string>
+  <string name="ShoppingListDetailViewGoToItemInfo">Vöruupplýsingar</string>
+  <string name="ShoppingListDetailViewNoItemsInShoppingList">Engar vörur eru á innkaupalista</string>
+  <string name="ShoppingListDetailViewItemExistsAndWillBeOverwritten">{0} er þegar til í {1} og verður yfirskrifað</string>
+  <string name="ShoppingListDetailViewItemsExistAndWillBeOverwritten">Eftirfarandi vara er þegar til í {0} og verður yfirskrifuð</string>
+  <string name="ShoppingListDetailViewWishlist">Óskalisti</string>
+
+
+  <!--NOTIFICATIONS VIEW -->
+  <string name="NotificationViewExpires">Rennur út: </string>
+  <string name="NotificationViewUnread">Ólesnar</string>
+  <string name="NotificationViewRead">Lesnar</string>
+  <string name="NotificationViewDeleteNotification">Eyða tilkynningum?</string>
+  <string name="NotificationViewNotificationationWillBeDeleted">Tilkynningum verður eytt</string>
+  <string name="NotificationViewDeleteNotifications">Eyða tilkynningum?</string>
+  <string name="NotificationViewNotificationationsWillBeDeleted">Tilkynningum verður eytt</string>
+
+
+  <!--WELCOME VIEW -->
+  <string name ="WelcomeViewWelcomeText">Pikkið á hnappinn að neðan í upphafi til að skrá ykkur inn eða stofna nýjan aðgang og stilla eigið notandasnið. \r\n \n\nAðild gefur kost á persónulegum tilboðum og afslætti, auk þess að hægt er að safna punktum sem má nota sem greiðslu þegar verslað er.</string>
+  <string name ="WelcomeViewPageTitle"> Velkomin </string>
+  <string name ="WelcomeViewLoginButtonText">Innskráning</string>
+
+  <!-- STORE LOCATOR VIEW -->
+  <string name="StorelocatorViewNotInStock">Varan er hvergi til á lager.</string>
+  <string name="StorelocatorViewInStockStores">{0} er til á lager í þessum verslunum.</string>
+  
+  <!-- STORE LOCATOR DETAIL VIEW -->
+  <string name="StorelocatorDetailViewOpeningHourDay">{0} - {1} á {2}</string>
+  <string name="StorelocatorDetailViewSundays">sunnudögum</string>
+  <string name="StorelocatorDetailViewMonday">mánudögum</string>
+  <string name="StorelocatorDetailViewTuesday">þriðjudögum</string>
+  <string name="StorelocatorDetailViewWednesday">miðvikudögum</string>
+  <string name="StorelocatorDetailViewThursday">fimmtudögum</string>
+  <string name="StorelocatorDetailViewFriday">föstudögum</string>
+  <string name="StorelocatorDetailViewSaturday">laugardögum</string>
+  <string name="StorelocatorDetailViewPhone">Sími {0}</string>
+  <string name="StorelocatorDetailViewKilometersAway">{0} kílómetra héðan</string>
+  
+  <!-- OFFER COUPON NOTIFICATION DETAIL SCREENS -->
+  <string name="DetailViewExpires">Rennur út: {0} - {1}</string>
+  <string name="DetailViewNeverExpires">Rennur aldrei út</string>
+  <string name="DetailViewDetails">Upplýsingar</string>
+
+  <!--COUPON VIEW-->
+  <string name="CouponViewAddedToQRCode">Afsláttarmiða bætt við QR kóða</string>
+  <string name="CouponViewAddToQRCode">Bæta afsláttarmiða við QR kóða</string>
+  <string name="CouponViewRemoveFromQRCode">Fjarlægja afsláttarmiða úr QR kóða</string>
+  <string name="CouponUse">Nota afsláttarmiða</string>
+
+  <!--OFFER VIEW-->
+  <string name="OfferViewAddedToQRCode">Tilboði bætt við QR kóða</string>
+  <string name="OfferViewAddToQRCode">Bæta tilboði við QR kóða</string>
+  <string name="OfferViewRemoveFromQRCode">Fjarlægja tilboð úr QR kóða</string>
+  <string name="OfferUse">Nota tilboð</string>
+  
+  <!--OFFERS GROUP NAME-->
+  <string name="GeneralOffers">Almenn tilboð</string>
+  <string name="MemberOffers">Aðildartilboð</string>
+  <string name="PointOffers">Punktatilboð</string>
+  
+  <!-- QR CODE VIEW -->
+  <string name="QRCodeViewNoSelected">Engin tilboð eða afsláttarmiðar hafa verið valin.</string>
+
+  <!-- SETTINGS -->
+  <string name="SettingsViewResetPinSuccess">PIN númeri hefur verið breytt</string>
+  <string name="SettingsViewResetPinError">Gat ekki breyt PIN númeriCould not change pin</string>
+  <string name="SettingsViewNewPinToShort">Nýtt PIN númer skal vera 4 tölur</string>
+  <string name="SettingsViewNewPinTitle">Endurstilla PIN</string>
+  <string name="SettingsViewNewPinMessage">Endurstilli PIN númer</string>
+
+  <string name="SettingsViewNotifications">Stillingar tilkynninga</string>
+  <string name="SettingsViewReceiveNotificationsSummary">Heimila appi að láta þig vita þegar koma nýjar tilkynningar</string>
+  
+  <!-- CREATE ACCOUNT INFORMATION -->
+  <string name="AccountInformationViewUserName">Notandanafn</string>
+  <string name="AccountInformationViewPassword">Aðgangsorð</string>
+  <string name="AccountInformationViewPasswordConfirmation">Staðfesting aðgangsorðs</string>
+  <string name="AccountInformationViewChangePassword">Breyta aðgangsorði</string>
+  <string name="AccountInformationViewEmail">Tölvupóstfang</string>
+  <string name="AccountInformationViewName">Nafn</string>
+  <string name="AccountInformationViewPhone">Sími</string>
+  <string name="AccountInformationViewAddressOne">Heimilisfang 1</string>
+  <string name="AccountInformationViewAddressTwo">Heimilisfang 2</string>
+  <string name="AccountInformationViewCity">Borg</string>
+  <string name="AccountInformationViewPostCode">Póstnúmer</string>
+  <string name="AccountInformationViewState">Fylki</string>
+  <string name="AccountInformationViewCountry">Land</string>
+  <string name="AccountInformationAccountInformation">Aðgangsupplýsingar</string>
+  <string name="AccountInformationPersonalInformation">Persónulegar upplýsingar</string>
+
+  <!-- CREATE ACCOUNT PROFILES -->
+  <string name="AccountProfilesViewCreateAccount">Stofna aðgang</string>
+  <string name="AccountProfilesViewProfiles">Notandasnið</string>
+  <string name="AccountProfilesViewFailed">Villa við að sækja notandasnið</string>
+  <string name="AccountProfilesViewRetry">Reyna aftur</string>
+
+  <!-- ACCOUNT -->
+  <string name="AccountViewBack">Til baka</string>
+  <string name="AccountViewCreate">Stofna</string>
+  <string name="AccountViewUpdate">Uppfæra</string>
+  <string name="AccountViewUserNameEmpty">Notandanafn má ekki vera óútfyllt</string>
+  <string name="AccountViewPasswordEmpty">Aðgangsorð má ekki vera óútfyllt</string>
+  <string name="AccountViewPasswordConfirmEmpty">Staðfesting aðgangsorðs má ekki vera óútfyllt</string>
+  <string name="AccountViewPasswordAndPasswordConfirmDifferent">Aðgangsorð verður að stemma við staðfestingu aðgangsorðs</string>
+  <string name="AccountViewEmailEmpty">Tölvupóstfang má ekki vera óútfyllt</string>
+  <string name="AccountViewNameMustContainLastName">Nafn verður að innihalda Eftirnafm</string>
+  <string name="AccountViewFirstNameEmpty">Fornafn má ekki vera óútfyllt</string>
+  <string name="AccountViewLastNameEmpty">Eftirnafn má ekki vera óútfyllt</string>
+  <string name="AccountViewAddressOneEmpty">Heimilisfang 1 má ekki vera óútfyllt</string>
+  <string name="AccountViewCityEmpty">Borg má ekki vera óútfyllt</string>
+  <string name="AccountViewPostCodeEmpty">Póstnúmer má ekki vera óútfyllt</string>
+  <string name="AccountViewStateEmpty">Fylki má ekki vera óútfyllt</string>
+  <string name="AccountViewCountryEmpty">Land má ekki vera óútfyllt</string>
+  <string name="AccountViewCreateAccount">Stofna aðgang</string>
+  <string name="AccountViewCreatingNewAccount">Stofna nýjan aðgang</string>
+  <string name="AccountViewUpdateAccount">Uppfæra aðgang</string>
+  <string name="AccountViewUpdatingExistingAccount">Uppfæri aðgang þinn</string>
+  <string name="AccountViewUpdateSuccess">Uppfærslu aðgangs lokið</string>
+  <string name="AccountViewEmailExists">Uppgefið tölvupóstfang er þegar til á skrá.</string>
+  <string name="AccountViewEmailInvalid">Sláið inn gilt tölvupóstfang.</string>
+  <string name="AccountViewPasswordInvalid">Sláið inn gilt aðgangsorð.</string>
+  <string name="AccountViewUserNameExists">Þetta notandanafn er í notkun.\nVeljið annað notandanafn.</string>
+  <string name="AccountViewUserNameInvalid">Sláið inn gilt notandanafn.</string>
+  
+  <!-- ACCOUNT MANAGEMENT -->
+  <string name="AccountManagementViewEditInformation">Breyta aðgangi</string>
+  <string name="AccountManagementViewChangePassword">Breyta aðgangsorði</string>
+  <string name="AccountManagementViewInstructions">Ef breyta á grunnupplýsingum aðgangs eða tengdum notendasniðum, veljið \"{0}\".\n\n\nTil að breyta aðgangsorði, veljið \"{1}\"</string>
+
+  <!-- CHANGE PASSWORD -->
+  <string name="ChangePasswordViewOldPassword">Núverandi aðgangsorð</string>
+  <string name="ChangePasswordViewPassword">Nýtt aðgangsorð</string>
+  <string name="ChangePasswordViewPasswordConfirmation">Staðfesting nýs aðgangsorðs</string>
+  <string name="ChangePasswordChangePassword">Breyta aðgangsorði</string>
+  <string name="ChangePasswordChangingPassword">Breyti aðgangsorði</string>
+  <string name="ChangePasswordChangePasswordSuccess">Aðgangsorði hefur verið breytt</string>
+  <string name="ChangePasswordOldPasswordEmpty">Eldra aðgangsorð má ekki vera óútfyllt</string>
+  <string name="ChangePasswordNewPasswordEmpty">Nýtt aðgangsorð má ekki vera óútfyllt</string>
+  <string name="ChangePasswordPasswordsDontMatch">Aðgangsorð stemmir ekki við staðfestingu aðgangsorðsPassword does not match password confirmation</string>
+  <string name="ChangePasswordErrorChangingPassword">Gat ekki breytt aðgangsorði</string>
+  <string name="ChangePasswordInvalidPasswordException">Sláið inn gilt aðgangsorð</string>
+
+  <!-- GENERAL SEARCH -->
+  <string name="GeneralSearchViewOffersGroupHeader">Tilboð ({0})</string>
+  <string name="GeneralSearchViewCouponsGroupHeader">Afsláttarmiðar ({0})</string>
+  <string name="GeneralSearchViewNotificationsGroupHeader">Tikynningar ({0})</string>
+  <string name="GeneralSearchViewTransactionsGroupHeader">Saga ({0})</string>
+  <string name="GeneralSearchViewWishListGroupHeader">Óskalisti ({0})</string>
+  <string name="GeneralSearchViewStoresGroupHeader">Verslanir ({0})</string>
+  <string name="GeneralSearchViewItemsGroupHeader">Vörur ({0})</string>
+  <string name="GeneralSearchViewCoupon">Afsláttarmiði</string>
+  <string name="GeneralSearchViewOffer">Tilboð</string>
+  <string name="GeneralSearchViewNotification">Tilkynning</string>
+  <string name="GeneralSearchViewItem">Vara</string>
+  <string name="GeneralSearchViewTransaction">Saga</string>
+  <string name="GeneralSearchViewShoppingList">Innkaupalisti</string>
+  <string name="GeneralSearchViewStore">Verslun</string>
+  <string name="GeneralSearchViewSearchStringToShort">Slá þarf inn minnst 3 stafi til að leita.</string>
+  <string name="GeneralSearchViewChooseCategories">Veljið flokka til að leita í.</string>
+  
+  <!-- MENU -->
+  <string name="MenuViewSettingsTitle">Stillingar</string>
+  <string name="MenuViewAccountManagementTitle">Stjórn aðgangs</string>
+  <string name="MenuViewLogout">Útskráning</string>
+  <string name="MenuViewHelp">Hjálp</string>
+  <string name="MenuViewScanBarcodeTitle">Skanna strikamerki</string>
+  <string name="MenuViewSearchTitle">Leit</string>
+  <string name="MenuViewRefreshTitle">Endurnýja</string>
+  <string name="MenuViewQRTitle">Mynda QR kóða</string>
+  <string name="MenuViewDeleteTitle">Eyða</string>
+  <string name="MenuViewNewShoppingList">Búa til nýjan innkaupalista</string>
+  <string name="MenuViewClearTitle">Hreinsa</string>
+  <string name="MenuViewAddToCurrentTitle">Bæta öllum vörum á núverandi lista</string>
+  <string name="MenuViewSaveAsNewListTitle">Vista sem nýjan lista</string>
+  <string name="MenuViewShowStoresOnMap">Sýna allar verslanir á korti</string>
+  <string name="MenuViewShowStoreOnMap">Sýna verslun á korti</string>
+  <string name="MenuViewShowDirections">Sýna leiðarlýsingu</string>
+  <string name="MenuViewMarkAsReadTitle">Merkja sem lesið</string>
+  <string name="MenuViewMarkAsUnreadTitle">Merkja sem ólesið</string>
+  <string name="MenuViewViewStock">Athuga hvar vara er til í birgðum</string>
+  <string name="MenuViewContactUs">Hafið samband</string>
+  <string name="MenuViewShare">Deila</string>
+  <string name="MenuViewGooglePlus">Google+</string>
+  <string name="MenuViewFacebook">Facebook</string>
+  <string name="MenuViewShowAsList">Sýna sem lista</string>
+  <string name="MenuViewShowAsGrid">Sýna sem net</string>
+  
+  <!-- NOTIFICATION BAR -->
+  <string name="NotificationBarNotification">Tilkynning</string>
+  <string name="NotificationBarNotifications">Tilkynningar</string>
+  <string name="NotificationBarContentText">Þín bíða {0} nýjar {1}</string>
+  
+  
+  <!-- ACTION BAR -->
+  <string name="ActionbarOffers">Tilboð</string>
+  <string name="ActionbarCoupons">Afsláttarmiðar</string>
+  <string name="ActionbarNotifications">Tilkynningar</string>
+  <string name="ActionbarNotification">Tilkynning</string>
+  <string name="ActionbarSearch">Leit</string>
+  <string name="ActionbarShoppingLists">Innkaupalistar</string>
+  <string name="ActionbarShoppingList">Innkaupalisti</string>
+  <string name="ActionbarQrCode">QR kóði</string>
+  <string name="ActionbarStores">Verslanir</string>
+  <string name="ActionbarMap">Kort</string>
+  <string name="ActionbarCoupon">Afsláttarmiði´</string>
+  <string name="ActionbarStore">Verslun</string>
+  <string name="ActionbarOffer">Tilboð</string>
+  <string name="ActionbarTransaction">Saga</string>
+  <string name="ActionbarTransactions">Saga</string>
+  <string name="ActionbarSettings">Stillingar</string>
+  <string name="ActionbarItem">Vara</string>
+  <string name="ActionbarContactUs">Hafið samband</string>
+  <string name="ActionbarCheckout">Ljúka kaupum</string>
+  <string name="ActionBarForgotPassword">Gleymt aðgangsorð</string>
+  <string name="ActionBarResetPassword">Endurstilla aðgangsorð</string>
+
+
+  <string name="ActionbarHome">Heimila</string>
+  <string name="ActionbarLogin">Innskráning</string>
+  <string name="ActionbarLogout">Útskráning</string>
+  <string name="ActionbarItems">Vörur</string>
+
+  <!-- APPLICATION -->
+  <string name="ApplicationName">LS Retail Vildarkerfi</string>
+  
+  <!-- PLAY SERVICE UTIL -->
+  <string name="PlayServiceUtilRequiresPlayService">Google Play Services verður að vera uppsett til þess að kortið virki.</string>
+  <string name="PlayServiceUtilInstall">Setja upp</string>
+  <string name="PlayServiceUtilPlayServices">Google Play Services</string>
+
+  <!-- MODELS -->
+
+  <!-- BASEMODEL -->
+  <string name="ModelErrorTitle">Villa</string>
+  <string name="ModelAuthenticationFailed">Rangt notandanafn eða aðgangsorð.\nReynið aftur.</string>
+  <string name="ModelDeviceBlocked">Þetta tæki hefur verið útilokað</string>
+  <string name="ModelGenericException">Villa. Reynið aftur</string>
+  <string name="ModelNetworkException">Ekkert netsamband</string>
+  <string name="ModelEmailExists">Tölvupóstfang er þegar til</string>
+  <string name="ModelSecurityToken">Aðgangi hafnað</string>
+  <string name="ModelAccessNotAllowed">Aðgangi hafnað</string>
+
+  <!-- MEMBERCONTACTMODEL -->
+  <string name="MemberContactModelRegisterDevice">Skrá tæki</string>
+  <string name="MemberContactModelRegisteringDevice">Skrái tæki</string>
+  <string name="MemberContactModelLogout">Útskráning</string>
+  <string name="MemberContactModelLoggingOutUser">Skrái notanda út: {0}</string>
+  <string name="MemberContactModelResetPassword">Endurstilla aðgangsorð</string>
+  <string name="MemberContactModelResettingPassword">Endurstilli aðgangsorð</string>
+  <string name="MemberContactModelLogin">Innskráning</string>
+  <string name="MemberContactModelLoggingInUser">Skrái notanda út: {0}</string>
+
+  <!-- STORE MODEL -->
+  <string name="StoreModelStoreLocator">Verslanaleit</string>
+  <string name="StoreModelGettingStores">Sæki verslanir</string>
+  
+  <!-- NOTIFICATION MODEL -->
+  <string name="NotificationModelNotifications">Tilkynningar</string>
+  <string name="NotificationModelMarkingCheckedAsRead">Merki valdar tilkynningar sem lesnar</string>
+  <string name="NotificationModelMarkingCheckedAsUnread">Merki valdar tilkynningar sem ólesnar</string>
+  <string name="NotificationModelDeletingChecked">Eyði völdum tilkynningum</string>
+  <string name="NotificationModelMarkingAsRead">Merki {0} sem lesna</string>
+  <string name="NotificationModelMarkingAsUnread">Merki {0} sem ólesna</string>
+  <string name="NotificationModelDelete">Deleting {0}</string>
+  
+  <!-- SHOPPING LIST MODEL -->
+  <string name="ShoppingListModelItemAddedToShoppingList">Vara vistuð</string>
+  <string name="ShoppingListModelItemsAddedToShoppingList">Vörur vistaðar</string>
+
+  <!-- ITEM MODEL -->
+  <string name="ItemModelItemNotFound">Vara fannst ekki</string>
+
+  <!-- TIME UTILS -->
+  <string name="TimeUtilsSecondAgo">fyrir sekúndu</string>
+  <string name="TimeUtilsSecondsAgo">fyrir sekúndum</string>
+  <string name="TimeUtilsMinuteAgo">fyrir mínútu</string>
+  <string name="TimeUtilsMinutesAgo">fyrir mínútum</string>
+  <string name="TimeUtilsHourAgo">fyrir klukkustund</string>
+  <string name="TimeUtilsHoursAgo">fyrir klukkustundum</string>
+  <string name="TimeUtilsYesterday">í gær</string>
+  <string name="TimeUtilsDaysAgo">fyrir dögum</string>
+  <string name="TimeUtilsMonthAgo">fyrir mánuði</string>
+  <string name="TimeUtilsMonthsAgo">fyrir mánuðum</string>
+  <string name="TimeUtilsYearAgo">fyrir ári</string>
+  <string name="TimeUtilsYearsAgo">fyrir árum</string>
+  
+</resources>

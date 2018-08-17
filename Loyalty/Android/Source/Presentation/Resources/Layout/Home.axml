@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+  <android.support.design.widget.AppBarLayout android:id="@+id/appbar"
+                                              android:layout_width="match_parent"
+                                              android:layout_height="wrap_content"
+                                              android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+    <android.support.v7.widget.Toolbar android:id="@+id/HomeScreenToolbar"
+                                       android:layout_width="match_parent"
+                                       android:layout_height="@dimen/ActionBarHeight"
+                                       app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                                       app:layout_scrollFlags="scroll|enterAlways" />
+
+  </android.support.design.widget.AppBarLayout>
+
+  <ImageView android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:layout_weight="0"
+             android:padding="@dimen/BasePadding"
+             android:adjustViewBounds="true"
+             android:src="@drawable/logo"/>
+
+  <LinearLayout android:layout_width="fill_parent"
+                android:layout_height="@dimen/MinTouchSize"
+                android:layout_weight="0"
+                android:orientation="horizontal">
+
+    <Button style="@style/CustomBorderlessButton"
+            android:id="@+id/HomeButtonOne"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="@color/barcode"
+            android:text="Items"/>
+
+    <Button style="@style/CustomBorderlessButton"
+            android:id="@+id/HomeButtonTwo"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="@color/storelocator"
+            android:text="Stores"/>
+
+  </LinearLayout>
+
+  <FrameLayout android:layout_width="fill_parent"
+               android:layout_height="0px"
+               android:layout_weight="1">
+
+    <android.support.v4.view.ViewPager android:id="@+id/HomePager"
+                                       android:layout_width="match_parent"
+                                       android:layout_height="match_parent"/>
+
+    <dk.ostebaronen.droid.viewpagerindicator.LinePageIndicator android:id="@+id/HomePagerIndicator"
+                                              android:padding="5dip"
+                                              android:layout_height="16dp"
+                                              android:layout_width="fill_parent"
+                                              app:strokeWidth="4dp"
+                                              app:lineWidth="30dp"
+                                              app:unselectedColor="@color/black54"
+                                              app:selectedColor="@color/accent"
+                                              android:layout_gravity="bottom"/>
+
+    <ProgressBar style="@style/ProgressBarLoyalty"
+                 android:id="@+id/HomePagerProgress"
+                 android:layout_width="fill_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="bottom"
+                 android:layout_marginBottom="-8dp"/>
+
+  </FrameLayout>
+
+</LinearLayout>

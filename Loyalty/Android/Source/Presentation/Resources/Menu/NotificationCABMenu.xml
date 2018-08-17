@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:id="@+id/MenuViewMarkUnread"
+        android:icon="@drawable/ic_action_unread"
+        android:title="@string/MenuViewMarkAsUnreadTitle"
+        android:showAsAction="always"/>
+  <item android:id="@+id/MenuViewMarkRead"
+        android:icon="@drawable/ic_action_read"
+        android:title="@string/MenuViewMarkAsReadTitle"
+        android:showAsAction="always"/>
+  <item android:id="@+id/MenuViewDelete"
+        android:icon="@drawable/ic_action_discard_light"
+        android:title="@string/MenuViewDeleteTitle"
+        android:showAsAction="always"/>
+</menu>

@@ -1,0 +1,440 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!-- APPLICATION -->
+  <string name="ApplicationCancel">Abbrechen</string>
+  <string name="ApplicationDone">Erledigt</string>
+  <string name="ApplicationDelete">Löschen</string>
+  <string name="ApplicationYes">Ja</string>
+  <string name="ApplicationNo">Nein</string>
+  <string name="ApplicationOk">Ok</string>
+  <string name="ApplicationRequired">Erforderlich</string>
+  <string name ="ApplicationNext">Nächste</string>
+  <string name ="ApplicationQty">Menge</string>
+  <string name ="ApplicationQtyN">Menge: {0}</string>
+  <string name ="ApplicationOr">Bestellung</string>
+  <string name ="ApplicationEmail">Email</string>
+  <string name ="ApplicationBasket">Einkaufswagen</string>
+  <string name ="ApplicationTotal">Summe</string>
+  <string name ="ApplicationAddToBasket">Zum Einkaufswagen hinzufügen</string>
+  <string name ="ApplicationAddedToBasket">Zum Einkaufswagen hinzugefügt</string>
+  <string name ="ApplicationAddToWishList">Zum Wunschzettel hinzufügen</string>
+  <string name ="ApplicationTitle">LS Retail Loyalty</string>
+
+  <!-- ACTIVITIES -->
+
+  <!-- CHECKOUT VIEW -->
+  <string name="CheckoutViewInStorePickup">Abholung in Filiale</string>
+  <string name="CheckoutViewHomeDelivery">Lieferung nachhause</string>
+  <string name="CheckoutViewClickCollect">Click &amp; Collect</string>
+  <string name="CheckoutViewShippingMethod">Liefermethode</string>
+  <string name="CheckoutViewStoreToPickup">Filiale für Abholung</string>
+  <string name="CheckoutViewShippingAddress">Lieferadresse</string>
+  <string name="CheckoutViewName">Name</string>
+  <string name="CheckoutViewAddressOne">Addresse 1</string>
+  <string name="CheckoutViewAddressTwo">Addresse 2</string>
+  <string name="CheckoutViewCity">Ort</string>
+  <string name="CheckoutViewState">Bundesland</string>
+  <string name="CheckoutViewPostCode">PLZ</string>
+  <string name="CheckoutViewCountry">Land</string>
+  <string name="CheckoutViewPaymentOptions">Zahlungsart</string>
+  <string name="CheckoutViewPayOnDelivery">Bezahlung bei Lieferung</string>
+  <string name="CheckoutViewPayCreditCard">Kreditkarte</string>
+  <string name="CheckoutViewPayment">Bezahlung</string>
+  <string name="CheckoutViewBillingAddress">Rechnungsadresse</string>
+  <string name="CheckoutViewCardNumber">Kartennummer</string>
+  <string name="CheckoutViewMM">MM</string>
+  <string name="CheckoutViewYYYY">YYYY</string>
+  <string name="CheckoutViewCVV">CVV</string>
+  <string name="CheckoutViewSameAsShippingAddress">Identisch mit Lieferadresse</string>
+  <string name="CheckoutViewTotalHeader">SUMME</string>
+  <string name="CheckoutViewSubtotal">Zwischensumme:</string>
+  <string name="CheckoutViewShipping">Lieferung:</string>
+  <string name="CheckoutViewTotalWithoutVAT">Summe ohne Mwst:</string>
+  <string name="CheckoutViewVAT">Mwst:</string>
+  <string name="CheckoutViewDiscount">Rabatt:</string>
+  <string name="CheckoutViewTotal">Summe:</string>
+  <string name="CheckoutViewOrder">Bestellung</string>
+  <string name="CheckoutViewCalculateTotal">Berechnete Summe</string>
+  <string name="CheckoutViewExpires">Verfällt {0}/{1}</string>
+  <string name="CheckoutViewOrderSuccess">Bestellung erfolgreich abgeschlossen</string>
+  <string name="CheckoutViewCantHaveZeroQty">{0} Menge darf nicht 0 sein</string>
+  <string name="CheckoutViewAllRequiredFieldsMustBeFilled">Alle erforderlichen Felder müssen ausgefüllt werden</string>
+  <string name="CheckoutViewMustEnterCreditCardInfo">Alle Kreditkarten-Informatioinen müssen eingetragen werden</string>
+  <string name="CheckoutViewNoItemsAvailable">Keiner der Artikel ist verfügbar in</string>
+  <string name="CheckoutViewItemNotAvailable">Der folgende Artikel ist nicht verfügbar</string>
+  <string name="CheckoutViewItemsNotAvailable">Die folgenden Artikel sind nicht verfügbar</string>
+  <string name="CheckoutViewEmailToSendReceipt">Ein Beleg wird an die folgende E-Mail gesendet</string>
+
+  <!-- SCANNER VIEW -->
+
+  <string name="ScannerViewScannerTopText">Halten Sie die Kamera an den Barcode\n ca. 15 Zentimeter enfernt</string>
+  <string name="ScannerViewScannerBottomText">Warten Sie bis der Barcode automatisch gescannt wurde!</string>
+
+  <!-- LOGIN VIEW -->
+  <string name="LoginViewUsername">Benutzername</string>
+  <string name="LoginViewPassword">Passwort</string>
+  <string name="LoginViewLoginButton">Anmeldung</string>
+  <string name="LoginViewCreateAccountButton">Konto erstellen</string>
+  <string name="LoginViewUserNameEmpty">Benutzername darf nicht leer sein</string>
+  <string name="LoginViewPasswordEmpty">Passwort darf nicht leer sein</string>
+  <string name="LoginViewInvalidSecurityToken">Anmeldung ist abgelaufen, bitte melden Sie sich erneut an</string>
+  <string name="LoginViewForgotPassword"><u>Passwort vergessen?</u></string>
+
+  <!-- FORGOT PASSWORD VIEW -->
+  <string name="ForgotPasswordInstructions">Geben Sie Ihren Benutzernamen ein, um einen Code zum Zurücksetzen Ihres Passworts per E-Mail zu erhalten.</string>
+  <string name="ForgotPasswordSendCode">Code senden</string>
+  <string name="ForgotPasswordAlreadyHaveCode">Sie haben bereits einen Zurücksetzungs-Code erhalten?</string>
+
+  <string name="ResetPasswordInstructions">Geben Sie Ihre E-Mail, den Zurücksetzungs-Code und Ihr neues Passwort ein, um Ihr Passwort zurückzusetzen.</string>
+  <string name="ResetPasswordResetCodeEmpty">Zurücksetzungs-Code darf nicht leer sein.</string>
+  <string name="ResetPasswordResetCode">Zurücksetzungs-Code</string>
+  <string name="ResetPasswordResetPassword">Passwort zurücksetzen</string>
+
+
+  <!-- HISTORY VIEW -->
+  <string name="TransactionViewNoTransactions">Keine Transaktionen vorhanden</string>
+  <string name="TransactionViewTransactionCannotBeOpened">Transaktionen können nicht geöffnet werden</string>
+
+  <!-- HISTORY DETAIL VIEW -->
+  <string name="TransactionDetailViewItemNameHeaderText">Artikel</string>
+  <string name="TransactionDetailViewItemAmountHeaderText">Betrag</string>
+  <string name="TransactionDetailViewTotalWithoutVAT">Summe ohne Mwst:</string>
+  <string name="TransactionDetailViewDiscountTotal">Summe Rabatt:</string>
+  <string name="TransactionDetailViewTotal">Summe:</string>
+
+  <!-- CONTACT US VIEW -->
+  <string name="ContactUsViewOpenAppError">Es ist keine App vorhanden, die diese Erweiterung öffnen kann</string>
+
+  <!-- ACCOUNT TIER VIEW -->
+  <string name="AccountTierViewIdentify">Scannen Sie diesen Code an der Kasse, um sich zu identifizieren.</string>
+  <string name="AccountTierViewCurrentTier">Sie sind ein {0} Mitglied.</string>
+  <string name="AccountTierViewNextTier">Sie benötigen weitere {0} Punkte, um ein {1} Mitglied zu werden.</string>
+  <string name="AccountTierViewPointsBalance">Sie haben {0} Punkte.</string>
+  <string name="AccountTierViewCurrentLevel">Aktuelle Stufe</string>
+  <string name="AccountTierViewNextLevel">Nächstes Stufe</string>
+
+  <!-- ITEM CATEGORY VIEW -->
+  <string name="ItemCategoryViewFailed">Fehler beim Abrufen der Artikelkategorie</string>
+  <string name="ItemCategoryViewRetry">Erneut versuchen</string>
+
+  <!-- ITEM VIEW -->
+  <string name="ItemViewVariant">Variation</string>
+  <string name="ItemViewUnitOfMeasure">Einheit</string>
+  <string name="ItemViewAddToShoppingList">Hinzufügen zu</string>
+  <string name="ItemViewPickShoppingList">Bitte wählen Sie eine Einkaufsliste</string>
+  <string name="ItemViewAddToNewList">Eine neue Einkaufsliste erstellen</string>
+  <string name="ItemViewNewListName">Einkaufsliste Name</string>
+
+  <!-- ITEM SEARCH VIEW -->
+  <string name="ItemSearchViewSearchToShortError">Es müssen mindestens 3 Buchstaben in die Suche eingegeben werden.</string>
+  <string name="ItemSearchViewNoItemsFound">Keine Artikel gefunden</string>
+
+  <!-- BASKET VIEW -->
+  <string name="BasketViewBasketIsEmpty">Einkaufswagen ist leer.</string>
+  <string name="BasketViewGoToCheckout">Zur Abmeldung</string>
+  <string name="BasketViewClearBasketPrompt">Einkaufswagen leeren?</string>
+
+  <!-- SHOPPING LISTS VIEW -->
+  <string name="ShoppingListViewDeleteConfirmation">Sind Sie sicher, dass Sie die Liste löschen möchten?</string>
+  <string name="ShoppingListViewClearConfirmation">Sind Sie sicher, dass Sie die Liste leeren möchten?</string>
+  <string name="ShoppingListViewClearList">Liste leeren</string>
+  <string name="ShoppingListViewDeleteList">Liste löschen</string>
+
+  <!-- SHOPPING LIST DETAIL VIEW -->
+  <string name="ShoppingListDetailViewItemName">Artikel</string>
+  <string name="ShoppingListDetailViewEnterNewQuantity">Bitte  geben Sie eine neue Menge ein</string>
+  <string name="ShoppingListDetailViewDeleteConfirmation">Sind Sie sicher, dass Sie den Artikel löschen möchten?</string>
+  <string name="ShoppingListDetailViewChangeQty">Menge ändern</string>
+  <string name="ShoppingListDetailViewAddToAnotherList">Zu einer anderen Einkaufsliste hinzufügen</string>
+  <string name="ShoppingListDetailViewDeleteItemFromList">Artikel von Liste löschen</string>
+  <string name="ShoppingListDetailViewSaveShoppingList">Einkaufsliste speichern</string>
+  <string name="ShoppingListDetailViewEnterShoppingListName">Bitte geben Sie den Einkaufslisten-Name ein.</string>
+  <string name="ShoppingListDetailViewNameCannotBeEmpty">Name darf nicht leer sein</string>
+  <string name="ShoppingListDetailViewGoToItemInfo">Artikel Information</string>
+  <string name="ShoppingListDetailViewNoItemsInShoppingList">Keine Artikel in Einkaufsliste</string>
+  <string name="ShoppingListDetailViewItemExistsAndWillBeOverwritten">{0} existiert bereits in {1} und wird überschrieben</string>
+  <string name="ShoppingListDetailViewItemsExistAndWillBeOverwritten">Der folgende Artikel existiert bereits in {0} und wird überschrieben</string>
+  <string name="ShoppingListDetailViewWishlist">Wunschzettel</string>
+
+
+  <!--NOTIFICATIONS VIEW -->
+  <string name="NotificationViewExpires">Verfällt: </string>
+  <string name="NotificationViewUnread">Ungelesen</string>
+  <string name="NotificationViewRead">Lesen</string>
+  <string name="NotificationViewDeleteNotification">Benachrichtigung löschen?</string>
+  <string name="NotificationViewNotificationationWillBeDeleted">Benachrichtigung wird unwiderruflich gelöscht</string>
+  <string name="NotificationViewDeleteNotifications">Benachrichtigungen löschen?</string>
+  <string name="NotificationViewNotificationationsWillBeDeleted">Benachrichtigungen werden unwiderruflich gelöscht</string>
+
+
+  <!--WELCOME VIEW -->
+  <string name ="WelcomeViewWelcomeText">Um anzufangen, klicken Sie auf den Button unten für die Anmeldung oder erstellen Sie ein neues Konto und richten Ihr persönliches Profil ein. \r\n \n\nAls Mitglied können erhalten Sie persönlichen Coupons außerdem haben Sie die Möglichkeit Punkten zu sammeln, die Sie für Ihr Einkaufserlebnis nutzen können.</string>
+  <string name ="WelcomeViewPageTitle"> Willkommen </string>
+  <string name ="WelcomeViewLoginButtonText">Anmelden</string>
+
+  <!-- STORE LOCATOR VIEW -->
+  <string name="StorelocatorViewNotInStock">Der Artikel ist in keiner Filiale vorrätig.</string>
+  <string name="StorelocatorViewInStockStores">{0} ist auf Lager in diesen Filialen.</string>
+
+  <!-- STORE LOCATOR DETAIL VIEW -->
+  <string name="StorelocatorDetailViewOpeningHourDay">{0} - {1} am {2}</string>
+  <string name="StorelocatorDetailViewSundays">Sonntags</string>
+  <string name="StorelocatorDetailViewMonday">Montags</string>
+  <string name="StorelocatorDetailViewTuesday">Dienstags</string>
+  <string name="StorelocatorDetailViewWednesday">Mittwochs</string>
+  <string name="StorelocatorDetailViewThursday">Donnerstags</string>
+  <string name="StorelocatorDetailViewFriday">Freitags</string>
+  <string name="StorelocatorDetailViewSaturday">Samstags</string>
+  <string name="StorelocatorDetailViewPhone">Tel. {0}</string>
+  <string name="StorelocatorDetailViewKilometersAway">{0} Kilometer entfernt</string>
+
+  <!-- OFFER COUPON NOTIFICATION DETAIL SCREENS -->
+  <string name="DetailViewExpires">Verfällt: {0} - {1}</string>
+  <string name="DetailViewNeverExpires">Verfällt nie</string>
+  <string name="DetailViewDetails">Details</string>
+
+  <!--COUPON VIEW-->
+  <string name="CouponViewAddedToQRCode">Gutschein wurde zu QR Code hinzugefügt</string>
+  <string name="CouponViewAddToQRCode">Gutschein zu QR Code hinzufügen</string>
+  <string name="CouponViewRemoveFromQRCode">Gutschein von QR Code entfernen</string>
+  <string name="CouponUse">Gutschein einlösen</string>
+
+  <!--OFFER VIEW-->
+  <string name="OfferViewAddedToQRCode">Angebot zu QR Code hinzugefügt</string>
+  <string name="OfferViewAddToQRCode">Angebot zu QR Code hinzufügen</string>
+  <string name="OfferViewRemoveFromQRCode">Angebot von QR Code entfernen</string>
+  <string name="OfferUse">Angebot annehmen</string>
+
+  <!--OFFERS GROUP NAME-->
+  <string name="GeneralOffers">Angebote Allgemein</string>
+  <string name="MemberOffers">Angebote Mitglieder</string>
+  <string name="PointOffers">Angebote Punkte</string>
+
+  <!-- QR CODE VIEW -->
+  <string name="QRCodeViewNoSelected">Keine Angebote oder Gutscheine wurden ausgewählt.</string>
+
+  <!-- SETTINGS -->
+  <string name="SettingsViewResetPinSuccess">Pin erfolgreich geändert</string>
+  <string name="SettingsViewResetPinError">Pin konnte nicht geändert werden</string>
+  <string name="SettingsViewNewPinToShort">Neuer Pin muss 4 Ziffern haben</string>
+  <string name="SettingsViewNewPinTitle">Pin zurücksetzen</string>
+  <string name="SettingsViewNewPinMessage">Pin Nummer wird zurückgesetzt</string>
+
+  <string name="SettingsViewNotifications">Einstellung Benachrichtigungen</string>
+  <string name="SettingsViewReceiveNotificationsSummary">Dem App erlauben Sie zu informieren, wenn neue Benachrichtigungen eingehen.</string>
+
+  <!-- CREATE ACCOUNT INFORMATION -->
+  <string name="AccountInformationViewUserName">Benutzername</string>
+  <string name="AccountInformationViewPassword">Passwort</string>
+  <string name="AccountInformationViewPasswordConfirmation">Passwort Bestätigung</string>
+  <string name="AccountInformationViewChangePassword">Passwort ändern</string>
+  <string name="AccountInformationViewEmail">E-Mail</string>
+  <string name="AccountInformationViewFirstName">Vorname</string>
+  <string name="AccountInformationViewMiddleName">2. Vorname</string>
+  <string name="AccountInformationViewLastName">Nachname</string>
+  <string name="AccountInformationViewPhone">Telefon</string>
+  <string name="AccountInformationViewAddressOne">Addresse 1</string>
+  <string name="AccountInformationViewAddressTwo">Addresse 2</string>
+  <string name="AccountInformationViewCity">Ort</string>
+  <string name="AccountInformationViewPostCode">PLZ</string>
+  <string name="AccountInformationViewState">Bundesland</string>
+  <string name="AccountInformationViewCountry">Land</string>
+  <string name="AccountInformationAccountInformation">Konto Informationen</string>
+  <string name="AccountInformationPersonalInformation">Persönliche Informationen</string>
+
+  <!-- CREATE ACCOUNT PROFILES -->
+  <string name="AccountProfilesViewCreateAccount">Konto erstellen</string>
+  <string name="AccountProfilesViewProfiles">Profile</string>
+  <string name="AccountProfilesViewFailed">Fehler beim Abrufen der Profile</string>
+  <string name="AccountProfilesViewRetry">Wiederholen</string>
+
+  <!-- ACCOUNT -->
+  <string name="AccountViewBack">Zurück</string>
+  <string name="AccountViewCreate">Erstellen</string>
+  <string name="AccountViewUpdate">Aktualisieren</string>
+  <string name="AccountViewUserNameEmpty">Benutzername darf nicht leer sein</string>
+  <string name="AccountViewPasswordEmpty">Passwort darf nicht leer sein</string>
+  <string name="AccountViewPasswordConfirmEmpty">Passwort Bestätigung darf nicht leer sein</string>
+  <string name="AccountViewPasswordAndPasswordConfirmDifferent">Passwort und Passwort Bestätigung müssen gleich sein.</string>
+  <string name="AccountViewEmailEmpty">E-Mail darf nicht leer sein</string>
+  <string name="AccountViewFirstNameEmpty">Vorname darf nicht leer sein</string>
+  <string name="AccountViewLastNameEmpty">Nachname darf nicht leer sein</string>
+  <string name="AccountViewAddressOneEmpty">Addresse 1 darf nicht leer sein</string>
+  <string name="AccountViewCityEmpty">Ort darf nicht leer sein</string>
+  <string name="AccountViewPostCodeEmpty">PLZ darf nicht leer sein</string>
+  <string name="AccountViewStateEmpty">Bundesland darf nicht leer sein</string>
+  <string name="AccountViewCountryEmpty">Land darf nicht leer sein</string>
+  <string name="AccountViewCreateAccount">Konto erstellen</string>
+  <string name="AccountViewCreatingNewAccount">Neues Konto wird erstellt</string>
+  <string name="AccountViewUpdateAccount">Konto aktualisieren</string>
+  <string name="AccountViewUpdatingExistingAccount">Konto wird aktualisiert</string>
+  <string name="AccountViewUpdateSuccess">Konto wurde erfolgreich aktualisiert</string>
+  <string name="AccountViewEmailExists">Die angegebene E-Mail-Adresse ist bereits registriert.</string>
+  <string name="AccountViewEmailInvalid">Bitte geben Sie eine gültige E-Mail-Adresse an.</string>
+  <string name="AccountViewPasswordInvalid">Bitte geben Sie ein gültiges Passwort ein.</string>
+  <string name="AccountViewUserNameExists">Dieser Benutzer wird bereits verwendet.\nBitte wählen Sie einen anderen Benuternamen.</string>
+  <string name="AccountViewUserNameInvalid">Bitte geben Sie einen gültigen Benutzernamen ein.</string>
+
+  <!-- ACCOUNT MANAGEMENT -->
+  <string name="AccountManagementViewEditInformation">Konto bearbeiten</string>
+  <string name="AccountManagementViewChangePassword">Passwort ändern</string>
+  <string name="AccountManagementViewInstructions">Um Ihre Basis Konto Informationen oder Ihr damit verbundenes Profil zu ändern, wählen Sie \"{0}\".\n\n\nUm das Passwort zu ändern, wählen Sie \"{1}\"</string>
+
+  <!-- CHANGE PASSWORD -->
+  <string name="ChangePasswordViewOldPassword">Aktuelles Passwort</string>
+  <string name="ChangePasswordViewPassword">Neues Passwort</string>
+  <string name="ChangePasswordViewPasswordConfirmation">Neues Passwort bestätigen</string>
+  <string name="ChangePasswordChangePassword">Passwort ändern</string>
+  <string name="ChangePasswordChangingPassword">Passwort wird geändert</string>
+  <string name="ChangePasswordChangePasswordSuccess">Passwort wurde erfolgreich geändert</string>
+  <string name="ChangePasswordOldPasswordEmpty">Altes Passwort darf nicht leer sein</string>
+  <string name="ChangePasswordNewPasswordEmpty">Neues Passwort darf nicht leer sein</string>
+  <string name="ChangePasswordPasswordsDontMatch">Passwort und Passwort Bestätigung sind ungleich</string>
+  <string name="ChangePasswordErrorChangingPassword">Passwort kann nicht geändert werden</string>
+  <string name="ChangePasswordInvalidPasswordException">Bitte geben Sie ein gültiges Passwort ein.</string>
+
+  <!-- GENERAL SEARCH -->
+  <string name="GeneralSearchViewOffersGroupHeader">Angebote ({0})</string>
+  <string name="GeneralSearchViewCouponsGroupHeader">Gutscheine ({0})</string>
+  <string name="GeneralSearchViewNotificationsGroupHeader">Benachrichtigungen ({0})</string>
+  <string name="GeneralSearchViewTransactionsGroupHeader">Historie ({0})</string>
+  <string name="GeneralSearchViewWishListGroupHeader">Wunschzettel ({0})</string>
+  <string name="GeneralSearchViewStoresGroupHeader">Filialen ({0})</string>
+  <string name="GeneralSearchViewItemsGroupHeader">Artikel ({0})</string>
+  <string name="GeneralSearchViewCoupon">Gutschein</string>
+  <string name="GeneralSearchViewOffer">Angebot</string>
+  <string name="GeneralSearchViewNotification">Benachrichtigung</string>
+  <string name="GeneralSearchViewItem">Artikel</string>
+  <string name="GeneralSearchViewTransaction">Historie</string>
+  <string name="GeneralSearchViewShoppingList">Einkaufsliste</string>
+  <string name="GeneralSearchViewStore">Filiale</string>
+  <string name="GeneralSearchViewSearchStringToShort">Suche muss mindestens 3 Buchstaben enthalten.</string>
+  <string name="GeneralSearchViewChooseCategories">Bitte eine Kategorie auswählen, in der Sie suchen möchten.</string>
+
+  <!-- MENU -->
+  <string name="MenuViewSettingsTitle">Einstellungen</string>
+  <string name="MenuViewAccountManagementTitle">Konto Management</string>
+  <string name="MenuViewLogout">Abmelden</string>
+  <string name="MenuViewHelp">Hilfe</string>
+  <string name="MenuViewScanBarcodeTitle">Barcode scannen</string>
+  <string name="MenuViewSearchTitle">Suche</string>
+  <string name="MenuViewRefreshTitle">Aktualisieren</string>
+  <string name="MenuViewQRTitle">QR Code generieren</string>
+  <string name="MenuViewDeleteTitle">Löschen</string>
+  <string name="MenuViewNewShoppingList">Neue Einkaufsliste erstellen</string>
+  <string name="MenuViewClearTitle">Leeren</string>
+  <string name="MenuViewAddToCurrentTitle">Alle Artikel zu dieser Liste hinzufügen</string>
+  <string name="MenuViewSaveAsNewListTitle">Als neue Liste speichern</string>
+  <string name="MenuViewShowStoresOnMap">Alle Filialen auf Karte zeigen</string>
+  <string name="MenuViewShowStoreOnMap">Filiale auf Karte zeigen</string>
+  <string name="MenuViewShowDirections">Wegbeschreibung zeigen</string>
+  <string name="MenuViewMarkAsReadTitle">Als gelesen markieren</string>
+  <string name="MenuViewMarkAsUnreadTitle">Als ungelesen markieren</string>
+  <string name="MenuViewViewStock">Prüfen wo Artikel auf Lager vorhanden ist</string>
+  <string name="MenuViewContactUs">Kontaktieren Sie uns</string>
+  <string name="MenuViewShare">Teilen</string>
+  <string name="MenuViewGooglePlus">Google+</string>
+  <string name="MenuViewFacebook">Facebook</string>
+  <string name="MenuViewShowAsList">Als Liste anzeigen</string>
+  <string name="MenuViewShowAsGrid">Als Raster anzeigen</string>
+
+  <!-- NOTIFICATION BAR -->
+  <string name="NotificationBarNotification">Benachrichtigung</string>
+  <string name="NotificationBarNotifications">Benachrichtigungen</string>
+  <string name="NotificationBarContentText">Sie haben {0} neue {1}</string>
+
+
+  <!-- ACTION BAR -->
+  <string name="ActionbarOffers">Angebote</string>
+  <string name="ActionbarCoupons">Gutscheine</string>
+  <string name="ActionbarNotifications">Benachrichtigungen</string>
+  <string name="ActionbarNotification">Benachrichtigung</string>
+  <string name="ActionbarSearch">Suche</string>
+  <string name="ActionbarShoppingLists">Einkaufslisten</string>
+  <string name="ActionbarShoppingList">Einkaufsliste</string>
+  <string name="ActionbarQrCode">Qr Code</string>
+  <string name="ActionbarStores">Filialen</string>
+  <string name="ActionbarMap">Karte</string>
+  <string name="ActionbarCoupon">Gutschein</string>
+  <string name="ActionbarStore">Filiale</string>
+  <string name="ActionbarOffer">Angebot</string>
+  <string name="ActionbarTransaction">Historie</string>
+  <string name="ActionbarTransactions">Historie</string>
+  <string name="ActionbarSettings">Einstellungen</string>
+  <string name="ActionbarItem">Artikel</string>
+  <string name="ActionbarContactUs">Kontaktieren Sie uns</string>
+  <string name="ActionbarCheckout">Abmelden</string>
+  <string name="ActionBarForgotPassword">Passwort vergessen</string>
+  <string name="ActionBarResetPassword">Passwort zurücksetzen</string>
+
+
+  <string name="ActionbarHome">Startseite</string>
+  <string name="ActionbarLogin">Anmelden</string>
+  <string name="ActionbarLogout">Abmelden</string>
+  <string name="ActionbarItems">Artikel</string>
+
+  <!-- APPLICATION -->
+  <string name="ApplicationName">akquinet Loyalty</string>
+
+  <!-- PLAY SERVICE UTIL -->
+  <string name="PlayServiceUtilRequiresPlayService">Die Karte erfordert Google Play Services für die Installation.</string>
+  <string name="PlayServiceUtilInstall">Installieren</string>
+  <string name="PlayServiceUtilPlayServices">Google Play Services</string>
+
+  <!-- MODELS -->
+
+  <!-- BASEMODEL -->
+  <string name="ModelErrorTitle">Fehler</string>
+  <string name="ModelAuthenticationFailed">Falscher Benutzername oder Passwort.\nBitte versuchen Sie es erneut.</string>
+  <string name="ModelDeviceBlocked">Dieses Gerät wurde gesperrt</string>
+  <string name="ModelGenericException">Fehler, bitte versuchen Sie es erneut</string>
+  <string name="ModelNetworkException">Keine Netzwerk Verbindung </string>
+  <string name="ModelEmailExists">E-Mail existiert bereits</string>
+  <string name="ModelSecurityToken">Zugang verwehrt</string>
+  <string name="ModelAccessNotAllowed">Zugang verwehrt</string>
+
+  <!-- MEMBERCONTACTMODEL -->
+  <string name="MemberContactModelRegisterDevice">Gerät registrieren</string>
+  <string name="MemberContactModelRegisteringDevice">Gerät wird registriert</string>
+  <string name="MemberContactModelLogout">Abmelden</string>
+  <string name="MemberContactModelLoggingOutUser">Benutzer abmelden: {0}</string>
+  <string name="MemberContactModelResetPassword">Passwort zurücksetzen</string>
+  <string name="MemberContactModelResettingPassword">Passwort wird zurückgesetzt</string>
+  <string name="MemberContactModelLogin">Anmelden</string>
+  <string name="MemberContactModelLoggingInUser">Benutzer wird angemeldet: {0}</string>
+
+  <!-- STORE MODEL -->
+  <string name="StoreModelStoreLocator">Filial-Suche</string>
+  <string name="StoreModelGettingStores">Filialen werden abgerufen</string>
+
+  <!-- NOTIFICATION MODEL -->
+  <string name="NotificationModelNotifications">Benachrichtigungen</string>
+  <string name="NotificationModelMarkingCheckedAsRead">Ausgewählte Benachrichtigungen werden als gelesen markiert</string>
+  <string name="NotificationModelMarkingCheckedAsUnread">Ausgewählte Benachrichtigungen werden als ungelesen markiert</string>
+  <string name="NotificationModelDeletingChecked">Ausgewählte Benachrichtigungen werden gelöscht</string>
+  <string name="NotificationModelMarkingAsRead"> {0} als gelesen markieren</string>
+  <string name="NotificationModelMarkingAsUnread"> {0} als ungelesen markieren</string>
+  <string name="NotificationModelDelete">Wird gelöscht {0}</string>
+
+  <!-- SHOPPING LIST MODEL -->
+  <string name="ShoppingListModelItemAddedToShoppingList">Artikel gespeichert</string>
+  <string name="ShoppingListModelItemsAddedToShoppingList">Artikel gespeichert</string>
+
+  <!-- ITEM MODEL -->
+  <string name="ItemModelItemNotFound">Artikel nicht gefunden</string>
+
+  <!-- TIME UTILS -->
+  <string name="TimeUtilsSecondAgo">vor einer Sekunde</string>
+  <string name="TimeUtilsSecondsAgo">vor Sekunden</string>
+  <string name="TimeUtilsMinuteAgo">vor einer Minute</string>
+  <string name="TimeUtilsMinutesAgo">vor Minuten</string>
+  <string name="TimeUtilsHourAgo">vor einer Stunde</string>
+  <string name="TimeUtilsHoursAgo">vor Stunden</string>
+  <string name="TimeUtilsYesterday">gestern</string>
+  <string name="TimeUtilsDaysAgo">vor Tagen</string>
+  <string name="TimeUtilsMonthAgo">vor einem Monat</string>
+  <string name="TimeUtilsMonthsAgo">vor Monaten</string>
+  <string name="TimeUtilsYearAgo">vor einem Jahr</string>
+  <string name="TimeUtilsYearsAgo">vor Jahren</string>
+
+</resources>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             style="@style/SelectableListItem"
+             android:layout_height="wrap_content"
+             android:layout_width="fill_parent">
+
+    <LinearLayout android:layout_width="fill_parent"
+                  android:layout_height="@dimen/TwoLineListItemHeight"
+                  android:paddingLeft="@dimen/BasePadding"
+                  android:paddingTop="@dimen/BasePadding"
+                  android:paddingBottom="@dimen/BasePadding"
+                  android:descendantFocusability="blocksDescendants"
+                  android:orientation="horizontal"
+                  android:background="@drawable/list_cell_background"
+                  style="@style/ListItem">
+
+      <FrameLayout android:id="@+id/ShoppingListDetailListItemViewImageContainer"
+                 android:layout_height="@dimen/ListImageHeight"
+                 android:layout_width="@dimen/ListImageHeight"
+                 android:layout_marginRight="@dimen/SecondaryBasePadding">
+
+        <ImageView style="@style/LazyListImage"
+                   android:id="@+id/ShoppingListDetailListItemViewImage"
+                   android:layout_height="fill_parent"
+                   android:layout_width="fill_parent"/>
+
+      </FrameLayout>
+
+      |<LinearLayout android:orientation="vertical"
+                     android:layout_width="0px"
+                     android:layout_height="wrap_content"
+                     android:layout_weight="1"
+                     android:layout_gravity="center_vertical">
+
+        <TextView style="@style/Subhead"
+                  android:id="@+id/ShoppingListDetailListItemViewItemName"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center_vertical"
+              android:singleLine="true"
+              android:ellipsize="end"/>
+
+        <TextView style="@style/Body2"
+                  android:id="@+id/ShoppingListDetailListItemViewVariantName"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+              android:singleLine="true"
+              android:ellipsize="end"/>
+
+      </LinearLayout>
+
+      <ImageButton style="@style/CustomBorderlessButton"
+                   android:id="@+id/ShoppingListDetailListItemViewItemOverflow"
+                   android:layout_width="@dimen/MinTouchSize"
+                   android:layout_height="@dimen/MinTouchSize"
+                   android:layout_marginLeft="@dimen/BasePadding"
+                   android:padding="@dimen/BaseListPadding"
+                   android:layout_weight="0"
+                   android:layout_gravity="center_vertical"
+                   android:src="@drawable/ic_action_navigation_more_vert_dark"
+                   android:focusable="false"
+                   android:focusableInTouchMode="false" />
+
+    </LinearLayout>
+</FrameLayout>

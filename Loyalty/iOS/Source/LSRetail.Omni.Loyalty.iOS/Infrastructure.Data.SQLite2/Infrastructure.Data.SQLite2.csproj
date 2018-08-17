@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{DFCD9D6A-F3A3-4C99-87BE-F441DA43ACAD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Infrastructure.Data.SQLite2</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>Infrastructure.Data.SQLite2</AssemblyName>
+    <TargetFrameworkIdentifier>Xamarin.iOS</TargetFrameworkIdentifier>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release Internal|iPhone' ">
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Release Internal</OutputPath>
+    <DefineConstants></DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Data.Sqlite" />
+    <Reference Include="System.Data" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Properties\" />
+    <Folder Include="Devices\" />
+    <Folder Include="Webservice\" />
+    <Folder Include="DB\" />
+    <Folder Include="DB\DTO\" />
+    <Folder Include="DB\Scripts\" />
+    <Folder Include="DB\Scripts\ClearDB\" />
+    <Folder Include="DB\Scripts\CreateDB\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.SQLite2\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.SQLite2\Devices\DeviceRepository.cs">
+      <Link>Devices\DeviceRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.SQLite2\Webservice\WebserviceRepository.cs">
+      <Link>Webservice\WebserviceRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.SQLite2\DB\DB.cs">
+      <Link>DB\DB.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.SQLite2\DB\SqliteExtensions.cs">
+      <Link>DB\SqliteExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.SQLite2\DB\SqliteHelper.cs">
+      <Link>DB\SqliteHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.SQLite2\DB\Scripts\ClearDB\DropTables.cs">
+      <Link>DB\Scripts\ClearDB\DropTables.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.SQLite2\DB\Scripts\CreateDB\CreateTables.cs">
+      <Link>DB\Scripts\CreateDB\CreateTables.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.SQLite2\SQLException.cs">
+      <Link>SQLException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.SQLite2\SQLStatusCode.cs">
+      <Link>SQLStatusCode.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.SQLite2\DB\DTO\WebserviceData.cs">
+      <Link>DB\DTO\WebserviceData.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Common\Core\Base\Domain.DataModel.Base\Domain.DataModel.Base.csproj">
+      <Project>{7BCAC03E-3B65-4CF4-9EBB-4EF353276D1C}</Project>
+      <Name>Domain.DataModel.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Common\Core\Loyalty\Domain.DataModel.Loyalty\Domain.DataModel.Loyalty.csproj">
+      <Project>{36A6FDFB-59D3-4618-92DD-0DEB8B6AB501}</Project>
+      <Name>Domain.DataModel.Loyalty</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Common\Core\Base\Domain.Services.Base\Domain.Services.Base.csproj">
+      <Project>{9C38D897-021B-4743-92E4-AE9C0252D17F}</Project>
+      <Name>Domain.Services.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Common\Core\Loyalty\Domain.Services.Loyalty\Domain.Services.Loyalty.csproj">
+      <Project>{1BE9DD18-AFAF-4F25-A62D-E6BF109C180F}</Project>
+      <Name>Domain.Services.Loyalty</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+</Project>

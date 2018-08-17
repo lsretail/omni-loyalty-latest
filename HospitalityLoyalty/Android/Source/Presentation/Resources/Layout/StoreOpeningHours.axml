@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_height="wrap_content"
+              android:layout_width="match_parent"
+              android:orientation="vertical"
+              android:paddingLeft="@dimen/BasePadding"
+              android:paddingRight="@dimen/BasePadding">
+  
+  <TextView style="@style/Title"
+                    android:id="@+id/StoreOpeningHoursDescripion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/BasePadding"
+                    android:paddingBottom="@dimen/HalfBasePadding"/>
+
+  <TextView style="@style/Subhead"
+            android:id="@+id/StoreOpeningHours"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+  
+</LinearLayout>

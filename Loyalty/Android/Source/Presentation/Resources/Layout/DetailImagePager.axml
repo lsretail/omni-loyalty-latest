@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             android:layout_width="fill_parent"
+             android:layout_height="@dimen/DetailImageSize"
+             app:layout_collapseMode="parallax">
+
+  <android.support.v4.view.ViewPager android:id="@+id/DetailImagePager"
+                                     android:layout_width="match_parent"
+                                     android:layout_height="match_parent" />
+
+  <dk.ostebaronen.droid.viewpagerindicator.LinePageIndicator android:id="@+id/DetailImagePagerIndicator"
+                                            android:padding="5dip"
+                                            android:layout_height="wrap_content"
+                                            android:layout_width="fill_parent"
+                                            android:visibility="gone"
+                                            app:strokeWidth="4dp"
+                                            app:lineWidth="30dp"
+                                            app:unselectedColor="@color/black54"
+                                            app:selectedColor="@color/accent"
+                                            android:layout_gravity="bottom" />
+
+  <View android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#18000000"/>
+
+</FrameLayout>

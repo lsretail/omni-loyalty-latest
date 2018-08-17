@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              style="@style/ListItem"
+              android:orientation="horizontal"
+              android:gravity="center_horizontal|center_vertical">
+  <ProgressBar style="@style/CustomProgressDialog"
+               android:id="@+id/ItemsListItemViewProgressBar"
+               android:layout_centerInParent="true"/>
+</LinearLayout>

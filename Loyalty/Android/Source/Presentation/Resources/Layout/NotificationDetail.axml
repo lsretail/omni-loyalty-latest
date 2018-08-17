@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="match_parent"
+                                                 android:fitsSystemWindows="false">
+
+  <android.support.design.widget.AppBarLayout android:id="@+id/appbar"
+                                              android:layout_width="match_parent"
+                                              android:layout_height="@dimen/DetailImageSize"
+                                              android:background="@color/transparent"
+                                              android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+    <android.support.design.widget.CollapsingToolbarLayout android:id="@+id/NotificationDetailScreenCollapsingToolbar"
+                                                           android:layout_width="match_parent"
+                                                           android:layout_height="match_parent"
+                                                           app:contentScrim="?attr/colorPrimary"
+                                                           app:expandedTitleMarginBottom="32dp"
+                                                           app:expandedTitleMarginEnd="64dp"
+                                                           app:expandedTitleMarginStart="48dp"
+                                                           app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+
+      <include android:id="@+id/NotificationViewImagePager"
+               layout="@layout/DetailImagePager" />
+
+      <android.support.v7.widget.Toolbar android:id="@+id/NotificationDetailScreenToolbar"
+                                         android:layout_width="match_parent"
+                                         android:layout_height="?attr/actionBarSize"
+                                         app:layout_collapseMode="pin"
+                                         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    </android.support.design.widget.CollapsingToolbarLayout>
+
+  </android.support.design.widget.AppBarLayout>
+
+  <android.support.v4.widget.NestedScrollView android:layout_width="match_parent"
+                                              android:layout_height="match_parent"
+                                              android:paddingLeft="@dimen/BigScreenPanePadding"
+                                              android:paddingRight="@dimen/BigScreenPanePadding"
+                                              app:layout_scrollFlags="scroll"
+                                              app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  android:background="@color/white">
+
+      <!--CONTENT-->
+
+      <TextView style="@style/HeadLine"
+                android:id="@+id/NotificationDetailViewPrimaryText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/BasePadding"
+                android:paddingLeft="@dimen/BasePadding"
+                android:paddingRight="@dimen/BasePadding"
+                android:paddingBottom="@dimen/HalfBasePadding"
+                android:textColor="@color/accent"/>
+
+      <TextView style="@style/Subhead"
+                android:id="@+id/NotificationDetailViewExpirationDate"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/BasePadding"
+                android:paddingRight="@dimen/BasePadding"
+                android:paddingTop="@dimen/HalfBasePadding"
+                android:paddingBottom="@dimen/HalfBasePadding" />
+
+      <TextView style="@style/Title"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/DetailViewDetails"
+                android:paddingLeft="@dimen/BasePadding"
+                android:paddingRight="@dimen/BasePadding"
+                android:paddingTop="@dimen/HalfBasePadding"
+                android:paddingBottom="@dimen/HalfBasePadding" />
+
+      <TextView style="@style/Subhead"
+                android:id="@+id/NotificationDetailViewSecondaryText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/BasePadding"
+                android:paddingRight="@dimen/BasePadding"
+                android:paddingTop="@dimen/HalfBasePadding"
+                android:paddingBottom="@dimen/HalfBasePadding" />
+
+    </LinearLayout>
+
+  </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>
+
+<!--<presentation.views.WindowOverLayScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                                            android:id="@+id/NotificationViewContent"
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent">
+
+  <FrameLayout android:layout_width="fill_parent"
+               android:layout_height="fill_parent">
+
+    <include android:id="@+id/NotificationViewImagePager"
+             layout="@layout/DetailImagePager" />
+
+    <FrameLayout android:layout_width="fill_parent"
+                 android:layout_height="fill_parent"
+                 android:paddingTop="@dimen/DetailImageSize">
+
+      <LinearLayout
+            android:id="@+id/NotificationViewMainContent"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:paddingBottom="@dimen/HalfBasePadding"
+            android:background="@color/white">
+
+        <TextView style="@style/Title"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:text="@string/DetailViewDetails"
+                  android:paddingLeft="@dimen/BasePadding"
+                  android:paddingRight="@dimen/BasePadding"
+                  android:layout_marginBottom="@dimen/HalfBasePadding"
+                  android:layout_marginTop="@dimen/BasePadding" />
+
+        <TextView style="@style/Subhead"
+                  android:id="@+id/NotificationDetailViewSecondaryText"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:paddingLeft="@dimen/BasePadding"
+                  android:paddingRight="@dimen/BasePadding"
+                  android:layout_marginTop="@dimen/HalfBasePadding"
+                  android:layout_marginBottom="@dimen/HalfBasePadding" />
+
+      </LinearLayout>
+
+      <LinearLayout android:id="@+id/NotificationViewTitleBar"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/BasePadding"
+                    android:paddingBottom="@dimen/BasePadding"
+                    android:background="@color/notifications">
+
+        <TextView style="@style/HeadLineLight"
+                  android:id="@+id/NotificationDetailViewPrimaryText"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:paddingLeft="@dimen/BasePadding"
+                  android:paddingRight="@dimen/BasePadding"/>
+
+        <TextView style="@style/SubheadLight"
+                  android:id="@+id/NotificationDetailViewExpirationDate"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:paddingLeft="@dimen/BasePadding"
+                  android:paddingRight="@dimen/BasePadding"
+                  android:visibility="gone"/>
+
+      </LinearLayout>
+        
+    </FrameLayout>
+      
+  </FrameLayout>
+
+</presentation.views.WindowOverLayScrollView>-->

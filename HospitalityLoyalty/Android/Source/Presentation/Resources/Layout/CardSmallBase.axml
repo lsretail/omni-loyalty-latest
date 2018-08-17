@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="0px"
+             android:layout_height="wrap_content"
+             android:padding="@dimen/CardHalfMargin"
+             android:layout_weight="@integer/SmallSmallCardWeight">
+  <FrameLayout android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:foreground="@drawable/selecteble_background"
+               android:duplicateParentState="true">
+    <LinearLayout android:id="@+id/CardSmallBaseContainer"
+                  android:orientation="vertical"
+                  android:layout_width="fill_parent"
+                  android:layout_height="@dimen/SmallCardHeight"
+                  android:background="@drawable/card_background"/>
+    <!--android:layout_marginBottom="2dp"/>-->
+    <!--<View android:layout_width="fill_parent"
+          android:layout_height="2dp"
+          android:background="@color/accent"
+          android:layout_gravity="bottom"/>-->
+  </FrameLayout>
+</FrameLayout>

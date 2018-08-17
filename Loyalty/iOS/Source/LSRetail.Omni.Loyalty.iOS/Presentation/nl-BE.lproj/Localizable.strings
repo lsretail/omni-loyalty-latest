@@ -1,0 +1,98 @@
+//GENERAL
+"General_OK" = "OK"; //[Term:456]
+"General_Cancel" = "Annuleren"; //[Term:367]
+"General_Back" = "Terug"; //[Term:363]
+"General_Yes" = "Ja"; //[Term:514]
+"General_No" = "Nee"; //[Term:454]
+
+//Base Model UI Exceptions
+
+//Welcome Screen
+"Welcome_WelcomeText" = "To get started, tap the button below to log in or to create a new account and configure your personal profile.
+
+Being a member allows you to benefit from personal offers and coupons as well as collecting points, which can be used for tendering during your shopping experience.";
+
+// Home
+
+// History
+
+
+
+// Location/Store/Restaurant details
+
+// Offers & coupons
+"OffersAndCoupons_Coupons" = "Coupons"; //[Term:22509]
+
+// Offer details
+"Offer_Details_Title" = "Aanbod"; //[Term:15041]
+
+// Coupon details
+
+// Checkout
+"Checkout_AreYouSureRemoveItem" = "Weet u zeker dat u dit artikel wilt verwijderen?"; //[Term:15254]
+
+//Click & Collect
+"ClickCollect_Stores" = "Winkels"; //[Term:14629]
+
+// Account
+"Account_NewPassword" = "Nieuw wachtwoord"; //[Term:447]
+"Account_Male" = "Man"; //[Term:438]
+"Account_Female" = "Vrouw"; //[Term:409]
+"Account_Required" = "vereist"; //[Term:16062]
+"Account_Gender" = "Geslacht"; //[Term:415]
+
+//Notifications
+
+// QR Code
+
+//Barcode Scanner
+
+// Slideout basket
+"SlideoutBasket_Coupons" = "Coupons"; //[Term:22509]
+
+// Basket
+
+// Edit basket item
+
+// Add to basket
+
+//Slideout Menu
+
+//Item
+
+// Item details
+
+// Image zoom screen
+
+// Transaction details
+"TransactionDetails_Transaction" = "Transactie"; //[Term:8012]
+
+//Wish List
+
+//Notifications
+
+//Search
+"SearchScreen_Coupons" = "Coupons"; //[Term:22509]
+"SearchScreen_Stores" = "Winkels"; //[Term:14629]
+
+// Map view
+
+// Hidden settings
+
+// Custom more controller
+
+// Weekdays
+"Weekday_Tuesday" = "Dinsdag"; //[Term:3815]
+"Weekday_Wednesday" = "Woensdag"; //[Term:3810]
+"Weekday_Thursday" = "Donderdag"; //[Term:3819]
+"Weekday_Saturday" = "Zaterdag"; //[Term:3826]
+"Weekday_Sunday" = "Zondag"; //[Term:3821]
+
+// SearchPopUp
+"SearchPopUp_Offer" = "Aanbod"; //[Term:15041]
+"SearchPopUp_Coupon" = "Coupon"; //[Term:3208]
+"SearchPopUp_Store" = "Winkel"; //[Term:2594]
+
+//ChangeVariantQtyPopUpView
+
+//Related

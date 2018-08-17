@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="0px"
+             android:layout_height="wrap_content"
+             android:padding="@dimen/CardHalfMargin"
+             android:layout_weight="@integer/MediumSmallCardWeight">
+  <FrameLayout android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:foreground="@drawable/selecteble_background"
+               android:duplicateParentState="true">
+    <RelativeLayout android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/SmallCardHeight"
+                    android:background="@drawable/card_background">
+      <FrameLayout android:id="@+id/CardMediumSmallItemImageContainer"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent">
+        <ImageView android:id="@+id/CardMediumSmallItemImage"
+                   android:layout_width="fill_parent"
+                   android:layout_height="match_parent"
+                   android:scaleType="centerCrop"/>
+      </FrameLayout>
+      <TextView android:id="@+id/CardMediumSmallItemDescription"
+                style="@style/TextViewHeader"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@color/background_pressed"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:lines="1"/>
+    </RelativeLayout>
+  </FrameLayout>
+</FrameLayout>

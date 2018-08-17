@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <dimen name="TextSizeSubtitle">14sp</dimen>
+  <dimen name="TextSizeNormal">18sp</dimen>
+  <dimen name="TextSizeHeader">22sp</dimen>
+  <dimen name="TextSizeExtraLarge">28sp</dimen>
+  <dimen name="TextSizeListHeader">14sp</dimen>
+  
+  <dimen name="PaneHalfPadding">8dp</dimen>
+  <dimen name="PanePadding">16dp</dimen>
+  <dimen name="PaneDoublePadding">32dp</dimen>
+  <dimen name="HeaderImageHeight">300dp</dimen>
+  <dimen name="MinTouchHeight">48dp</dimen>
+  
+  <dimen name="ButtonHeight">48dp</dimen>
+  <dimen name="InsetButtonHeight">54dp</dimen>
+
+  <dimen name="ThumbnailImageSize">64dp</dimen>
+  
+  <dimen name="StoreServiceIconSize">56dp</dimen>
+
+  <!-- Custom View -->
+  <dimen name="ViewInset">4dp</dimen>
+  <dimen name="OneDP">1dp</dimen>
+  <dimen name="TwoDP">2dp</dimen>
+  <dimen name="FourDP">4dp</dimen>
+  
+  <!-- IDs -->
+  <item name="CardOne" type="id"/>
+  <item name="CardTwo" type="id"/>
+  <item name="CardThree" type="id"/>
+  <item name="CardFour" type="id"/>
+  <item name="CardFive" type="id"/>
+  <item name="CardSix" type="id"/>
+  <item name="CardSeven" type="id"/>
+  <item name="CardEight" type="id"/>
+  <item name="CardNine" type="id"/>
+  <item name="CardTen" type="id"/>
+  <item name="CardEleven" type="id"/>
+
+  <!-- Width - Height -->
+  <!--<dimen name="CardMargin">16dp</dimen>
+  <dimen name="CardHalfMargin">8dp</dimen>
+  
+  <dimen name="SmallSmallCardWidth">144dp</dimen>
+  <dimen name="MediumSmallCardWidth">304dp</dimen>
+
+  <dimen name="SmallCardHeight">192dp</dimen>
+  <dimen name="SmallCardTextHeight">48dp</dimen>
+
+  <integer name="SmallSmallCardWeight">144</integer>
+  <integer name="MediumSmallCardWeight">304</integer>-->
+  
+  <integer name="CardColumns">2</integer>
+  <integer name="StackedCardColumns">1</integer>
+  <dimen name="BigScreenPanePadding">0px</dimen>
+  <dimen name="BigScreenListPadding">0px</dimen>
+
+  <dimen name="CardMargin">16dp</dimen>
+  <dimen name="CardHalfMargin">8dp</dimen>
+  <dimen name="CardSingleMargin">@dimen/CardMargin</dimen>
+  
+  <dimen name="SmallSmallCardWidth">128dp</dimen>
+  <dimen name="MediumCardWidth">256dp</dimen>
+
+  <dimen name="ExtraSmallCardHeight">80dp</dimen>
+  <dimen name="SmallCardHeight">176dp</dimen>
+  <dimen name="MediumCardHeight">368dp</dimen>
+  
+  <dimen name="SmallCardTextHeight">48dp</dimen>
+  <dimen name="MediumCardTextHeight">48dp</dimen>
+
+  <integer name="SmallSmallCardWeight">128</integer>
+  <integer name="MediumSmallCardWeight">256</integer>
+  <integer name="MediumCardWeight">256</integer>
+
+
+
+
+  <dimen name="ActionBarHeight">@dimen/abc_action_bar_default_height_material</dimen>
+  <dimen name="MaxDrawerWidth">400dp</dimen>
+  
+  <dimen name="MaxLogoHeight">160dp</dimen>
+  
+  <dimen name="OneLineListItemHeight">48dp</dimen>
+  <dimen name="TwoLineListItemHeight">72dp</dimen>
+  <dimen name="ThreeLineListItemHeight">72dp</dimen>
+
+  <dimen name="CollapsingToolbarLayoutLeftTextPadding">48dp</dimen>
+  <dimen name="CollapsingToolbarLayoutBottomTextPadding">32dp</dimen>
+
+  <dimen name="ListImageHeight">40dp</dimen>
+  <dimen name="ListImageTextPadding">56dp</dimen>
+  <dimen name="BasePadding">16dp</dimen>
+  <dimen name="HalfBasePadding">8dp</dimen>
+  <dimen name="SecondaryBasePadding">16dp</dimen>
+  <dimen name="SecondaryTotalPadding">72dp</dimen>
+
+  <dimen name="BaseInsetPadding">20dp</dimen>
+
+  <dimen name="BaseListPadding">16dp</dimen>
+  <dimen name="MinTouchSize">48dp</dimen>
+
+  <dimen name="ListIconHeight">24dp</dimen>
+  <dimen name="ListIconPaddingTop">12dp</dimen>
+  <dimen name="ListIconPaddingRight">32dp</dimen>
+  <dimen name="ListDividerHeight">1px</dimen>
+
+  <dimen name="DialogContentPadding">24dp</dimen>
+  <dimen name="DialogButtonHeight">36dp</dimen>
+  <dimen name="DialogButtonMinWidth">88dp</dimen>
+
+  <dimen name="CardMargin">4dp</dimen>
+  <dimen name="CardHalfMargin">2dp</dimen>
+  <dimen name="CardCornerRadius">2dp</dimen>
+
+  <dimen name="CardOneLineTextHeight">48dp</dimen>
+  <dimen name="CardTwoLineTextHeight">68dp</dimen>
+
+  <integer name="GridColumnCount">2</integer>
+  <integer name="StaggeredGridColumnCount">1</integer>
+
+  <dimen name="CardThumbnailImageWidth">112dp</dimen>
+
+  <dimen name="FloatingActionButtonCompatPadding">16dp</dimen>
+  <dimen name="FloatingActionButtonListPadding">88dp</dimen>
+  
+  <dimen name="HomeAdHeight">320dp</dimen>
+  
+  <!-- ELEVATIONS -->
+  <dimen name="FloatingActionButtonRestingElevation">6dp</dimen>
+  <dimen name="FloatingActionButtonPressedElevation">12dp</dimen>
+  <dimen name="CardRestingElevation">2dp</dimen>
+  <dimen name="CardPressedElevation">8dp</dimen>
+  <dimen name="AppBarElevation">4dp</dimen>
+</resources>

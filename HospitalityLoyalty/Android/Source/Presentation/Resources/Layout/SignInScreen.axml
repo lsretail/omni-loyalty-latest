@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent"
+                                            android:scrollbarStyle="outsideOverlay">
+
+  <LinearLayout android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+    <ImageView android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="32dp"
+               android:layout_marginLeft="@dimen/BasePadding"
+               android:layout_marginRight="@dimen/BasePadding"
+               android:layout_marginBottom="32dp"
+               android:maxHeight="@dimen/MaxLogoHeight"
+               android:src="@drawable/ic_login_picture"
+               android:adjustViewBounds="true" />
+
+    <!--<AutoCompleteTextView android:id="@+id/SignInScreenEmail"
+                          android:layout_width="fill_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_marginBottom="8dp"
+                          android:hint="@string/LoginEmail"
+                          android:textColor="@color/black87"
+                          android:inputType="textEmailAddress"
+                          android:singleLine="true"
+                          android:imeOptions="actionNext"/>-->
+    
+    <presentation.views.CustomTextInputLayout android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:layout_marginLeft="@dimen/BasePadding"
+                                                   android:layout_marginRight="@dimen/BasePadding"
+                                                   android:layout_marginBottom="@dimen/HalfBasePadding">
+
+      <EditText android:id="@+id/SignInScreenEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/LoginEmail"
+                android:imeOptions="actionNext"
+                android:singleLine="true" />
+
+    </presentation.views.CustomTextInputLayout>
+
+    <presentation.views.CustomTextInputLayout android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:layout_marginLeft="@dimen/BasePadding"
+                                                   android:layout_marginRight="@dimen/BasePadding"
+                                                   android:layout_marginBottom="@dimen/HalfBasePadding">
+
+      <EditText android:id="@+id/SignInScreenPassword"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:password="true"
+                android:hint="@string/LoginPassword"
+                android:imeOptions="actionDone"
+                android:singleLine="true" />
+
+    </presentation.views.CustomTextInputLayout>
+
+    <presentation.views.ProgressButton android:id="@+id/SignInScreenSignInButton"
+                                       android:layout_width="fill_parent"
+                                       android:layout_height="@dimen/ButtonHeight"
+                                       android:layout_marginLeft="@dimen/BasePadding"
+                                       android:layout_marginRight="@dimen/BasePadding"
+                                       android:layout_marginBottom="@dimen/BasePadding"
+                                       app:normalText="@string/LoginSignIn"
+                                       app:doneText=""
+                                       app:buttonColor="@color/accent"
+                                       app:buttonColorPressed="@color/accentpressed"
+                                       app:insetLeft="true"
+                                       app:insetRight="true"
+                                       app:roundCorners="true" />
+
+    <TextView android:id="@+id/SignInScreenForgotPassword"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="@dimen/BasePadding"
+              android:layout_marginRight="@dimen/BasePadding"
+              android:layout_marginTop="@dimen/BasePadding"
+              android:layout_marginBottom="@dimen/BasePadding"
+              android:gravity="center_horizontal"
+              android:textColor="@color/accent"
+              android:text="@string/LoginForgotPassword" />
+
+  </LinearLayout>
+</ScrollView>

@@ -1,0 +1,37 @@
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                                    style="@style/SelectableListItem"
+                                    android:id="@+id/card_view"
+                                    android:layout_gravity="center"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="@dimen/HomeAdHeight"
+                                    card_view:cardCornerRadius="@dimen/CardCornerRadius"
+                                    card_view:cardPreventCornerOverlap="true"
+                                    card_view:cardBackgroundColor="@color/white"
+                                    card_view:cardUseCompatPadding="true">
+
+  <android.support.v4.view.ViewPager android:id="@+id/HomeAdItemViewItemPager"
+                                       android:layout_width="match_parent"
+                                       android:layout_height="match_parent" />
+
+  <com.viewpagerindicator.LinePageIndicator android:id="@+id/HomeAdItemViewItemPagerIndicator"
+                                            android:padding="8dip"
+                                            android:layout_height="wrap_content"
+                                            android:layout_width="fill_parent"
+                                            app:strokeWidth="4dp"
+                                            app:lineWidth="30dp"
+                                            app:unselectedColor="@color/black54"
+                                            app:selectedColor="@color/accent"
+                                            android:layout_gravity="bottom"/>
+
+
+  <!--TODO-->
+  <ProgressBar style="@style/ProgressBarPresentation"
+               android:id="@+id/HomeAdItemViewItemImagePagerProgress"
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:layout_gravity="bottom"
+               android:layout_marginBottom="-8dp"/>
+  
+</android.support.v7.widget.CardView>

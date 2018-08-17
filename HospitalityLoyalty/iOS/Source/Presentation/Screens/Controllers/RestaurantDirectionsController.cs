@@ -1,0 +1,85 @@
+﻿using System.Collections.Generic;
+using Foundation;
+using UIKit;
+using System.Globalization;
+using CoreLocation;
+using LSRetail.Omni.GUIExtensions.iOS;
+using LSRetail.Omni.Domain.DataModel.Base.Setup;
+
+namespace Presentation.Screens
+{
+	public partial class RestaurantDirectionsDialogController : UIViewController
+	{
+		public Store Store { get; set; }
+		UIWebView webView;
+		private CLLocationManager locationManager;
+
+		public RestaurantDirectionsDialogController (Store store)
+		{
+			this.Store = store;
+			this.locationManager = new CLLocationManager();
+		}
+
+		public override void DidReceiveMemoryWarning ()
+		{
+			// Releases the view if it doesn't have a superview.
+			base.DidReceiveMemoryWarning ();
+		}
+
+		public override void LoadView ()
+		{
+			this.webView = new UIWebView(UIScreen.MainScreen.Bounds);
+			View = this.webView;
+		}
+
+		public override void ViewDidLoad ()
+		{
+			this.Title = this.Store.Description;
+
+			if(Utils.Util.GetOSVersion().Major >= 8)
+			{
+				locationManager.RequestWhenInUseAuthorization();
+			}
+			locationManager.StartUpdatingLocation();
+
+			locationManager.LocationsUpdated += (sender, e) => 
+			{
+				// We got the user's location
+				locationManager.StopUpdatingLocation();
+				CLLocationCoordinate2D currentLocationCoord = locationManager.Location.Coordinate;
+				LoadDirectionsWebView(currentLocationCoord);
+			};
+
+			locationManager.Failed += async (sender, e) => 
+			{
+				// We don't have the user's location
+				locationManager.StopUpdatingLocation();
+
+				await AlertView.ShowAlert(
+				    this,
+					LocalizationUtilities.LocalizedString("Location_CouldNotGetLocation", "Couldn't get current location"),
+					LocalizationUtilities.LocalizedString("Location_CouldNotGetLocationInstructions", "Make sure Location Services are enabled. To enable, go to privacy settings and turn Location Services on for this app."),
+					LocalizationUtilities.LocalizedString("General_OK", "OK")
+				);
+
+			};
+
+			SetRightBarButtonItems();
+		}
+
+		public void SetRightBarButtonItems()
+		{
+			List<UIBarButtonItem> barButtonItemList = new List<UIBarButtonItem>();
+			this.NavigationItem.RightBarButtonItems = barButtonItemList.ToArray();
+		}
+
+		private void LoadDirectionsWebView(CLLocationCoordinate2D fromCoordinates)
+		{
+			NSUrl url = new NSUrl ("http://maps.google.com/maps?saddr=" 
+				+ fromCoordinates.Latitude.ToString(CultureInfo.InvariantCulture) + "," + fromCoordinates.Longitude.ToString(CultureInfo.InvariantCulture) 
+				+ "&daddr=" + this.Store.Latitude.ToString(CultureInfo.InvariantCulture) + "," + this.Store.Longitude.ToString(CultureInfo.InvariantCulture));
+			this.webView.LoadRequest(new NSUrlRequest(url));
+		}
+	}
+}
+

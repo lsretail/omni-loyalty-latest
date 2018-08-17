@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="@dimen/OneLineListItemHeight"
+    android:paddingLeft="16dp"
+    android:gravity="center_vertical"
+    android:descendantFocusability="blocksDescendants">
+    <ImageView
+        android:id="@+id/DrawerMenuListItemImage"
+        android:layout_height="24dp"
+        android:layout_width="24dp"
+        android:layout_marginRight="32dp"
+        android:scaleType="centerInside"
+        android:layout_weight="0" />
+    <LinearLayout
+        android:layout_width="0px"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:paddingRight="16dp"
+        android:orientation="vertical"
+        android:gravity="center_vertical">
+        <TextView
+            style="@style/Subhead"
+            android:id="@+id/DrawerMenuListItemTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            style="@style/Caption"
+            android:id="@+id/DrawerMenuListItemSubTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <ImageButton
+        style="@style/CustomBorderlessButton"
+        android:id="@+id/DrawerMenuListItemSecondaryAction"
+        android:layout_width="@dimen/MinTouchSize"
+        android:layout_height="@dimen/MinTouchSize"
+        android:padding="@dimen/BaseListPadding"
+        android:layout_weight="0"
+        android:layout_gravity="center_vertical" />
+</LinearLayout>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:fitsSystemWindows="false">
+
+  <android.support.design.widget.AppBarLayout android:id="@+id/appbar"
+                                              android:layout_width="match_parent"
+                                              android:layout_height="wrap_content"
+                                              android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+    <android.support.v7.widget.Toolbar android:id="@+id/HomeScreenToolbar"
+                                       android:layout_width="match_parent"
+                                       android:layout_height="@dimen/ActionBarHeight"
+                                       app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                                       app:layout_scrollFlags="scroll|enterAlways" />
+
+  </android.support.design.widget.AppBarLayout>
+
+  <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:paddingLeft="@dimen/BigScreenPanePadding"
+              android:paddingRight="@dimen/BigScreenPanePadding"
+              app:layout_scrollFlags="scroll"
+              app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <LinearLayout android:id="@+id/HomeScreenContent"
+                  android:layout_width="fill_parent"
+                  android:layout_height="fill_parent"
+                  android:orientation="vertical"
+                  android:animateLayoutChanges="true">
+
+      <LinearLayout android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+        <android.support.v7.widget.CardView style="@style/SelectableListItem"
+                                            android:id="@+id/HomeScreenOptionOne"
+                                            android:layout_gravity="center"
+                                            android:layout_width="0px"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            app:cardCornerRadius="@dimen/CardCornerRadius"
+                                            app:cardPreventCornerOverlap="true"
+                                            app:cardBackgroundColor="@color/white"
+                                            app:cardUseCompatPadding="true">
+
+          <LinearLayout android:orientation="horizontal"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:minHeight="@dimen/MinTouchHeight"
+                        android:gravity="center">
+
+            <ImageView android:id="@+id/HomeScreenOptionOneImage"
+                       android:layout_height="@dimen/ListIconHeight"
+                       android:layout_width="wrap_content"
+                       android:layout_gravity="center_vertical"
+                       android:paddingLeft="12dp"
+                       android:paddingRight="12dp" />
+
+            <TextView style="@style/Subhead"
+                      android:id="@+id/HomeScreenOptionOneText"
+                      android:layout_height="wrap_content"
+                      android:layout_width="fill_parent"
+                      android:gravity="center_vertical"
+                      android:lines="1"
+                      android:textColor="@color/accent" />
+
+          </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView style="@style/SelectableListItem"
+                                            android:id="@+id/HomeScreenOptionTwo"
+                                            android:layout_gravity="center"
+                                            android:layout_width="0px"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            app:cardCornerRadius="@dimen/CardCornerRadius"
+                                            app:cardPreventCornerOverlap="true"
+                                            app:cardBackgroundColor="@color/white"
+                                            app:cardUseCompatPadding="true">
+
+          <LinearLayout android:orientation="horizontal"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:minHeight="@dimen/MinTouchHeight"
+                        android:gravity="center">
+
+            <ImageView android:id="@+id/HomeScreenOptionTwoImage"
+                       android:layout_height="@dimen/ListIconHeight"
+                       android:layout_width="wrap_content"
+                       android:layout_gravity="center_vertical"
+                       android:paddingLeft="12dp"
+                       android:paddingRight="12dp" />
+
+            <TextView style="@style/Subhead"
+                      android:id="@+id/HomeScreenOptionTwoText"
+                      android:layout_height="wrap_content"
+                      android:layout_width="fill_parent"
+                      android:gravity="center_vertical"
+                      android:lines="1"
+                      android:textColor="@color/accent" />
+
+          </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+      </LinearLayout>
+
+      <android.support.v7.widget.CardView style="@style/SelectableListItem"
+                                          android:id="@+id/HomeScreenContactCard"
+                                          android:layout_gravity="center"
+                                          android:layout_width="fill_parent"
+                                          android:layout_height="wrap_content"
+                                          app:cardCornerRadius="@dimen/CardCornerRadius"
+                                          app:cardPreventCornerOverlap="true"
+                                          app:cardBackgroundColor="@color/accent"
+                                          app:cardUseCompatPadding="true">
+
+        <ImageView android:layout_height="@dimen/ListIconHeight"
+                   android:layout_width="wrap_content"
+                   android:layout_gravity="center_vertical"
+                   android:paddingLeft="@dimen/BasePadding"
+                   android:src="@drawable/ic_person_white_24dp" />
+
+        <TextView style="@style/Subhead"
+                  android:id="@+id/HomeScreenContactCardTitle"
+                  android:layout_height="wrap_content"
+                  android:layout_width="fill_parent"
+                  android:minHeight="@dimen/MinTouchHeight"
+                  android:layout_marginLeft="@dimen/ListImageTextPadding"
+                  android:layout_gravity="center_vertical"
+                  android:gravity="center_vertical"
+                  android:textColor="@color/white87"
+                  android:text="Points for all" />
+
+      </android.support.v7.widget.CardView>
+
+      <LinearLayout android:id="@+id/HomeScreenHintContainer"
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:animateLayoutChanges="true" />
+
+      <include android:id="@+id/HomeScreenAdContainer" layout="@layout/HomeAdCardItem" />
+
+      <ProgressBar style="?android:progressBarStyle"
+                   android:id="@+id/HomeScreenAdProgress"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center"
+                   android:layout_margin="@dimen/BasePadding"
+                   android:visibility="gone" />
+
+    </LinearLayout>
+
+  </ScrollView>
+
+</LinearLayout>

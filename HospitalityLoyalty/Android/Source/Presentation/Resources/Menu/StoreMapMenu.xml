@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+  <item android:id="@+id/MenuViewShare"
+        android:title="@string/MenuItemMapType"
+        android:icon="@drawable/ic_map_white_24dp"
+        app:showAsAction="always" >
+    <!-- "file" submenu -->
+    <menu>
+      <group android:checkableBehavior="single">
+        <item android:id="@+id/MenuViewNormalMap"
+              android:title="@string/MenuItemNormalMap" 
+              android:checked="true"/>
+        <item android:id="@+id/MenuViewSatelliteMap"
+              android:title="@string/MenuItemSatelliteMap" />
+        <item android:id="@+id/MenuViewHybridMap"
+              android:title="@string/MenuItemHybridMap" />
+      </group>
+    </menu>
+  </item>
+
+  <!--<item android:id="@+id/MenuViewShowDirections"
+        android:title="@string/MenuItemDirections"
+        android:icon="@drawable/ic_action_directions"
+        app:showAsAction="always"/>
+
+  <item android:id="@+id/MenuViewShowStoreInfo"
+        android:title="@string/MenuItemStoreInformation"
+        android:icon="@drawable/ic_action_about"
+        app:showAsAction="always"/>-->
+</menu>

@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9ED94EB9-30C5-4617-9268-260E36B40108}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Infrastructure.Data.WS</RootNamespace>
+    <AssemblyName>Infrastructure.Data.WS</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+    <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'PlayStoreRelease|AnyCPU'">
+    <OutputPath>bin\PlayStoreRelease\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LSOmniServicePCL, Version=2.0.1.22990, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\3rdPartyComponents\LSOmniServicePCL\LSOmniServicePCL.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\3rdPartyComponents\LSOmniServicePCL\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Refractored.Xam.Settings, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\3rdPartyComponents\LSOmniServicePCL\Xam.Plugins.Settings\lib\MonoAndroid10\Refractored.Xam.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Refractored.Xam.Settings.Abstractions, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\3rdPartyComponents\LSOmniServicePCL\Xam.Plugins.Settings\lib\MonoAndroid10\Refractored.Xam.Settings.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Addresses\AddressFactory.cs">
+      <Link>Addresses\AddressFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Advertisements\AdvertisementFactory.cs">
+      <Link>Advertisements\AdvertisementFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Advertisements\AdvertisementRepository.cs">
+      <Link>Advertisements\AdvertisementRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Base\BaseRepository.cs">
+      <Link>Base\BaseRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Basket\BasketFactory.cs">
+      <Link>Basket\BasketFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Basket\BasketRepository.cs">
+      <Link>Basket\BasketRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\ClickCollect\ClickCollectFactory.cs">
+      <Link>ClickCollect\ClickCollectFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\ClickCollect\ClickCollectRepository.cs">
+      <Link>ClickCollect\ClickCollectRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Debugs\DebugRepository.cs">
+      <Link>Debug\DebugRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Devices\DeviceFactory.cs">
+      <Link>Devices\DeviceFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Images\ImageFactory.cs">
+      <Link>Images\ImageFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Images\ImageRepository.cs">
+      <Link>Images\ImageRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Items\ItemCategoryFactory.cs">
+      <Link>Items\ItemCategoryFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Items\ItemFactory.cs">
+      <Link>Items\ItemFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Items\ItemLinkFactory.cs">
+      <Link>Items\ItemLinkFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Items\ItemRepository.cs">
+      <Link>Items\ItemRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Items\ProductGroupFactory.cs">
+      <Link>Items\ProductGroupFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Items\UnitOfMeasureFactory.cs">
+      <Link>Items\UnitOfMeasureFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Items\VariantExtFactory.cs">
+      <Link>Items\VariantExtFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Items\VariantFactory.cs">
+      <Link>Items\VariantFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Items\VariantRegistrationFactory.cs">
+      <Link>Items\VariantRegistrationFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\MemberAccounts\MemberAccountFactory.cs">
+      <Link>MemberAccounts\MemberAccountFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\MemberContacts\MemberContactFactory.cs">
+      <Link>MemberContacts\MemberContactFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\MemberContacts\MemberContactRepository.cs">
+      <Link>MemberContacts\MemberContactRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Notifications\NotificationFactory.cs">
+      <Link>Notifications\NotificationFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Notifications\NotificationRepository.cs">
+      <Link>Notifications\NotificationRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Offers\OfferFactory.cs">
+      <Link>Offers\OfferFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Offers\OfferRepository.cs">
+      <Link>Offers\OfferRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\OneList\OneListFactory.cs">
+      <Link>OneList\OneListFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\OneList\OneListRepository.cs">
+      <Link>OneList\OneListRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Profiles\ProfileFactory.cs">
+      <Link>Profiles\ProfileFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Profiles\ProfileRepository.cs">
+      <Link>Profiles\ProfileRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Search\SeachFactory.cs">
+      <Link>Search\SeachFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Search\SearchRepository.cs">
+      <Link>Search\SearchRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Stores\StoreFactory.cs">
+      <Link>Stores\StoreFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Stores\StoreRepository.cs">
+      <Link>Stores\StoreRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Transactions\TransactionFactory.cs">
+      <Link>Transactions\TransactionFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Transactions\TransactionRepository.cs">
+      <Link>Transactions\TransactionRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Utils\ErrorHandler.cs">
+      <Link>Utils\ErrorHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Utils\ErrorMessageGenerator.cs">
+      <Link>Utils\ErrorMessageGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Utils\Utils.cs">
+      <Link>Utils\Utils.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Utils\WSError.cs">
+      <Link>Utils\WSError.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain.Linked\Domain\Domain.csproj">
+      <Project>{82D0C0C1-DD7F-4CCA-878D-F454993C93B1}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure.Data.SQLite\Infrastructure.Data.SQLite.csproj">
+      <Project>{748DD107-0F44-469F-8904-59E83A846E5A}</Project>
+      <Name>Infrastructure.Data.SQLite</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

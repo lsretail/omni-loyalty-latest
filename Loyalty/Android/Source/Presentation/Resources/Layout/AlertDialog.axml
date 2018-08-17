@@ -1,0 +1,71 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+  
+  <LinearLayout android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:descendantFocusability="beforeDescendants"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+    <CheckBox android:id="@+id/AlertDialogCreateNewList"
+              android:layout_height="wrap_content"
+              android:layout_width="match_parent"
+              android:text="@string/ItemViewAddToNewList"/>
+
+    <TextView style="@style/Subhead"
+              android:id="@+id/AlertDialogPickShoppingListText"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="@dimen/BasePadding"
+              android:focusable="false"
+              android:focusableInTouchMode="false"
+              android:text="@string/ItemViewPickShoppingList"/>
+
+    <ViewSwitcher android:id="@+id/AlertDialogViewSwitcher"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:inAnimation="@android:anim/fade_in"
+                  android:outAnimation="@android:anim/fade_out"
+                  android:measureAllChildren="false">
+
+      <LinearLayout android:id="@+id/AlertDialogExistingList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+        <Spinner android:id="@+id/AlertDialogPickShoppingList"
+                 android:layout_width="fill_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="@dimen/BasePadding"/>
+
+        <TextView android:id="@+id/AlertDialogOverwriteWarning"
+                  style="@style/Subhead"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:paddingTop="@dimen/BasePadding"
+                  android:focusable="false"
+                  android:textColor="@color/red"
+                  android:focusableInTouchMode="false"/>
+
+      </LinearLayout>
+
+      <LinearLayout android:id="@+id/AlertDialogNewList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+        <EditText android:id="@+id/AlertDialogNewShoppingListEditText"
+                  android:layout_height="wrap_content"
+                  android:layout_width="match_parent"
+                  android:layout_marginTop="@dimen/BasePadding"
+                  android:hint="@string/ItemViewNewListName"/>
+
+      </LinearLayout>
+
+    </ViewSwitcher>
+
+  </LinearLayout>
+
+</ScrollView>

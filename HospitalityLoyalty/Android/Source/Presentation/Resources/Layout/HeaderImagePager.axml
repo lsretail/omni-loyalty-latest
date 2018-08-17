@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto" 
+             android:id="@+id/HeaderImageContainer"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:foreground="@drawable/selecteble_background"
+             android:clickable="true"
+             android:fitsSystemWindows="@bool/DetailScreenFitsSystemWindows"
+             android:transitionName="@string/TransitionImage"
+            app:layout_collapseMode="parallax">
+
+  <android.support.v4.view.ViewPager android:id="@+id/HeaderImageViewPager"
+                                     android:layout_width="match_parent"
+                                     android:layout_height="@dimen/HeaderImageHeight"
+                                     android:fitsSystemWindows="@bool/DetailScreenFitsSystemWindows" />
+
+  <com.viewpagerindicator.LinePageIndicator android:id="@+id/HeaderImageIndicator"
+                                            android:padding="8dip"
+                                            android:layout_height="wrap_content"
+                                            android:layout_width="fill_parent"
+                                            android:fitsSystemWindows="@bool/DetailScreenFitsSystemWindows"
+                                            app:strokeWidth="4dp"
+                                            app:lineWidth="30dp"
+                                            app:unselectedColor="@color/black54"
+                                            app:selectedColor="@color/accent"
+                                            android:layout_gravity="bottom"/>
+
+  <View android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#18000000"
+        android:fitsSystemWindows="@bool/DetailScreenFitsSystemWindows"/>
+        <!--android:background="@drawable/transparent_actionbar_gradient"/>-->
+
+</FrameLayout>

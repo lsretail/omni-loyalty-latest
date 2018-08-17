@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:id="@+id/MenuViewSearch"
+        android:title="@string/MenuViewSearchTitle"
+        android:icon="@drawable/ic_search_24dp"
+        android:showAsAction="always"/>
+  <item android:id="@+id/MenuViewGenerateQR"
+        android:icon="@drawable/ic_action_qr"
+        android:title="@string/MenuViewQRTitle"
+        android:showAsAction="always"/>
+  <item android:id="@+id/MenuViewScanBarcode"
+        android:title="@string/MenuViewScanBarcodeTitle"
+        android:icon="@drawable/ic_action_scan"
+        android:showAsAction="always"/>
+  <item android:id="@+id/MenuViewRefresh"
+        android:title="@string/MenuViewRefreshTitle"
+        android:orderInCategory="10"/>
+  <item android:id="@+id/MenuViewLogout"
+        android:title="@string/MenuViewLogout" 
+        android:orderInCategory="50"/>
+</menu>

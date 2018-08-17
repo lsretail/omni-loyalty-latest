@@ -1,0 +1,10 @@
+﻿# Comments are lines which start with '#'
+# Blank lines are ignored.
+
+# Enable GREF messages to `adb logcat`
+debug.mono.log=HospLoy
+
+MONO_LOG_LEVEL=debug
+MONO_GC_PARAMS=bridge-implementation=new
+
+MONO_GC_PARAMS=nursery-size=16m,soft-heap-limit=32m

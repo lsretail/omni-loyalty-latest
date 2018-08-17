@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                                            xmlns:progressButton="http://schemas.android.com/apk/res-auto"
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent"
+                                            android:layout_gravity="fill_vertical"
+                                            android:scrollbarStyle="outsideOverlay">
+
+  <LinearLayout android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+    <ImageView android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="32dp"
+               android:layout_marginLeft="@dimen/BasePadding"
+               android:layout_marginRight="@dimen/BasePadding"
+               android:layout_marginBottom="32dp"
+               android:maxHeight="@dimen/MaxLogoHeight"
+               android:src="@drawable/ic_login_picture"
+               android:adjustViewBounds="true" />
+
+
+    <presentation.views.CustomTextInputLayout android:layout_width="match_parent"
+                                              android:layout_height="wrap_content"
+                                              android:layout_marginLeft="@dimen/BasePadding"
+                                              android:layout_marginRight="@dimen/BasePadding"
+                                              android:layout_marginBottom="@dimen/HalfBasePadding">
+
+      <EditText android:id="@+id/SignUpScreenName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/LoginName"
+                android:textColor="@color/black87"
+                android:singleLine="true"
+                android:imeOptions="actionNext" />
+
+    </presentation.views.CustomTextInputLayout>
+
+    <!--<AutoCompleteTextView android:id="@+id/SignUpScreenEmail"
+                          android:layout_width="fill_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_marginBottom="8dp"
+                          android:hint="@string/LoginEmail"
+                          android:textColor="@color/black87"
+                          android:inputType="textEmailAddress"
+                          android:singleLine="true"
+                          android:imeOptions="actionNext"/>-->
+
+
+    <presentation.views.CustomTextInputLayout android:layout_width="match_parent"
+                                              android:layout_height="wrap_content"
+                                              android:layout_marginLeft="@dimen/BasePadding"
+                                              android:layout_marginRight="@dimen/BasePadding"
+                                              android:layout_marginBottom="@dimen/HalfBasePadding">
+
+      <EditText android:id="@+id/SignUpScreenEmail"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/LoginEmail"
+                android:textColor="@color/black87"
+                android:singleLine="true"
+                android:imeOptions="actionNext" />
+
+    </presentation.views.CustomTextInputLayout>
+
+
+    <presentation.views.CustomTextInputLayout android:layout_width="match_parent"
+                                              android:layout_height="wrap_content"
+                                              android:layout_marginLeft="@dimen/BasePadding"
+                                              android:layout_marginRight="@dimen/BasePadding"
+                                              android:layout_marginBottom="@dimen/HalfBasePadding">
+
+      <EditText android:id="@+id/SignUpScreenPassword"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:password="true"
+                android:hint="@string/LoginPassword"
+                android:textColor="@color/black87"
+                android:singleLine="true"
+                android:imeOptions="actionNext" />
+
+    </presentation.views.CustomTextInputLayout>
+
+    <TextView style="@style/Caption"
+              android:id="@+id/SignUpScreenPasswordPolicy"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="@dimen/BaseInsetPadding"
+              android:layout_marginRight="@dimen/BaseInsetPadding"
+              android:layout_marginBottom="@dimen/HalfBasePadding"
+              android:textColor="@color/accent"
+              android:visibility="gone" />
+
+
+    <presentation.views.CustomTextInputLayout android:layout_width="match_parent"
+                                              android:layout_height="wrap_content"
+                                              android:layout_marginLeft="@dimen/BasePadding"
+                                              android:layout_marginRight="@dimen/BasePadding"
+                                              android:layout_marginBottom="@dimen/HalfBasePadding">
+
+      <EditText android:id="@+id/SignUpScreenPasswordConfirm"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:password="true"
+                android:hint="@string/LoginConfirmPassword"
+                android:textColor="@color/black87"
+                android:singleLine="true"
+                android:imeOptions="actionDone" />
+
+    </presentation.views.CustomTextInputLayout>
+
+    <presentation.views.ProgressButton android:id="@+id/SignUpScreenSignUpButton"
+                                       android:layout_width="fill_parent"
+                                       android:layout_height="@dimen/InsetButtonHeight"
+                                       android:layout_marginLeft="@dimen/BasePadding"
+                                       android:layout_marginRight="@dimen/BasePadding"
+                                       android:layout_marginBottom="@dimen/BasePadding"
+                                       progressButton:normalText="@string/LoginSignUp"
+                                       progressButton:doneText=""
+                                       progressButton:buttonColor="@color/accent"
+                                       progressButton:buttonColorPressed="@color/accentpressed"
+                                       progressButton:insetLeft="true"
+                                       progressButton:insetRight="true"
+                                       progressButton:roundCorners="true" />
+  </LinearLayout>
+</ScrollView>

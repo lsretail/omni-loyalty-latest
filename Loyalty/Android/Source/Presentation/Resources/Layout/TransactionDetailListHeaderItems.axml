@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:paddingTop="@dimen/HalfBasePadding"
+              android:paddingBottom="@dimen/HalfBasePadding"
+              android:background="@color/transactions">
+
+  <TextView style="@style/SubheadLight"
+            android:id="@+id/TransactionDetailViewSubTitle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"/>
+  
+</LinearLayout>

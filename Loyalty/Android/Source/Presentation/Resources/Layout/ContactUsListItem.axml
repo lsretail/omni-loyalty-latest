@@ -1,0 +1,39 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:gravity="center_vertical"
+              android:paddingLeft="@dimen/BasePadding">
+  
+  <LinearLayout
+      android:orientation="vertical"
+      android:layout_width="0px"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:layout_marginTop="@dimen/HalfBasePadding"
+      android:layout_marginBottom="@dimen/HalfBasePadding">
+    
+    <TextView style="@style/Subhead"
+      android:id="@+id/ContactUsListItemDescription"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"/>
+    
+    <TextView style="@style/Body1"
+              android:id="@+id/ContactUsListItemValue"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:textColor="@color/black54"/>
+    
+  </LinearLayout>
+
+  <ImageButton style="@style/CustomBorderlessButton"
+                 android:id="@+id/ContactUsListItemAction"
+                 android:layout_width="@dimen/MinTouchSize"
+                 android:layout_height="@dimen/MinTouchSize"
+                 android:padding="@dimen/BaseListPadding"
+                 android:layout_weight="0"
+                 android:layout_gravity="top"
+                 android:focusable="false"
+                 android:focusableInTouchMode="false" />
+  
+</LinearLayout>

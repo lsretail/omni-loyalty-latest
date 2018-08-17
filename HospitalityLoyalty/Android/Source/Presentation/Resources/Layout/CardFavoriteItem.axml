@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+  <LinearLayout android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="80dp">
+    <RelativeLayout android:id="@+id/CardFavoriteItemImageContainer"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/CardHalfMargin"
+                    android:layout_gravity="center_vertical">
+      <ImageView android:id="@+id/CardFavoriteItemImage"
+                 android:layout_width="fill_parent"
+                 android:layout_height="fill_parent"
+                 android:scaleType="centerCrop"/>
+    </RelativeLayout>
+
+    <LinearLayout android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  android:layout_marginTop="4dp"
+                  android:layout_marginBottom="4dp">
+      
+      <LinearLayout android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+        <TextView android:id="@+id/CardFavoriteItemTitle"
+                  style="@style/TextViewNormal"
+                  android:layout_width="0px"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="1"
+                  android:layout_gravity="center_vertical"
+                  android:textColor="@color/accent"/>
+
+        <ImageButton style="@style/CustomBorderlessTransparentButton"
+                     android:id="@+id/CardFavoriteItemDelete"
+                     android:layout_width="48dp"
+                     android:layout_height="48dp"
+                     android:layout_weight="0"
+                     android:layout_gravity="center_vertical"
+                     android:src="@drawable/ic_action_clear" />
+
+      </LinearLayout>
+
+      <TextView style="@style/TextViewSubtitle"
+                android:id="@+id/CardFavoriteItemSubTitle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:textColor="@color/secondarytextcolor"/>
+      
+      <TextView style="@style/TextViewNormal"
+                  android:id="@+id/CardFavoriteItemPrice"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="1"
+                  android:gravity="right"
+                  android:textColor="@color/accent"/>
+    </LinearLayout>
+  </LinearLayout>
+
+  <View style="@style/LightHorizontalDivider"/>
+
+  <Button style="@style/CustomBorderlessTransparentButton"
+        android:id="@+id/CardFavoriteItemAddToBasket"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/MinTouchHeight"
+        android:layout_gravity="center_vertical"
+        android:focusable="false"
+        android:drawableLeft="@drawable/ic_action_add_shopping_cart_dark"
+        android:text="@string/FavoriteAddToBasket" />
+</merge>

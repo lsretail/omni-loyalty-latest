@@ -1,0 +1,364 @@
+//GENERAL
+"General_OK" = "OK"; //[Term:456]
+"General_Cancel" = "Cancel"; //[Term:367]
+"General_Back" = "Back"; //[Term:363]
+"General_Error" = "Error";
+"General_ErrorTryAgain" = "Error, please try again";
+"General_Yes" = "Yes"; //[Term:514]
+"General_No" = "No"; //[Term:454]
+"General_Info" = "Info";
+"General_Done" = "Done";
+"General_Apply" = "Apply";
+"General_Retry" = "Retry";
+"General_Refresh" = "Refresh";
+"General_Attention" = "Attention";
+"General_Proceed" = "Proceed"; //[Term:24117]
+"General_GetDataErrorMessage" = "Something went wrong...\r\nHit refresh to try again"; //[Term:24121]
+"General_Confirmation" = "Confirmation";
+"General_Close" = "Close";
+
+//Base Model UI Exceptions
+"Model_AuthenticationFailedException" = "Incorrect user name or password. Please try again.";
+"Model_GenericException" = "Error, please try again";
+"Model_NetworkException" = "Network error";
+"Model_DeviceBlocked" = "This device has been blocked";
+"Model_AccessNotAllowed" = "Access denied"; //[Term:24103]
+"Model_EmailExists" = "Email already exists. Please try again";
+"Model_SecurityToken" = "Access denied"; //[Term:24103]
+"Model_InvalidPassword" = "Invalid password";
+"Model_InvalidOldPassword" = "Invalid old password";
+"Model_InvalidUsername" = "Invalid username";
+"Model_UsernameExists" = "This email/username already exists. Please try again";
+"Model_UserNotLoggedIn" = "User not logged in";
+"Model_ItemNotFound" = "Item not found";
+"Model_EmailInvalidException" = "Email invalid";
+
+//Welcome Screen
+"Welcome_ApplicationTitle" = "Quality Store";
+"Welcome_Title" = "Welcome";
+"Welcome_WelcomeText" = "To get started, tap the button below to log in or to create a new account and configure your personal profile.
+
+Being a member allows you to benefit from personal offers and coupons as well as collecting points, which can be used for tendering during your shopping experience.";
+
+// Home
+"Home_Home" = "Home";
+"Home_HomeScreen" = "HomeScreen";
+"Home_Welcome" = "Welcome";
+"Home_SignIn" = "Sign in to get points for each purchase";
+"Home_Points_Lowercase" = "points";
+
+// History
+"History_History" = "History";
+"History_Item_Lowercase" = "item";
+"History_Items_Lowercase" = "items";
+"History_NoData" = "No previous transactions available"; //[Term:24137]
+"History_SearchScreen" = "Shopping history from ";
+
+
+"TransactionView_Expire" = "Expires: ";
+"TransactionView_Total" = "Total:";
+"TransactionView_Discount" = "Discount:";
+"TransactionView_Vat" = "VAT:";
+"TransactionView_Vat2" = "VAT ({0}):";
+"TransactionView_Net" = "Net Total:"; //[Term:24131]
+"TransactionView_ItemName" = "Item name";
+"TransactionView_Qty" = "Qty";
+"TransactionView_Amount" = "Amount";
+"TransactionView_TransactionUnavailable" = "Transaction unavailable"; //[Term:24127]
+"TransactionView_TransactionUnavailableMsg" = "This transaction is unavailable at the moment"; //[Term:24122]
+
+// Location/Store/Restaurant details
+"Location_Locations" = "Locations";
+"Locations_MapOfAllLocations" = "Map of all locations";
+"Location_Details_Phone" = "Phone";
+"Location_Details_OpeningHours" = "Opening hours";
+"Location_CouldNotGetLocation" = "Couldn't get current location"; //[Term:24130]
+"Location_CouldNotGetLocationInstructions" = "Make sure Location Services are enabled. To enable, go to privacy settings and turn Location Services on for this app.";
+
+// Offers & coupons
+"OffersAndCoupons_OffersAndCoupons" = "Offers & coupons";
+"OffersAndCoupons_Offers" = "Offers"; //[Term:8320]
+"OffersAndCoupons_Coupons" = "Coupons"; //[Term:22509]
+"OffersAndCoupons_NoOffersAndCoupons" = "There are no offers or coupons available";
+"OffersAndCoupons_NoOffers" = "There are no offers available";
+"OffersAndCoupons_NoCoupons" = "There are no coupons available";
+"OffersAndCoupons_NoOffersPleaseLogIn" = "No offers available, try logging in."; //[Term:24136]
+"OffersAndCoupons_NoCouponsPleaseLogIn" = "No coupons available, try logging in."; //[Term:24132]
+"OffersAndCoupons_PointOffers" = "Point offers";
+"OffersAndCoupons_MemberOffers" = "Member offers";
+"OffersAndCoupons_GeneralOffers" = "General offers"; //[Term:24116]
+"OffersAndCoupons_ClubOffers" = "Club offers";
+"OffersAndCoupons_RelatedItems" = "Related Items";
+"OffersAndCoupons_ShowAllRelatedItems" = "Show all related items";
+"OffersAndCoupons_SeeAll" = "See all >";
+
+// Offer details
+"Offer_Details_Title" = "Offer"; //[Term:15041]
+
+// Coupon details
+"Coupon_Details_Close" = "Close";
+"Coupon_Details_QRCode" = "QR code"; //[Term:24114]
+"Coupon_Details_PleaseScan" = "Please scan QR code";
+"Coupon_Details_AddToBasket" = "Add to basket";
+"Coupon_Details_RemoveFromBasket" = "Remove from basket";
+"Coupon_Details_ValidUntil" = "Valid until";
+
+// Checkout
+"Checkout_Checkout" = "Checkout"; //[Term:24111]
+"Checkout_PlaceOrder" = "Place order"; //[Term:24113]
+"Checkout_ClearBasket" = "Clear basket"; //[Term:24139]
+"Checkout_RemoveItem" = "Remove item";
+"Checkout_Total" = "Total";
+"Checkout_AreYouSureClearBasket" = "Are you sure you want to clear the basket?"; //[Term:24106]
+"Checkout_ClearBasketErrorTryAgain" = "Could not clear basket, please try again.";
+"Checkout_AreYouSurePlaceOrder" = "Are you sure you want to place the order?"; //[Term:24108]
+"Checkout_AreYouSureRemoveItem" = "Are you sure you want to remove this item?"; //[Term:15254]
+"Checkout_ErrorPlacingOrder" = "Couldn't place the order.\r\nPlease try again.";
+"Checkout_ThankYou" = "Thank You!";
+"Checkout_OrderProcessed" = "Your order has been successfully processed."; //[Term:24126]
+"Checkout_OrderReceived" = "We have received your order and are now collecting the item/s. We will notify you as soon as your order is ready.";
+"Checkout_ShippingMethod" = "Select shipping method"; //[Term:24120]
+"Checkout_HomeDelivery" = "Home Delivery";
+"Checkout_HomeDeliveryTitle" = "Home Delivery - Demo Screen";
+"Checkout_HomeDeliveryMsg" = "This process needs to be localized for each region";
+"Checkout_ConfirmOrder" = "Confirm order"; //[Term:24141]
+"Checkout_Verify" = "Please verify your order before you proceed"; //[Term:24129]
+"Checkout_SubTotal" = "Sub-Total:";
+"Checkout_Discount" = "Discount: ";
+"Checkout_VAT" = "VAT: ";
+"Checkout_HomeDeliveryDescription" = "Let us send you the order";
+"Checkout_ClickCollectDescription" = "Pick up your order at a chosen store at your own time";
+
+//Click & Collect
+"ClickCollect_NotAvailableTitle" = "Not available in this store"; //[Term:24138]
+"ClickCollect_NotAvailableMsg" = "Item/s not available, please try another store";
+"ClickCollect_Stores" = "Stores"; //[Term:14629]
+"ClickCollect_Shipping" = "Shipping";
+"ClickCollect_ClickCollect" = "Click & Collect";
+"ClickCollect_SendOrderDetails" = "Order details will be sent to:";
+"ClickCollect_Attention" = "Attention!";
+"ClickCollect_Proceed" = "Click \"Proceed\" if you wish to continue with the order below."; //[Term:24140]
+"ClickCollect_ItemNotAvailable" = "This item is not available at ";
+"ClickCollect_ItemsNotAvailable" = "These items are not available at ";
+"ClickCollect_Qty" = "Qty: ";
+"ClickCollect_StoreDistance" = "km. away from here";
+"ClickCollect_SelectStore" = "Select store to collect from";
+
+// Account
+"Account_Account" = "Account";
+"Account_CreateAccount" = "Create account";
+"Account_ManageAccount" = "Manage account";
+"Account_UpdateAccount" = "Update account"; //[Term:24123]
+"Account_Login" = "Log in";
+"Account_Logout" = "Log out";
+"Account_AreYouSureLogout" = "Are you sure you want to log out?"; //[Term:24107]
+"Account_Points_Lowercase" = "points";
+"Account_Email" = "Email";
+"Account_Password" = "Password";
+"Account_ConfirmPassword" = "Confirm password";
+"Account_PleaseFillAllFields" = "Please fill all required fields"; //[Term:24142]
+"Account_InvalidEmail" = "Invalid email";
+"Account_EmptyUsernameError" = "Username cannot be empty";
+"Account_LastNameRequired" = "Last name is required";
+"Account_ForgotPassword" = "Forgot password?";
+"Account_PasswordMismatch" = "Password mismatch";
+"Account_ResetPasswordTitle" = "Reset password"; //[Term:24128]
+"Account_NewPassword" = "New password"; //[Term:447]
+"Account_ConfirmNewPassword" = "Confirm new password";
+"Account_OldPassword" = "Old password";
+"Account_PasswordSuccess" = "Password successfully changed";
+"Account_AccountUpdated" = "Account successfully updated";
+"Account_ResetPasswordMsg" = "Enter your username and a password reset code will be sent to your email";
+"Account_ProvidedPasswordsDontMatch" = "The provided passwords do not match";
+"Account_AlreadyHaveAnAccountLogIn" = "Already have an account? Log in."; //[Term:24115]
+"Account_NewUserCreateAnAccount" = "New user? Create an account.";
+"Account_Username" = "Username";
+"Account_Name" = "Full name";
+"Account_Male" = "Male"; //[Term:438]
+"Account_Female" = "Female"; //[Term:409]
+"Account_AddressOne" = "Address 1"; //[Term:24104]
+"Account_AddressTwo" = "Address 2"; //[Term:24105]
+"Account_City" = "City";
+"Account_State" = "State";
+"Account_Country" = "Country";
+"Account_PostCode" = "PostCode";
+"Account_Change" = "Change";
+"Account_ChangePassword" = "Change password";
+"Account_PhoneNumber" = "Phone";
+"Account_Required" = "Required"; //[Term:16062]
+"Account_Optional" = "Optional";
+"Account_DateOfBirth" = "Date of birth";
+"Account_Gender" = "Gender"; //[Term:415]
+"Account_ChooseProfiles" = "Choose profiles";
+"Account_EmptyError" = " cannot be empty";
+"Account_Continue" = "Continue"; //[Term:3618]
+"Account_ErrorChangePassword" = "Error changing password";
+"Account_Member" = "member";
+"Account_Profiles" = "Choose profiles";
+"Account_SignUp" = "Sign Up";
+"Account_ResetPasswordSuccess" = "New password was sent to your email";
+"Account_ResetCode" = "Reset code";
+"Account_ResetPassword" = "Reset password";
+"Account_ResetPasswordInstructions" = "Reset code was sent to your email, use that to finish resetting your password";
+"Account_NextSchemeLevel" = "Next level at {0}.\nYou need another {1} points\nto become a {2} member.";
+
+//Notifications
+"Notification_RemoveNotifications" = "Remove all notifications";
+"Notification_AreYouSureRemoveNotifications" = "Are you sure you want to remove all notifications?"; //[Term:24109]
+"Notification_NoNotifications" = "No notifications."; //[Term:24135]
+"Notification_AreYouSureRemoveNotification" = "Are you sure you want to delete this notification?";
+"Notification_Notification" = "Notification";
+"Notification_LoginNotifications" = "Please log in to see notifications.";
+
+// QR Code
+"QRCode_QRCode" = "QR code"; //[Term:24114]
+"QRCode_Identify" = "Show this QR code to identify yourself";
+
+//Barcode Scanner
+"ScanBarcode_btnLight" = "Light";
+"ScanBarcode_Error" = "Scanning failed"; //[Term:24118]
+
+// Slideout basket
+"SlideoutBasket_Checkout" = "Checkout"; //[Term:24111]
+"SlideoutBasket_YourOrder" = "Your order";
+"SlideoutBasket_BasketEmpty" = "Your basket is empty! Add items and they will show up here.";
+"SlideoutBasket_BasketEmptyAndNotLoggedIn" = "Your basket is empty! Login and start adding items.";
+"SlideoutBasket_Total" = "Total";
+"SlideoutBasket_Coupons" = "Coupons"; //[Term:22509]
+"SlideoutBasket_Offers" = "Offers"; //[Term:8320]
+"SlideoutBasket_QuantityAbbreviation" = "Qty";
+"SlideoutBasket_Multiplier" = "x";
+"SlideoutBasket_ExtraLineFormatStringModifier" = "{0}";
+"SlideoutBasket_ExtraLineFormatStringPlus" = "+ {0} {1}";
+"SlideoutBasket_ExtraLineFormatStringMinus" = "- {0} {1}";
+"SlideoutBasket_ExtraLineFormatStringPlusUom" = "+ {0} {1} {2}";
+"SlideoutBasket_ExtraLineFormatStringMinusUom" = "- {0} {1} {2}";
+
+// Basket
+"Basket_Basket" = "Basket";
+"Basket_BasketEmpty" = "Your basket is empty!\r\nAdd items and they will show up here.";
+"Basket_Total" = "Total";
+"Basket_Checkout" = "Checkout"; //[Term:24111]
+
+// Edit basket item
+"EditBasketItem_EditItem" = "Edit item";
+"EditBasketItem_EditItemErrorTryAgain" = "Could not edit item, please try again.";
+"EditBasketItem_DeleteItemErrorTryAgain" = "Could not delete item from basket, please try again.";
+
+// Add to basket
+"AddToBasket_AddToBasket" = "Add to basket";
+"AddToBasket_AddToBasketErrorTryAgain" = "Could not add item to basket, please try again.";
+"AddToBasket_AddWishListToBasketErrorTryAgain" = "Could not add wish list to basket, please try again.";
+"AddToBasket_ItemAddedToBasket" = "Item added to basket!";
+"AddToBasket_ItemsAddedToBasket" = "Items added to basket!";
+
+//Slideout Menu
+"SlideoutMenu_Items" = "Items";
+"SlideoutMenu_ScanBarcode" = "Scan barcode";
+"SlideoutMenu_Notifications" = "Notifications"; //[Term:24112]
+"SlideoutMenu_WishList" = "Wish list";
+"SlideoutMenu_Search" = "Search";
+"SlideoutMenu_ContactUs" = "Contact us";
+
+//Item
+"Item_NotFoundTitle" = "Item not found";
+"Item_NotFoundMsg" = "This item is not in our database";
+"Item_Variant" = "Variant";
+"Item_UOM" = "UOM";
+
+// Item details
+"ItemDetails_AddToBasket" = "Add to basket";
+"ItemDetails_Modify" = "Modify";
+"ItemDetails_Quantity" = "Quantity";
+"ItemDetails_Per" = "per";
+"ItemDetails_ItemAddedToWishList" = "Item added to wish list!";
+"ItemDetails_ItemNotInStock" = "Item not in stock";
+"ItemDetails_NoItems" = "No items to display."; //[Term:24134]
+"ItemDetails_Availability" = "See availability"; //[Term:24119]
+"ItemDetails_SelectVariant" = "Select variant"; //[Term:23628]
+"ItemDetails_RelatedOffersAndCoupons" = "Related offers and coupons";
+
+// Image zoom screen
+"ImageZoom_Image" = "Image";
+
+// Transaction details
+"TransactionDetails_Multiplier" = "x";
+"TransactionDetails_Transaction" = "Transaction"; //[Term:8012]
+"TransactionDetails_ErrorAddingItemToBasket" = "Couldn't add item to basket";
+"TransactionDetails_ErrorAddingSomeItemsToBasket" = "Couldn't add all items to basket";
+
+//Wish List
+"WishList_WishList" = "Wish list";
+"WishList_RemoveFromWishList" = "Remove from wish list";
+"WishList_AreYouSureRemoveItem" = "Are you sure you want to remove this item from your wish list?"; //[Term:24110]
+"WishList_AddToBasket" = "Add wish list to basket";
+"WishList_AddToWishList" = "Add to wish list";
+"WishList_NoItems" = "No items in the wish list."; //[Term:24133]
+"WishList_AddItemToWishListErrorTryAgain" = "Could not add item to wish list, please try again.";
+"WishList_RemoveItemFromWishListErrorTryAgain" = "Could not remove item from wish list, please try again.";
+"WishList_ClearWishList" = "Clear wish list";
+"WishList_ClearWishListAreYouSure" = "Are you sure you want to clear the wish list?";
+"WishList_ClearWishListErrorTryAgain" = "Could not clear the wish list, please try again.";
+"WishList_Login" = "Please log in to add items to your wish list.";
+
+//Notifications
+"Notifications_Notifications" = "Notifications"; //[Term:24112]
+"Notifications_DeleteAll" = "Delete all notifications";
+
+//Search
+"Search_NoResults" = "Search returned no results";
+"Search_Instruction" = "Use the search bar for general search."; //[Term:24124]
+"SearchScreen_Coupons" = "Coupons"; //[Term:22509]
+"SearchScreen_ItemCategories" = "Item Categories";
+"SearchScreen_Items" = "Items";
+"SearchScreen_Notifications" = "Notifications"; //[Term:24112]
+"SearchScreen_Offers" = "Offers"; //[Term:8320]
+"SearchScreen_ProductGroups" = "Product Groups";
+"SearchScreen_Profiles" = "Profiles";
+"SearchScreen_ShoppingLists" = "ShoppingLists";
+"SearchScreen_Stores" = "Stores"; //[Term:14629]
+"SearchScreen_Transactions" = "Transactions";
+
+// Map view
+"MapView_AllLocations" = "All locations";
+
+// Hidden settings
+"Hidden_Settings_ChangeWS" = "Change Webservice";
+"Hidden_Settings_HiddenSettings" = "Hidden Settings";
+"Hidden_Settings_URL" = "URL"; //[Term:2282]
+"Hidden_Settings_Resource" = "Resource";
+"Hidden_Settings_WebserviceChanged" = "Webservice changed"; //[Term:24125]
+"Hidden_Settings_WebserviceChangeSuccessMessage" = "ATTENTION\r\n Restart the app COMPLETELY by double pressing the home button and swiping the app away. Then reopen it.";
+"HiddenSettings_Ping" = "Ping";
+"HiddenSettings_AreYouSure" = "Are you sure that you want to change the web service";
+"HiddenSettings_Version" = "Version {0}";
+
+// Custom more controller
+"MoreScreen_More" = "More";
+
+// Weekdays
+"Weekday_Monday" = "Monday";
+"Weekday_Tuesday" = "Tuesday"; //[Term:3815]
+"Weekday_Wednesday" = "Wednesday"; //[Term:3810]
+"Weekday_Thursday" = "Thursday"; //[Term:3819]
+"Weekday_Friday" = "Friday";
+"Weekday_Saturday" = "Saturday"; //[Term:3826]
+"Weekday_Sunday" = "Sunday"; //[Term:3821]
+
+// SearchPopUp
+"SearchPopUp_Title" = "Please choose categories you want to search in.";
+"SearchPopUp_Item" = "Item";
+"SearchPopUp_Offer" = "Offer"; //[Term:15041]
+"SearchPopUp_Coupon" = "Coupon"; //[Term:3208]
+"SearchPopUp_Notification" = "Notification";
+"SearchPopUp_History" = "History";
+"SearchPopUp_ShoppingList" = "Shopping list";
+"SearchPopUp_Store" = "Store"; //[Term:2594]
+
+//ChangeVariantQtyPopUpView
+"ChangeVariantQtyPopUp_SelectVariant" = "Please select variant";
+"ChangeVariantQtyPopUp_PleaseChooseVariant" = "Please choose variant for all dimesions";
+
+//Related
+"Related_ItemTitle" = "Related items";
+"Related_OfferTitle" = "Related offers & coupons";

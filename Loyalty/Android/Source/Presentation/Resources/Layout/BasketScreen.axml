@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="@color/backgroundcolor">
+
+  <android.support.v7.widget.Toolbar android:id="@+id/BasketScreenToolbar"
+                                     android:layout_height="@dimen/ActionBarHeight"
+                                     android:layout_width="match_parent"
+                                     android:minHeight="@dimen/ActionBarHeight"
+                                     android:background="@color/accent"
+                                     app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                                     app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+  <android.support.v4.widget.SwipeRefreshLayout android:id="@+id/BasketScreenListRefreshContainer"
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="0px"
+                                                android:layout_weight="1">
+
+    <presentation.views.LoyaltyRecyclerView android:id="@+id/BasketScreenList"
+                                            android:scrollbars="vertical"
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent"/>
+
+  </android.support.v4.widget.SwipeRefreshLayout>
+
+  <LinearLayout android:id="@+id/BasketScreenEmptyView"
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:paddingLeft="64dp"
+                android:paddingRight="64dp"
+                android:gravity="center">
+
+    <ImageView android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:src="@drawable/basket"
+               android:adjustViewBounds="true"
+               android:layout_marginBottom="32dp" />
+
+    <TextView style="@style/Subhead"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:gravity="center_horizontal"
+              android:textColor="@color/black54"
+              android:text="@string/BasketViewBasketIsEmpty"
+              android:layout_marginBottom="@dimen/BasePadding" />
+
+    <presentation.views.ColoredButton android:id="@+id/BasketScreenStartOrdering"
+                                      android:layout_width="fill_parent"
+                                      android:layout_height="@dimen/ButtonHeight"
+                                      android:focusable="false"
+                                      android:clickable="true"
+                                      app:roundCorners="true"
+                                      app:buttonColor="@color/accent"
+                                      app:normalText="Start ordering" />
+
+  </LinearLayout>
+
+  <LinearLayout android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:layout_marginTop="1dp"
+                android:background="@color/white">
+
+    <LinearLayout android:orientation="horizontal"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:minHeight="@dimen/OneLineListItemHeight">
+
+      <TextView style="@style/Subhead"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingLeft="@dimen/BasePadding"
+                android:paddingRight="@dimen/BasePadding"
+                android:gravity="center_vertical|right"
+                android:text="@string/ApplicationTotal" />
+
+      <ProgressBar android:id="@+id/BasketScreenTotalProgressBar"
+                   style="?android:progressBarStyle"
+                   android:layout_width="wrap_content"
+                   android:layout_height="match_parent"
+                   android:layout_weight="0"
+                   android:layout_gravity="center"
+                   android:paddingLeft="@dimen/TextPadding"
+                   android:paddingRight="@dimen/TextPadding"
+                   android:gravity="center" />
+
+      <TextView style="@style/Subhead"
+                android:id="@+id/BasketScreenTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingRight="@dimen/BasePadding"
+                android:layout_weight="0"
+                android:visibility="gone"
+                android:gravity="center" />
+
+    </LinearLayout>
+
+  </LinearLayout>
+
+  <presentation.views.ColoredButton android:id="@+id/BasketScreenCheckout"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="@dimen/ButtonHeight"
+                                    android:focusable="false"
+                                    android:clickable="true"
+                                    app:roundCorners="false"
+                                    app:buttonColor="@color/accent"
+                                    app:normalText="@string/BasketViewGoToCheckout" />
+
+</LinearLayout>

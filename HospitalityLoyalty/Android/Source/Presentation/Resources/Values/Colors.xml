@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  
+  <!-- APP COLORS -->
+  <color name="backgroundcolor">#E5E5E5</color>
+  <color name="white">#F5F5F5</color>
+  <color name="black">#000000</color>
+  <color name="realwhite">#FFFFFF</color>
+
+  <!--<color name="presentation_color">#3b6bcc</color>
+  <color name="accent">#3b6bcc</color>
+  <color name="accentpressed">#cc3b6bcc</color>-->
+
+  <color name="accent">#009688</color>    <!-- 500 -->
+  <color name="accentdark">#004D40</color>    <!-- 900 -->
+
+  <color name="accentpressed">#26A69A</color>    <!-- 400 -->
+  
+  <color name="accentnormal">#26A69A</color>    <!-- 400 -->
+  <color name="accentactivated">#00796B</color>    <!-- 700 -->
+  <color name="accenthighlight">#00796B</color>    <!-- 700 -->
+  
+  <color name="presentation_color">#33b5e5</color>
+
+  <color name="background_pressed">#42000000</color>
+  <color name="transparent_black">#32000000</color>
+
+  <color name="popupwindowbackground">#cc000000</color><!-- 500 -->
+  <color name="transparent">#00000000</color>
+  
+  <color name="black87">#de000000</color>
+  <color name="black54">#8a000000</color>
+
+  <color name="white87">#deffffff</color>
+  <color name="white54">#8affffff</color>
+</resources>

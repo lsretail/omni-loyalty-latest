@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+  <item android:id="@+id/MenuViewSearch"
+        android:icon="@drawable/ic_search_24dp"
+        android:title="Search"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        app:showAsAction="always"/>
+  <item android:id="@+id/MenuViewScanBarcode"
+        android:title="@string/MenuViewScanBarcodeTitle"
+        android:icon="@drawable/ic_action_scan"
+        app:showAsAction="ifRoom"/>
+</menu>

@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+	</PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <RootNamespace>LSRetail.Omni.Domain.Services.Base</RootNamespace>
+    <AssemblyName>LSRetail.Omni.Domain.Services.Base</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\Domain.DataModel.Base\Properties\Version.cs" Link="Properties\Version.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Domain.DataModel.Base\Domain.DataModel.Base.csproj" />
+  </ItemGroup>
+
+</Project>

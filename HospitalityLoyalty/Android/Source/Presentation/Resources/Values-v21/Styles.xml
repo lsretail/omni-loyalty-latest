@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <bool name="DetailScreenFitsSystemWindows">false</bool>
+
+  <style name="BaseThemeNoStatusBar" parent="@style/BaseThemeNoActionBar">
+    <!--<item name="android:windowTranslucentStatus">true</item>-->
+  </style>
+  
+  <style name="CustomBorderlessTransparentButton" parent="android:Widget.Material.ActionButton">
+    <item name="android:minHeight">@dimen/MinTouchHeight</item>
+    <item name="android:minWidth">@dimen/MinTouchHeight</item>
+    <!--<item name="android:background">@drawable/selecteble_background</item>
+    <item name="android:textColor">@color/black54</item>-->
+  </style>
+
+  <style name="CustomBorderlessTransparentButtonPadding" parent="@style/CustomBorderlessTransparentButton">
+    <item name="android:minHeight">@dimen/MinTouchHeight</item>
+    <item name="android:minWidth">@dimen/MinTouchHeight</item>
+    <item name="android:paddingLeft">@dimen/BasePadding</item>
+    <item name="android:paddingRight">@dimen/BasePadding</item>
+  </style>
+
+  <style name="SelectableListItem">
+    <item name="android:foreground">?android:attr/selectableItemBackground</item>
+    <!--<item name="android:background">@drawable/selecteble_background</item>
+    <item name="android:textColor">@color/black54</item>-->
+  </style>
+
+  <style name="FloatingActionButton">
+    <item name="android:stateListAnimator">@anim/fab_button_elevation</item>
+  </style>
+
+  <!-- HOLO -->
+
+  <style name="ListViewPresentation" parent="android:Widget.ListView">
+    <item name="android:listSelector">?android:attr/selectableItemBackground</item>
+  </style>
+
+  <style name="ListViewPresentation.White" parent="android:Widget.ListView.White">
+    <item name="android:listSelector">?android:attr/selectableItemBackground</item>
+  </style>
+
+  <!-- HOLO END -->
+
+  <style name="ProgressBarPresentation" parent="android:Widget.Material.Light.ProgressBar.Horizontal">
+  </style>
+
+  
+</resources>

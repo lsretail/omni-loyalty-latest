@@ -1,0 +1,91 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              style="@style/SelectableListItem"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/white"
+              android:orientation="vertical">
+
+  <LinearLayout android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+    <FrameLayout android:id="@+id/TransactionDetailListItemViewItemImageContainer"
+                 android:layout_width="@dimen/CardThumbnailImageWidth"
+                 android:layout_height="match_parent">
+
+      <ImageView android:id="@+id/TransactionDetailListItemViewItemImage"
+                 android:layout_width="fill_parent"
+                 android:layout_height="match_parent"
+                 android:scaleType="centerCrop"
+                 android:adjustViewBounds="true" />
+
+    </FrameLayout>
+
+    <LinearLayout android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical">
+
+      <TextView android:id="@+id/TransactionDetailListItemViewTitle"
+                style="@style/Subhead"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/BasePadding"
+                android:layout_marginRight="@dimen/BasePadding"
+                android:layout_marginTop="@dimen/BasePadding"
+                android:layout_marginBottom="@dimen/HalfBasePadding" />
+
+      <TextView android:id="@+id/TransactionDetailListItemViewQty"
+                style="@style/Body1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/BasePadding"
+                android:layout_marginRight="@dimen/BasePadding"
+                android:layout_marginBottom="@dimen/HalfBasePadding"
+                android:textColor="@color/black87" />
+
+      <TextView style="@style/Body1"
+                android:id="@+id/TransactionDetailListItemViewSubtitle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/BasePadding"
+                android:layout_marginRight="@dimen/BasePadding"
+                android:textColor="@color/black54" />
+
+      <TextView style="@style/Body1"
+                android:id="@+id/TransactionDetailListItemViewPrice"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/BasePadding"
+                android:layout_marginBottom="@dimen/BasePadding"
+                android:gravity="right"
+                android:textColor="@color/accent" />
+
+      <View style="@style/LightHorizontalDivider" />
+
+      <RelativeLayout android:layout_width="fill_parent"
+                      android:layout_height="@dimen/MinTouchSize">
+
+        <ImageButton style="@style/CustomBorderlessTransparentButton"
+                     android:id="@+id/TransactionDetailListItemViewFavorite"
+                     android:layout_width="wrap_content"
+                     android:layout_height="match_parent"
+                     android:layout_gravity="center_vertical"
+                     android:layout_toLeftOf="@+id/TransactionDetailListItemViewAddToBasket"
+                     android:focusable="false" />
+
+        <ImageButton style="@style/CustomBorderlessTransparentButton"
+                     android:id="@+id/TransactionDetailListItemViewAddToBasket"
+                     android:layout_width="wrap_content"
+                     android:layout_height="match_parent"
+                     android:layout_gravity="center_vertical"
+                     android:layout_alignParentRight="true"
+                     android:focusable="false"
+                     android:src="@drawable/ic_add_shopping_cart_black_24dp" />
+
+      </RelativeLayout>
+
+    </LinearLayout>
+
+  </LinearLayout>
+
+</LinearLayout>

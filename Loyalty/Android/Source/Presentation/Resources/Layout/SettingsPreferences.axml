@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+  <PreferenceCategory
+    android:title="@string/SettingsViewImageSettings">
+    <ListPreference
+            android:key="ImageSize"
+            android:title="@string/SettingsViewImageSizeTitle"
+            android:summary="@string/SettingsViewImageSizeSummary"
+            android:defaultValue="999"
+            android:entries="@array/ImageSizes"
+            android:entryValues="@array/ImageSizesValues"/>
+  </PreferenceCategory>
+  <PreferenceCategory
+    android:title="@string/SettingsViewNotifications">
+    <CheckBoxPreference android:key="NotificationService"
+                          android:title="@string/SettingsViewReceiveNotificationsTitle"
+                          android:defaultValue="true"
+                          android:summary="@string/SettingsViewReceiveNotificationsSummary"/>
+  </PreferenceCategory>
+  <PreferenceCategory
+    android:title="Pin code">
+    <presentation.dialogs.PinPreferenceDialog android:key="TODO"
+                          android:title="@string/SettingsViewNewPinTitle"
+                          android:dialogMessage="@string/SettingsViewNewPinDialogMessage"
+                          android:defaultValue=""
+                          android:summary="@string/SettingsViewNewPinSubtitle"/>
+  </PreferenceCategory>
+</PreferenceScreen>
+

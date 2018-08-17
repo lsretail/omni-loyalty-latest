@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="match_parent"
+                                                 android:fitsSystemWindows="@bool/DetailScreenFitsSystemWindows">
+
+  <android.support.design.widget.AppBarLayout android:id="@+id/appbar"
+                                              android:layout_width="match_parent"
+                                              android:layout_height="@dimen/HeaderImageHeight"
+                                              android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                                              android:fitsSystemWindows="@bool/DetailScreenFitsSystemWindows">
+
+    <android.support.design.widget.CollapsingToolbarLayout android:id="@+id/StoreDetailScreenCollapsingToolbar"
+                                                           android:layout_width="match_parent"
+                                                           android:layout_height="match_parent"
+                                                           android:fitsSystemWindows="@bool/DetailScreenFitsSystemWindows"
+                                                           app:contentScrim="?attr/colorPrimary"
+                                                           app:expandedTitleMarginBottom="32dp"
+                                                           app:expandedTitleMarginEnd="64dp"
+                                                           app:expandedTitleMarginStart="48dp"
+                                                           app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+
+      <include layout="@layout/HeaderImagePager" />
+
+      <android.support.v7.widget.Toolbar android:id="@+id/StoreDetailScreenToolbar"
+                                         android:layout_width="match_parent"
+                                         android:layout_height="?attr/actionBarSize"
+                                         android:fitsSystemWindows="@bool/DetailScreenFitsSystemWindows"
+                                         app:layout_collapseMode="pin"
+                                         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    </android.support.design.widget.CollapsingToolbarLayout>
+
+  </android.support.design.widget.AppBarLayout>
+
+  <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                                              android:id="@+id/StoreDetailScreenScrollView"
+                                              android:layout_width="match_parent"
+                                              android:layout_height="match_parent"
+                                              android:paddingLeft="@dimen/BigScreenPanePadding"
+                                              android:paddingRight="@dimen/BigScreenPanePadding"
+                                              app:layout_scrollFlags="scroll"
+                                              app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <LinearLayout android:id="@+id/StoreDetailScreenContent"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical">
+
+      <LinearLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/BasePadding"
+                    android:background="@color/white">
+
+        <TextView style="@style/HeadLine"
+                  android:id="@+id/StoreDetailScreenStoreName"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:paddingLeft="@dimen/BasePadding"
+                  android:paddingRight="@dimen/BasePadding"
+                  android:paddingTop="@dimen/HalfBasePadding"
+                  android:paddingBottom="@dimen/BasePadding"
+                  android:textColor="@color/accent" />
+
+        <LinearLayout android:id="@+id/StoreDetailScreenLocationContainer"
+                      android:background="@drawable/selecteble_background"
+                      android:layout_width="fill_parent"
+                      android:layout_height="wrap_content"
+                      android:minHeight="@dimen/OneLineListItemHeight"
+                      android:layout_marginBottom="@dimen/HalfBasePadding"
+                      android:orientation="horizontal"
+                      android:gravity="center_vertical">
+
+          <ImageView android:layout_width="@dimen/ListImageHeight"
+                     android:layout_height="@dimen/ListImageHeight"
+                     android:layout_marginLeft="@dimen/HalfBasePadding"
+                     android:layout_marginRight="@dimen/HalfBasePadding"
+                     android:src="@drawable/ic_place_black_24dp"
+                     android:scaleType="centerInside"
+                     android:gravity="top"
+                     android:layout_gravity="top" />
+
+          <TextView style="@style/Subhead"
+                    android:id="@+id/StoreDetailScreenStoreAddress"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/StoreDetailScreenPhoneContainer"
+                      android:background="@drawable/selecteble_background"
+                      android:layout_width="fill_parent"
+                      android:layout_height="wrap_content"
+                      android:minHeight="@dimen/OneLineListItemHeight"
+                      android:layout_marginBottom="@dimen/HalfBasePadding"
+                      android:orientation="horizontal"
+                      android:gravity="center_vertical">
+
+          <ImageView android:layout_width="@dimen/ListImageHeight"
+                     android:layout_height="@dimen/ListImageHeight"
+                     android:layout_marginLeft="@dimen/HalfBasePadding"
+                     android:layout_marginRight="@dimen/HalfBasePadding"
+                     android:src="@drawable/ic_local_phone_black_24dp"
+                     android:scaleType="centerInside"
+                     android:gravity="top"
+                     android:layout_gravity="top" />
+
+          <TextView style="@style/Subhead"
+                    android:id="@+id/StoreDetailScreenStorePhone"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical" />
+
+        </LinearLayout>
+
+      </LinearLayout>
+
+      <HorizontalScrollView android:id="@+id/StoreDetailScreenServicesContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white">
+
+        <LinearLayout android:id="@+id/StoreDetailScreenServices"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:paddingLeft="@dimen/HalfBasePadding"
+                      android:paddingRight="@dimen/HalfBasePadding">
+
+        </LinearLayout>
+
+      </HorizontalScrollView>
+
+      <LinearLayout android:id="@+id/StoreDetailScreenOpeningHours"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/BasePadding"
+                    android:background="@color/white">
+
+      </LinearLayout>
+
+    </LinearLayout>
+
+  </android.support.v4.widget.NestedScrollView>
+
+  <android.support.design.widget.FloatingActionButton android:id="@+id/StoreDetailScreenDirections"
+                                                      android:layout_width="wrap_content"
+                                                      android:layout_height="wrap_content"
+                                                      android:layout_margin="@dimen/BasePadding"
+                                                      android:clickable="true"
+                                                      android:src="@drawable/ic_directions_car_white_24dp"
+                                                      app:borderWidth="0dp"
+                                                      app:layout_anchor="@+id/appbar"
+                                                      app:layout_anchorGravity="bottom|right|end" />
+
+</android.support.design.widget.CoordinatorLayout>

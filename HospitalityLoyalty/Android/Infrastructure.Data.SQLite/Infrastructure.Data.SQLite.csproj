@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E9F0AEA9-2F20-466E-ACF8-79EAA1B38872}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Infrastructure.Data.SQLite</RootNamespace>
+    <AssemblyName>Infrastructure.Data.SQLite</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'PlayStoreRelease|AnyCPU'">
+    <OutputPath>bin\PlayStoreRelease\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Android" />
+    <Reference Include="Mono.Data.Sqlite" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Core\Source\Infrastructure\Infrastructure.Data.SQLite2\Baskets\BasketRepository.cs">
+      <Link>Basket\BasketRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\Source\Infrastructure\Infrastructure.Data.SQLite2\DB\DB.cs">
+      <Link>DB\DB.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\Source\Infrastructure\Infrastructure.Data.SQLite2\DB\DTO\WebserviceData.cs">
+      <Link>DB\DTO\WebserviceData.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\Source\Infrastructure\Infrastructure.Data.SQLite2\DB\Scripts\ClearDB\DropTables.cs">
+      <Link>DB\Scripts\ClearDB\DropTables.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\Source\Infrastructure\Infrastructure.Data.SQLite2\DB\Scripts\CreateDB\CreateTables.cs">
+      <Link>DB\Scripts\CreateDB\CreateTables.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\Source\Infrastructure\Infrastructure.Data.SQLite2\DB\SqliteExtensions.cs">
+      <Link>DB\SqliteExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\Source\Infrastructure\Infrastructure.Data.SQLite2\DB\SqliteHelper.cs">
+      <Link>DB\SqliteHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\Source\Infrastructure\Infrastructure.Data.SQLite2\Favorites\FavoriteRepository.cs">
+      <Link>Favorites\FavoriteRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\Source\Infrastructure\Infrastructure.Data.SQLite2\MemberContacts\ContactRepository.cs">
+      <Link>MemberContacts\ContactRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\Source\Infrastructure\Infrastructure.Data.SQLite2\Menus\MenuRepository.cs">
+      <Link>Menus\MenuRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\Source\Infrastructure\Infrastructure.Data.SQLite2\SQLException.cs">
+      <Link>SQLException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\Source\Infrastructure\Infrastructure.Data.SQLite2\SQLStatusCode.cs">
+      <Link>SQLStatusCode.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\Source\Infrastructure\Infrastructure.Data.SQLite2\Transactions\TransactionRepository.cs">
+      <Link>Transactions\TransactionRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Core\Source\Infrastructure\Infrastructure.Data.SQLite2\Webservice\WebserviceRepository.cs">
+      <Link>Webservice\WebserviceRepository.cs</Link>
+    </Compile>
+    <Compile Include="Resources\Resource.Designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Values\Strings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Core\Base\Domain.DataModel.Base\Domain.DataModel.Base.csproj">
+      <Project>{7bcac03e-3b65-4cf4-9ebb-4ef353276d1c}</Project>
+      <Name>Domain.DataModel.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Common\Core\Base\Domain.Services.Base\Domain.Services.Base.csproj">
+      <Project>{9c38d897-021b-4743-92e4-ae9c0252d17f}</Project>
+      <Name>Domain.Services.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Common\Core\Loyalty.Hospitality\Domain.DataModel.Loyalty.Hospitality\Domain.DataModel.Loyalty.Hospitality.csproj">
+      <Project>{539f8620-b7d5-4925-8038-45412674e776}</Project>
+      <Name>Domain.DataModel.Loyalty.Hospitality</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Common\Core\Loyalty.Hospitality\Domain.Services.Loyalty.Hospitality\Domain.Services.Loyalty.Hospitality.csproj">
+      <Project>{090f2121-340c-482e-adaa-e5df8440cf6c}</Project>
+      <Name>Domain.Services.Loyalty.Hospitality</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Common\Core\Loyalty\Domain.DataModel.Loyalty\Domain.DataModel.Loyalty.csproj">
+      <Project>{36a6fdfb-59d3-4618-92dd-0deb8b6ab501}</Project>
+      <Name>Domain.DataModel.Loyalty</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Common\Core\Loyalty\Domain.Services.Loyalty\Domain.Services.Loyalty.csproj">
+      <Project>{1be9dd18-afaf-4f25-a62d-e6bf109c180f}</Project>
+      <Name>Domain.Services.Loyalty</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

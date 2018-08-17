@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:padding="@dimen/CardHalfMargin"
+             android:layout_weight="@integer/MediumCardWeight">
+  <FrameLayout android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:foreground="@drawable/selecteble_background"
+               android:duplicateParentState="true">
+    <LinearLayout android:orientation="vertical"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:background="@drawable/card_background">
+      <TextView style="@style/TextViewNormal"
+                android:id="@+id/CardMediumWrappedTitle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:ellipsize="end"/>
+      <LinearLayout android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+        <TextView style="@style/TextViewNormal"
+                  android:id="@+id/CardMediumWrappedSubTitle"
+                  android:layout_width="0px"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="1"
+                  android:textColor="@color/secondarytextcolor"
+                  android:singleLine="true"
+                  android:ellipsize="end"/>
+        <TextView style="@style/TextViewNormal"
+                  android:id="@+id/CardMediumWrappedPrice"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="0"
+                  android:textColor="@color/accent"/>
+      </LinearLayout>
+    </LinearLayout>
+  </FrameLayout>
+</FrameLayout>

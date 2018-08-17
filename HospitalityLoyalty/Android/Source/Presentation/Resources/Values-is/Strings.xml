@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- UPDATED 14.04.2015 -->
+<resources>
+  <string name="ApplicationName">Presentation</string>
+
+  <!-- APP -->
+
+  <string name="Qty">Magn</string>
+  <string name="Or">eða</string>
+  <string name="Ok">Í lagi</string>
+  <string name="Cancel">Hætta við</string>
+  <string name="Next">Næsti</string>
+  <string name="Save">Vista</string>
+  <string name="Saving">Vistar</string>
+  <string name="Done">Lokið</string>
+  <string name="AddToBasket">Bæta í körfu</string>
+  <string name="Items">Vörur</string>
+  <string name="Total">Alls</string>
+  <string name="Delete">Eyða</string>
+  <string name="Edit">Breyta</string>
+  <string name="Favorite">Bæta í eftirlæti</string>
+  <string name="RemoveFavorite">Fjarlægja úr eftirlæti</string>
+  <string name="GotIt">Komið</string>
+  <string name="QtyN">Magn: {0}</string>
+  <string name="Welcome">Velkomin(n)</string>
+  <string name="Retry">Reyna aftur</string>   <!-- 24.03.2015 -->
+
+  <!-- APP END -->
+
+  <!-- ACTION BAR TITLES -->
+
+  <string name="ActionBarLogin">Innskráning</string>
+  <string name="ActionBarAccount">Reikningur</string>
+  <string name="ActionBarHome">Heim</string>
+  <string name="ActionBarMenu">Matseðill</string>
+  <string name="ActionBarOffersAndCoupons">Tilboð og afsláttarmiðar</string>
+  <string name="ActionBarTransactionHistory">Pöntunarsaga</string>
+  <string name="ActionBarFavorites">Mín eftirlæti</string>
+  <string name="ActionBarStores">Staðsetningar</string>
+  <string name="ActionBarLogout">Skrá út</string>
+  <string name="ActionBarUpdateContact">Uppfæra tengilið</string>
+  <string name="ActionBarChangePassword">Breyta aðgangsorði</string>
+  <string name="ActionBarForgotPassword">Gleymt lykilorð</string> <!-- 09.04.2015 -->
+  <string name="ActionBarResetPassword">Endurstilla lykilorð</string> <!-- 09.04.2015 -->
+
+  <!-- ACTION BAR TITLES END -->
+
+  <!-- WELCOME -->
+
+  <string name ="WelcomeText">Með appinu getur þú skoðað og pantað af matseðli, vistað eftirlætis vörur og færslur, séð kaupsögu þína og einnig séð allar staðsetningar á Íslandi. \r\n \n\nÞegar þú skráir þig inn sem notanda í appinu byrjar þú að safna punktum fyrir keyptar vörur auk þess sem annar ávinningur hlýst þar af.</string>
+
+  <!-- WELCOME END -->
+
+  <!-- LOGIN -->
+
+  <string name="LoginEmail">Tölvupóstfang</string>
+  <string name="LoginPassword">Aðgangsorð</string>
+  <string name="LoginConfirmPassword">Staðfestið aðgangsorð</string>
+  <string name="LoginSignIn">Skrá inn</string>
+  <string name="LoginSignUp">Nýskráning</string>
+  <string name="LoginName">Nafn</string>
+  <string name="LoginForgotPassword">Gleymt lykilorð?</string>  <!-- 09.04.2015 -->
+
+  <string name="LoginNameEmpty">Nafn má ekki vera óútfyllt</string>
+  <string name="LoginEmailEmpty">Tölvupóstfang má ekki vera óútfyllt</string>
+  <string name="LoginPasswordEmpty">Lykilorð má ekki vera óútfyllt</string>
+  <string name="LoginEmailValid">Tölvupóstfang verður að vera gilt</string>
+  <string name="LoginPasswordMatch">Aðgangsorð verða að vera eins</string>
+
+  <string name="ForgotPasswordInstructions">Sláðu inn tölvupóstfang til að fá kóða til að endurstilla lykilorð.</string>  <!-- 09.04.2015 -->
+  <string name="ForgotPasswordSendCode">Senda kóða</string>  <!-- 09.04.2015 -->
+  <string name="ForgotPasswordAlreadyHaveCode">Ertu nú þegar með endurstillinga kóða?</string>  <!-- 09.04.2015 -->
+
+  <string name="ResetPasswordInstructions">Sláðu inn tölvupóstfang, endurstillinga kóða og nýtt lykilorð til að endurstilla lykilorð.</string>  <!-- 09.04.2015 -->
+  <string name="ResetPasswordResetCodeEmpty">Endurstillinga kóði má ekki vera óútfylltur.</string>  <!-- 09.04.2015 -->
+  <string name="ResetPasswordResetCode">Endurstillinga kóði</string>  <!-- 09.04.2015 -->
+
+  <!-- LOGIN END -->
+
+  <!-- CONTACT -->
+
+  <string name="ContactYouHavePoints">Þú átt {0} punkta</string>
+  <!--<string name="ContactInstructions">Auðkenndu þig með því að fá starfsmann til að skanna kóðann að neðan</string>-->
+  <string name="ContactInstructions">Hefja pantanir núna til að safna fleiri punktum.</string>
+  <string name="ContactPoints">{0} Punktar</string>
+  <string name="ContactCoupons">Afsláttarmiðar</string>
+  <string name="ContactRefreshingPoints">Endurnýja punktastöðu</string>
+
+  <string name="ContactUpdate">Uppfæra</string>
+  <string name="ContactOldPassword">Fyrra aðgangsorð</string>
+  <string name="ContactNewPassword">Nýtt aðgangsorð</string>
+  <string name="ContactNewPasswordConfirm">Staðfesta nýtt aðgangsorð</string>
+
+  <string name="ContactNewPasswordEmpty">Nýtt aðgangsorð má ekki vera óútfyllt</string>
+  <string name="ContactOldPasswordEmpty">Fyrra aðgangsorð má ekki vera óútfyllt</string>
+  <string name="ContactNewPasswordsMustMatch">Ný aðgangsorð verða að vera eins</string>
+
+  <!-- CONTACT END -->
+
+  <!-- HOME -->
+
+  <string name="HomeDrawerOpen">Opna</string>
+  <string name="HomeDrawerClose">Loka</string>
+  <string name="HomeLogInToReceivePoints">Skráðu þig inn til þess að fá punkta fyrir keyptar vörur</string>
+  <string name="HomeAccountPoints">Punktar á reikningi</string>
+  <string name="HomeAccountPointsHint">Dragið niður vinstra megin á valmynd eða tengist upplýsingaskjá til þess að endurnýja punktastöðu</string>
+
+  <!-- HOME END -->
+
+  <!-- BASKET -->
+
+  <string name="BasketEmpty">Karfan er tóm</string>
+  <string name="BasketStartOrdering">Hefja pöntun</string>
+  <string name="BasketCheckout">Panta</string>
+
+  <string name="BasketItemAdded">Vöru var bætt í körfu</string>
+  <string name="BasketItemRemoved">Vara var tekin úr körfu</string>
+  <string name="BasketItemUpdated">Vara uppfærð</string>
+
+  <string name="BasketCouponAdded">Afsláttarmiða var bætt í körfu</string>
+  <string name="BasketCouponRemoved">Afsláttarmiði var tekinn úr körfu</string>
+  <string name="BasketOfferAdded">Tilboði var bætt í körfu</string>
+  <string name="BasketOfferRemoved">Tilboð var fjarlægt úr körfu</string>
+
+  <string name="BasketQty">Magn: {0}</string>
+
+  <string name="BasketExtra">• {0} {1}</string>
+  <string name="BasketReduced">• {0} minnkað um {1}</string>
+  <string name="BasketExcluded">• {0} fjarlægt</string>
+
+  <string name="BasketModifier">• {0}</string>
+
+  <!-- BASKET END -->
+
+  <!-- MENU -->
+
+  <string name="MenuOrder">Pöntun</string>
+  <string name="MenuShowAsList">Sýna sem lista</string>
+  <string name="MenuShowAsGrid">Sýna sem grind</string>
+  <string name="MenuRefreshingMenu">Endurnýja valmynd</string>
+
+  <string name="MenuAddToModify">Breyta og bæta í körfu</string>
+  <string name="MenuAddToDescription">Lýsing</string>
+
+
+  <string name="MenuTotal">Alls:</string>
+  <string name="MenuMaximumSelection">Mest er hægt að velja {0}</string>
+  <string name="MenuMinimumSelection">Minnst er hægt að velja {0}</string>
+
+  <!-- MENU ITEM END -->
+
+  <!-- OFFERS -->
+
+  <string name="OffersEmpty">Engin tilboð eru tiltæk þessa stundina</string>
+  <string name="Offers">Tilboð</string>
+  <string name="OffersRefreshingOffers">Endurnýja tilboð</string>
+
+  <string name="OfferAddToBasket">Bæta í körfu</string>
+  <string name="OfferRemoveFromBasket">Taka úr körfu</string>
+  <string name="OfferUseOffer">Nota tilboð</string>
+  <string name="OfferInstructions">Auðkenndu þig með því að fá starfsmann til að skanna kóðann að neðan og nota svo tilboð</string>
+  <string name="OfferDetails">Upplýsingar um tilboð</string>
+
+  <!-- OFFERS END -->
+
+  <!-- COUPONS-->
+
+  <string name="CouponsEmpty">Engir afsláttarmiðar tiltækir þessa stundina</string>
+  <string name="Coupons">Afsláttarmiðar</string>
+  <string name="CouponsRefreshingCoupons">Endurnýja afsláttarmiða</string>
+
+  <string name="CouponAddToBasket">Bæta í körfu</string>
+  <string name="CouponRemoveFromBasket">Taka úr körfu</string>
+  <string name="CouponRemoveUseCoupon">Nota afsláttarmiða</string>
+  <string name="CouponInstructions">Auðkenndu þig með því að fá starfsmann til að skanna kóðann að neðan og nota svo afsláttarmiða</string>
+  <string name="CouponDetails">Upplýsingar um afsláttarmiða</string>
+
+  <!-- COUPONS END -->
+
+  <!-- HISTORY -->
+
+  <string name="HistoryAddToBasket">Bæta í körfu</string>
+  <string name="HistoryAddAllToBasket">Bæta öllu í körfu</string>
+
+  <string name="HistoryNoTransactions">Engar pantanir ennþá</string>
+
+  <string name="HistoryQty">Magn: {0}</string>
+
+  <string name="HistoryItems">{0} vörur</string>
+
+  <!-- HISTORY END -->
+
+  <!-- FAVORITE -->
+
+  <string name="FavoriteTransactions">Færslur</string>
+  <string name="FavoriteItems">Vörur</string>
+
+  <string name="FavoriteAddToBasket">Bæta í körfu</string>
+  <string name="FavoriteChangeName">Breyta um nafn</string>
+  <string name="FavoriteNewName">Nýtt nafn</string>
+
+  <string name="FavoriteNoItems">Engar eftirlætisvörur</string>
+
+  <string name="FavoriteNoTransactions">Engar eftirlætisfærslur</string>
+  <string name="FavoriteTransactionItems">{0} vörur</string>
+
+  <!-- FAVORITE END -->
+
+  <!-- STORE -->
+
+  <string name="StoreMap">Kort</string>
+
+  <string name="StoreMonday">Mánudagur</string>
+  <string name="StoreTuesday">Þriðjudagur</string>
+  <string name="StoreWednesday">Miðvikudagur</string>
+  <string name="StoreThursday">Fimmtudagur</string>
+  <string name="StoreFriday">Föstudagur</string>
+  <string name="StoreSaturday">Laugardagur</string>
+  <string name="StoreSunday">Sunnudagur</string>
+
+  <string name="StoreOpeningOneDay">{0}: {1} til {2}</string>
+  <string name="StoreOpeningTwoDays">{0} og {1}: {2} til {3}</string>
+  <string name="StoreOpeningManyDays">{0} til {1}: {2} til {3}</string>
+
+  <string name="StoreMainOpeningHours">Opnunartími</string>
+  <string name="StoreDriveThrough">Bílalúga</string>
+
+  <string name="StoreServiceGiftCard">Gjafakort</string>
+  <string name="StoreServiceFreeWifi">Frítt WIFI</string>
+  <string name="StoreServicePlayPlace">Barnahorn</string>
+  <string name="StoreServiceFreeRefill">Frí áfylling</string>
+  <string name="StoreServiceDriveThrough">Bílalúga</string>
+  <string name="StoreServiceGarden">Garður</string>
+
+  <!-- STORE END -->
+
+  <!-- CHECKOUT -->
+
+  <string name="CheckoutInstructions">Biðjið starfsmann um að skanna þennan kóða</string>
+  <string name="CheckoutCodeBackInstructions">Þennan kóða er hægt að fá aftur í pöntunar sögu.</string>  <!-- 09.04.2015 -->
+
+  <string name="CheckoutPayInstructions">Sláið inn kortaupplýsingar</string>
+  <string name="CheckoutPayCardNumber">Kortnúmer</string>
+  <string name="CheckoutPayMonth">MM</string>
+  <string name="CheckoutPayYear">ÁÁ</string>
+  <string name="CheckoutPayCVV">CVV</string>
+  <string name="CheckoutPayPay">Greiða</string>
+  <string name="CheckoutPayLogin">Innskráning</string>
+  <string name="CheckoutPayLoginInstructions">Ef þú skráir þig inn fyrir greiðslu þarf ekki að slá inn kortupplýsingar á ný</string>
+
+  <string name="CheckoutPayNow">Greiða núna</string>
+
+  <string name="ConfirmCheckoutTotal">Alls</string>
+  <string name="ConfirmCheckoutTotalHeader">ALLS</string>
+  <string name="ConfirmCheckoutCheckout">Panta</string>
+
+  <!-- CHECKOUT END -->
+
+  <!-- MODELS -->
+
+  <!-- MENUS -->
+
+  <string name="MenuItemAddToFavorites">Bæta við eftirlæti</string>
+  <string name="MenuItemRemoveFromFavorites">Fjarlægja úr eftirlæti</string>
+  <string name="MenuItemOpenBasket">Opna körfu</string>
+  <string name="MenuItemCloseBasket">Loka körfu</string>
+  <string name="MenuItemClearBasket">Hreinsa körfu</string>
+  <string name="MenuItemDirections">Sýna leiðarlýsingu</string>
+  <string name="MenuItemShowStoreOnMap">Sýna verslun á korti</string>
+  <string name="MenuItemMapType">Tegund korts</string>
+  <string name="MenuItemNormalMap">Venjulegt kort</string>
+  <string name="MenuItemSatelliteMap">Gervihnattarkort</string>
+  <string name="MenuItemHybridMap">Blandað kort</string>
+  <string name="MenuItemStoreInformation">Sýna upplýsingar verslunar</string>
+  <string name="MenuItemQrCode">Sýna QR kóða</string>
+  <string name="MenuItemIngredients">Innihald</string>
+  <string name="MenuItemModifiers">Breytur</string>
+  <string name="MenuItemMaximumSelected">Velja má allt að {0}</string>
+
+  <!-- MENUS END -->
+
+  <!-- BASEMODEL -->
+
+  <string name="ModelErrorTitle">Villa</string>
+  <string name="ModelAuthenticationFailed">Rangt notandanafn eða aðgangsorð.\nReynið aftur.</string>
+  <string name="ModelDeviceBlocked">Þetta tæki hefur verið útilokað</string>
+  <string name="ModelGenericException">Villa, reyndu aftur</string>
+  <string name="ModelNetworkException">Ekkert netsamband</string>
+  <string name="ModelEmailExists">Tölvupóstfang er þegar til staðar</string>
+  <string name="ModelEmailInvalid">Tölvupóstfang uppfyllir ekki kröfur</string>
+  <string name="ModelPasswordInvalid">Lykilorð uppfyllir ekki kröfur.</string>
+  <string name="ModelSecurityToken">Aðgangi hafnað</string>
+  <string name="ModelAccessNotAllowed">Aðgangi hafnað</string>
+
+  <!-- BASEMODEL END -->
+
+  <!-- ANIMATION -->
+
+  <string name="TransitionImage">Umbreytingarmynd</string>
+  <string name="TransitionMap">Umbreytingarkort</string>
+
+  <!-- ANIMATION END -->
+</resources>

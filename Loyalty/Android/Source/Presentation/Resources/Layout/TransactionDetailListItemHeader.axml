@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content">
+
+  <LinearLayout android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/OneLineListItemHeight"
+                android:paddingLeft="@dimen/BasePadding"
+                android:paddingRight="@dimen/BasePadding"
+                android:background="@color/transactions"
+                android:gravity="center_vertical">
+      
+      <TextView style="@style/SubheadLight"
+                android:id="@+id/TransactionDetailViewItemNameHeader"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:text="@string/TransactionDetailViewItemNameHeaderText"/>
+
+      <TextView style="@style/SubheadLight"
+                android:id="@+id/TransactionDetailViewItemQtyHeader"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="20"
+                android:paddingLeft="@dimen/BasePadding"
+                android:text="@string/ApplicationQty"/>
+
+      <TextView style="@style/SubheadLight"
+                android:id="@+id/TransactionDetailViewItemAmountHeader"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="30"
+                android:paddingLeft="@dimen/BasePadding"
+                android:gravity="right"
+                android:text="@string/TransactionDetailViewItemAmountHeaderText"/>
+
+  </LinearLayout>
+
+</LinearLayout>

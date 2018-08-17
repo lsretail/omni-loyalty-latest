@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+  <LinearLayout android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+    
+    <LinearLayout android:orientation="horizontal"
+                  android:layout_height="wrap_content"
+                  android:layout_width="fill_parent"
+                  android:paddingTop="@dimen/BasePadding"
+                  android:paddingBottom="@dimen/BasePadding"
+                  android:paddingLeft="@dimen/BasePadding"
+                  android:paddingRight="@dimen/BasePadding">
+
+      <TextView style="@style/HeadLine"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingRight="@dimen/BasePadding"
+                android:gravity="right"
+                android:text="@string/CheckoutViewTotal"/>
+
+      <TextView style="@style/HeadLine"
+                android:id="@+id/CheckoutTotalHeaderViewTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:textColor="@color/black87"/>
+
+    </LinearLayout>
+
+    <lsandroidlibrary.views.ColoredButton android:id="@+id/CheckoutTotalHeaderViewOrder"
+                                          android:layout_width="fill_parent"
+                                          android:layout_height="@dimen/ButtonHeight"
+                                          android:layout_marginLeft="@dimen/BasePadding"
+                                          android:layout_marginRight="@dimen/BasePadding"
+                                          android:layout_marginBottom="@dimen/BasePadding"
+                                          android:focusable="false"
+                                          android:clickable="true"
+                                          app:roundCorners="true"
+                                          app:buttonColor="@color/accentcolor"/>
+    
+  </LinearLayout>
+
+  <View android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/card_shadow"/>
+
+</LinearLayout>

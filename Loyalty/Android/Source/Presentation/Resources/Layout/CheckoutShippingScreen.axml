@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical">
+
+  <android.support.design.widget.AppBarLayout android:id="@+id/appbar"
+                                              android:layout_width="match_parent"
+                                              android:layout_height="wrap_content"
+                                              android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+    <android.support.v7.widget.Toolbar android:id="@+id/CheckoutShippingScreenToolbar"
+                                       android:layout_width="match_parent"
+                                       android:layout_height="@dimen/ActionBarHeight"
+                                       app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                                       app:layout_scrollFlags="scroll|enterAlways" />
+
+  </android.support.design.widget.AppBarLayout>
+
+  <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent">
+
+    <LinearLayout android:orientation="vertical"
+                  android:layout_width="fill_parent"
+                  android:layout_height="fill_parent"
+                  android:animateLayoutChanges="true">
+
+      <!-- DELIVERY -->
+      <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/CardMargin"
+                    android:paddingRight="@dimen/CardMargin"
+                    android:orientation="vertical">
+
+        <!-- SHIPPING -->
+        <!--<TextView style="@style/Body2"
+                android:paddingLeft="@dimen/BasePadding"
+                android:paddingRight="@dimen/BasePadding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/OneLineListItemHeight"
+                android:gravity="center_vertical"
+                android:text="@string/CheckoutViewShippingType"/>
+
+      <LinearLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/BasePadding"
+                    android:paddingBottom="@dimen/BasePadding"
+                    android:background="@color/white">
+
+        <RadioGroup android:id="@+id/CheckoutViewShippingMethod"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/BasePadding"
+                    android:paddingRight="@dimen/BasePadding">
+
+          <RadioButton android:id="@+id/CheckoutViewInStorePickup"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:text="@string/CheckoutViewInStorePickup"
+                       android:textSize="@dimen/TextSizeNormal"
+                       android:textColor="@color/black87"/>
+
+          <RadioButton android:id="@+id/CheckoutViewHomeDelivery"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:text="@string/CheckoutViewHomeDelivery"
+                       android:textSize="@dimen/TextSizeNormal"
+                       android:textColor="@color/black87"
+                       android:layout_marginTop="@dimen/BasePadding"/>
+
+        </RadioGroup>
+
+      </LinearLayout>-->
+
+        <!-- SHIPPING ADDRESS -->
+        <TextView style="@style/Body2"
+                  android:id="@+id/CheckoutViewShippingHeader"
+                  android:paddingLeft="@dimen/BasePadding"
+                  android:paddingRight="@dimen/BasePadding"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:minHeight="@dimen/OneLineListItemHeight"
+                  android:gravity="center_vertical"
+                  android:text="@string/CheckoutViewShippingAddress"/>
+
+        <LinearLayout android:id="@+id/CheckoutViewShippingContainer"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:paddingTop="@dimen/BasePadding"
+                      android:paddingBottom="@dimen/BasePadding"
+                      android:background="@color/white">
+
+          <Spinner android:id="@+id/CheckoutViewSavedAddresses"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="@dimen/BasePadding"
+                   android:layout_marginRight="@dimen/BasePadding"/>
+
+          <TextView style="@style/Subhead"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:paddingTop="@dimen/HalfBasePadding"
+                  android:paddingLeft="@dimen/BasePadding"
+                  android:paddingRight="@dimen/BasePadding"
+                  android:text="@string/CheckoutViewName"/>
+
+          <EditText android:id="@+id/CheckoutViewShippingName"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/BasePadding"
+                    android:layout_marginRight="@dimen/BasePadding"
+                    android:hint="@string/ApplicationRequired"
+                    android:inputType="text"
+                    android:imeOptions="actionNext"/>
+
+          <TextView style="@style/Subhead"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:paddingTop="@dimen/HalfBasePadding"
+                  android:paddingLeft="@dimen/BasePadding"
+                  android:paddingRight="@dimen/BasePadding"
+                  android:text="@string/CheckoutViewAddressOne"/>
+
+          <EditText android:id="@+id/CheckoutViewShippingAddressOne"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/BasePadding"
+                    android:layout_marginRight="@dimen/BasePadding"
+                    android:hint="@string/ApplicationRequired"
+                    android:inputType="text"
+                    android:imeOptions="actionNext"/>
+
+          <TextView style="@style/Subhead"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:paddingTop="@dimen/HalfBasePadding"
+                  android:paddingLeft="@dimen/BasePadding"
+                  android:paddingRight="@dimen/BasePadding"
+                  android:text="@string/CheckoutViewAddressTwo"/>
+
+          <EditText android:id="@+id/CheckoutViewShippingAddressTwo"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/BasePadding"
+                    android:layout_marginRight="@dimen/BasePadding"
+                    android:inputType="text"
+                    android:imeOptions="actionNext"/>
+
+          <TextView style="@style/Subhead"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:paddingTop="@dimen/HalfBasePadding"
+                  android:paddingLeft="@dimen/BasePadding"
+                  android:paddingRight="@dimen/BasePadding"
+                  android:text="@string/CheckoutViewCity"/>
+
+          <EditText android:id="@+id/CheckoutViewShippingCity"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/BasePadding"
+                    android:layout_marginRight="@dimen/BasePadding"
+                    android:hint="@string/ApplicationRequired"
+                    android:inputType="text"
+                    android:imeOptions="actionNext"/>
+
+          <TextView style="@style/Subhead"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:paddingTop="@dimen/HalfBasePadding"
+                  android:paddingLeft="@dimen/BasePadding"
+                  android:paddingRight="@dimen/BasePadding"
+                  android:text="@string/CheckoutViewState"/>
+
+          <EditText android:id="@+id/CheckoutViewShippingState"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/BasePadding"
+                    android:layout_marginRight="@dimen/BasePadding"
+                    android:hint="@string/ApplicationRequired"
+                    android:inputType="text"
+                    android:imeOptions="actionNext"/>
+
+          <TextView style="@style/Subhead"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:paddingTop="@dimen/HalfBasePadding"
+                  android:paddingLeft="@dimen/BasePadding"
+                  android:paddingRight="@dimen/BasePadding"
+                  android:text="@string/CheckoutViewPostCode"/>
+
+          <EditText android:id="@+id/CheckoutViewShippingPostCode"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/BasePadding"
+                    android:layout_marginRight="@dimen/BasePadding"
+                    android:hint="@string/ApplicationRequired"
+                    android:inputType="text"
+                    android:imeOptions="actionNext"/>
+
+          <TextView style="@style/Subhead"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:paddingTop="@dimen/HalfBasePadding"
+                  android:paddingLeft="@dimen/BasePadding"
+                  android:paddingRight="@dimen/BasePadding"
+                  android:text="@string/CheckoutViewCountry"/>
+
+          <EditText android:id="@+id/CheckoutViewShippingCountry"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/BasePadding"
+                    android:layout_marginRight="@dimen/BasePadding"
+                    android:hint="@string/ApplicationRequired"
+                    android:inputType="text"
+                    android:imeOptions="actionDone"/>
+
+        </LinearLayout>
+
+      </LinearLayout>
+
+      <!-- PAYMENT -->
+      <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/CardMargin"
+                android:paddingRight="@dimen/CardMargin"
+                android:orientation="vertical">
+
+        <!-- PAYMENT -->
+        <TextView style="@style/Body2"
+                  android:paddingLeft="@dimen/BasePadding"
+                  android:paddingRight="@dimen/BasePadding"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:minHeight="@dimen/OneLineListItemHeight"
+                  android:gravity="center_vertical"
+                  android:text="@string/CheckoutViewPaymentOptions"/>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:paddingTop="@dimen/BasePadding"
+                      android:paddingBottom="@dimen/BasePadding"
+                      android:background="@color/white">
+
+          <RadioGroup android:id="@+id/CheckoutViewPaymentMethod"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:paddingLeft="@dimen/BasePadding"
+                      android:paddingRight="@dimen/BasePadding">
+
+            <RadioButton android:id="@+id/CheckoutViewPayOnDelivery"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="@string/CheckoutViewPayOnDelivery"
+                         android:textSize="@dimen/TextSizeNormal"
+                         android:textColor="@color/black87"/>
+
+            <RadioButton android:id="@+id/CheckoutViewPayCreditCard"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="@string/CheckoutViewPayCreditCard"
+                         android:textSize="@dimen/TextSizeNormal"
+                         android:textColor="@color/black87"
+                         android:layout_marginTop="@dimen/BasePadding"/>
+
+          </RadioGroup>
+
+        </LinearLayout>
+
+        <!-- CARD PAYMENT -->
+        <TextView style="@style/Body2"
+                  android:id="@+id/CheckoutViewPaymentHeader"
+                  android:paddingLeft="@dimen/BasePadding"
+                  android:paddingRight="@dimen/BasePadding"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:minHeight="@dimen/OneLineListItemHeight"
+                  android:gravity="center_vertical"
+                  android:text="@string/CheckoutViewPayment"/>
+
+        <LinearLayout android:id="@+id/CheckoutViewPaymentContainer"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:paddingTop="@dimen/BasePadding"
+                      android:paddingBottom="@dimen/BasePadding"
+                      android:background="@color/white">
+
+          <EditText android:id="@+id/CheckoutViewPaymentCardNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/BasePadding"
+                    android:layout_marginRight="@dimen/BasePadding"
+                    android:hint="@string/CheckoutViewCardNumber"
+                    android:singleLine="true"
+                    android:maxLength="16"
+                    android:inputType="number"
+                    android:imeOptions="actionNext"/>
+
+          <LinearLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="@dimen/HalfBasePadding">
+            <EditText android:id="@+id/CheckoutViewPaymentCardMM"
+                      android:layout_width="0px"
+                      android:layout_height="wrap_content"
+                      android:layout_weight="2"
+                      android:layout_marginLeft="@dimen/BasePadding"
+                      android:layout_marginRight="@dimen/HalfBasePadding"
+                      android:hint="@string/CheckoutViewMM"
+                      android:singleLine="true"
+                      android:maxLength="2"
+                      android:inputType="number"
+                      android:imeOptions="actionNext"/>
+
+            <EditText android:id="@+id/CheckoutViewPaymentCardYYYY"
+                      android:layout_width="0px"
+                      android:layout_height="wrap_content"
+                      android:layout_weight="2"
+                      android:layout_marginLeft="@dimen/HalfBasePadding"
+                      android:layout_marginRight="@dimen/BasePadding"
+                      android:hint="@string/CheckoutViewYYYY"
+                      android:singleLine="true"
+                      android:maxLength="4"
+                      android:inputType="number"
+                      android:imeOptions="actionNext"/>
+
+            <EditText android:id="@+id/CheckoutViewPaymentCardCVV"
+                      android:layout_width="0px"
+                      android:layout_height="wrap_content"
+                      android:layout_weight="2"
+                      android:paddingTop="@dimen/HalfBasePadding"
+                      android:layout_marginLeft="@dimen/BasePadding"
+                      android:layout_marginRight="@dimen/BasePadding"
+                      android:hint="@string/CheckoutViewCVV"
+                      android:singleLine="true"
+                      android:maxLength="3"
+                      android:inputType="number"
+                      android:imeOptions="actionDone"/>
+          </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- BILLING ADDRESS -->
+        <TextView style="@style/Body2"
+                  android:id="@+id/CheckoutViewBillingHeader"
+                  android:paddingLeft="@dimen/BasePadding"
+                  android:paddingRight="@dimen/BasePadding"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:minHeight="@dimen/OneLineListItemHeight"
+                  android:gravity="center_vertical"
+                  android:text="@string/CheckoutViewBillingAddress"/>
+
+        <LinearLayout android:id="@+id/CheckoutViewBillingContainer"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:paddingTop="@dimen/BasePadding"
+                      android:paddingBottom="@dimen/BasePadding"
+                      android:background="@color/white">
+
+          <CheckBox android:id="@+id/CheckoutViewUseShippingAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/BasePadding"
+                    android:layout_marginRight="@dimen/BasePadding"
+                    android:text="@string/CheckoutViewSameAsShippingAddress"
+                    android:textSize="@dimen/TextSizeNormal"
+                    android:textColor="@color/black87"/>
+
+          <LinearLayout android:id="@+id/CheckoutViewBillingInformation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+            <Spinner android:id="@+id/CheckoutViewSavedBillingAddresses"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="@dimen/BasePadding"
+                     android:layout_marginLeft="@dimen/BasePadding"
+                     android:layout_marginRight="@dimen/BasePadding"/>
+
+            <TextView style="@style/Subhead"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/BasePadding"
+                    android:paddingLeft="@dimen/BasePadding"
+                    android:paddingRight="@dimen/BasePadding"
+                    android:text="@string/CheckoutViewName"/>
+
+            <EditText android:id="@+id/CheckoutViewBillingName"
+                      android:layout_width="fill_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginLeft="@dimen/BasePadding"
+                      android:layout_marginRight="@dimen/BasePadding"
+                      android:hint="@string/ApplicationRequired"
+                      android:inputType="text"
+                      android:imeOptions="actionNext"/>
+
+            <TextView style="@style/Subhead"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/HalfBasePadding"
+                    android:paddingLeft="@dimen/BasePadding"
+                    android:paddingRight="@dimen/BasePadding"
+                    android:text="@string/CheckoutViewAddressOne"/>
+
+            <EditText android:id="@+id/CheckoutViewBillingAddressOne"
+                      android:layout_width="fill_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginLeft="@dimen/BasePadding"
+                      android:layout_marginRight="@dimen/BasePadding"
+                      android:hint="@string/ApplicationRequired"
+                      android:inputType="text"
+                      android:imeOptions="actionNext"/>
+
+            <TextView style="@style/Subhead"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/HalfBasePadding"
+                    android:paddingLeft="@dimen/BasePadding"
+                    android:paddingRight="@dimen/BasePadding"
+                    android:text="@string/CheckoutViewAddressTwo"/>
+
+            <EditText android:id="@+id/CheckoutViewBillingAddressTwo"
+                      android:layout_width="fill_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginLeft="@dimen/BasePadding"
+                      android:layout_marginRight="@dimen/BasePadding"
+                      android:hint="@string/ApplicationRequired"
+                      android:inputType="text"
+                      android:imeOptions="actionNext"/>
+
+            <TextView style="@style/Subhead"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/HalfBasePadding"
+                    android:paddingLeft="@dimen/BasePadding"
+                    android:paddingRight="@dimen/BasePadding"
+                    android:text="@string/CheckoutViewCity"/>
+
+            <EditText android:id="@+id/CheckoutViewBillingCity"
+                      android:layout_width="fill_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginLeft="@dimen/BasePadding"
+                      android:layout_marginRight="@dimen/BasePadding"
+                      android:hint="@string/ApplicationRequired"
+                      android:inputType="text"
+                      android:imeOptions="actionNext"/>
+
+            <TextView style="@style/Subhead"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/HalfBasePadding"
+                    android:paddingLeft="@dimen/BasePadding"
+                    android:paddingRight="@dimen/BasePadding"
+                    android:text="@string/CheckoutViewState"/>
+
+            <EditText android:id="@+id/CheckoutViewBillingState"
+                      android:layout_width="fill_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginLeft="@dimen/BasePadding"
+                      android:layout_marginRight="@dimen/BasePadding"
+                      android:hint="@string/ApplicationRequired"
+                      android:inputType="text"
+                      android:imeOptions="actionNext"/>
+
+            <TextView style="@style/Subhead"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/HalfBasePadding"
+                    android:paddingLeft="@dimen/BasePadding"
+                    android:paddingRight="@dimen/BasePadding"
+                    android:text="@string/CheckoutViewPostCode"/>
+
+            <EditText android:id="@+id/CheckoutViewBillingPostCode"
+                      android:layout_width="fill_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginLeft="@dimen/BasePadding"
+                      android:layout_marginRight="@dimen/BasePadding"
+                      android:hint="@string/ApplicationRequired"
+                      android:inputType="text"
+                      android:imeOptions="actionNext"/>
+
+            <TextView style="@style/Subhead"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/HalfBasePadding"
+                    android:paddingLeft="@dimen/BasePadding"
+                    android:paddingRight="@dimen/BasePadding"
+                    android:text="@string/CheckoutViewCountry"/>
+
+            <EditText android:id="@+id/CheckoutViewBillingCountry"
+                      android:layout_width="fill_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginLeft="@dimen/BasePadding"
+                      android:layout_marginRight="@dimen/BasePadding"
+                      android:hint="@string/ApplicationRequired"
+                      android:inputType="text"
+                      android:imeOptions="actionDone"/>
+
+          </LinearLayout>
+
+        </LinearLayout>
+
+      </LinearLayout>
+
+      <LinearLayout android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/CardMargin"
+                    android:paddingRight="@dimen/CardMargin">
+
+        <presentation.views.ColoredButton android:id="@+id/CheckoutShippingViewNext"
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="@dimen/ButtonHeight"
+                                            android:layout_marginTop="@dimen/CardMargin"
+                                            android:layout_marginBottom="@dimen/CardMargin"
+                                            android:focusable="false"
+                                            android:clickable="true"
+                                            app:roundCorners="true"
+                                            app:buttonColor="@color/accent"
+                                            app:normalText="@string/ApplicationNext"/>
+
+      </LinearLayout>
+
+    </LinearLayout>
+
+  </ScrollView>
+
+</LinearLayout>

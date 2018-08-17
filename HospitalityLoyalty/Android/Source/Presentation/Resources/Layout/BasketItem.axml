@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/BasketItemRoot"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:background="@drawable/selecteble_background"
+              android:descendantFocusability="blocksDescendants" >
+
+  <LinearLayout style="@style/ListItem"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/HalfBasePadding"
+                android:paddingBottom="@dimen/HalfBasePadding"
+                android:paddingLeft="@dimen/BasePadding"
+                android:paddingRight="@dimen/BasePadding"
+                android:minHeight="@dimen/TwoLineListItemHeight">
+
+    <TextView style="@style/Subhead"
+                  android:id="@+id/BasketItemDescription"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"/>
+
+    <TextView style="@style/Body1"
+                android:id="@+id/BasketItemVariants"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black54"
+                android:visibility="gone"/>
+
+    <LinearLayout android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal">
+
+      <TextView style="@style/Body1"
+                android:id="@+id/BasketItemQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:textColor="@color/black54"/>
+
+      <TextView style="@style/Body1"
+                android:id="@+id/BasketItemPrice"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:textColor="@color/accent"/>
+
+    </LinearLayout>
+
+  </LinearLayout>
+
+  <android.support.v7.widget.LinearLayoutCompat style="@style/DividerLayout"
+                                                         android:id="@+id/BasketItemMenu"
+                                                         android:orientation="horizontal"
+                                                         android:layout_width="fill_parent"
+                                                         android:layout_height="wrap_content"
+                                                         android:minHeight="@dimen/MinTouchHeight"
+                                                         android:visibility="gone">
+
+    <Button style="@style/CustomBorderlessTransparentButton"
+            android:id="@+id/BasketItemDelete"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:focusable="false"
+            android:drawableLeft="@drawable/ic_delete_black_24dp"
+            android:text="@string/Delete" />
+
+    <Button style="@style/CustomBorderlessTransparentButton"
+            android:id="@+id/BasketItemEdit"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:focusable="false"
+            android:drawableLeft="@drawable/ic_mode_edit_black_24dp"
+            android:text="@string/Edit" />
+
+    <ImageButton style="@style/CustomBorderlessTransparentButton"
+                 android:id="@+id/BasketItemFavorite"
+                 android:layout_width="wrap_content"
+                 android:layout_height="match_parent"
+                 android:layout_weight="0"
+                 android:layout_gravity="center_vertical"
+                 android:focusable="false"/>
+    
+    <ImageButton style="@style/CustomBorderlessTransparentButton"
+                 android:id="@+id/BasketItemDecreaseQty"
+                 android:layout_width="wrap_content"
+                 android:layout_height="match_parent"
+                 android:layout_weight="0"
+                 android:layout_gravity="center_vertical"
+                 android:focusable="false"
+                 android:visibility="gone"
+                 android:src="@drawable/ic_remove_black_24dp" />
+
+    <ImageButton style="@style/CustomBorderlessTransparentButton"
+                 android:id="@+id/BasketItemIncreaseQty"
+                 android:layout_width="wrap_content"
+                 android:layout_height="match_parent"
+                 android:layout_weight="0"
+                 android:layout_gravity="center_vertical"
+                 android:focusable="false"
+                 android:visibility="gone"
+                 android:src="@drawable/ic_add_black_24dp" />
+
+  </android.support.v7.widget.LinearLayoutCompat>
+</LinearLayout>

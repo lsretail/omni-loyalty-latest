@@ -1,0 +1,1 @@
+adb install HospLoy.apk

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:paddingLeft="@dimen/CardMargin"
+              android:paddingRight="@dimen/CardMargin"
+              android:orientation="vertical">
+
+  <!-- CARD -->
+  <TextView style="@style/Body2"
+            android:id="@+id/CheckoutViewInformationHeader"
+            android:paddingLeft="@dimen/BasePadding"
+            android:paddingRight="@dimen/BasePadding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/OneLineListItemHeight"
+            android:gravity="center_vertical"/>
+
+  <LinearLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/CardMargin"
+                android:layout_marginBottom="@dimen/CardHalfMargin"
+                android:paddingTop="@dimen/CardMargin"
+                android:paddingBottom="@dimen/CardMargin"
+                android:background="@color/white">
+
+    <TextView style="@style/Subhead"
+              android:id="@+id/CheckoutViewInformationHeading"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:paddingLeft="@dimen/BasePadding"
+              android:paddingRight="@dimen/BasePadding"
+              android:layout_marginBottom="@dimen/TextHalfPadding"/>
+
+    <TextView style="@style/Body1"
+              android:id="@+id/CheckoutViewInformationDescription"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:paddingLeft="@dimen/BasePadding"
+              android:paddingRight="@dimen/BasePadding"
+              android:textColor="@color/black54"/>
+
+  </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              style="@style/SelectableListItem"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal">
+
+  <FrameLayout android:id="@+id/CardBasketItemImageContainer"
+               android:layout_width="120dp"
+               android:layout_height="match_parent">
+
+    <ImageView android:id="@+id/CardBasketItemImage"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:scaleType="centerCrop" />
+
+  </FrameLayout>
+
+  <LinearLayout android:id="@+id/CardBasketItemContentContainer"
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/TwoLineListItemHeight"
+                android:background="@color/white">
+
+    <TextView android:id="@+id/CardBasketItemDescription"
+              style="@style/Subhead"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:paddingLeft="@dimen/BasePadding"
+              android:paddingTop="@dimen/BasePadding" />
+
+    <TextView style="@style/Body1"
+              android:id="@+id/CardBasketItemVariant"
+              android:layout_width="wrap_content"
+              android:layout_height="match_parent"
+              android:paddingLeft="@dimen/BasePadding"
+              android:paddingRight="@dimen/BasePadding"
+              android:gravity="center_vertical"
+              android:textColor="@color/black54" />
+
+    <TextView style="@style/Body1"
+              android:id="@+id/CardBasketItemDiscount"
+              android:layout_width="wrap_content"
+              android:layout_height="match_parent"
+              android:paddingLeft="@dimen/BasePadding"
+              android:paddingRight="@dimen/BasePadding"
+              android:gravity="center_vertical"
+              android:textColor="@color/red" />
+
+    <LinearLayout android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  android:paddingLeft="@dimen/BasePadding"
+                  android:paddingRight="@dimen/BasePadding"
+                  android:paddingBottom="@dimen/BasePadding">
+
+      <TextView style="@style/Body1"
+                android:id="@+id/CardBasketItemQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:textColor="@color/black54" />
+
+      <TextView style="@style/Body1"
+                android:id="@+id/CardBasketItemAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:paddingLeft="@dimen/BasePadding"
+                android:gravity="center_vertical" />
+
+    </LinearLayout>
+
+  </LinearLayout>
+
+</LinearLayout>

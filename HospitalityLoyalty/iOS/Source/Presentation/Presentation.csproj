@@ -1,0 +1,721 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{75E0EB27-C23E-4CE9-A5D3-D8C77178204D}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>LSRetail.Omni.Hospitality.Loyalty.iOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>LSRetailOmniHospitalityLoyaltyiOS</AssemblyName>
+    <TargetFrameworkIdentifier>Xamarin.iOS</TargetFrameworkIdentifier>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>__UNIFIED__;DEBUG;__MOBILE__;__IOS__;CHANGEWS;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <ConsolePause>false</ConsolePause>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchProfiling>true</MtouchProfiling>
+    <MtouchI18n>
+    </MtouchI18n>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchExtraArgs>-linkskip=System.Threading.Tasks</MtouchExtraArgs>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <CustomCommands>
+      <CustomCommands>
+        <Command>
+          <type>BeforeBuild</type>
+          <command>sh BuildBump.sh</command>
+        </Command>
+      </CustomCommands>
+    </CustomCommands>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>
+    </DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <DefineConstants>__UNIFIED__;__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchI18n>
+    </MtouchI18n>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <CodesignProvision>
+    </CodesignProvision>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>__UNIFIED__;DEBUG;__MOBILE__;__IOS__;CHANGEWS;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchI18n>
+    </MtouchI18n>
+    <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
+    <MtouchProfiling>true</MtouchProfiling>
+    <CodesignProvision>
+    </CodesignProvision>
+    <IpaPackageName>
+    </IpaPackageName>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <DefineConstants>__UNIFIED__;__MOBILE__;__IOS__;CHANGEWS;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Distribution: LS Retail ehf</CodesignKey>
+    <CodesignProvision>7c73ad84-b840-42ba-9e86-c6088b677971</CodesignProvision>
+    <BuildIpa>true</BuildIpa>
+    <IpaPackageName>
+    </IpaPackageName>
+    <MtouchI18n>
+    </MtouchI18n>
+    <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
+    <DebugType>
+    </DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Ad-Hoc</OutputPath>
+    <DefineConstants>__UNIFIED__;__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <BuildIpa>true</BuildIpa>
+    <CodesignProvision>Automatic:AdHoc</CodesignProvision>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <MtouchI18n>
+    </MtouchI18n>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <OnDemandResourcesInitialInstallTags>
+    </OnDemandResourcesInitialInstallTags>
+    <OnDemandResourcesPrefetchOrder>
+    </OnDemandResourcesPrefetchOrder>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
+    <DebugType>
+    </DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\AppStore</OutputPath>
+    <DefineConstants>__UNIFIED__;__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignProvision>D02B47CC-6728-4753-9E93-1A231E53E20C</CodesignProvision>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <IpaPackageName>
+    </IpaPackageName>
+    <MtouchI18n>
+    </MtouchI18n>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release Internal|iPhone' ">
+    <DebugType>
+    </DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release Internal</OutputPath>
+    <DefineConstants>__UNIFIED__;__MOBILE__;__IOS__;__HOCKEYAPP__;CHANGEWS;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchI18n>
+    </MtouchI18n>
+    <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
+    <CodesignProvision>LSOmniDistProfile2</CodesignProvision>
+    <CodesignKey>iPhone Distribution: LS Retail ehf</CodesignKey>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchExtraArgs>-linkskip=System.Threading.Tasks</MtouchExtraArgs>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release Internal|iPhoneSimulator' ">
+    <DebugType>
+    </DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release Internal</OutputPath>
+    <DefineConstants>__UNIFIED__;__MOBILE__;__IOS__;__UNIFIED__;__MOBILE__;__IOS__;__HOCKEYAPP__;CHANGEWS;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchI18n>
+    </MtouchI18n>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <CodesignProvision>LSOmniDistProfile2</CodesignProvision>
+    <CodesignKey>iPhone Distribution: LS Retail ehf</CodesignKey>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchExtraArgs>-linkskip=System.Threading.Tasks</MtouchExtraArgs>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="MonoTouch.Dialog-1" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Xamarin.Insights">
+      <HintPath>..\packages\Xamarin.Insights.1.10.6\lib\Xamarin.iOS10\Xamarin.Insights.dll</HintPath>
+    </Reference>
+    <Reference Include="PLCrashReporterUnifiedBinding">
+      <HintPath>..\packages\Xamarin.Insights.1.10.6\lib\Xamarin.iOS10\PLCrashReporterUnifiedBinding.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.portable">
+      <HintPath>..\packages\ZXing.Net.Mobile.2.0.4.17\lib\Xamarin.iOS10\zxing.portable.dll</HintPath>
+    </Reference>
+    <Reference Include="ZXing.Net.Mobile.Core">
+      <HintPath>..\packages\ZXing.Net.Mobile.2.0.4.17\lib\Xamarin.iOS10\ZXing.Net.Mobile.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ZXingNetMobile">
+      <HintPath>..\packages\ZXing.Net.Mobile.2.0.4.17\lib\Xamarin.iOS10\ZXingNetMobile.dll</HintPath>
+    </Reference>
+    <Reference Include="HockeySDK">
+      <HintPath>..\Components\hockeyappios-4.1.0\lib\ios-unified\HockeySDK.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings.Abstractions">
+      <HintPath>..\packages\Xam.Plugins.Settings.3.0.1\lib\Xamarin.iOS10\Plugin.Settings.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings">
+      <HintPath>..\packages\Xam.Plugins.Settings.3.0.1\lib\Xamarin.iOS10\Plugin.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="GUIExtensions">
+      <HintPath>..\..\..\..\Common\iOS\GUIExtensions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="en.lproj\Localizable.strings" />
+    <BundleResource Include="Images\Branding\Standard\Default-568h%402x.png" />
+    <BundleResource Include="Images\Branding\Standard\Default.png" />
+    <BundleResource Include="Images\Branding\Standard\Default%402x.png" />
+    <BundleResource Include="Images\Branding\Standard\Icon1024.png" />
+    <BundleResource Include="Images\Branding\Standard\Icon512.png" />
+    <BundleResource Include="Images\Branding\Standard\Default-667h%402x.png" />
+    <BundleResource Include="Images\Branding\Standard\Default-736h%403x.png" />
+    <BundleResource Include="Images\Branding\Urban\Splash12422208.png" />
+    <BundleResource Include="Images\Branding\Urban\Splash320480.png" />
+    <BundleResource Include="Images\Branding\Urban\Splash6401136.png" />
+    <BundleResource Include="Images\Branding\Urban\Splash640960.png" />
+    <BundleResource Include="Images\Branding\Urban\Splash7501334.png" />
+    <BundleResource Include="Images\Branding\Urban\default_account_image.png" />
+    <BundleResource Include="Images\Branding\Urban\default_account_image2.png" />
+    <BundleResource Include="Images\Branding\Urban\default_map_location_image.png" />
+    <BundleResource Include="Images\Branding\Urban\default_map_location_image%402x.png" />
+    <BundleResource Include="Images\Branding\Urban\homescreen_logo.png" />
+    <BundleResource Include="Images\Branding\Urban\ic_login_picture.png" />
+    <BundleResource Include="Images\Branding\Urban\logo_drawer.png" />
+    <BundleResource Include="Images\Branding\Urban\splash.jpg" />
+    <BundleResource Include="Images\Branding\Standard\default_account_image.png" />
+    <BundleResource Include="Images\Branding\Standard\default_account_image2.png" />
+    <BundleResource Include="Images\Branding\Standard\default_map_location_image.png" />
+    <BundleResource Include="Images\Branding\Standard\default_map_location_image%402x.png" />
+    <BundleResource Include="Images\Branding\Standard\homescreen_logo.png" />
+    <BundleResource Include="Images\Branding\Standard\qrcode_placeholder.png" />
+    <BundleResource Include="Images\Branding\Standard\slideoutmenubackground.png" />
+    <BundleResource Include="Images\Branding\Standard\slideoutmenubackground2.png" />
+    <BundleResource Include="Images\Branding\Standard\Splash.png" />
+    <BundleResource Include="Images\Branding\Standard\Splash%402x.png" />
+    <BundleResource Include="Images\Branding\Standard\Splash-568h%402x.png" />
+    <BundleResource Include="Images\IconsForTabBar\TabBarIconAccount.png" />
+    <BundleResource Include="Images\IconsForTabBar\TabBarIconAccount%402x.png" />
+    <BundleResource Include="Images\IconsForTabBar\TabBarIconFavorite.png" />
+    <BundleResource Include="Images\IconsForTabBar\TabBarIconFavorite%402x.png" />
+    <BundleResource Include="Images\IconsForTabBar\TabBarIconHistory.png" />
+    <BundleResource Include="Images\IconsForTabBar\TabBarIconHistory%402x.png" />
+    <BundleResource Include="Images\IconsForTabBar\TabBarIconHome.png" />
+    <BundleResource Include="Images\IconsForTabBar\TabBarIconHome%402x.png" />
+    <BundleResource Include="Images\IconsForTabBar\TabBarIconLocations.png" />
+    <BundleResource Include="Images\IconsForTabBar\TabBarIconLocations%402x.png" />
+    <BundleResource Include="Images\IconsForTabBar\TabBarIconMenu.png" />
+    <BundleResource Include="Images\IconsForTabBar\TabBarIconMenu%402x.png" />
+    <BundleResource Include="Images\IconsForTabBar\TabBarIconOC.png" />
+    <BundleResource Include="Images\IconsForTabBar\TabBarIconOC%402x.png" />
+    <BundleResource Include="Images\IconsForTabBar\TabBarIconMore.png" />
+    <BundleResource Include="Images\IconsForTabBar\TabBarIconMore%402x.png" />
+    <BundleResource Include="Images\IconsForTabBar\TabBarIconShoppingBasket.png" />
+    <BundleResource Include="Images\IconsForTabBar\TabBarIconShoppingBasket%402x.png" />
+    <BundleResource Include="Images\Icons\IconAccount.png" />
+    <BundleResource Include="Images\Icons\iconDeleteWhite.png" />
+    <BundleResource Include="Images\Icons\IconEdit.png" />
+    <BundleResource Include="Images\Icons\IconHistory.png" />
+    <BundleResource Include="Images\Icons\IconHome.png" />
+    <BundleResource Include="Images\Icons\IconInfo.png" />
+    <BundleResource Include="Images\Icons\IconLocations.png" />
+    <BundleResource Include="Images\Icons\IconMenu.png" />
+    <BundleResource Include="Images\Icons\IconOC.png" />
+    <BundleResource Include="Images\Icons\iconQRCodeWhite.png" />
+    <BundleResource Include="Images\Icons\IconSave.png" />
+    <BundleResource Include="Images\Icons\IconSettings.png" />
+    <BundleResource Include="Images\Icons\IconTrash.png" />
+    <BundleResource Include="Images\Icons\IconShoppingBasket.png" />
+    <BundleResource Include="Images\Icons\IconShoppingBasketAdd.png" />
+    <BundleResource Include="Images\Icons\IconSlideMenu.png" />
+    <BundleResource Include="Images\Other\map_cell_background.png" />
+    <BundleResource Include="Images\Other\noImage.png" />
+    <BundleResource Include="Images\Other\store_service_drive_through.png" />
+    <BundleResource Include="Images\Other\store_service_free_refill.png" />
+    <BundleResource Include="Images\Other\store_service_free_wifi.png" />
+    <BundleResource Include="Images\Other\store_service_garden.png" />
+    <BundleResource Include="Images\Other\store_service_gift_card.png" />
+    <BundleResource Include="Images\Other\store_service_play_place.png" />
+    <BundleResource Include="Images\Icons\IconCancel.png" />
+    <BundleResource Include="Images\Icons\iconX.png" />
+    <BundleResource Include="en.lproj\InfoPlist.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="Screens\SlideoutNavigationController.cs" />
+    <Compile Include="Utils\Image.cs" />
+    <Compile Include="Utils\UI.cs" />
+    <Compile Include="Utils\Util.cs" />
+    <Compile Include="Utils\AppColors.cs" />
+    <Compile Include="Screens\SlideoutMenuTableSource.cs" />
+    <Compile Include="Utils\MapDelegate.cs" />
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\StoreModel.cs" />
+    <Compile Include="Models\MenuModel.cs" />
+    <Compile Include="Models\ImageModel.cs" />
+    <Compile Include="Utils\IImageCache.cs" />
+    <Compile Include="Utils\ImageCacheItem.cs" />
+    <Compile Include="Models\ContactModel.cs" />
+    <Compile Include="Views\DraggableView.cs" />
+    <Compile Include="Utils\QRCode.cs" />
+    <Compile Include="Views\ErrorGettingDataView.cs" />
+    <Compile Include="Models\BasketModel.cs" />
+    <Compile Include="Utils\AppData.cs" />
+    <Compile Include="Models\WebserviceModel.cs" />
+    <Compile Include="Models\AdvertisementModel.cs" />
+    <Compile Include="Models\TransactionModel.cs" />
+    <Compile Include="Utils\EasyLayout.cs" />
+    <Compile Include="Models\FavoriteModel.cs" />
+    <Compile Include="Models\OrderModel.cs" />
+    <Compile Include="Models\OfferModel.cs" />
+    <Compile Include="Utils\UIImageEffects.cs" />
+    <Compile Include="Models\AppSettingsModel.cs" />
+    <Compile Include="Utils\Settings.cs" />
+    <Compile Include="Screens\Controllers\PublishedOffersDetailController.cs" />
+    <Compile Include="Views\ScrollItemView.cs" />
+    <Compile Include="Screens\Views\PublishedOffersDetailView.cs" />
+    <Compile Include="Screens\Controllers\RootTabBarController.cs" />
+    <Compile Include="Screens\Controllers\CustomMoreController.cs" />
+    <Compile Include="Screens\Views\CustomMoreView.cs" />
+    <Compile Include="Screens\Tables\CustomMoreControllerTableSource.cs" />
+    <Compile Include="Screens\Tables\AccountCell.cs" />
+    <Compile Include="Screens\Tables\ImageCell.cs" />
+    <Compile Include="Screens\Controllers\BasketController.cs" />
+    <Compile Include="Screens\Views\BasketView.cs" />
+    <Compile Include="Screens\Views\BaseView.cs" />
+    <Compile Include="Screens\Tables\BasketTableSource.cs" />
+    <Compile Include="Screens\Tables\BasketCell.cs" />
+    <Compile Include="Screens\Views\PopUpViews\PopUpView.cs" />
+    <Compile Include="Screens\Views\PopUpViews\WelcomePopUpView.cs" />
+    <Compile Include="Screens\Controllers\HomeController.cs" />
+    <Compile Include="Screens\Controllers\AccountController.cs" />
+    <Compile Include="Screens\Controllers\WelcomeController.cs" />
+    <Compile Include="Screens\Views\Partials\AdvertisementView.cs" />
+    <Compile Include="Screens\Views\HomeView.cs" />
+    <Compile Include="Screens\Views\AccountView.cs" />
+    <Compile Include="Screens\Views\WelcomeView.cs" />
+    <Compile Include="Screens\Controllers\LoginDialogController.cs" />
+    <Compile Include="Screens\Views\ImageCarouselView.cs" />
+    <Compile Include="Screens\Controllers\ChangePasswordDialogController.cs" />
+    <Compile Include="Screens\Controllers\HiddenSettingsController.cs" />
+    <Compile Include="Screens\Controllers\ManageAccountDialogController.cs" />
+    <Compile Include="Screens\Controllers\ResetPasswordDialogController.cs" />
+    <Compile Include="Screens\Views\HiddenSettingsView.cs" />
+    <Compile Include="Screens\Controllers\CheckoutController.cs" />
+    <Compile Include="Screens\Views\CheckoutOrderPlacedView.cs" />
+    <Compile Include="Screens\Views\CheckoutOrderOverView.cs" />
+    <Compile Include="Screens\Tables\CheckoutOrderOverViewTableSource.cs" />
+    <Compile Include="Screens\Tables\CheckoutOrderOverViewCell.cs" />
+    <Compile Include="Screens\Controllers\HistoryController.cs" />
+    <Compile Include="Screens\Views\HistoryView.cs" />
+    <Compile Include="Screens\Tables\TransactionHistoryTableSource.cs" />
+    <Compile Include="Screens\Tables\TransactionOverviewTableCell.cs" />
+    <Compile Include="Screens\Views\Partials\NoDataView.cs" />
+    <Compile Include="Screens\Controllers\TransactionDetailController.cs" />
+    <Compile Include="Screens\Views\TransactionDetailView.cs" />
+    <Compile Include="Screens\Tables\TransactionDetailsTableView.cs" />
+    <Compile Include="Screens\Tables\ItemOverviewCell.cs" />
+    <Compile Include="Screens\Tables\CheckoutDetailsItemOverviewCell.cs" />
+    <Compile Include="Screens\Tables\TransactionDetailCell.cs" />
+    <Compile Include="Screens\Controllers\QRCodeController.cs" />
+    <Compile Include="Screens\Views\QRCodeView.cs" />
+    <Compile Include="Screens\Controllers\FavouriteController.cs" />
+    <Compile Include="Screens\Views\FavouriteView.cs" />
+    <Compile Include="Screens\Tables\FavoriteItemsTableSource.cs" />
+    <Compile Include="Screens\Tables\FavouriteTransactionsTableSource.cs" />
+    <Compile Include="Screens\Tables\FavoriteItemCell.cs" />
+    <Compile Include="Screens\Tables\FavouriteTransactionCell.cs" />
+    <Compile Include="Screens\Tables\CollectionSources\CardCollectionCell.cs" />
+    <Compile Include="Screens\Tables\CollectionSources\CardCollectionSource.cs" />
+    <Compile Include="Screens\Tables\CollectionSources\LocationsCollectionSource.cs" />
+    <Compile Include="Screens\Tables\CollectionSources\OffersAndCouponsCollectionSource.cs" />
+    <Compile Include="Screens\Controllers\MapController.cs" />
+    <Compile Include="Screens\Controllers\CardCollectionController.cs" />
+    <Compile Include="Screens\Controllers\OffersAndCouponsCardCollectionController.cs" />
+    <Compile Include="Screens\Controllers\LocationsCardCollectionController.cs" />
+    <Compile Include="Screens\Controllers\AboutUsController.cs" />
+    <Compile Include="Screens\Views\AboutUsView.cs" />
+    <Compile Include="Screens\Controllers\AddToBasketController.cs" />
+    <Compile Include="Screens\Controllers\EditBasketItemController.cs" />
+    <Compile Include="Screens\Controllers\ModifiersController.cs" />
+    <Compile Include="Screens\Views\ModifiersView.cs" />
+    <Compile Include="Screens\Controllers\WebViewController.cs" />
+    <Compile Include="Screens\Tables\AboutUsTableCell.cs" />
+    <Compile Include="Screens\Tables\AboutUsTableSource.cs" />
+    <Compile Include="Screens\Tables\ModifiersTableSource.cs" />
+    <Compile Include="Screens\Tables\ModifiersScreenTableCell.cs" />
+    <Compile Include="Screens\Controllers\ImageSliderController.cs" />
+    <Compile Include="Screens\Views\ImageSliderView.cs" />
+    <Compile Include="Screens\Views\Partials\ZoomImageView.cs" />
+    <Compile Include="Screens\Controllers\ItemDetailController.cs" />
+    <Compile Include="Screens\Views\ItemDetailView.cs" />
+    <Compile Include="Screens\Controllers\LocationDetailsController.cs" />
+    <Compile Include="Screens\Tables\HomeTableSource.cs" />
+    <Compile Include="Screens\Controllers\RestaurantDirectionsController.cs" />
+    <Compile Include="Screens\Views\Partials\GradientView.cs" />
+    <Compile Include="Screens\Views\Partials\IconButton.cs" />
+    <Compile Include="Screens\Views\LocationDetailsView.cs" />
+    <Compile Include="Screens\Views\Partials\InlineQtyModifier.cs" />
+    <Compile Include="Screens\Views\Partials\ItemDetailsContent.cs" />
+    <Compile Include="Screens\Views\Partials\ImageSlider.cs" />
+    <Compile Include="UI\Menu\MenuCollectionCellLayouts.cs" />
+    <Compile Include="UI\Menu\MenuCollectionViewSource.cs" />
+    <Compile Include="UI\Base\CollectionView\BaseCollectionViewController.cs" />
+    <Compile Include="UI\Menu\MenuCollectionController.cs" />
+    <Compile Include="UI\Menu\MenuCollectionCell.cs" />
+    <Compile Include="UI\Menu\MenuBaseCollectionCell.cs" />
+    <Compile Include="Utils\MenuUtils.cs" />
+    <Compile Include="UI\Base\CollectionView\CollectionCellRowLayout.cs" />
+    <Compile Include="UI\Base\CollectionView\CollectionCellThumbnailLayout.cs" />
+    <Compile Include="UI\Menu\MenuCollectionViewDelegateFlowLayout.cs" />
+    <Compile Include="UI\Menu\MenuGroupCells\MenuGroupCollectionThumbnailCell.cs" />
+    <Compile Include="UI\Menu\MenuItemCells\MenuItemCollectionViewRowCell.cs" />
+    <Compile Include="UI\Menu\MenuGroupCells\MenuGroupCollectionRowCell.cs" />
+    <Compile Include="UI\Menu\MenuItemCells\MenuItemCollectionViewThumbnailCell.cs" />
+    <Compile Include="UI\Menu\MenuItemCells\MenuItemBaseCollectionCell.cs" />
+    <Compile Include="UI\Menu\Interfaces\IBasketSelectedListener.cs" />
+    <Compile Include="UI\Menu\Interfaces\IItemSelectedListener.cs" />
+    <Compile Include="Helpers\Settings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Screens\" />
+    <Folder Include="Utils\" />
+    <Folder Include="Images\" />
+    <Folder Include="Views\" />
+    <Folder Include="Images\Branding\" />
+    <Folder Include="Screens\Controllers\" />
+    <Folder Include="Screens\Views\" />
+    <Folder Include="Screens\Tables\" />
+    <Folder Include="Images\IconsForTabBar\" />
+    <Folder Include="Screens\Views\PopUpViews\" />
+    <Folder Include="Images\Icons\" />
+    <Folder Include="Images\Other\" />
+    <Folder Include="Utils\Enums\" />
+    <Folder Include="UI\" />
+    <Folder Include="UI\Base\" />
+    <Folder Include="UI\Base\CollectionView\" />
+    <Folder Include="UI\Menu\" />
+    <Folder Include="UI\Menu\MenuGroupCells\" />
+    <Folder Include="UI\Menu\MenuItemCells\" />
+    <Folder Include="UI\Menu\Interfaces\" />
+    <Folder Include="Resources\Images.xcassets\ViewGridIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\ViewLargeCellsIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\ViewSmallCellsIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\CloseIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\FavoriteOffIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\FavoriteOnIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\Directions.imageset\" />
+    <Folder Include="Resources\Images.xcassets\PinDrop.imageset\" />
+    <Folder Include="Resources\Images.xcassets\DoneIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\CancelIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\AddShoppingCart.imageset\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ITunesArtwork Include="iTunesArtwork" />
+    <ITunesArtwork Include="iTunesArtwork%402x" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Default.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Default%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Default-568h%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Default-736h%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Default-667h%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\Icon120.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\Icon180.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\Icon57.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\Icon114.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\Icon29.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\Icon58.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\Icon87.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\Icon80.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\Icon40.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\Icon50.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\Icon100.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\Icon152.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\Icon76.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\Icon167.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\ViewGridIcon.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\ViewGridIcon.imageset\ViewGridIcon.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\ViewGridIcon.imageset\ViewGridIcon%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\ViewGridIcon.imageset\ViewGridIcon%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\ViewLargeCellsIcon.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\ViewLargeCellsIcon.imageset\ViewLargeCellsIcon.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\ViewLargeCellsIcon.imageset\ViewLargeCellsIcon%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\ViewLargeCellsIcon.imageset\ViewLargeCellsIcon%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\ViewSmallCellsIcon.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\ViewSmallCellsIcon.imageset\ViewSmallCellsIcon.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\ViewSmallCellsIcon.imageset\ViewSmallCellsIcon%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\ViewSmallCellsIcon.imageset\ViewSmallCellsIcon%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\CloseIcon.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\CloseIcon.imageset\CloseIcon.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\CloseIcon.imageset\CloseIcon%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\CloseIcon.imageset\CloseIcon%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\FavoriteOffIcon.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\FavoriteOffIcon.imageset\FavoriteOffIcon.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\FavoriteOffIcon.imageset\FavoriteOffIcon%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\FavoriteOffIcon.imageset\FavoriteOffIcon%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\FavoriteOnIcon.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\FavoriteOnIcon.imageset\FavoriteOnIcon.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\FavoriteOnIcon.imageset\FavoriteOnIcon%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\FavoriteOnIcon.imageset\FavoriteOnIcon%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Directions.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Directions.imageset\ic_directions_white_36pt.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Directions.imageset\ic_directions_white_36pt_2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Directions.imageset\ic_directions_white_36pt_3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\PinDrop.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\PinDrop.imageset\ic_pin_drop_white_36pt.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\PinDrop.imageset\ic_pin_drop_white_36pt_2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\PinDrop.imageset\ic_pin_drop_white_36pt_3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\DoneIcon.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\DoneIcon.imageset\ic_done_white_36pt.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\DoneIcon.imageset\ic_done_white_36pt_2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\DoneIcon.imageset\ic_done_white_36pt_3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\CancelIcon.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\CancelIcon.imageset\ic_clear_white_36pt.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\CancelIcon.imageset\ic_clear_white_36pt_2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\CancelIcon.imageset\ic_clear_white_36pt_3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AddShoppingCart.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AddShoppingCart.imageset\ic_add_shopping_cart_white_36pt.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AddShoppingCart.imageset\ic_add_shopping_cart_white_36pt_2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AddShoppingCart.imageset\ic_add_shopping_cart_white_36pt_3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\packages\Xamarin.Insights.1.10.6\build\Xamarin.iOS10\Xamarin.Insights.targets" Condition="Exists('..\packages\Xamarin.Insights.1.10.6\build\Xamarin.iOS10\Xamarin.Insights.targets')" />
+  <ItemGroup>
+    <ProjectReference Include="..\Infrastructure.Data.SQLite2\Infrastructure.Data.SQLite2.csproj">
+      <Project>{2F10081D-2A32-43D0-A7B5-8B4B5205E523}</Project>
+      <Name>Infrastructure.Data.SQLite2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Common\Core\Loyalty.Hospitality\Domain.Services.Loyalty.Hospitality\Domain.Services.Loyalty.Hospitality.csproj">
+      <Project>{090F2121-340C-482E-ADAA-E5DF8440CF6C}</Project>
+      <Name>Domain.Services.Loyalty.Hospitality</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Common\Core\Loyalty.Hospitality\Infrastructure.Data.OmniService.Loyalty.Hospitality\Infrastructure.Data.OmniService.Loyalty.Hospitality.csproj">
+      <Project>{35497EC6-8E89-44A0-8531-827470002765}</Project>
+      <Name>Infrastructure.Data.OmniService.Loyalty.Hospitality</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Common\Core\Base\Domain.DataModel.Base\Domain.DataModel.Base.csproj">
+      <Project>{7BCAC03E-3B65-4CF4-9EBB-4EF353276D1C}</Project>
+      <Name>Domain.DataModel.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Common\Core\Loyalty\Domain.DataModel.Loyalty\Domain.DataModel.Loyalty.csproj">
+      <Project>{36A6FDFB-59D3-4618-92DD-0DEB8B6AB501}</Project>
+      <Name>Domain.DataModel.Loyalty</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Common\Core\Loyalty.Hospitality\Domain.DataModel.Loyalty.Hospitality\Domain.DataModel.Loyalty.Hospitality.csproj">
+      <Project>{539F8620-B7D5-4925-8038-45412674E776}</Project>
+      <Name>Domain.DataModel.Loyalty.Hospitality</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Common\Core\Base\Domain.Services.Base\Domain.Services.Base.csproj">
+      <Project>{9C38D897-021B-4743-92E4-AE9C0252D17F}</Project>
+      <Name>Domain.Services.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Common\Core\Loyalty\Domain.Services.Loyalty\Domain.Services.Loyalty.csproj">
+      <Project>{1BE9DD18-AFAF-4F25-A62D-E6BF109C180F}</Project>
+      <Name>Domain.Services.Loyalty</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Common\Core\Base\Infrastructure.Data.Omniservice\Infrastructure.Data.Omniservice.csproj">
+      <Project>{8DD497E3-7563-41C0-8543-0163F5702591}</Project>
+      <Name>Infrastructure.Data.Omniservice</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Common\Core\Loyalty\Infrastructure.Data.Omniservice.Loyalty\Infrastructure.Data.Omniservice.Loyalty.csproj">
+      <Project>{D007C2F6-6B6B-40A7-AF96-1AE94BCC0598}</Project>
+      <Name>Infrastructure.Data.Omniservice.Loyalty</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

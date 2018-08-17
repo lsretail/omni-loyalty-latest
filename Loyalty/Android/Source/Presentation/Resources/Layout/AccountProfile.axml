@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content">
+  
+  <TextView style="@style/HeadLineLight"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/BasePadding"
+            android:paddingBottom="@dimen/BasePadding"
+            android:paddingLeft="@dimen/BasePadding"
+            android:paddingRight="@dimen/BasePadding"
+            android:background="@color/accent"
+            android:text="@string/AccountProfilesViewProfiles"/>
+
+  <ViewSwitcher xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/AccountProfileViewSwitcher"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inAnimation="@android:anim/fade_in"
+                android:outAnimation="@android:anim/fade_out">
+
+    <ProgressBar android:id="@+id/AccountProfileViewLoadingSpinner"
+          style="?android:progressBarStyleLarge"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center" />
+
+    <LinearLayout android:id="@+id/AccountProfileViewContentView"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical">
+
+      <ListView style="@style/CustomListView"
+                android:id="@+id/AccountProfileViewList"
+                android:layout_width="fill_parent"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:footerDividersEnabled="false"/>
+
+      <LinearLayout android:id="@+id/AccountProfileViewEmptyView"
+                  android:layout_width="fill_parent"
+                  android:layout_height="fill_parent"
+                  android:orientation="vertical"
+                  android:visibility="gone">
+        <TextView style="@style/Subhead"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:gravity="center"
+                  android:paddingTop="100dp"
+                  android:text ="@string/AccountProfilesViewFailed"/>
+
+        <Button android:id="@+id/AccountProfileViewEmptyViewRetry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="150dp"
+                android:layout_gravity="center_horizontal"
+                android:text ="@string/AccountProfilesViewRetry"/>
+        
+      </LinearLayout>
+
+      <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:paddingLeft="@dimen/BasePadding"
+                    android:paddingRight="@dimen/BasePadding"
+                    android:paddingTop="@dimen/BasePadding"
+                    android:paddingBottom="@dimen/BasePadding">
+
+        <presentation.views.ColoredButton android:id="@+id/AccountProfilesCancel"
+                                              android:layout_width="0px"
+                                              android:layout_height="@dimen/ButtonHeight"
+                                              android:layout_weight="1"
+                                              android:layout_marginRight="@dimen/BasePadding"
+                                              android:focusable="false"
+                                              android:clickable="true"
+                                              app:roundCorners="true"
+                                              app:normalText="@string/AccountViewBack"
+                                              app:buttonColor="@color/accent"/>
+
+        <presentation.views.ColoredButton android:id="@+id/AccountProfilesCreate"
+                                              android:layout_width="0px"
+                                              android:layout_height="@dimen/ButtonHeight"
+                                              android:layout_weight="1"
+                                              android:focusable="false"
+                                              android:clickable="true"
+                                              app:roundCorners="true"
+                                              app:buttonColor="@color/accent"/>
+
+      </LinearLayout>
+      
+    </LinearLayout>
+    
+  </ViewSwitcher>
+  
+</LinearLayout>

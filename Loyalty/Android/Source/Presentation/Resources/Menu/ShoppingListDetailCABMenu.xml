@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:id="@+id/MenuViewItemInformation"
+        android:title="@string/ShoppingListDetailViewGoToItemInfo"/>
+  <item android:id="@+id/MenuViewChangeQty"
+        android:title="@string/ShoppingListDetailViewChangeQty"/>
+  <item android:id="@+id/MenuViewAddToAnotherList"
+        android:title="@string/ShoppingListDetailViewAddToAnotherList"/>
+  <item android:id="@+id/MenuViewAddToBasket"
+        android:title="@string/ApplicationAddToBasket"/>
+  <item android:id="@+id/MenuViewDeleteItemFromList"
+        android:title="@string/ShoppingListDetailViewDeleteItemFromList"/>
+</menu>

@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <!--<style name="ApplicationTheme" parent="@android:style/Theme.Light.NoTitleBar">
+  </style>-->
+
+  <!--<style name="BaseStyleLight" parent="Theme.AppCompat.Light">
+    <item name="android:windowBackground">@color/backgroundcolor</item>
+
+    <item name="android:listViewStyle">@style/ListViewLsAndroidLibrary</item>
+    <item name="android:listViewWhiteStyle">@style/ListViewLsAndroidLibrary.White</item>
+    <item name="android:spinnerItemStyle">@style/SpinnerItemLsAndroidLibrary</item>
+    <item name="android:expandableListViewStyle">@style/ExpandableListLsAndroidLibrary</item>
+  </style>-->
+
+  <!--<style name="BaseStyleLightDarkActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
+    <item name="android:windowBackground">@color/backgroundcolor</item>
+
+    <item name="android:listViewStyle">@style/ListViewLsAndroidLibrary</item>
+    <item name="android:listViewWhiteStyle">@style/ListViewLsAndroidLibrary.White</item>
+    <item name="android:spinnerItemStyle">@style/SpinnerItemLsAndroidLibrary</item>
+    <item name="android:expandableListViewStyle">@style/ExpandableListLsAndroidLibrary</item>
+  </style>
+
+  <style name="BaseStyleLightNoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="android:windowBackground">@color/backgroundcolor</item>
+
+    <item name="android:listViewStyle">@style/ListViewLsAndroidLibrary</item>
+    <item name="android:listViewWhiteStyle">@style/ListViewLsAndroidLibrary.White</item>
+    <item name="android:spinnerItemStyle">@style/SpinnerItemLsAndroidLibrary</item>
+    <item name="android:expandableListViewStyle">@style/ExpandableListLsAndroidLibrary</item>
+  </style>
+
+  <style name="BaseApplicationTheme" parent="@style/BaseStyleLightNoActionBar">
+    <item name="colorPrimary">@color/accent</item>
+    <item name="android:colorPrimaryDark">@color/accentdark</item>
+
+    <item name="colorControlNormal">@color/accentnormal</item>
+    <item name="colorControlActivated">@color/accentactivated</item>
+    <item name="colorControlHighlight">@color/accenthighlight</item>
+  </style>-->
+  
+  <!--<style name="ApplicationTheme" parent="@style/BaseApplicationTheme">
+    <item name="actionMenuTextColor">@color/white</item>
+    <item name="android:windowContentOverlay">@null</item>
+
+    <item name="android:progressBarStyleHorizontal">@style/ProgressBarLoyalty</item>
+  </style>-->
+
+  <style name="ApplicationTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+    <item name="android:windowBackground">@color/backgroundcolor</item>
+    
+    <item name="colorPrimary">@color/accent</item>
+    <item name="colorPrimaryDark">@color/accentdark</item>
+
+    <item name="colorControlNormal">@color/accentnormal</item>
+    <item name="colorControlActivated">@color/accentactivated</item>
+    <item name="colorControlHighlight">@color/accenthighlight</item>
+
+    <item name="colorAccent">@color/accentactivated</item>
+  </style>
+
+  <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="colorPrimaryDark">@color/accentdark</item>
+    <item name="android:windowBackground">@drawable/splash</item>
+  </style>
+
+  <style name="ApplicationThemeFullyTransparent" parent="@style/ApplicationTheme">
+    <item name="windowActionBarOverlay">true</item>
+  </style>
+
+  <style name="DividerLayout">
+    <item name="divider">@drawable/divider_vertical_bright_opaque</item>
+    <item name="showDividers">middle</item>
+    <item name="dividerPadding">12dp</item>
+  </style>
+
+  <style name="ListImage">
+    <item name="android:scaleType">fitCenter</item>
+    <item name="android:layout_width">70dp</item>
+    <item name="android:layout_height">70dp</item>
+    <item name="android:layout_gravity">center_vertical</item>
+  </style>
+  
+  <style name="LazyListImageContainer">
+    <!--<item name="android:layout_width">@dimen/ImageThumbnailSize</item>
+    <item name="android:layout_height">match_parent</item>
+    <item name="android:minHeight">64dp</item>-->
+    <item name="android:layout_gravity">center_vertical</item>
+  </style>
+  
+  <style name="LazyListImage">
+    <item name="android:scaleType">centerCrop</item>
+    <item name="android:layout_width">fill_parent</item>
+    <item name="android:layout_height">fill_parent</item>
+  </style>
+
+  <style name="ListItem">
+    <item name="android:layout_width">fill_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:minHeight">?android:attr/listPreferredItemHeight</item>
+    <item name="android:gravity">center_vertical</item>
+  </style>
+
+  <!-- BUTTONS -->
+
+  <style name="CustomBorderlessButton" parent="@style/Widget.AppCompat.Light.ActionButton">
+    <item name="android:background">@drawable/selecteble_background</item>
+  </style>
+
+  <!-- BUTTONS END -->
+
+  <!-- PROGRESS BAR -->
+
+  <style name="IndeterminateProgressDialogLarge" parent="@style/Widget.AppCompat.ProgressBar">
+    <item name="android:indeterminateTint">@color/accent</item>
+    <item name="android:indeterminateTintMode">src_in</item>
+    <item name="android:layout_height">@dimen/ProgressBarLargeSize</item>
+    <item name="android:layout_width">@dimen/ProgressBarLargeSize</item>
+  </style>
+
+  <style name="IndeterminateProgressDialog" parent="@style/Widget.AppCompat.ProgressBar">
+    <item name="android:indeterminateTint">@color/accent</item>
+    <item name="android:indeterminateTintMode">src_in</item>
+  </style>
+
+  <style name="CustomProgressDialog" parent="@android:style/Widget.Holo.Light.ProgressBar">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+  </style>
+
+  <!-- PROGRESS BAR END -->
+
+  <style name="CustomListView">
+    <item name="android:background">@color/transparent</item>
+    <item name="android:cacheColorHint">@color/transparent</item>
+    <item name="android:fadingEdge">none</item>
+    <item name="android:fadingEdgeLength">0dp</item>
+    <item name="android:overScrollMode">never</item>
+    <item name="android:overScrollHeader">@null</item>
+    <item name="android:overScrollFooter">@null</item>
+  </style>
+
+  <style name="LightHorizontalDivider">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">1dp</item>
+    <item name="android:background">@drawable/divider_vertical_bright_opaque</item>
+  </style>
+  
+  <!--HOLO STYLE-->
+  
+  <style name="ProgressBarLoyalty" parent="android:Widget.ProgressBar.Horizontal">
+    <item name="android:progressDrawable">@drawable/loyalty_progress_horizontal_holo_light</item>
+    <item name="android:minHeight">16dip</item>
+    <item name="android:maxHeight">16dip</item>
+  </style>
+  
+  <!--HOLO STYLE END-->
+
+  <!-- LIST -->
+
+  <style name="SelectableListItem">
+    <item name="android:foreground">@drawable/selecteble_background</item>
+  </style>
+
+  <style name="ListViewLsAndroidLibrary" parent="android:Widget.ListView">
+    <item name="android:listSelector">@drawable/lsandroidlibrary_list_selector_holo_light</item>
+  </style>
+
+  <style name="ListViewLsAndroidLibrary.White" parent="android:Widget.ListView.White">
+    <item name="android:listSelector">@drawable/lsandroidlibrary_list_selector_holo_light</item>
+  </style>
+
+  <style name="SpinnerItemLsAndroidLibrary" parent="android:TextAppearance.Widget.TextView.SpinnerItem">
+    <item name="android:textColor">#000000</item>
+  </style>
+
+  <style name="ExpandableListLsAndroidLibrary" parent="android:Widget.ExpandableListView">
+    <item name="android:listSelector">@drawable/lsandroidlibrary_list_selector_holo_light</item>
+  </style>
+
+  <!-- LIST END -->
+
+  <!-- TEXT STYLES -->
+
+  <style name="Display4">
+    <item name="android:textSize">112sp</item>
+    <item name="android:textColor">@color/black54</item>
+    <item name="android:fontFamily">sans-serif-thin</item>
+  </style>
+
+  <style name="Display3">
+    <item name="android:textSize">56sp</item>
+    <item name="android:textColor">@color/black54</item>
+  </style>
+
+  <style name="Display2">
+    <item name="android:textSize">45sp</item>
+    <item name="android:textColor">@color/black54</item>
+  </style>
+
+  <style name="Display1">
+    <item name="android:textSize">34sp</item>
+    <item name="android:textColor">@color/black54</item>
+  </style>
+
+  <style name="HeadLine">
+    <item name="android:textSize">24sp</item>
+    <item name="android:textColor">@color/black54</item>
+  </style>
+
+  <style name="Title">
+    <item name="android:textSize">20sp</item>
+    <item name="android:textColor">@color/black87</item>
+    <item name="android:fontFamily">sans-serif-condensed</item>
+    <!--MEDIUM-->
+  </style>
+
+  <style name="Subhead">
+    <item name="android:textSize">16sp</item>
+    <item name="android:textColor">@color/black87</item>
+  </style>
+
+  <style name="Body2">
+    <item name="android:textSize">14sp</item>
+    <item name="android:textColor">@color/black87</item>
+    <item name="android:fontFamily">sans-serif-condensed</item>
+    <!--MEDIUM-->
+  </style>
+
+  <style name="Body1">
+    <item name="android:textSize">14sp</item>
+    <item name="android:textColor">@color/black87</item>
+  </style>
+
+  <style name="Caption">
+    <item name="android:textSize">12sp</item>
+    <item name="android:textColor">@color/black54</item>
+  </style>
+
+  <style name="Menu">
+    <item name="android:textSize">14sp</item>
+    <item name="android:textColor">@color/black87</item>
+    <item name="android:fontFamily">sans-serif-condensed</item>
+  </style>
+
+  <style name="Button">
+    <item name="android:textSize">14sp</item>
+    <item name="android:textColor">@color/black87</item>
+    <item name="android:fontFamily">sans-serif-condensed</item>
+    <item name="android:textAllCaps">true</item>
+  </style>
+
+  <!-- WHITE -->
+
+  <style name="Display4Light">
+    <item name="android:textSize">112sp</item>
+    <item name="android:textColor">@color/white54</item>
+    <item name="android:fontFamily">sans-serif-thin</item>
+  </style>
+
+  <style name="Display3Light">
+    <item name="android:textSize">56sp</item>
+    <item name="android:textColor">@color/white54</item>
+  </style>
+
+  <style name="Display2Light">
+    <item name="android:textSize">45sp</item>
+    <item name="android:textColor">@color/white54</item>
+  </style>
+
+  <style name="Display1Light">
+    <item name="android:textSize">34sp</item>
+    <item name="android:textColor">@color/white54</item>
+  </style>
+
+  <style name="HeadLineLight">
+    <item name="android:textSize">24sp</item>
+    <item name="android:textColor">@color/white54</item>
+  </style>
+
+  <style name="TitleLight">
+    <item name="android:textSize">20sp</item>
+    <item name="android:textColor">@color/white87</item>
+    <item name="android:fontFamily">sans-serif-condensed</item>
+    <!--MEDIUM-->
+  </style>
+
+  <style name="SubheadLight">
+    <item name="android:textSize">16sp</item>
+    <item name="android:textColor">@color/white87</item>
+  </style>
+
+  <style name="Body2Light">
+    <item name="android:textSize">14sp</item>
+    <item name="android:textColor">@color/white87</item>
+    <item name="android:fontFamily">sans-serif-condensed</item>
+    <!--MEDIUM-->
+  </style>
+
+  <style name="Body1Light">
+    <item name="android:textSize">14sp</item>
+    <item name="android:textColor">@color/white87</item>
+  </style>
+
+  <style name="CaptionLight">
+    <item name="android:textSize">12sp</item>
+    <item name="android:textColor">@color/white54</item>
+  </style>
+
+  <style name="MenuLight">
+    <item name="android:textSize">14sp</item>
+    <item name="android:textColor">@color/white87</item>
+    <item name="android:fontFamily">sans-serif-condensed</item>
+  </style>
+
+  <style name="ButtonLight">
+    <item name="android:textSize">14sp</item>
+    <item name="android:textColor">@color/white87</item>
+    <item name="android:fontFamily">sans-serif-condensed</item>
+    <item name="android:textAllCaps">true</item>
+  </style>
+
+  <!-- TEXT STYLES END -->
+</resources>

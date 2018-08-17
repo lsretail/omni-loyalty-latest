@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+  <LinearLayout android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:animateLayoutChanges="true">
+
+    <!--LOGIN INFORMATION-->
+
+    <TextView style="@style/HeadLineLight"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:paddingTop="@dimen/BasePadding"
+              android:paddingBottom="@dimen/BasePadding"
+              android:paddingLeft="@dimen/BasePadding"
+              android:paddingRight="@dimen/BasePadding"
+              android:background="@color/accent"
+              android:text="@string/AccountInformationAccountInformation"/>
+
+    <!-- USERNAME -->
+
+    <android.support.design.widget.TextInputLayout android:id="@+id/AccountInformationViewUserNameInputLayout"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:paddingTop="@dimen/BasePadding"
+                                                   android:layout_marginLeft="@dimen/BasePadding"
+                                                   android:layout_marginRight="@dimen/BasePadding">
+
+      <EditText android:id="@+id/AccountInformationViewUserName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/AccountInformationViewUserName"
+                android:inputType="text"
+                android:imeOptions="actionNext"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <!-- EMAIL -->
+
+    <android.support.design.widget.TextInputLayout android:id="@+id/AccountInformationViewEmailInputLayout"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:paddingTop="@dimen/HalfBasePadding"
+                                                   android:layout_marginLeft="@dimen/BasePadding"
+                                                   android:layout_marginRight="@dimen/BasePadding">
+
+      <EditText android:id="@+id/AccountInformationViewEmail"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/AccountInformationViewEmail"
+                android:inputType="textEmailAddress"
+                android:imeOptions="actionNext"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <!--PASSWORD BOXES-->
+
+    <LinearLayout android:id="@+id/AccountInformationViewPasswordFields"
+                  android:orientation="vertical"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:animateLayoutChanges="true">
+
+      <!--<TextView style="@style/Subhead"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/HalfBasePadding"
+                android:paddingLeft="@dimen/BasePadding"
+                android:paddingRight="@dimen/BasePadding"
+                android:text="@string/AccountInformationViewPassword"/>-->
+
+
+
+      <android.support.design.widget.TextInputLayout android:id="@+id/AccountInformationViewPasswordInputLayout"
+                                                     android:layout_width="match_parent"
+                                                     android:layout_height="wrap_content"
+                                                     android:paddingTop="@dimen/HalfBasePadding"
+                                                     android:layout_marginLeft="@dimen/BasePadding"
+                                                     android:layout_marginRight="@dimen/BasePadding">
+
+        <EditText android:id="@+id/AccountInformationViewPassword"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:hint="@string/AccountInformationViewPassword"
+                  android:inputType="textPassword"
+                  android:imeOptions="actionNext"/>
+
+      </android.support.design.widget.TextInputLayout>
+
+      <!--<TextView style="@style/Caption"
+                android:id="@+id/AccountInformationPasswordPolicy"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/BaseInsetPadding"
+                android:paddingRight="@dimen/BaseInsetPadding"
+                android:textColor="@color/accent"
+                android:visibility="gone"/>
+
+      <TextView style="@style/Subhead"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/HalfBasePadding"
+                android:paddingLeft="@dimen/BasePadding"
+                android:paddingRight="@dimen/BasePadding"
+                android:text="@string/AccountInformationViewPasswordConfirmation"/>-->
+
+      <android.support.design.widget.TextInputLayout android:id="@+id/AccountInformationViewPasswordConfirmInputLayout"
+                                                     android:layout_width="match_parent"
+                                                     android:layout_height="wrap_content"
+                                                     android:paddingTop="@dimen/HalfBasePadding"
+                                                     android:layout_marginLeft="@dimen/BasePadding"
+                                                     android:layout_marginRight="@dimen/BasePadding">
+
+        <EditText android:id="@+id/AccountInformationViewPasswordConfirm"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:hint="@string/AccountInformationViewPasswordConfirmation"
+                  android:inputType="textPassword"
+                  android:imeOptions="actionNext"/>
+
+      </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
+
+    <!--CHANGE PASSWORD BUTTON-->
+    <LinearLayout android:id="@+id/AccountInformationViewChangePassword"
+                  android:orientation="vertical"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content">
+
+      <!--<TextView style="@style/Subhead"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/HalfBasePadding"
+                android:paddingLeft="@dimen/BasePadding"
+                android:paddingRight="@dimen/BasePadding"
+                android:text="@string/AccountInformationViewPassword"/>-->
+
+      <presentation.views.ColoredButton android:id="@+id/AccountInformationViewChangePasswordButton"
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="@dimen/ButtonHeight"
+                                            android:layout_marginLeft="@dimen/BasePadding"
+                                            android:layout_marginRight="@dimen/BasePadding"
+                                            android:layout_marginTop="@dimen/HalfBasePadding"
+                                            android:layout_marginBottom="@dimen/HalfBasePadding"
+                                            android:focusable="false"
+                                            android:clickable="true"
+                                            app:roundCorners="true"
+                                            app:normalText="@string/AccountInformationViewChangePassword"
+                                            app:buttonColor="@color/accent"/>
+
+    </LinearLayout>
+
+    <!--ACCOUNT INFORMATION-->
+
+    <TextView style="@style/HeadLineLight"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/BasePadding"
+            android:paddingBottom="@dimen/BasePadding"
+            android:paddingLeft="@dimen/BasePadding"
+            android:paddingRight="@dimen/BasePadding"
+            android:layout_marginTop="@dimen/HalfBasePadding"
+            android:background="@color/accent"
+            android:text="@string/AccountInformationPersonalInformation"/>
+
+      <!--<TextView style="@style/Subhead"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/HalfBasePadding"
+                android:paddingLeft="@dimen/BasePadding"
+                android:paddingRight="@dimen/BasePadding"
+                android:text="@string/AccountInformationViewFirstName"/>-->
+
+    <android.support.design.widget.TextInputLayout android:id="@+id/AccountInformationViewNameInputLayout"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:paddingTop="@dimen/HalfBasePadding"
+                                                   android:layout_marginLeft="@dimen/BasePadding"
+                                                   android:layout_marginRight="@dimen/BasePadding">
+
+      <EditText android:id="@+id/AccountInformationViewName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/AccountInformationViewName"
+                android:inputType="text"
+                android:imeOptions="actionNext"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <!--<TextView style="@style/Subhead"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:paddingTop="@dimen/HalfBasePadding"
+              android:paddingLeft="@dimen/BasePadding"
+              android:paddingRight="@dimen/BasePadding"
+              android:text="@string/AccountInformationViewMiddleName"/>-->
+
+    <!--<EditText android:id="@+id/AccountInformationViewMiddleName"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="@dimen/BasePadding"
+              android:layout_marginRight="@dimen/BasePadding"
+              android:inputType="text"
+              android:imeOptions="actionNext"/>
+
+    <TextView style="@style/Subhead"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:paddingTop="@dimen/HalfBasePadding"
+              android:paddingLeft="@dimen/BasePadding"
+              android:paddingRight="@dimen/BasePadding"
+              android:text="@string/AccountInformationViewLastName"/>
+
+    <EditText android:id="@+id/AccountInformationViewLastName"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="@dimen/BasePadding"
+              android:layout_marginRight="@dimen/BasePadding"
+              android:typeface="monospace"
+              android:inputType="text"
+              android:imeOptions="actionNext"/>-->
+
+    <!--<TextView style="@style/Subhead"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:paddingTop="@dimen/HalfBasePadding"
+              android:paddingLeft="@dimen/BasePadding"
+              android:paddingRight="@dimen/BasePadding"
+              android:text="@string/AccountInformationViewPhone"/>-->
+
+    <android.support.design.widget.TextInputLayout android:id="@+id/AccountInformationViewPhoneInputLayout"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:paddingTop="@dimen/HalfBasePadding"
+                                                   android:layout_marginLeft="@dimen/BasePadding"
+                                                   android:layout_marginRight="@dimen/BasePadding">
+
+      <EditText android:id="@+id/AccountInformationViewPhone"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/AccountInformationViewPhone"
+                android:inputType="number"
+                android:imeOptions="actionNext"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <!--<TextView style="@style/Subhead"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:paddingTop="@dimen/HalfBasePadding"
+              android:paddingLeft="@dimen/BasePadding"
+              android:paddingRight="@dimen/BasePadding"
+              android:text="@string/AccountInformationViewAddressOne"/>-->
+
+    <android.support.design.widget.TextInputLayout android:id="@+id/AccountInformationViewAddressOneInputLayout"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:paddingTop="@dimen/HalfBasePadding"
+                                                   android:layout_marginLeft="@dimen/BasePadding"
+                                                   android:layout_marginRight="@dimen/BasePadding">
+
+      <EditText android:id="@+id/AccountInformationViewAddressOne"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/AccountInformationViewAddressOne"
+                android:inputType="text"
+                android:imeOptions="actionNext"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <!--<TextView style="@style/Subhead"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:paddingTop="@dimen/HalfBasePadding"
+              android:paddingLeft="@dimen/BasePadding"
+              android:paddingRight="@dimen/BasePadding"
+              android:text="@string/AccountInformationViewAddressTwo"/>-->
+
+
+
+    <android.support.design.widget.TextInputLayout android:id="@+id/AccountInformationViewAddressTwoInputLayout"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:paddingTop="@dimen/HalfBasePadding"
+                                                   android:layout_marginLeft="@dimen/BasePadding"
+                                                   android:layout_marginRight="@dimen/BasePadding">
+
+      <EditText android:id="@+id/AccountInformationViewAddressTwo"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/AccountInformationViewAddressTwo"
+                android:inputType="text"
+                android:imeOptions="actionNext"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <!--<TextView style="@style/Subhead"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:paddingTop="@dimen/HalfBasePadding"
+              android:paddingLeft="@dimen/BasePadding"
+              android:paddingRight="@dimen/BasePadding"
+              android:text="@string/AccountInformationViewCity"/>-->
+
+    <android.support.design.widget.TextInputLayout android:id="@+id/AccountInformationViewCityInputLayout"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:paddingTop="@dimen/HalfBasePadding"
+                                                   android:layout_marginLeft="@dimen/BasePadding"
+                                                   android:layout_marginRight="@dimen/BasePadding">
+
+      <EditText android:id="@+id/AccountInformationViewCity"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/AccountInformationViewCity"
+                android:inputType="text"
+                android:imeOptions="actionNext"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <!--<TextView style="@style/Subhead"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:paddingTop="@dimen/HalfBasePadding"
+              android:paddingLeft="@dimen/BasePadding"
+              android:paddingRight="@dimen/BasePadding"
+              android:text="@string/AccountInformationViewState"/>-->
+
+    <android.support.design.widget.TextInputLayout android:id="@+id/AccountInformationViewStateInputLayout"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:paddingTop="@dimen/HalfBasePadding"
+                                                   android:layout_marginLeft="@dimen/BasePadding"
+                                                   android:layout_marginRight="@dimen/BasePadding">
+
+      <EditText android:id="@+id/AccountInformationViewState"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/AccountInformationViewState"
+                android:inputType="text"
+                android:imeOptions="actionNext"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <!--<TextView style="@style/Subhead"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:paddingTop="@dimen/HalfBasePadding"
+              android:paddingLeft="@dimen/BasePadding"
+              android:paddingRight="@dimen/BasePadding"
+              android:text="@string/AccountInformationViewPostCode"/>-->
+
+    <android.support.design.widget.TextInputLayout android:id="@+id/AccountInformationViewPostCodeInputLayout"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:paddingTop="@dimen/HalfBasePadding"
+                                                   android:layout_marginLeft="@dimen/BasePadding"
+                                                   android:layout_marginRight="@dimen/BasePadding">
+
+      <EditText android:id="@+id/AccountInformationViewPostCode"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/AccountInformationViewPostCode"
+                android:inputType="text"
+                android:imeOptions="actionNext"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <!--<TextView style="@style/Subhead"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:paddingTop="@dimen/HalfBasePadding"
+              android:paddingLeft="@dimen/BasePadding"
+              android:paddingRight="@dimen/BasePadding"
+              android:text="@string/AccountInformationViewCountry"/>-->
+
+    <android.support.design.widget.TextInputLayout android:id="@+id/AccountInformationViewCountryInputLayout"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:paddingTop="@dimen/HalfBasePadding"
+                                                   android:layout_marginLeft="@dimen/BasePadding"
+                                                   android:layout_marginRight="@dimen/BasePadding"
+                                                   android:layout_marginBottom="@dimen/HalfBasePadding">
+
+      <EditText android:id="@+id/AccountInformationViewCountry"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/AccountInformationViewCountry"
+                android:inputType="text"
+                android:imeOptions="actionDone"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <presentation.views.ColoredButton android:id="@+id/AccountInformationNext"
+                                          android:layout_width="fill_parent"
+                                          android:layout_height="@dimen/ButtonHeight"
+                                          android:layout_marginLeft="@dimen/BasePadding"
+                                          android:layout_marginRight="@dimen/BasePadding"
+                                          android:layout_marginTop="@dimen/HalfBasePadding"
+                                          android:layout_marginBottom="@dimen/BasePadding"
+                                          android:focusable="false"
+                                          android:clickable="true"
+                                          app:roundCorners="true"
+                                          app:normalText="@string/ApplicationNext"
+                                          app:buttonColor="@color/accent"/>
+  </LinearLayout>
+</ScrollView>

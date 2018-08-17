@@ -1,0 +1,67 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              style="@style/SelectableListItem"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/white"
+              android:orientation="vertical"
+              android:paddingTop="@dimen/BasePadding">
+
+  <TextView style="@style/Subhead"
+            android:id="@+id/FavoriteTransactionDetailHeaderTitle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/BasePadding"
+            android:paddingRight="@dimen/BasePadding"
+            android:singleLine="true"
+            android:ellipsize="end" />
+
+  <LinearLayout android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/HalfBasePadding"
+                android:paddingLeft="@dimen/BasePadding"
+                android:paddingRight="@dimen/BasePadding"
+                android:orientation="horizontal">
+
+    <TextView style="@style/Body1"
+              android:id="@+id/FavoriteTransactionDetailHeaderSubTitle"
+              android:layout_width="0px"
+              android:layout_height="wrap_content"
+              android:layout_weight="1"
+              android:layout_marginRight="@dimen/BasePadding"
+              android:textColor="@color/black54"
+              android:singleLine="true"
+              android:ellipsize="end" />
+
+    <TextView style="@style/Body1"
+              android:id="@+id/FavoriteTransactionDetailHeaderPrice"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_weight="0"
+              android:textColor="@color/accent" />
+
+  </LinearLayout>
+
+  <RelativeLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content">
+
+    <Button style="@style/CustomBorderlessTransparentButtonPadding"
+            android:id="@+id/FavoriteTransactionDetailHeaderDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/MinTouchHeight"
+            android:layout_gravity="center_vertical"
+            android:focusable="false"
+            android:text="@string/Delete" />
+
+    <Button style="@style/CustomBorderlessTransparentButtonPadding"
+            android:id="@+id/FavoriteTransactionDetailHeaderAddToBasket"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/MinTouchHeight"
+            android:layout_gravity="center_vertical"
+            android:layout_toRightOf="@+id/FavoriteTransactionDetailHeaderDelete"
+            android:focusable="false"
+            android:text="@string/AddToBasket"
+            android:textColor="@color/accent" />
+
+  </RelativeLayout>
+
+</LinearLayout>

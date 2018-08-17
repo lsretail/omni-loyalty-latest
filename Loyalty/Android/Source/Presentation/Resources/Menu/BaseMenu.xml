@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <!--<item android:id="@+id/MenuViewSettings"
+        android:title="@string/MenuViewSettingsTitle"
+        android:orderInCategory="20"/>-->
+  <!--<item android:id="@+id/MenuViewAccountManagement"
+        android:title="@string/MenuViewAccountManagementTitle"
+        android:orderInCategory="30"/>-->
+  <!--<item android:id="@+id/MenuViewHelp"
+        android:title="@string/MenuViewHelp" 
+        android:orderInCategory="40"/>-->
+  <item android:id="@+id/MenuViewContactUs"
+        android:title="@string/MenuViewContactUs"
+        android:orderInCategory="40"/>
+</menu>

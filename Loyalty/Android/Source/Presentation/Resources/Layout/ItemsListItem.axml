@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             style="@style/SelectableListItem"
+             android:layout_height="wrap_content"
+             android:layout_width="fill_parent">
+
+  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/OneLineListItemHeight"
+                android:paddingLeft="@dimen/BasePadding"
+                android:paddingRight="@dimen/BasePadding"
+                android:background="@drawable/list_cell_background"
+                style="@style/ListItem">
+
+    <FrameLayout android:id="@+id/ItemsListItemViewItemImageContainer"
+                 android:layout_height="@dimen/ListImageHeight"
+                 android:layout_width="@dimen/ListImageHeight"
+                 android:layout_marginRight="@dimen/SecondaryBasePadding">
+
+      <ImageView style="@style/LazyListImage"
+                 android:id="@+id/ItemsListItemViewItemImage"
+                 android:layout_height="fill_parent"
+                 android:layout_width="fill_parent" />
+
+    </FrameLayout>
+
+    <TextView style="@style/Subhead"
+              android:id="@+id/ItemsListItemViewItemTitle"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:singleLine="true"
+              android:ellipsize="end" />
+
+  </LinearLayout>
+
+</FrameLayout>

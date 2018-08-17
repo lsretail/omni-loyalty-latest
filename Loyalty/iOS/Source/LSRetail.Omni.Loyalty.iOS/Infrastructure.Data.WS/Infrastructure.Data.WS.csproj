@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{923ED8CA-A6C0-40EB-A3E3-BD71A41BFE94}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Infrastructure.Data.WS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>Infrastructure.Data.WS</AssemblyName>
+    <TargetFrameworkIdentifier>Xamarin.iOS</TargetFrameworkIdentifier>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release Internal|iPhone' ">
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Release Internal</OutputPath>
+    <DefineConstants></DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\3rdPartyComponents\LSOmniServicePCL\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="Plugin.Settings">
+      <HintPath>..\..\..\..\3rdPartyComponents\LSOmniServicePCL\Xam.Plugins.Settings\lib\Xamarin.iOS10\Plugin.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings.Abstractions">
+      <HintPath>..\..\..\..\3rdPartyComponents\LSOmniServicePCL\Xam.Plugins.Settings\lib\MonoTouch10\Plugin.Settings.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="LSOmniServicePCL">
+      <HintPath>..\..\..\..\3rdPartyComponents\LSOmniServicePCL\LSOmniServicePCL.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Addresses\" />
+    <Folder Include="Base\" />
+    <Folder Include="Basket\" />
+    <Folder Include="Devices\" />
+    <Folder Include="Images\" />
+    <Folder Include="Items\" />
+    <Folder Include="MemberAccounts\" />
+    <Folder Include="MemberContacts\" />
+    <Folder Include="Notifications\" />
+    <Folder Include="Offers\" />
+    <Folder Include="Profiles\" />
+    <Folder Include="Properties\" />
+    <Folder Include="Search\" />
+    <Folder Include="Stores\" />
+    <Folder Include="Transactions\" />
+    <Folder Include="Utils\" />
+    <Folder Include="ClickCollect\" />
+    <Folder Include="Debugs\" />
+    <Folder Include="OneList\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Addresses\AddressFactory.cs">
+      <Link>Addresses\AddressFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Base\BaseRepository.cs">
+      <Link>Base\BaseRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Basket\BasketFactory.cs">
+      <Link>Basket\BasketFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Basket\BasketRepository.cs">
+      <Link>Basket\BasketRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Devices\DeviceFactory.cs">
+      <Link>Devices\DeviceFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Images\ImageFactory.cs">
+      <Link>Images\ImageFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Images\ImageRepository.cs">
+      <Link>Images\ImageRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Items\ItemCategoryFactory.cs">
+      <Link>Items\ItemCategoryFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Items\ItemFactory.cs">
+      <Link>Items\ItemFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Items\ItemRepository.cs">
+      <Link>Items\ItemRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Items\ProductGroupFactory.cs">
+      <Link>Items\ProductGroupFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Items\UnitOfMeasureFactory.cs">
+      <Link>Items\UnitOfMeasureFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Items\VariantFactory.cs">
+      <Link>Items\VariantFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\MemberAccounts\MemberAccountFactory.cs">
+      <Link>MemberAccounts\MemberAccountFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\MemberContacts\MemberContactFactory.cs">
+      <Link>MemberContacts\MemberContactFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\MemberContacts\MemberContactRepository.cs">
+      <Link>MemberContacts\MemberContactRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Notifications\NotificationFactory.cs">
+      <Link>Notifications\NotificationFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Notifications\NotificationRepository.cs">
+      <Link>Notifications\NotificationRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Offers\OfferFactory.cs">
+      <Link>Offers\OfferFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Offers\OfferRepository.cs">
+      <Link>Offers\OfferRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Profiles\ProfileFactory.cs">
+      <Link>Profiles\ProfileFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Profiles\ProfileRepository.cs">
+      <Link>Profiles\ProfileRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Search\SeachFactory.cs">
+      <Link>Search\SeachFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Search\SearchRepository.cs">
+      <Link>Search\SearchRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Stores\StoreFactory.cs">
+      <Link>Stores\StoreFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Stores\StoreRepository.cs">
+      <Link>Stores\StoreRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Transactions\TransactionFactory.cs">
+      <Link>Transactions\TransactionFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Transactions\TransactionRepository.cs">
+      <Link>Transactions\TransactionRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Utils\ErrorHandler.cs">
+      <Link>Utils\ErrorHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Utils\ErrorMessageGenerator.cs">
+      <Link>Utils\ErrorMessageGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Utils\WSError.cs">
+      <Link>Utils\WSError.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Utils\Utils.cs">
+      <Link>Utils\Utils.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\ClickCollect\ClickCollectFactory.cs">
+      <Link>ClickCollect\ClickCollectFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\ClickCollect\ClickCollectRepository.cs">
+      <Link>ClickCollect\ClickCollectRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Debugs\DebugRepository.cs">
+      <Link>Debugs\DebugRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\OneList\OneListFactory.cs">
+      <Link>OneList\OneListFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\OneList\OneListRepository.cs">
+      <Link>OneList\OneListRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Items\VariantExtFactory.cs">
+      <Link>Items\VariantExtFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Items\VariantRegistrationFactory.cs">
+      <Link>Items\VariantRegistrationFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Infrastructure\Infrastructure.Data.WS\Items\ItemLinkFactory.cs">
+      <Link>Items\ItemLinkFactory.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+</Project>

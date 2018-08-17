@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2011
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{C1612441-EC89-4517-97A8-757E1202C895}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{37726E0D-4361-4238-8A12-F79134E0436D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{17C880EB-2FDC-47DC-8690-6FC618759446}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{FE9298DA-7BDF-42E3-9D39-567DF3D7906C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Data.WS", "Source\Infrastructure\Infrastructure.Data.WS\Infrastructure.Data.WS.csproj", "{F205AA43-427D-4CC2-972E-7CAED85FF33C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Data.Mock", "Source\Infrastructure\Infrastructure.Data.Mock\Infrastructure.Data.Mock.csproj", "{9B57A76D-3A32-4039-B48F-F84689ACF811}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Data.SQLite2", "Source\Infrastructure\Infrastructure.Data.SQLite2\Infrastructure.Data.SQLite2.csproj", "{CA9F29C3-F220-4A7A-8CC3-5A32CAEA022A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F205AA43-427D-4CC2-972E-7CAED85FF33C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F205AA43-427D-4CC2-972E-7CAED85FF33C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F205AA43-427D-4CC2-972E-7CAED85FF33C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F205AA43-427D-4CC2-972E-7CAED85FF33C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B57A76D-3A32-4039-B48F-F84689ACF811}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B57A76D-3A32-4039-B48F-F84689ACF811}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B57A76D-3A32-4039-B48F-F84689ACF811}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B57A76D-3A32-4039-B48F-F84689ACF811}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA9F29C3-F220-4A7A-8CC3-5A32CAEA022A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA9F29C3-F220-4A7A-8CC3-5A32CAEA022A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA9F29C3-F220-4A7A-8CC3-5A32CAEA022A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA9F29C3-F220-4A7A-8CC3-5A32CAEA022A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{17C880EB-2FDC-47DC-8690-6FC618759446} = {37726E0D-4361-4238-8A12-F79134E0436D}
+		{F205AA43-427D-4CC2-972E-7CAED85FF33C} = {17C880EB-2FDC-47DC-8690-6FC618759446}
+		{9B57A76D-3A32-4039-B48F-F84689ACF811} = {17C880EB-2FDC-47DC-8690-6FC618759446}
+		{CA9F29C3-F220-4A7A-8CC3-5A32CAEA022A} = {17C880EB-2FDC-47DC-8690-6FC618759446}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CBD157C7-44B5-41BA-BD8B-DEDA4195DA7E}
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Source\Domain\Domain\Domain.csproj
+	EndGlobalSection
+EndGlobal

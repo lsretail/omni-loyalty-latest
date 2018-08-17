@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <integer name="GridColumnCount">4</integer>
+  <integer name="StaggeredGridColumnCount">3</integer>
+  <dimen name="FloatingActionButtonListPadding">0px</dimen>
+  <dimen name="BigScreenListPadding">96dp</dimen>
+  <dimen name="BigScreenPanePadding">192dp</dimen>
+  <dimen name="HeaderImageHeight">330dp</dimen>
+
+  <dimen name="MaxLogoHeight">240dp</dimen>
+</resources>

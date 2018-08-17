@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+  <FrameLayout android:id="@+id/CardStoreImageContainer"
+                   android:layout_width="fill_parent"
+                   android:layout_height="0px"
+                   android:layout_margin="@dimen/CardHalfMargin"
+                   android:layout_weight="1">
+    <ImageView android:id="@+id/CardStoreImage"
+               android:layout_width="fill_parent"
+               android:layout_height="fill_parent"
+               android:scaleType="centerCrop"/>
+  </FrameLayout>
+  <LinearLayout android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/SmallCardTextHeight"
+                android:layout_weight="0">
+    <TextView android:id="@+id/CardStoreDescription"
+              style="@style/TextViewNormal"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:singleLine="true"
+              android:ellipsize="end"/>
+    <TextView android:id="@+id/CardStoreSecondaryDescription"
+              style="@style/TextViewNormal"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:textColor="@color/secondarytextcolor"
+              android:lines="1"
+              android:singleLine="true"
+              android:ellipsize="end"/>
+  </LinearLayout>
+</merge>
+

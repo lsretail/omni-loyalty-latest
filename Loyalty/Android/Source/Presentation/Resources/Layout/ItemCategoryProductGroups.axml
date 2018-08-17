@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ViewSwitcher xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/ItemCategoryProductGroupsViewSwitcher"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:inAnimation="@android:anim/fade_in"
+              android:outAnimation="@android:anim/fade_out"
+              android:background="@color/fragmentbackground">
+
+  <LinearLayout android:id="@+id/ItemCategoryProductGroupsViewContent"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical">
+    <ExpandableListView style="@style/CustomListView"
+                        android:id="@+id/ItemCategoryProductGroupsViewList"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:groupIndicator="@null"
+                        android:headerDividersEnabled="false"/>
+    <LinearLayout android:id="@+id/ItemCategoryProductGroupsViewEmptyView"
+                  android:layout_width="fill_parent"
+                  android:layout_height="fill_parent"
+                  android:orientation="vertical">
+      <TextView style="@style/TextViewNormal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="100dp"
+                android:text ="@string/ItemCategoryViewFailed"/>
+
+      <Button android:id="@+id/ItemCategoryProductGroupsViewEmptyViewRetry"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:minWidth="150dp"
+              android:layout_gravity="center_horizontal"
+              android:text ="@string/ItemCategoryViewRetry"/>
+    </LinearLayout>
+  </LinearLayout>
+
+  <ProgressBar android:id="@+id/ItemCategoryProductGroupsViewLoadingSpinner"
+        style="?android:progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+</ViewSwitcher>
+

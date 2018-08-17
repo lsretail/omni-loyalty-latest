@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <integer name="CardColumns">4</integer>
+  <dimen name="BigScreenPanePadding">112dp</dimen>
+  <dimen name="DetailImageSize">270dp</dimen>
+</resources>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:id="@+id/MenuViewShare"
+        android:title="@string/MenuViewShare"
+        android:icon="@drawable/ic_action_share"
+        android:showAsAction="always" >
+    <!-- "file" submenu -->
+    <!--<menu>
+      <item android:id="@+id/MenuViewGooglePlusShare"
+            android:icon="@drawable/ic_action_google_plus"
+            android:title="@string/MenuViewGooglePlus" />
+      <item android:id="@+id/MenuViewFacebookShare"
+            android:icon="@drawable/ic_action_facebook"
+            android:title="@string/MenuViewFacebook" 
+            android:showAsAction="always"/>
+    </menu>-->
+  </item>
+</menu>

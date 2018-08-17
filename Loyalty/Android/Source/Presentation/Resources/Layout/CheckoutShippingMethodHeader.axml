@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+        <TextView
+            style="@style/Subhead"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/BasePadding"
+            android:layout_marginLeft="@dimen/BasePadding"
+            android:layout_marginRight="@dimen/BasePadding"
+            android:text="@string/CheckoutViewShippingMethod" />
+        <Spinner
+            android:id="@+id/CheckoutShippingMethodHeaderViewShippingMethod"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/OneLineListItemHeight"
+            android:layout_marginLeft="@dimen/BasePadding"
+            android:layout_marginRight="@dimen/BasePadding" />
+        <ViewSwitcher
+            android:id="@+id/CheckoutShippingMethodHeaderViewStoresViewSwitcher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inAnimation="@android:anim/fade_in"
+            android:outAnimation="@android:anim/fade_out"
+            android:layout_marginBottom="@dimen/HalfBasePadding">
+            <LinearLayout
+                android:id="@+id/CheckoutShippingMethodHeaderViewStoresContent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent">
+                <TextView
+                    style="@style/Subhead"
+                    android:id="@+id/CheckoutShippingMethodHeaderViewStoreHeader"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/BasePadding"
+                    android:layout_marginLeft="@dimen/BasePadding"
+                    android:layout_marginRight="@dimen/BasePadding"
+                    android:text="@string/CheckoutViewStoreToPickup" />
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent">
+                    <Spinner
+                        android:id="@+id/CheckoutShippingMethodHeaderViewStores"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="@dimen/OneLineListItemHeight"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/BasePadding"
+                        android:layout_marginRight="@dimen/BasePadding" />
+                    <ImageButton
+                        style="@style/CustomBorderlessButton"
+                        android:id="@+id/CheckoutShippingMethodHeaderViewStoresOnMap"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/MinTouchSize"
+                        android:layout_weight="0"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="@dimen/BasePadding"
+                        android:src="@drawable/ic_action_map" />
+                </LinearLayout>
+            </LinearLayout>
+            <ProgressBar
+                android:id="@+id/CheckoutShippingMethodHeaderViewStoresProgress"
+                style="?android:progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+        </ViewSwitcher>
+        <TextView
+            style="@style/Subhead"
+            android:id="@+id/CheckoutShippingMethodHeaderViewUnavailableItems"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/HalfBasePadding"
+            android:layout_marginBottom="@dimen/HalfBasePadding"
+            android:layout_marginLeft="@dimen/BasePadding"
+            android:layout_marginRight="@dimen/BasePadding"
+            android:textColor="@color/negative"
+            android:visibility="gone" />
+        <LinearLayout
+            android:id="@+id/CheckoutShippingMethodHeaderViewPayment"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:paddingTop="@dimen/HalfBasePadding"
+            android:paddingBottom="@dimen/HalfBasePadding"
+            android:paddingLeft="@dimen/BasePadding"
+            android:paddingRight="@dimen/BasePadding">
+            <TextView
+                style="@style/HeadLine"
+                android:id="@+id/CheckoutTotalHeaderViewTotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:textColor="@color/black87" />
+        </LinearLayout>
+        <presentation.views.ColoredButton
+            android:id="@+id/CheckoutTotalHeaderViewOrder"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/ButtonHeight"
+            android:layout_marginLeft="@dimen/BasePadding"
+            android:layout_marginRight="@dimen/BasePadding"
+            android:layout_marginTop="@dimen/HalfBasePadding"
+            android:layout_marginBottom="@dimen/BasePadding"
+            android:focusable="false"
+            android:clickable="true"
+            app:roundCorners="true"
+            app:buttonColor="@color/accent" />
+    </LinearLayout>
+</LinearLayout>

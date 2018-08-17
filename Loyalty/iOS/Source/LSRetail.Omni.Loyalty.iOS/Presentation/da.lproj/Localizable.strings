@@ -1,0 +1,302 @@
+//GENERAL
+"General_OK" = "OK"; //[Term:456]
+"General_Cancel" = "Annuller"; //[Term:367]
+"General_Back" = "Tilbage"; //[Term:363]
+"General_Error" = "Fejl";
+"General_ErrorTryAgain" = "Der opstod en fejl. Prøv igen";
+"General_Yes" = "Ja"; //[Term:514]
+"General_No" = "Nej"; //[Term:454]
+"General_Info" = "Info";
+"General_Done" = "Udført";
+"General_Apply" = "Anvend";
+"General_Retry" = "Prøv igen";
+"General_Refresh" = "Opdater";
+"General_Attention" = "Bemærk";
+"General_Proceed" = "Fortsæt"; //[Term:24117]
+"General_GetDataErrorMessage" = "Noget gik galt ... \r\nTryk på Opdater for at forsøge igen"; //[Term:24121]
+
+//Base Model UI Exceptions
+"Model_AuthenticationFailedException" = "Forkert brugernavn eller adgangskode. Prøv igen.";
+"Model_GenericException" = "Der opstod en fejl. Prøv igen";
+"Model_NetworkException" = "Netværksfejl";
+"Model_DeviceBlocked" = "Denne enhed er blevet blokeret";
+"Model_AccessNotAllowed" = "Adgang nægtet"; //[Term:24103]
+"Model_EmailExists" = "E-mailadressen findes ikke";
+"Model_SecurityToken" = "Adgang nægtet"; //[Term:24103]
+"Model_InvalidPassword" = "Ugyldig adgangskode";
+"Model_InvalidOldPassword" = "Den gamle adgangskode er ugyldig";
+"Model_InvalidUsername" = "Ugyldigt brugernavn";
+"Model_ItemNotFound" = "Varen findes ikke";
+"Model_EmailInvalidException" = "Ugyldig e-mailadresse";
+
+//Welcome Screen
+"Welcome_ApplicationTitle" = "Kvalitetsbutik";
+"Welcome_Title" = "Velkommen";
+"Welcome_WelcomeText" = "To get started, tap the button below to log in or to create a new account and configure your personal profile.
+
+Being a member allows you to benefit from personal offers and coupons as well as collecting points, which can be used for tendering during your shopping experience.";
+
+// Home
+"Home_Home" = "Start";
+"Home_HomeScreen" = "Startskærm";
+"Home_Points_Lowercase" = "points";
+
+// History
+"History_History" = "Oversigt";
+"History_Item_Lowercase" = "vare";
+"History_Items_Lowercase" = "varer";
+"History_NoData" = "Der er ingen tidligere transaktioner tilgængelige"; //[Term:24137]
+"History_SearchScreen" = "Indkøbsoversigt fra ";
+
+
+"TransactionView_Expire" = "Udløber: ";
+"TransactionView_Total" = "I alt:";
+"TransactionView_Discount" = "Rabat:";
+"TransactionView_Vat" = "Moms:";
+"TransactionView_Net" = "Nettobeløb:"; //[Term:24131]
+"TransactionView_ItemName" = "Varenavn";
+"TransactionView_Qty" = "Antal";
+"TransactionView_Amount" = "Beløb";
+"TransactionView_TransactionUnavailable" = "Transaktionen er ikke tilgængelig"; //[Term:24127]
+"TransactionView_TransactionUnavailableMsg" = "Denne transaktion er ikke tilgængelig i øjeblikket"; //[Term:24122]
+
+// Location/Store/Restaurant details
+"Location_Locations" = "Lokationer";
+"Locations_MapOfAllLocations" = "Kort over alle lokationer";
+"Location_Details_Phone" = "Telefon";
+"Location_Details_OpeningHours" = "Åbningstider";
+"Location_CouldNotGetLocation" = "Den aktuelle placering kunne ikke hentes"; //[Term:24130]
+"Location_CouldNotGetLocationInstructions" = "Sørg for, at Lokationstjenester er aktiveret. For at aktivere lokationstjenesterne, skal du gå til indstillinger for beskyttelse af personlige oplysninger og aktivere lokationstjenester til dette program.";
+
+// Offers & coupons
+"OffersAndCoupons_OffersAndCoupons" = "Tilbud og kuponer";
+"OffersAndCoupons_Offers" = "Tilbud"; //[Term:8320]
+"OffersAndCoupons_Coupons" = "Kuponer"; //[Term:22509]
+"OffersAndCoupons_NoOffersAndCoupons" = "Der er ingen tilgængelige tilbud eller kuponer";
+"OffersAndCoupons_NoOffers" = "Der er ingen tilgængelige tilbud";
+"OffersAndCoupons_NoCoupons" = "Der er ingen tilgængelige kuponer";
+"OffersAndCoupons_NoOffersPleaseLogIn" = "Der er ingen tilbude tilgængelige, forsøg at logge på."; //[Term:24136]
+"OffersAndCoupons_NoCouponsPleaseLogIn" = "Der er ingen værdikuponer tilgængelige, forsøg at logge på."; //[Term:24132]
+"OffersAndCoupons_PointOffers" = "Pointtilbud";
+"OffersAndCoupons_MemberOffers" = "Medlemstilbud";
+"OffersAndCoupons_GeneralOffers" = "Generelle tilbud"; //[Term:24116]
+
+// Offer details
+"Offer_Details_Title" = "Tilbud"; //[Term:15041]
+
+// Coupon details
+"Coupon_Details_Close" = "Luk";
+"Coupon_Details_QRCode" = "QR-kode"; //[Term:24114]
+"Coupon_Details_PleaseScan" = "Scan QR-koden";
+"Coupon_Details_AddToBasket" = "Tilføj til kurv";
+"Coupon_Details_RemoveFromBasket" = "Fjern fra kurven";
+"Coupon_Details_ValidUntil" = "Gyldig indtil";
+
+// Checkout
+"Checkout_Checkout" = "Checkout"; //[Term:24111]
+"Checkout_PlaceOrder" = "Afgiv ordre"; //[Term:24113]
+"Checkout_ClearBasket" = "Ryd kurv"; //[Term:24139]
+"Checkout_RemoveItem" = "Fjern vare";
+"Checkout_Total" = "Total";
+"Checkout_AreYouSureClearBasket" = "Er du sikker på, at du vil rydde kurven?"; //[Term:24106]
+"Checkout_AreYouSurePlaceOrder" = "Er du sikker på, at du vil placere ordren?"; //[Term:24108]
+"Checkout_AreYouSureRemoveItem" = "Er du sikker på, at du vil fjerne denne vare?"; //[Term:15254]
+"Checkout_ErrorPlacingOrder" = "Ordren kunne ikke placeres.\r\nPrøv igen.";
+"Checkout_ThankYou" = "Tak!";
+"Checkout_OrderProcessed" = "Din ordre er blevet behandlet."; //[Term:24126]
+"Checkout_ShippingMethod" = "Vælg forsendelsesmetode"; //[Term:24120]
+"Checkout_HomeDelivery" = "Levering i hjemmet";
+"Checkout_HomeDeliveryTitle" = "Levering i hjemmet - demoskærm";
+"Checkout_HomeDeliveryMsg" = "Denne proces skal lokaliseres til hver region";
+"Checkout_ConfirmOrder" = "Bekræft ordre"; //[Term:24141]
+"Checkout_Verify" = "Kontrollér din ordre, før du fortsætter"; //[Term:24129]
+"Checkout_SubTotal" = "Subtotal:";
+"Checkout_Discount" = "Rabat:";
+"Checkout_VAT" = "Moms:";
+"Checkout_HomeDeliveryDescription" = "Lad os sende dig ordren";
+"Checkout_ClickCollectDescription" = "Afhent din bestilling i en butik efter eget valg, når det passer dig";
+
+//Click & Collect
+"ClickCollect_NotAvailableTitle" = "Ikke tilgængelig i denne butik"; //[Term:24138]
+"ClickCollect_NotAvailableMsg" = "Varerne er ikke tilgængelige, prøv en anden butik";
+"ClickCollect_Stores" = "Butikker"; //[Term:14629]
+"ClickCollect_Shipping" = "Levering";
+"ClickCollect_ClickCollect" = "Klik og hent";
+"ClickCollect_SendOrderDetails" = "Ordreoplysninger sendes til:";
+"ClickCollect_Attention" = "Bemærk!";
+"ClickCollect_Proceed" = "Klik på \"Fortsæt\", hvis du ønsker at fortsætte med rækkefølgen nedenfor."; //[Term:24140]
+"ClickCollect_ItemNotAvailable" = "Denne vare er ikke tilgængelig på ";
+"ClickCollect_ItemsNotAvailable" = "Disse varer er ikke tilgængelige på ";
+"ClickCollect_Qty" = "Antal:";
+"ClickCollect_StoreDistance" = "km. væk herfra";
+
+// Account
+"Account_Account" = "Konto";
+"Account_CreateAccount" = "Opret en konto";
+"Account_ManageAccount" = "Administrer konto";
+"Account_UpdateAccount" = "Opdater konto"; //[Term:24123]
+"Account_Login" = "Log på";
+"Account_Logout" = "Log ud";
+"Account_AreYouSureLogout" = "Er du sikker på, at du vil logge af?"; //[Term:24107]
+"Account_Points_Lowercase" = "points";
+"Account_Email" = "E-mail";
+"Account_Password" = "Adgangskode";
+"Account_ConfirmPassword" = "Bekræft adgangskode";
+"Account_PleaseFillAllFields" = "Udfyld alle felter"; //[Term:24142]
+"Account_InvalidEmail" = "Ugyldig e-mailadresse";
+"Account_EmptyUsernameError" = "Brugernavn kan ikke være tomt";
+"Account_ForgotPassword" = "Har du glemt adgangskoden?";
+"Account_PasswordMismatch" = "Forkert adgangskode";
+"Account_ResetPasswordTitle" = "Nulstil adgangskode"; //[Term:24128]
+"Account_NewPassword" = "Ny adgangskode"; //[Term:447]
+"Account_ConfirmNewPassword" = "Bekræft ny adgangskode";
+"Account_OldPassword" = "Gammel adgangskode";
+"Account_PasswordSuccess" = "Adgangskoden blev ændret";
+"Account_AccountUpdated" = "Kontoen blev opdateret";
+"Account_ResetPasswordMsg" = "Indtast dit brugernavn, så sender vi en ny adgangskode til din e-mailadresse";
+"Account_ProvidedPasswordsDontMatch" = "De oplyste adgangskoder stemmer ikke overens";
+"Account_AlreadyHaveAnAccountLogIn" = "Har du allerede en konto? Log på."; //[Term:24115]
+"Account_NewUserCreateAnAccount" = "Ny bruger? Opret en konto.";
+"Account_Username" = "Brugernavn";
+"Account_Name" = "Navn";
+"Account_Male" = "Mand"; //[Term:438]
+"Account_Female" = "Kvinde"; //[Term:409]
+"Account_AddressOne" = "Adresse 1"; //[Term:24104]
+"Account_AddressTwo" = "Adresse 2"; //[Term:24105]
+"Account_City" = "By";
+"Account_State" = "Tilstand";
+"Account_Country" = "Land";
+"Account_PostCode" = "Postnummer";
+"Account_Change" = "Retur";
+"Account_ChangePassword" = "Skift adgangskode";
+"Account_PhoneNumber" = "Telefon";
+"Account_Required" = "Obligatorisk"; //[Term:16062]
+"Account_Optional" = "Valgfrit";
+"Account_Gender" = "Køn"; //[Term:415]
+"Account_ChooseProfiles" = "Vælg profiler";
+"Account_EmptyError" = " må ikke være tom";
+"Account_Continue" = "Fortsæt"; //[Term:3618]
+"Account_ErrorChangePassword" = "Der opstod en fejl under ændring af adgangskoden";
+"Account_Member" = "medlem";
+"Account_Profiles" = "Vælg profiler";
+"Account_SignUp" = "Tilmeld dig";
+
+//Notifications
+"Notification_RemoveNotifications" = "Fjern alle notifikationer";
+"Notification_AreYouSureRemoveNotifications" = "Er du sikker på, at du vil fjerne alle notifikationer?"; //[Term:24109]
+"Notification_NoNotifications" = "Ingen notifikationer."; //[Term:24135]
+
+// QR Code
+"QRCode_QRCode" = "QR-kode"; //[Term:24114]
+"QRCode_Identify" = "Vis denne QR-kode for at identificere dig selv";
+
+//Barcode Scanner
+"ScanBarcode_btnLight" = "Lys";
+"ScanBarcode_Error" = "Scanneren kunne ikke startes"; //[Term:24118]
+
+// Slideout basket
+"SlideoutBasket_Checkout" = "Checkout"; //[Term:24111]
+"SlideoutBasket_YourOrder" = "Din ordre";
+"SlideoutBasket_BasketEmpty" = "Din kurv er tom! Tilføj varer, og de vil vises her.";
+"SlideoutBasket_BasketEmptyAndNotLoggedIn" = "Din kurv er tom! Log på, og begynd at tilføje varer.";
+"SlideoutBasket_Total" = "Total";
+"SlideoutBasket_Coupons" = "Kuponer"; //[Term:22509]
+"SlideoutBasket_Offers" = "Tilbud"; //[Term:8320]
+"SlideoutBasket_QuantityAbbreviation" = "Antal";
+"SlideoutBasket_Multiplier" = "x";
+"SlideoutBasket_ExtraLineFormatStringModifier" = "{0}";
+"SlideoutBasket_ExtraLineFormatStringPlus" = "+ {0} {1}";
+"SlideoutBasket_ExtraLineFormatStringMinus" = "- {0} {1}";
+"SlideoutBasket_ExtraLineFormatStringPlusUom" = "+ {0} {1} {2}";
+"SlideoutBasket_ExtraLineFormatStringMinusUom" = "- {0} {1} {2}";
+
+// Basket
+"Basket_Checkout" = "Checkout"; //[Term:24111]
+
+// Edit basket item
+"EditBasketItem_EditItem" = "Rediger varen";
+
+// Add to basket
+"AddToBasket_AddToBasket" = "Tilføj til kurv";
+
+//Slideout Menu
+"SlideoutMenu_Items" = "Varer";
+"SlideoutMenu_ScanBarcode" = "Scan stregkode";
+"SlideoutMenu_Notifications" = "Notifikationer"; //[Term:24112]
+"SlideoutMenu_WishList" = "Ønskeliste";
+"SlideoutMenu_Search" = "Søg";
+"SlideoutMenu_ContactUs" = "Kontakt os";
+
+//Item
+"Item_NotFoundTitle" = "Varen findes ikke";
+"Item_NotFoundMsg" = "Denne vare er ikke i vores database";
+"Item_Variant" = "Variant";
+"Item_UOM" = "Enhed";
+
+// Item details
+"ItemDetails_AddToBasket" = "Tilføj til kurv";
+"ItemDetails_Modify" = "Rediger";
+"ItemDetails_Quantity" = "Antal";
+"ItemDetails_Per" = "pr.";
+"ItemDetails_ItemAddedToWishList" = " blev føjet til din ønskeliste!";
+"ItemDetails_ItemNotInStock" = "Varen er ikke på lager";
+"ItemDetails_NoItems" = "Der er ingen emner at vise."; //[Term:24134]
+"ItemDetails_Availability" = "Se tilgængelighed"; //[Term:24119]
+"ItemDetails_SelectVariant" = "Vælg variant"; //[Term:23628]
+
+// Image zoom screen
+
+// Transaction details
+"TransactionDetails_Multiplier" = "x";
+"TransactionDetails_Transaction" = "Transaktion"; //[Term:8012]
+"TransactionDetails_ErrorAddingItemToBasket" = "Varen kunne ikke tilføjes til kurven";
+"TransactionDetails_ErrorAddingSomeItemsToBasket" = "Ikke alle varer kunne tilføjes til kurven";
+
+//Wish List
+"WishList_WishList" = "Ønskeliste";
+"WishList_RemoveFromWishList" = "Fjern fra ønskesedlen";
+"WishList_AreYouSureRemoveItem" = "Er du sikker på, at du vil fjerne denne vare fra din ønskeliste?"; //[Term:24110]
+"WishList_AddToBasket" = "Tilføj ønskeliste til kurv";
+"WishList_AddToWishList" = "Tilføj til ønskeliste";
+"WishList_NoItems" = "Der er ingen varer på ønskelisten."; //[Term:24133]
+
+//Notifications
+"Notifications_Notifications" = "Notifikationer"; //[Term:24112]
+"Notifications_DeleteAll" = "Slet alle notifikationer";
+
+//Search
+"Search_NoResults" = "Søgningen returnerede ingen resultater";
+"Search_Instruction" = "Brug søgelinjen til almindelig søgning."; //[Term:24124]
+"SearchScreen_Coupons" = "Kuponer"; //[Term:22509]
+"SearchScreen_Notifications" = "Notifikationer"; //[Term:24112]
+"SearchScreen_Offers" = "Tilbud"; //[Term:8320]
+"SearchScreen_Stores" = "Butikker"; //[Term:14629]
+
+// Map view
+"MapView_AllLocations" = "Alle lokationer";
+
+// Hidden settings
+"Hidden_Settings_HiddenSettings" = "Skjulte indstillinger";
+"Hidden_Settings_URL" = "URL"; //[Term:2282]
+"Hidden_Settings_Resource" = "Ressource";
+"Hidden_Settings_WebserviceChanged" = "Webtjenesten blev ændret"; //[Term:24125]
+"Hidden_Settings_WebserviceChangeSuccessMessage" = "BEMÆRK!\r\n Genstart programmet HELT ved at dobbeltklikke på knappen Start og køre programmet væk. Åbn det igen.";
+
+// Custom more controller
+
+// Weekdays
+"Weekday_Monday" = "Mandag";
+"Weekday_Tuesday" = "Tirsdag"; //[Term:3815]
+"Weekday_Wednesday" = "Onsdag"; //[Term:3810]
+"Weekday_Thursday" = "Torsdag"; //[Term:3819]
+"Weekday_Friday" = "Fredag";
+"Weekday_Saturday" = "Lørdag"; //[Term:3826]
+"Weekday_Sunday" = "Søndag"; //[Term:3821]
+
+// SearchPopUp
+"SearchPopUp_Offer" = "Tilbud"; //[Term:15041]
+"SearchPopUp_Store" = "Butik"; //[Term:2594]
+
+//ChangeVariantQtyPopUpView
+
+//Related

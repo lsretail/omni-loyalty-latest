@@ -1,0 +1,343 @@
+//GENERAL
+"General_OK" = "Í lagi";
+"General_Cancel" = "Hætta við";
+"General_Back" = "Til baka";
+"General_Error" = "Villa";
+"General_ErrorTryAgain" = "Villa, reynið aftur";
+"General_Yes" = "Já";
+"General_No" = "Nei";
+"General_Info" = "Uppl.";
+"General_Done" = "Lokið";
+"General_Apply" = "Nota";
+"General_Retry" = "Reyna aftur";
+"General_Refresh" = "Endurnýja";
+"General_Attention" = "Athugið";
+"General_Proceed" = "Haldið áfram";
+"General_GetDataErrorMessage" = "Eitthvað fór úrskeiðis...\r\nÝtið á Endurnýja til að reyna aftur";
+"General_Confirmation" = "Staðfesting";
+
+//Base Model UI Exceptions
+"Model_AuthenticationFailedException" = "Rangt notandanafn eða aðgangsorð. Reynið aftur.";
+"Model_GenericException" = "Villa. Reynið aftur.";
+"Model_NetworkException" = "Netvilla";
+"Model_DeviceBlocked" = "Þetta tæki hefur verið útilokað";
+"Model_AccessNotAllowed" = "Aðgangi hafnað";
+"Model_EmailExists" = "Tölvupóstfang ekki til";
+"Model_SecurityToken" = "Aðgangi hafnað";
+"Model_InvalidPassword" = "Ógilt aðgangsorð";
+"Model_InvalidOldPassword" = "Ógilt eldra aðgangsorð";
+"Model_InvalidUsername" = "Ógilt notandanafn";
+"Model_UsernameExists" = "Þetta tölvupóstfang/notandanafn er þegar til. Reynið aftur";
+"Model_UserNotLoggedIn" = "Notandi er ekki innskráður";
+"Model_ItemNotFound" = "Vara fannst ekki";
+"Model_EmailInvalidException" = "Ógilt tölvupóstfang";
+
+//Welcome Screen
+"Welcome_ApplicationTitle" = "Útilíf";
+"Welcome_Title" = "Velkomin";
+"Welcome_WelcomeText" = "Pikkið á hnappinn að neðan í upphafi til að skrá ykkur inn eða stofna nýjan aðgang og stilla eigið notandasnið.
+
+Aðild gefur kost á persónulegum tilboðum og afslætti, auk þess að hægt er að safna punktum sem má nota sem greiðslu þegar verslað er.";
+
+// Home
+"Home_Home" = "Heim";
+"Home_HomeScreen" = "Heimaskjár";
+"Home_Welcome" = "Velkomin";
+"Home_SignIn" = "Skráið ykkur inn til þess að fá punkta þegar verslað er";
+
+"Home_Points_Lowercase" = "punktar";
+
+// History
+"History_History" = "Saga";
+"History_Item_Lowercase" = "vara";
+"History_Items_Lowercase" = "vörur";
+"History_NoData" = "Engar fyrri færslur fundust";
+"History_SearchScreen" = "Verslunarsaga frá ";
+
+"TransactionView_Expire" = "Rennur út: ";
+"TransactionView_Total" = "Samtals:";
+"TransactionView_Discount" = "Afsláttur:";
+"TransactionView_Vat" = "VSK:";
+"TransactionView_Net" = "Samtals nettó:";
+"TransactionView_ItemName" = "Vöruheiti";
+"TransactionView_Qty" = "Magn";
+"TransactionView_Amount" = "Upphæð";
+"TransactionView_TransactionUnavailable" = "Færsla er ekki tiltæk";
+"TransactionView_TransactionUnavailableMsg" = "Þessi færsla er ekki tiltæk í augnablikinu";
+
+// Location/Store/Restaurant details
+"Location_Locations" = "Staðir";
+"Locations_MapOfAllLocations" = "Kort yfir alla staði";
+"Location_Details_Phone" = "Sími";
+"Location_Details_OpeningHours" = "Opnunartími";
+"Location_CouldNotGetLocation" = "Tókst ekki að ná í núverandi stað";
+"Location_CouldNotGetLocationInstructions" = "Athugið hvort staðsetningarþjónusta sé virk. Hún er virkjuð með því að fara í persónuverndarstillingar og kveikja á Staðsetningarþjónustu fyrir þetta app.";
+
+// Offers & coupons
+"OffersAndCoupons_OffersAndCoupons" = "Tilboð & afsláttarmiðar";
+"OffersAndCoupons_Offers" = "Tilboð";
+"OffersAndCoupons_Coupons" = "Afsláttarmiðar";
+"OffersAndCoupons_NoOffersAndCoupons" = "Engin tilboð eða afsláttarmiðar tiltæk";
+"OffersAndCoupons_NoOffers" = "Engin tilboð eru tiltæk";
+"OffersAndCoupons_NoCoupons" = "Engir afsláttarmiðar eru tiltækir";
+"OffersAndCoupons_NoOffersPleaseLogIn" = "Engin tilboð eru tiltæk. Prófaðu að skrá þig inn.";
+"OffersAndCoupons_NoCouponsPleaseLogIn" = "Engir afsláttarmiðar eru tiltækir. Prófaðu að skrá þig inn.";
+"OffersAndCoupons_PointOffers" = "Punktatilboð";
+"OffersAndCoupons_MemberOffers" = "Aðildartilboð";
+"OffersAndCoupons_GeneralOffers" = "Almenn tilboð";
+
+// Offer details
+"Offer_Details_Title" = "Tilboð";
+
+// Coupon details
+"Coupon_Details_Close" = "Loka";
+"Coupon_Details_QRCode" = "QR kóði";
+"Coupon_Details_PleaseScan" = "Skannið QR kóðann";
+"Coupon_Details_AddToBasket" = "Bæta í körfu";
+"Coupon_Details_RemoveFromBasket" = "Fjarlægja úr körfu";
+"Coupon_Details_ValidUntil" = "Gildir til";
+
+// Checkout
+"Checkout_Checkout" = "Ljúka kaupum";
+"Checkout_PlaceOrder" = "Panta";
+"Checkout_ClearBasket" = "Hreinsa körfu";
+"Checkout_RemoveItem" = "Fjarlægja vöru";
+"Checkout_Total" = "Samtals";
+"Checkout_AreYouSureClearBasket" = "Viltu örugglega tæma körfuna?";
+"Checkout_ClearBasketErrorTryAgain" = "Gat ekki tæmt körfuna. Reynið aftur.";
+"Checkout_AreYouSurePlaceOrder" = "Viltu örugglega leggja fram pöntun?";
+"Checkout_AreYouSureRemoveItem" = "Viltu örugglega fjarlægja þessa vöru?";
+"Checkout_ErrorPlacingOrder" = "Gat ekki lagt fram pöntun.\r\nReynið aftur.";
+"Checkout_ThankYou" = "Takk fyrir!";
+"Checkout_OrderProcessed" = "Pöntun þín hefur verið afgreidd.";
+"Checkout_OrderReceived" = "Við höfum tekið við pöntun þinni og erum nú að ná í vörurnar. Við munum láta þig vita um leið og pöntunin er tilbúin.";
+"Checkout_ShippingMethod" = "Veljið afhendingarmáta";
+"Checkout_HomeDelivery" = "Heimsending";
+"Checkout_HomeDeliveryTitle" = "Heimsending - Sýniskjár";
+"Checkout_HomeDeliveryMsg" = "Staðfæra verður þessa vinnslu fyrir hvert svæði";
+"Checkout_ConfirmOrder" = "Staðfesta pöntun";
+"Checkout_Verify" = "Staðfestið pöntunina áður en haldið er áfram";
+"Checkout_SubTotal" = "Millisamtala:";
+"Checkout_Discount" = "Afsláttur: ";
+"Checkout_VAT" = "VSK: ";
+"Checkout_HomeDeliveryDescription" = "Látið okkur um að senda þér vöruna";
+"Checkout_ClickCollectDescription" = "Sækið vöruna í valinni verslun þegar hentar";
+
+//Click & Collect
+"ClickCollect_NotAvailableTitle" = "Ekki í boði í þessari verslun";
+"ClickCollect_NotAvailableMsg" = "Vara/vörur ekki til. Prófið aðra verslun.";
+"ClickCollect_Stores" = "Verslanir";
+"ClickCollect_Shipping" = "Afhending";
+"ClickCollect_ClickCollect" = "Smella og sækja";
+"ClickCollect_SendOrderDetails" = "Pöntunarupplýsingar verða sendar til:";
+"ClickCollect_Attention" = "Athugið!";
+"ClickCollect_Proceed" = "Smellið á \"Halda áfram\" ef óskað er að halda áfram með pöntunina að neðan.";
+"ClickCollect_ItemNotAvailable" = "Þessi vara er ekki til í ";
+"ClickCollect_ItemsNotAvailable" = "Þessar vörur eru ekki til í ";
+"ClickCollect_Qty" = "Magn: ";
+"ClickCollect_StoreDistance" = "km. héðan";
+"ClickCollect_SelectStore" = "Veljið verslun sem sótt er í";
+
+// Account
+"Account_Account" = "Aðgangur";
+"Account_CreateAccount" = "Stofna aðgang";
+"Account_ManageAccount" = "Stjórna aðgangi";
+"Account_UpdateAccount" = "Uppfæra aðgang";
+"Account_Login" = "Innskráning";
+"Account_Logout" = "Útskráning";
+"Account_AreYouSureLogout" = "Viltu örugglega skrá þig út?";
+"Account_Points_Lowercase" = "punktar";
+"Account_Email" = "Tölvupósfang";
+"Account_Password" = "Aðgangsorð";
+"Account_ConfirmPassword" = "Staðfesta aðgangsorð";
+"Account_PleaseFillAllFields" = "Fyllið út í alla nauðsynlega reiti";
+"Account_InvalidEmail" = "Ógilt tölvupóstfang";
+"Account_EmptyUsernameError" = "Notandanafn má ekki vera autt";
+"Account_LastNameRequired" = "Vinsamlegast skráið inn fullt nafn";
+"Account_ForgotPassword" = "Gleymt aðgangsorð?";
+"Account_PasswordMismatch" = "Misræmi milli aðgangsorða";
+"Account_ResetPasswordTitle" = "Endurstilla aðgangsorð";
+"Account_NewPassword" = "Nýtt aðgangsorð";
+"Account_ConfirmNewPassword" = "Staðfesta nýtt aðgangsorð";
+"Account_PasswordSuccess" = "Aðgangsorði hefur verið breytt";
+"Account_OldPassword" = "Fyrra aðgangsorð";
+"Account_AccountUpdated" = "Aðgangur hefur verið uppfærður";
+"Account_ResetPasswordMsg" = "Sláið inn notandanafn til þess að fá slóð á endurstillingu aðgangsorðs senda í tölvupósti";
+"Account_ProvidedPasswordsDontMatch" = "Uppgefin aðgangsorð stemma ekki";
+"Account_AlreadyHaveAnAccountLogIn" = "Ertu með aðgang? Skráðu þig inn.";
+"Account_NewUserCreateAnAccount" = "Nýr notandi? Búa til aðgang.";
+"Account_Username" = "Notandanafn";
+"Account_Name" = "Nafn";
+"Account_Male" = "KK";
+"Account_Female"= "KVK";
+"Account_AddressOne" = "Heimilisfang 1";
+"Account_AddressTwo" = "Heimilisfang 2";
+"Account_City" = "Borg";
+"Account_State" = "Ríki";
+"Account_Country" = "Land";
+"Account_PostCode" = "Póstnúmer";
+"Account_Change" = "Breyta";
+"Account_ChangePassword" = "Breyta aðgangsorði";
+"Account_PhoneNumber" = "Sími";
+"Account_Required" = "Krafist";
+"Account_Optional" = "Valkvæmt";
+"Account_DateOfBirth" = "Fæðingardagur";
+"Account_Gender" = "Kyn";
+"Account_ChooseProfiles" = "Velja notandasnið";
+"Account_EmptyError" = " Má ekki vera autt";
+"Account_Continue" = "Halda áfram";
+"Account_ErrorChangePassword" = "Villa við breytingu aðgangsorðs";
+"Account_Member" = "meðlimur";
+"Account_Profiles" = "Velja notandasnið";
+"Account_SignUp" = "Skrá";
+"Account_ResetPasswordSuccess" = "Nýtt aðgangsorð hefur verið sent í tölvupósti";
+"Account_ResetCode" = "Endurstillingarkóði";
+"Account_ResetPassword" = "Endurstilla aðgangsorð";
+"Account_ResetPasswordInstructions" = "Endurstillingarkóði hefur verið sendur í tölvupósti. Notið hann til þess að ljúka endurstillingu aðgangsorðs";
+
+//Notifications
+"Notification_RemoveNotifications" = "Fjarlægja allar tilkynningar";
+"Notification_AreYouSureRemoveNotifications" = "Viltu örugglega fjarlægja allar tilkynningar?";
+"Notification_NoNotifications" = "Engar tilkynningar.";
+
+// QR Code
+"QRCode_QRCode" = "QR kóði";
+"QRCode_Identify" = "Sýnið þennan QR kóða til auðkenningar";
+
+//Barcode Scanner
+"ScanBarcode_btnLight" = "Ljós";
+"ScanBarcode_Error" = "Skönnun mistókst";
+
+// Slideout basket
+"SlideoutBasket_Checkout" = "Ljúka kaupum";
+"SlideoutBasket_YourOrder" = "Pöntunin þín";
+"SlideoutBasket_BasketEmpty" = "Karfan þín er tóm! Bætið við vörum og þær munu birtast hér.";
+"SlideoutBasket_BasketEmptyAndNotLoggedIn" = "Karfan þín er tóm! Skráðu þig inn og taktu að bæta við vörum.";
+"SlideoutBasket_Total" = "Samtals";
+"SlideoutBasket_Coupons" = "Afsláttarmiðar";
+"SlideoutBasket_Offers" = "Tilboð";
+"SlideoutBasket_QuantityAbbreviation" = "Magn";
+"SlideoutBasket_Multiplier" = "x";
+"SlideoutBasket_ExtraLineFormatStringModifier" = "{0}";
+"SlideoutBasket_ExtraLineFormatStringPlus" = "+ {0} {1}";
+"SlideoutBasket_ExtraLineFormatStringMinus" = "- {0} {1}";
+"SlideoutBasket_ExtraLineFormatStringPlusUom" = "+ {0} {1} {2}";
+"SlideoutBasket_ExtraLineFormatStringMinusUom" = "- {0} {1} {2}";
+
+// Basket
+"Basket_Basket" = "Karfa";
+"Basket_BasketEmpty" = "Karfan þín er tóm!\r\nBætið við vörum og þær munu birtast hér.";
+"Basket_Total" = "Samtals";
+"Basket_Checkout" = "Ljúka kaupum";
+
+// Edit basket item
+"EditBasketItem_EditItem" = "Breyta vöru";
+"EditBasketItem_EditItemErrorTryAgain" = "Gat ekki breytt vöru. Reynið aftur.";
+"EditBasketItem_DeleteItemErrorTryAgain" = "Gat ekki eytt vöru úr körfu. Reynið aftur.";
+
+// Add to basket
+"AddToBasket_AddToBasket" = "Bæta í körfu";
+"AddToBasket_AddToBasketErrorTryAgain" = "Gat ekki bætt vöru í körfuna. Reynið aftur.";
+"AddToBasket_AddWishListToBasketErrorTryAgain" = "Gat ekki bætt óskalista í körfuna. Reynið aftur.";
+"AddToBasket_ItemAddedToBasket" = "Vöru bætt í körfuna!";
+"AddToBasket_ItemsAddedToBasket" = "Vörum bætt í körfuna!";
+
+//Slideout Menu
+"SlideoutMenu_Items" = "Vörur";
+"SlideoutMenu_ScanBarcode" = "Skanna strikamerki";
+"SlideoutMenu_Notifications" = "Tilkynningar";
+"SlideoutMenu_WishList" = "Óskalisti";
+"SlideoutMenu_Search" = "Leita";
+"SlideoutMenu_ContactUs" = "Hafið samband";
+
+//Item
+"Item_NotFoundTitle" = "Varan fannst ekki";
+"Item_NotFoundMsg" = "Þessi vara er ekki til í gagnagrunni okkar";
+"Item_Variant" = "Afbrigði";
+"Item_UOM" = "Mælieining";
+
+// Item details
+"ItemDetails_AddToBasket" = "Bæta í körfu";
+"ItemDetails_Modify" = "Breyta";
+"ItemDetails_Quantity" = "Magn";
+"ItemDetails_Per" = "á";
+"ItemDetails_ItemAddedToWishList" = "Vöru bætt á óskalista þinn!";
+"ItemDetails_ItemNotInStock" = "Varan er ekki til á lager";
+"ItemDetails_NoItems" = "Ekki er hægt að birta neinar vörur.";
+"ItemDetails_Availability" = "Sjá hvort er til";
+"ItemDetails_SelectVariant" = "Velja afbrigði";
+
+// Image zoom screen
+"ImageZoom_Image" = "Mynd";
+
+// Transaction details
+"TransactionDetails_Multiplier" = "x";
+"TransactionDetails_Transaction" = "Færsla";
+"TransactionDetails_ErrorAddingItemToBasket" = "Ekki tókst að bæta við vöru í körfu";
+"TransactionDetails_ErrorAddingSomeItemsToBasket" = "Ekki tókst að bæta við öllum vörum í körfu";
+
+//Wish List
+"WishList_WishList" = "Óskalisti";
+"WishList_RemoveFromWishList" = "Fjarlægja af óskalista";
+"WishList_AreYouSureRemoveItem" = "Viltu örugglega fjarlægja þessa vöru af óskalista þínum?";
+"WishList_AddToBasket" = "Bæta óskalista í körfuna";
+"WishList_AddToWishList" = "Bæta á óskalista";
+"WishList_NoItems" = "Engar vörur eru á óskalista.";
+"WishList_AddItemToWishListErrorTryAgain" = "Gat ekki bætt vöru á óskalista. Reynið aftur.";
+"WishList_RemoveItemFromWishListErrorTryAgain" = "Gat ekki fjarlægt vöru af óskalista. Reynið aftur.";
+"WishList_ClearWishList" = "Hreinsa óskalista";
+"WishList_ClearWishListAreYouSure" = "Viltu örugglega hreinsa óskalistann?";
+"WishList_ClearWishListErrorTryAgain" = "Gat ekki hreinsað óskalistann. Reynið aftur.";
+
+//Notifications
+"Notifications_Notifications" = "Tilkynningar";
+"Notifications_DeleteAll" = "Eyða öllum tilkynningum";
+
+//Search
+"Search_NoResults" = "Engar niðurstöður fengust úr leit";
+"Search_Instruction" = "Nota leitarslá fyrir almenna leit.";
+"SearchScreen_Coupons" = "Afsláttarmiðar";
+"SearchScreen_ItemCategories" = "Vöruflokkar";
+"SearchScreen_Items" = "Vörur";
+"SearchScreen_Notifications" = "Tilkynningar";
+"SearchScreen_Offers" = "Tilboð";
+"SearchScreen_ProductGroups" = "Vöruhópar";
+"SearchScreen_Profiles" = "Notandasnið";
+"SearchScreen_ShoppingLists" = "Innkaupalistar";
+"SearchScreen_Stores" = "Verslanir";
+"SearchScreen_Transactions" = "Færslur";
+
+// Map view
+"MapView_AllLocations" = "Allar verslanir";
+
+// Hidden settings
+"Hidden_Settings_ChangeWS" = "Breyta vefþjónustu";
+"Hidden_Settings_HiddenSettings" = "Faldar stillingar";
+"Hidden_Settings_URL" = "URL";
+"Hidden_Settings_Resource" = "Resource";
+"Hidden_Settings_WebserviceChanged" = "Vefþjónustu breytt";
+"Hidden_Settings_WebserviceChangeSuccessMessage" = "ATHUGIÐ\r\n Endurræsið appið AÐ FULLU með því að styðja tvisvar á heimahnappinn and swiping the app away. Then reopen it.";
+"HiddenSettings_Ping" = "Ping";
+"HiddenSettings_AreYouSure" = "Viltu örugglega breyta vefþjónustunni?";
+
+// Custom more controller
+"MoreScreen_More" = "Meira";
+
+// Weekdays
+"Weekday_Monday" = "Mánudagur";
+"Weekday_Tuesday" = "Þriðjudagur";
+"Weekday_Wednesday" = "Miðvikudagur";
+"Weekday_Thursday" = "Fimmtudagur";
+"Weekday_Friday" = "Föstudagur";
+"Weekday_Saturday" = "Laugardagur";
+"Weekday_Sunday" = "Sunnudagur";
+
+// SearchPopUp
+"SearchPopUp_Title" = "Veljið flokka sem á að leita í.";
+"SearchPopUp_Item" = "Vara";
+"SearchPopUp_Offer" = "Tilboð";
+"SearchPopUp_Coupon" = "Afsláttarmiði";
+"SearchPopUp_Notification" = "Tilkynning";
+"SearchPopUp_History" = "Saga";
+"SearchPopUp_ShoppingList" = "Innkaupalisti";
+"SearchPopUp_Store" = "Verslun";

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto" >
+  
+  <item android:id="@+id/MenuViewGenerateQR"
+        android:icon="@drawable/ic_action_qr"
+        android:title="@string/MenuViewQRTitle"
+        app:showAsAction="always"
+        android:orderInCategory="17"/>
+  
+</menu>

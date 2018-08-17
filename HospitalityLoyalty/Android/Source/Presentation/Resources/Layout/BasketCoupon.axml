@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              style="@style/ListItem"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:paddingLeft="@dimen/BasePadding"
+              android:paddingRight="@dimen/BasePadding"
+              android:paddingTop="@dimen/HalfBasePadding"
+              android:paddingBottom="@dimen/HalfBasePadding"
+              android:minHeight="@dimen/TwoLineListItemHeight"
+              android:background="@drawable/selecteble_background">
+
+      <TextView style="@style/Subhead"
+                android:id="@+id/BasketCouponDescription"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:ellipsize="end"/>
+
+      <TextView style="@style/Body1"
+                android:id="@+id/BasketCouponDetails"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:ellipsize="end"/>
+
+</LinearLayout>

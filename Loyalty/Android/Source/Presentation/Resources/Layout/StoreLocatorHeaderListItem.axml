@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             style="@style/SelectableListItem"
+             android:layout_height="wrap_content"
+             android:layout_width="fill_parent">
+
+  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/TwoLineListItemHeight"
+                android:paddingLeft="@dimen/BasePadding"
+                android:paddingRight="@dimen/BasePadding"
+                android:background="@drawable/list_cell_background"
+                style="@style/ListItem">
+
+    <FrameLayout android:id="@+id/StoreLocatorHeaderListItemStoreImageContainer"
+                 android:layout_height="@dimen/ListImageHeight"
+                 android:layout_width="@dimen/ListImageHeight"
+                 android:layout_marginRight="@dimen/SecondaryBasePadding">
+
+      <ImageView style="@style/LazyListImage"
+                 android:id="@+id/StoreLocatorHeaderListItemStoreImage"
+                 android:layout_height="fill_parent"
+                 android:layout_width="fill_parent" />
+
+    </FrameLayout>
+
+    <LinearLayout android:orientation="vertical"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content">
+
+      <TextView style="@style/Subhead"
+                android:id="@+id/StoreLocatorHeaderListItemStoreName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:ellipsize="end" />
+
+      <TextView style="@style/Body1"
+                android:id="@+id/StoreLocatorHeaderListItemStoreAddress"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:ellipsize="end" />
+
+    </LinearLayout>
+
+  </LinearLayout>
+
+</FrameLayout>

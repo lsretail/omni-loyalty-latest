@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent">
+
+  <ScrollView android:layout_width="fill_parent"
+              android:layout_height="0px"
+              android:layout_weight="1">
+
+    <LinearLayout android:orientation="vertical"
+                  android:layout_width="fill_parent"
+                  android:layout_height="fill_parent"
+                  android:paddingTop="@dimen/BasePadding"
+                  android:paddingLeft="@dimen/BasePadding"
+                  android:paddingRight="@dimen/BasePadding">
+
+      <TextView style="@style/Display1"
+                android:id="@+id/WelcomeViewPageTitle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/accent"
+                android:text="@string/WelcomeViewPageTitle" />
+
+      <TextView style="@style/Subhead"
+                android:id="@+id/WelcomeViewWelcomeText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/BasePadding"
+                android:text="@string/WelcomeViewWelcomeText" />
+
+    </LinearLayout>
+
+  </ScrollView>
+
+  <presentation.views.ColoredButton android:id="@+id/WelcomeViewLoginButton"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="@dimen/ButtonHeight"
+                                    android:layout_marginLeft="@dimen/BasePadding"
+                                    android:layout_marginRight="@dimen/BasePadding"
+                                    android:layout_marginTop="@dimen/BasePadding"
+                                    android:layout_marginBottom="@dimen/BasePadding"
+                                    android:focusable="false"
+                                    android:clickable="true"
+                                    app:roundCorners="true"
+                                    app:normalText="@string/ApplicationNext"
+                                    app:buttonColor="@color/accent" />
+
+</LinearLayout>

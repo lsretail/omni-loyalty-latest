@@ -1,0 +1,1 @@
+/usr/libexec/PlistBuddy -c "Set :CFBundleVersion $(($(date +'%s')/60))" "Info.plist"

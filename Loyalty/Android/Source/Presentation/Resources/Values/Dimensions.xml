@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <dimen name="ProgressBarHeight">4px</dimen>
+  <dimen name="PaneHalfPadding">4dp</dimen>
+  <dimen name="TextHalfPadding">4dp</dimen>
+  <dimen name="TextPadding">8dp</dimen>
+  <dimen name="SinglePanePadding">0dp</dimen>
+  <dimen name="TextSizeSubtitle">14sp</dimen>
+  <dimen name="TextSizeNormal">18sp</dimen>
+  <dimen name="TextSizeHeader">22sp</dimen>
+  <dimen name="ListTextSizeHeader">21sp</dimen>
+  <dimen name="ListHeadingTextSize">14sp</dimen>
+  <dimen name="TextSizeListHeader">14sp</dimen>
+  <dimen name="ImageThumbnailSize">80dp</dimen>
+  <dimen name="DetailImageSize">250dp</dimen>
+  <dimen name="ViewpagerMarginWidth">1dp</dimen>
+  <dimen name="ListItemMinHeight">?android:attr/listPreferredItemHeight</dimen>
+  
+  <dimen name="MinTouchHeight">48dp</dimen>
+
+  <dimen name="CollapsingToolbarLayoutLeftTextPadding">48dp</dimen>
+  <dimen name="CollapsingToolbarLayoutBottomTextPadding">32dp</dimen>
+  
+  
+  <!-- Card -->
+
+  <!--<dimen name="CardMargin">8dp</dimen>
+  <dimen name="CardHalfMargin">4dp</dimen>
+  <dimen name="CardSingleMargin">@dimen/CardMargin</dimen>
+
+  <dimen name="SmallSmallCardWidth">128dp</dimen>
+  <dimen name="MediumCardWidth">256dp</dimen>
+
+  <dimen name="SmallCardHeight">176dp</dimen>
+  <dimen name="MediumCardHeight">368dp</dimen>
+
+  <dimen name="SmallCardTextHeight">48dp</dimen>
+  <dimen name="MediumCardTextHeight">48dp</dimen>
+
+  <integer name="SmallSmallCardWeight">128</integer>
+  <integer name="MediumSmallCardWeight">256</integer>
+  <integer name="MediumCardWeight">256</integer>-->
+  
+  <!-- New after lollipop -->
+  <integer name="CardColumns">2</integer>
+  <integer name="StackedCardColumns">1</integer>
+  <dimen name="BigScreenPanePadding">0px</dimen>
+  <dimen name="CardCornerRadius">2dp</dimen>
+  <dimen name="CardImageHeight">144dp</dimen>
+  <dimen name="MinCardWidth">144dp</dimen>
+  <dimen name="ProgressBarLargeSize">64dp</dimen>
+
+  <dimen name="StatusbarHeight">25dp</dimen>
+  <dimen name="MaxDrawerWidth">400dp</dimen>
+  <dimen name="ActionBarHeight">@dimen/abc_action_bar_default_height_material</dimen>
+  <dimen name="MaxDrawerHeaderHeight">144dp</dimen>
+
+  <dimen name="OneLineListItemHeight">48dp</dimen>
+  <dimen name="TwoLineListItemHeight">72dp</dimen>
+  <dimen name="ThreeLineListItemHeight">72dp</dimen>
+
+  <dimen name="StackedListImageHeight">120dp</dimen>
+  <dimen name="ListImageHeight">40dp</dimen>
+  <dimen name="BasePadding">16dp</dimen>
+  <dimen name="HalfBasePadding">8dp</dimen>
+  <dimen name="SecondaryBasePadding">16dp</dimen>
+  <dimen name="SecondaryTotalPadding">72dp</dimen>
+  <dimen name="BaseInsetPadding">20dp</dimen>
+
+  <dimen name="BaseListPadding">16dp</dimen>
+  <dimen name="MinTouchSize">48dp</dimen>
+
+  <dimen name="ListIconHeight">24dp</dimen>
+  <dimen name="ListIconPaddingTop">12dp</dimen>
+  <dimen name="ListIconPaddingRight">32dp</dimen>
+  <dimen name="ListDividerHeight">1px</dimen>
+
+  <dimen name="DialogContentPadding">24dp</dimen>
+  <dimen name="DialogButtonHeight">36dp</dimen>
+  <dimen name="DialogButtonMinWidth">88dp</dimen>
+
+  <dimen name="CardMargin">4dp</dimen>
+  <dimen name="CardHalfMargin">2dp</dimen>
+
+  <dimen name="SmallSmallCardWidth">150dp</dimen>
+  <dimen name="MediumCardWidth">300dp</dimen>
+
+  <dimen name="ExtraSmallCardHeight">48dp</dimen>
+  <dimen name="SmallCardHeight">218dp</dimen>
+  <dimen name="MediumCardHeight">436dp</dimen>
+
+  <dimen name="CardOneLineTextHeight">48dp</dimen>
+  <dimen name="CardTwoLineTextHeight">68dp</dimen>
+  
+  <dimen name="CardTwoLineTextTotalHeight">214dp</dimen>
+
+  <dimen name="HalfMiniFab">20dp</dimen>
+  <dimen name="HalfMiniFabPadding">36dp</dimen>
+
+  <integer name="SmallSmallCardWeight">1</integer>
+  <integer name="MediumSmallCardWeight">2</integer>
+  <integer name="MediumCardWeight">2</integer>
+
+  <!-- Custom View -->
+  <dimen name="ViewInset">4dp</dimen>
+  <dimen name="OneDP">1dp</dimen>
+  <dimen name="TwoDP">2dp</dimen>
+  <dimen name="FourDP">4dp</dimen>
+
+  <dimen name="ButtonHeight">48dp</dimen>
+  <dimen name="InsetButtonHeight">54dp</dimen>
+</resources>

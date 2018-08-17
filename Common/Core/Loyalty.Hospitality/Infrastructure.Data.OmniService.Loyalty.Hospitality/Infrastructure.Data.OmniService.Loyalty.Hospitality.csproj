@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+	</PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AssemblyName>LSRetail.Omni.Infrastructure.Data.OmniService.Loyalty.Hospitality</AssemblyName>
+    <RootNamespace>LSRetail.Omni.Infrastructure.Data.OmniService.Loyalty.Hospitality</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Base\Domain.DataModel.Base\Properties\Version.cs" Link="Properties\Version.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Base\Infrastructure.Data.Omniservice\Infrastructure.Data.Omniservice.csproj" />
+    <ProjectReference Include="..\Domain.Services.Loyalty.Hospitality\Domain.Services.Loyalty.Hospitality.csproj" />
+  </ItemGroup>
+
+</Project>

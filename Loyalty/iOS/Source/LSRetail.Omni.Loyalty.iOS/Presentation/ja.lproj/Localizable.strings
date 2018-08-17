@@ -1,0 +1,79 @@
+//GENERAL
+"General_OK" = "了解"; //[Term:456]
+"General_Cancel" = "取消し"; //[Term:367]
+"General_Back" = "戻る"; //[Term:363]
+"General_Yes" = "はい"; //[Term:514]
+"General_No" = "いいえ"; //[Term:454]
+
+//Base Model UI Exceptions
+
+//Welcome Screen
+"Welcome_WelcomeText" = "To get started, tap the button below to log in or to create a new account and configure your personal profile.
+
+Being a member allows you to benefit from personal offers and coupons as well as collecting points, which can be used for tendering during your shopping experience.";
+
+// Home
+
+// History
+
+
+
+// Location/Store/Restaurant details
+
+// Offers & coupons
+
+// Offer details
+
+// Coupon details
+
+// Checkout
+
+//Click & Collect
+
+// Account
+"Account_NewPassword" = "新規パスワード"; //[Term:447]
+
+//Notifications
+
+// QR Code
+
+//Barcode Scanner
+
+// Slideout basket
+
+// Basket
+
+// Edit basket item
+
+// Add to basket
+
+//Slideout Menu
+
+//Item
+
+// Item details
+
+// Image zoom screen
+
+// Transaction details
+
+//Wish List
+
+//Notifications
+
+//Search
+
+// Map view
+
+// Hidden settings
+
+// Custom more controller
+
+// Weekdays
+
+// SearchPopUp
+"SearchPopUp_Coupon" = "割引券"; //[Term:3208]
+
+//ChangeVariantQtyPopUpView
+
+//Related

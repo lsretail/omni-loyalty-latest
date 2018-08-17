@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ViewSwitcher xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:id="@+id/ItemCategoryViewSwitcher"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:inAnimation="@android:anim/fade_in"
+              android:outAnimation="@android:anim/fade_out">
+
+  <LinearLayout android:id="@+id/ItemCategoryViewContent"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout android:id="@+id/appbar"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+      <android.support.v7.widget.Toolbar android:id="@+id/ItemCategoryScreenToolbar"
+                                         android:layout_width="match_parent"
+                                         android:layout_height="@dimen/ActionBarHeight"
+                                         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                                         app:layout_scrollFlags="scroll|enterAlways" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v7.widget.RecyclerView android:id="@+id/ItemCategoryViewList"
+                                            android:scrollbars="vertical"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent" />
+
+    <LinearLayout android:id="@+id/ItemCategoryViewEmptyView"
+                  android:layout_width="fill_parent"
+                  android:layout_height="fill_parent"
+                  android:orientation="vertical">
+
+      <TextView style="@style/Subhead"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="100dp"
+                android:text="@string/ItemCategoryViewFailed" />
+
+      <presentation.views.ColoredButton android:id="@+id/ItemCategoryViewEmptyViewRetry"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="@dimen/ButtonHeight"
+                                        android:layout_marginTop="@dimen/BasePadding"
+                                        android:layout_gravity="center_horizontal"
+                                        android:focusable="false"
+                                        android:clickable="true"
+                                        app:roundCorners="true"
+                                        app:normalText="@string/ItemCategoryViewRetry"
+                                        app:buttonColor="@color/accent" />
+
+    </LinearLayout>
+
+  </LinearLayout>
+
+  <ProgressBar android:id="@+id/ItemCategoryViewLoadingSpinner"
+               style="?android:progressBarStyleLarge"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center" />
+</ViewSwitcher>

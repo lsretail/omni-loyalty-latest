@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              style="@style/ListItem"
+              android:orientation="vertical"
+              android:layout_width="wrap_content">
+  <TextView style="@style/SubheadLight"
+            android:id="@+id/MenuSpinnerListItemTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"/>
+  <TextView style="@style/Body1Light"
+            android:id="@+id/MenuSpinnerListItemSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"/>
+</LinearLayout>

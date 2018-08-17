@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/AccountTierScreenToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ActionBarHeight"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:layout_scrollFlags="scroll|enterAlways" />
+    </android.support.design.widget.AppBarLayout>
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:animateLayoutChanges="true">
+            <TextView
+                style="@style/Subhead"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/BasePadding"
+                android:paddingRight="@dimen/BasePadding"
+                android:paddingTop="@dimen/HalfBasePadding"
+                android:paddingBottom="@dimen/HalfBasePadding"
+                android:text="@string/AccountTierViewIdentify" />
+            <ImageView
+                android:id="@+id/AccountTierQrCode"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:maxHeight="240dp"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true" />
+            <TextView
+                style="@style/HeadLineLight"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/BasePadding"
+                android:paddingRight="@dimen/BasePadding"
+                android:paddingTop="@dimen/HalfBasePadding"
+                android:paddingBottom="@dimen/HalfBasePadding"
+                android:background="@color/accounttier"
+                android:text="@string/AccountTierViewCurrentLevel" />
+            <TextView
+                style="@style/Subhead"
+                android:id="@+id/AccountTierViewPointsBalance"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/BasePadding"
+                android:paddingRight="@dimen/BasePadding"
+                android:paddingTop="@dimen/HalfBasePadding" />
+            <TextView
+                style="@style/Subhead"
+                android:id="@+id/AccountTierViewCurrentTier"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/BasePadding"
+                android:paddingRight="@dimen/BasePadding"
+                android:paddingTop="@dimen/HalfBasePadding"
+                android:paddingBottom="@dimen/HalfBasePadding" />
+            <TextView
+                style="@style/HeadLineLight"
+                android:id="@+id/AccountTierNextTierHeader"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/BasePadding"
+                android:paddingRight="@dimen/BasePadding"
+                android:paddingTop="@dimen/HalfBasePadding"
+                android:paddingBottom="@dimen/HalfBasePadding"
+                android:background="@color/accounttier"
+                android:text="@string/AccountTierViewNextLevel" />
+            <TextView
+                style="@style/Subhead"
+                android:id="@+id/AccountTierViewNextTier"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/BasePadding"
+                android:paddingRight="@dimen/BasePadding"
+                android:paddingTop="@dimen/HalfBasePadding" />
+            <TextView
+                style="@style/Subhead"
+                android:id="@+id/AccountTierViewNextTierPerks"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/BasePadding"
+                android:paddingRight="@dimen/BasePadding"
+                android:paddingTop="@dimen/HalfBasePadding"
+                android:paddingBottom="@dimen/BasePadding" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

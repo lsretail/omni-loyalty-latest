@@ -1,0 +1,497 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{82D0C0C1-DD7F-4CCA-878D-F454993C93B1}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Domain</RootNamespace>
+    <AssemblyName>Domain</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+    <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'PlayStoreRelease|AnyCPU'">
+    <OutputPath>bin\PlayStoreRelease\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Android" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Addresses\Address.cs">
+      <Link>Addresses\Address.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Advertisements\Advertisement.cs">
+      <Link>Advertisements\Advertisement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Advertisements\AdvertisementService.cs">
+      <Link>Advertisements\AdvertisementService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Advertisements\IAdvertisementRepository.cs">
+      <Link>Advertisements\IAdvertisementRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Advertisements\IAdvertisementService.cs">
+      <Link>Advertisements\IAdvertisementService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Base\EntityBase.cs">
+      <Link>Base\EntityBase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Base\Exceptions\AccessNotAllowedException.cs">
+      <Link>Base\Exceptions\AccessNotAllowedException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Base\Exceptions\DeviceBlockedException.cs">
+      <Link>Base\Exceptions\DeviceBlockedException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Base\Exceptions\EmailExistsException.cs">
+      <Link>Base\Exceptions\EmailExistsException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Base\Exceptions\EmailInvalidException.cs">
+      <Link>Base\Exceptions\EmailInvalidException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Base\Exceptions\GenericException.cs">
+      <Link>Base\Exceptions\GenericException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Base\Exceptions\NetworkException.cs">
+      <Link>Base\Exceptions\NetworkException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Base\Exceptions\PasswordInvalidException.cs">
+      <Link>Base\Exceptions\PasswordInvalidException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Base\Exceptions\SecurityTokenException.cs">
+      <Link>Base\Exceptions\SecurityTokenException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Base\Exceptions\UserNameExistsException.cs">
+      <Link>Base\Exceptions\UserNameExistsException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Base\Exceptions\UserNameInvalidException.cs">
+      <Link>Base\Exceptions\UserNameInvalidException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Base\Exceptions\UserNotLoggedInException.cs">
+      <Link>Base\Exceptions\UserNotLoggedInException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Base\IAggregateRoot.cs">
+      <Link>Base\IAggregateRoot.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Base\IDatabaseAgent.cs">
+      <Link>Base\IDatabaseAgent.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Base\IEntity.cs">
+      <Link>Base\IEntity.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Basket\Basket.cs">
+      <Link>Basket\Basket.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Basket\BasketCalcRequest.cs">
+      <Link>Basket\BasketCalcRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Basket\BasketCalcResponse.cs">
+      <Link>Basket\BasketCalcResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Basket\BasketCodes.cs">
+      <Link>Basket\BasketCodes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Basket\BasketItem.cs">
+      <Link>Basket\BasketItem.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Basket\BasketPostSaleRequest.cs">
+      <Link>Basket\BasketPostSaleRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Basket\BasketService.cs">
+      <Link>Basket\BasketService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Basket\IBasketRepository.cs">
+      <Link>Basket\IBasketRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Basket\IBasketService.cs">
+      <Link>Basket\IBasketService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Basket\TenderPaymentLine.cs">
+      <Link>Basket\TenderPaymentLine.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Basket\TenderType.cs">
+      <Link>Basket\TenderType.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\ClickCollect\ClickCollectService.cs">
+      <Link>ClickCollect\ClickCollectService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\ClickCollect\IClickCollectRepository.cs">
+      <Link>ClickCollect\IClickCollectRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\ClickCollect\IClickCollectService.cs">
+      <Link>ClickCollect\IClickCollectService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\ClickCollect\OrderAvailabilityRequest.cs">
+      <Link>ClickCollect\OrderAvailabilityRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\ClickCollect\OrderCreateRequest.cs">
+      <Link>ClickCollect\OrderCreateRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\ClickCollect\OrderLineAvailability.cs">
+      <Link>ClickCollect\OrderLineAvailability.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Debugs\DebugService.cs">
+      <Link>Debug\DebugService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Debugs\IDebugRepository.cs">
+      <Link>Debug\IDebugRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Debugs\IDebugService.cs">
+      <Link>Debug\IDebugService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Devices\Device.cs">
+      <Link>Devices\Device.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Devices\DeviceService.cs">
+      <Link>Devices\DeviceService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Devices\IDeviceLocalRepository.cs">
+      <Link>Devices\IDeviceLocalRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Devices\IDeviceService.cs">
+      <Link>Devices\IDeviceService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Devices\SpecialCase\UnknownDevice.cs">
+      <Link>Devices\SpecialCase\UnknownDevice.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Images\IImageRepository.cs">
+      <Link>Images\IImageRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Images\IImageService.cs">
+      <Link>Images\IImageService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Images\ImageService.cs">
+      <Link>Images\ImageService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Images\ImageType.cs">
+      <Link>Images\ImageType.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Images\ImageView.cs">
+      <Link>Images\ImageView.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Items\IItemRepository.cs">
+      <Link>Items\IItemRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Items\IItemService.cs">
+      <Link>Items\IItemService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Items\Item.cs">
+      <Link>Items\Item.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Items\ItemCatogory.cs">
+      <Link>Items\ItemCatogory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Items\ItemLink.cs">
+      <Link>Items\ItemLink.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Items\ItemService.cs">
+      <Link>Items\ItemService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Items\Price.cs">
+      <Link>Items\Price.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Items\ProductGroup.cs">
+      <Link>Items\ProductGroup.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Items\UnitOfMeasure.cs">
+      <Link>Items\UnitOfMeasure.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Items\Variant.cs">
+      <Link>Items\Variant.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Items\VariantExt.cs">
+      <Link>Items\VariantExt.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Items\VariantRegistration.cs">
+      <Link>Items\VariantRegistration.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\MemberAccounts\MemberAccount.cs">
+      <Link>MemberAccounts\MemberAccount.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\MemberAccounts\MemberClub.cs">
+      <Link>MemberAccounts\MemberClub.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\MemberAccounts\MemberScheme.cs">
+      <Link>MemberAccounts\MemberScheme.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\MemberContacts\Currency.cs">
+      <Link>MemberContacts\Currency.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\MemberContacts\DTO\LogonRequest.cs">
+      <Link>MemberContacts\DTO\LogonRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\MemberContacts\DTO\LogonResponse.cs">
+      <Link>MemberContacts\DTO\LogonResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\MemberContacts\Environment.cs">
+      <Link>MemberContacts\Environment.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\MemberContacts\Exceptions\AuthenticationFailedException.cs">
+      <Link>MemberContacts\Exceptions\AuthenticationFailedException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\MemberContacts\IMemberContactLocalRepository.cs">
+      <Link>MemberContacts\IMemberContactLocalRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\MemberContacts\IMemberContactLocalService.cs">
+      <Link>MemberContacts\IMemberContactLocalService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\MemberContacts\IMemberContactRepository.cs">
+      <Link>MemberContacts\IMemberContactRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\MemberContacts\IMemberContactService.cs">
+      <Link>MemberContacts\IMemberContactService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\MemberContacts\MemberContact.cs">
+      <Link>MemberContacts\MemberContact.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\MemberContacts\MemberContactLocalService.cs">
+      <Link>MemberContacts\MemberContactLocalService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\MemberContacts\MemberContactService.cs">
+      <Link>MemberContacts\MemberContactService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\MemberContacts\PushNotificationRequest.cs">
+      <Link>MemberContacts\PushNotificationRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Notifications\INotificationLocalRepository.cs">
+      <Link>Notifications\INotificationLocalRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Notifications\INotificationLocalService.cs">
+      <Link>Notifications\INotificationLocalService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Notifications\INotificationRepository.cs">
+      <Link>Notifications\INotificationRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Notifications\INotificationService.cs">
+      <Link>Notifications\INotificationService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Notifications\Notification.cs">
+      <Link>Notifications\Notification.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Notifications\NotificationLocalService.cs">
+      <Link>Notifications\NotificationLocalService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Notifications\NotificationService.cs">
+      <Link>Notifications\NotificationService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Notifications\NotificationStatus.cs">
+      <Link>Notifications\NotificationStatus.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Notifications\NotificationUnread.cs">
+      <Link>Notifications\NotificationUnread.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Offers\IOfferLocalRepository.cs">
+      <Link>Offers\IOfferLocalRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Offers\IOfferLocalService.cs">
+      <Link>Offers\IOfferLocalService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Offers\IOfferRepository.cs">
+      <Link>Offers\IOfferRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Offers\IOfferService.cs">
+      <Link>Offers\IOfferService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Offers\OfferCode.cs">
+      <Link>Offers\OfferCode.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Offers\OfferLocalService.cs">
+      <Link>Offers\OfferLocalService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Offers\OfferService.cs">
+      <Link>Offers\OfferService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Offers\OfferType.cs">
+      <Link>Offers\OfferType.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Offers\PublishedOffer.cs">
+      <Link>Offers\PublishedOffer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\OneList\IOneListRepository.cs">
+      <Link>OneList\IOneListRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\OneList\IOneListService.cs">
+      <Link>OneList\IOneListService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\OneList\OneList.cs">
+      <Link>OneList\OneList.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\OneList\OneListLine.cs">
+      <Link>OneList\OneListLine.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\OneList\OneListService.cs">
+      <Link>OneList\OneListService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Profiles\IProfileRepository.cs">
+      <Link>Profiles\IProfileRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Profiles\IProfileService.cs">
+      <Link>Profiles\IProfileService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Profiles\Profile.cs">
+      <Link>Profiles\Profile.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Profiles\ProfileService.cs">
+      <Link>Profiles\ProfileService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Search\AppSettingsKey.cs">
+      <Link>Search\AppSettingsKey.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Search\ContactUs.cs">
+      <Link>Search\ContactUs.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Search\ISearchRepository.cs">
+      <Link>Search\ISearchRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Search\ISearchService.cs">
+      <Link>Search\ISearchService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Search\Search.cs">
+      <Link>Search\Search.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Search\SearchService.cs">
+      <Link>Search\SearchService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Stores\IStoreRepository.cs">
+      <Link>Stores\IStoreRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Stores\IStoreService.cs">
+      <Link>Stores\IStoreService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Stores\Store.cs">
+      <Link>Stores\Store.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Stores\StoreHours.cs">
+      <Link>Stores\StoreHours.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Stores\StoreService.cs">
+      <Link>Stores\StoreService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Transactions\BaseLine.cs">
+      <Link>Transactions\BaseLine.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Transactions\ExtraInfoLine.cs">
+      <Link>Transactions\ExtraInfoLine.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Transactions\ITransactionLocalRepository.cs">
+      <Link>Transactions\ITransactionLocalRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Transactions\ITransactionLocalService.cs">
+      <Link>Transactions\ITransactionLocalService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Transactions\ITransactionRepository.cs">
+      <Link>Transactions\ITransactionRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Transactions\ITransactionService.cs">
+      <Link>Transactions\ITransactionService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Transactions\SaleLine.cs">
+      <Link>Transactions\SaleLine.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Transactions\TaxLine.cs">
+      <Link>Transactions\TaxLine.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Transactions\Tender.cs">
+      <Link>Transactions\Tender.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Transactions\TenderLine.cs">
+      <Link>Transactions\TenderLine.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Transactions\Transaction.cs">
+      <Link>Transactions\Transaction.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Transactions\TransactionFooterLine.cs">
+      <Link>Transactions\TransactionFooterLine.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Transactions\TransactionHeaderLine.cs">
+      <Link>Transactions\TransactionHeaderLine.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Transactions\TransactionLocalService.cs">
+      <Link>Transactions\TransactionLocalService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Transactions\TransactionService.cs">
+      <Link>Transactions\TransactionService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Utils\EnabledItems.cs">
+      <Link>Utils\EnabledItems.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Utils\MemberContactAttributes.cs">
+      <Link>Utils\MemberContactAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Core\Source\Domain\Domain\Utils\TaskPool.cs">
+      <Link>Utils\TaskPool.cs</Link>
+    </Compile>
+    <Compile Include="Base\Exceptions\PasswordOldInvalidException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="..\..\..\..\Core\Source\Domain\Domain\Devices\DeviceDiagram.cd">
+      <Link>Devices\DeviceDiagram.cd</Link>
+    </None>
+    <None Include="..\..\..\..\Core\Source\Domain\Domain\Items\ItemDiagram.cd">
+      <Link>Items\ItemDiagram.cd</Link>
+    </None>
+    <None Include="..\..\..\..\Core\Source\Domain\Domain\MemberAccounts\MemberAccountDiagram.cd">
+      <Link>MemberAccounts\MemberAccountDiagram.cd</Link>
+    </None>
+    <None Include="..\..\..\..\Core\Source\Domain\Domain\MemberContacts\MemberContactDiagram.cd">
+      <Link>MemberContacts\MemberContactDiagram.cd</Link>
+    </None>
+    <None Include="..\..\..\..\Core\Source\Domain\Domain\Transactions\TransactionDiagram.cd">
+      <Link>Transactions\TransactionDiagram.cd</Link>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

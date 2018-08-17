@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ViewSwitcher xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/VariantViewSwitcher"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+  <ScrollView android:id="@+id/VariantViewContent"
+              android:layout_width="match_parent"
+              android:layout_height="fill_parent">
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical">
+
+      <TextView style="@style/Subhead"
+                android:id="@+id/VariantTitleOne"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+      <Spinner android:id="@+id/VariantSpinnerOne"
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:minHeight="@dimen/OneLineListItemHeight"
+               android:visibility="gone" />
+
+      <TextView style="@style/Subhead"
+                android:id="@+id/VariantTitleTwo"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+      <Spinner android:id="@+id/VariantSpinnerTwo"
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:minHeight="@dimen/OneLineListItemHeight"
+               android:visibility="gone" />
+
+      <TextView style="@style/Subhead"
+                android:id="@+id/VariantTitleThree"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+      <Spinner android:id="@+id/VariantSpinnerThree"
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:minHeight="@dimen/OneLineListItemHeight"
+               android:visibility="gone" />
+
+      <TextView style="@style/Subhead"
+                android:id="@+id/VariantTitleFour"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+      <Spinner android:id="@+id/VariantSpinnerFour"
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:minHeight="@dimen/OneLineListItemHeight"
+               android:visibility="gone" />
+
+      <TextView style="@style/Subhead"
+                android:id="@+id/VariantTitleFive"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+      <Spinner android:id="@+id/VariantSpinnerFive"
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:minHeight="@dimen/OneLineListItemHeight"
+               android:visibility="gone" />
+
+      <TextView style="@style/Subhead"
+                android:id="@+id/VariantTitleSix"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+      <Spinner android:id="@+id/VariantSpinnerSix"
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:minHeight="@dimen/OneLineListItemHeight"
+               android:visibility="gone" />
+
+      <LinearLayout android:id="@+id/VariantQty"
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/MinTouchSize">
+
+        <TextView style="@style/Subhead"
+                  android:layout_width="0px"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="1"
+                  android:layout_gravity="center_vertical"
+                  android:text="@string/ApplicationQty" />
+
+        <ImageButton style="@style/CustomBorderlessButton"
+                     android:id="@+id/VariantDecreaseQty"
+                     android:layout_width="wrap_content"
+                     android:layout_height="match_parent"
+                     android:layout_weight="0"
+                     android:layout_gravity="center_vertical"
+                     android:src="@drawable/action_remove" />
+
+        <Button style="@style/CustomBorderlessButton"
+                android:id="@+id/VariantChangeQty"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:layout_gravity="center_vertical"
+                android:text="1" />
+
+        <ImageButton style="@style/CustomBorderlessButton"
+                     android:id="@+id/VariantIncreaseQty"
+                     android:layout_width="wrap_content"
+                     android:layout_height="match_parent"
+                     android:layout_weight="0"
+                     android:layout_gravity="center_vertical"
+                     android:src="@drawable/action_new" />
+
+      </LinearLayout>
+      
+    </LinearLayout>
+
+  </ScrollView>
+
+  <ProgressBar android:id="@+id/VariantLoadingSpinner"
+               style="?android:progressBarStyleLarge"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center" />
+
+</ViewSwitcher>

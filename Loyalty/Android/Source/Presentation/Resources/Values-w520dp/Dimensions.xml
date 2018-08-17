@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <integer name="CardColumns">3</integer>
+  <integer name="StackedCardColumns">2</integer>
+</resources>

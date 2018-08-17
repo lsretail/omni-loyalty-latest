@@ -1,0 +1,1 @@
+adb install Loyalty.apk

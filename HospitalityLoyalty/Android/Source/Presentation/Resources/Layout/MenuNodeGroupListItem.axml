@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             style="@style/SelectableListItem"
+             android:layout_height="fill_parent"
+             android:layout_width="fill_parent">
+
+  <LinearLayout android:background="@color/white"
+                android:orientation="horizontal"
+                android:minHeight="@dimen/OneLineListItemHeight"
+                android:paddingLeft="@dimen/BasePadding"
+                android:descendantFocusability="blocksDescendants"
+                style="@style/ListItem">
+
+    <FrameLayout android:id="@+id/MenuNodeListItemViewItemImageContainer"
+                 android:layout_height="@dimen/ListImageHeight"
+                 android:layout_width="@dimen/ListImageHeight"
+                 android:layout_marginRight="@dimen/SecondaryBasePadding">
+
+      <ImageView style="@style/LazyListImage"
+                 android:id="@+id/MenuNodeListItemViewItemImage"
+                 android:layout_height="fill_parent"
+                 android:layout_width="fill_parent"/>
+
+    </FrameLayout>
+    
+    <LinearLayout
+      android:orientation="vertical"
+      android:layout_width="0px"
+      android:layout_height="wrap_content"
+      android:paddingRight="@dimen/BasePadding"
+      android:layout_weight="1">
+
+      <TextView style="@style/Subhead"
+                android:id="@+id/MenuNodeListItemViewTitle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:ellipsize="end"/>
+
+    </LinearLayout>
+
+  </LinearLayout>
+
+</FrameLayout>

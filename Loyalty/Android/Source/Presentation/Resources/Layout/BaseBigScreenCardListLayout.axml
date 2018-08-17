@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent">-->
+
+  <!--<View android:id="@+id/BaseScreenExtendedActionBarLeft"
+        android:layout_width="fill_parent"
+        android:layout_height="128dp"
+        android:background="@color/accent"/>-->
+
+  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+    <FrameLayout android:id="@+id/BasePanelLayoutContentFrameOne"
+                 android:layout_width="fill_parent"
+                 android:layout_height="fill_parent"
+                 android:layout_marginLeft="@dimen/BigScreenPanePadding"
+                 android:layout_marginRight="@dimen/BigScreenPanePadding"/>
+
+  </LinearLayout>
+
+<!--</FrameLayout>-->
+

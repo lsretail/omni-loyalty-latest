@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              style="@style/SelectableListItem"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+  <presentation.views.SquareLayout android:id="@+id/ItemsListItemViewItemImageContainer"
+                                   android:layout_gravity="center"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="match_parent">
+
+    <ImageView android:id="@+id/ItemsListItemViewItemImage"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:scaleType="centerCrop" />
+
+    <ImageButton android:id="@+id/OfferHeaderListItemAddRemove"
+                 android:layout_width="@dimen/MinTouchSize"
+                 android:layout_height="@dimen/MinTouchSize"
+                 android:layout_alignParentRight="true"
+                 android:background="@drawable/overlay_selecteble_background"
+                 android:padding="@dimen/BaseListPadding"
+                 android:focusable="false"
+                 android:focusableInTouchMode="false" />
+
+  </presentation.views.SquareLayout>
+
+  <LinearLayout android:id="@+id/ItemCategoryListTextContainer"
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/CardTwoLineTextHeight"
+                android:layout_weight="0"
+                android:paddingLeft="@dimen/BasePadding"
+                android:paddingRight="@dimen/BasePadding"
+                android:background="@color/white"
+                android:gravity="center_vertical">
+    
+    <TextView android:id="@+id/OfferTitleText"
+              style="@style/Subhead"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:singleLine="true"
+              android:ellipsize="end"/>
+
+    <TextView android:id="@+id/OfferBodyText"
+              style="@style/Caption"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:singleLine="true"
+              android:ellipsize="end"/>
+
+  </LinearLayout>
+
+</LinearLayout>

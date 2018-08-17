@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <integer name="CardColumns">4</integer>
+  <integer name="StackedCardColumns">3</integer>
+  <dimen name="BigScreenPanePadding">224dp</dimen>
+</resources>

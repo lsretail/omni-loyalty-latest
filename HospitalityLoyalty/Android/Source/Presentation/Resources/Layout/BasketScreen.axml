@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent">
+
+  <android.support.design.widget.AppBarLayout android:id="@+id/appbar"
+                                              android:layout_width="match_parent"
+                                              android:layout_height="wrap_content"
+                                              android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+    <android.support.v7.widget.Toolbar android:id="@+id/BasketScreenToolbar"
+                                       android:layout_width="match_parent"
+                                       android:layout_height="?attr/actionBarSize"
+                                       app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                                       app:layout_scrollFlags="scroll|enterAlways"/>
+
+  </android.support.design.widget.AppBarLayout>
+
+  <android.support.v7.widget.RecyclerView android:id="@+id/BasketScreenList"
+                                          android:scrollbars="vertical"
+                                          android:layout_width="fill_parent"
+                                          android:layout_height="0px"
+                                          android:layout_weight="1"/>
+  
+  <!--<ListView style="@style/ListView"
+            android:id="@+id/BasketScreenList"
+            android:layout_width="fill_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"/>-->
+  
+  <LinearLayout android:id="@+id/BasketScreenEmptyView"
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:paddingLeft="64dp"
+                android:paddingRight="64dp"
+                android:gravity="center"
+                android:visibility="gone">
+
+    <ImageView android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:src="@drawable/basket"
+               android:adjustViewBounds="true"
+               android:layout_marginBottom="32dp"/>
+    <TextView style="@style/Subhead"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:gravity="center_horizontal"
+              android:textColor="@color/black54"
+              android:text="@string/BasketEmpty"
+              android:layout_marginBottom="16dp"/>
+
+    <presentation.views.ColoredButton android:id="@+id/BasketScreenStartOrdering"
+                                      android:layout_width="fill_parent"
+                                      android:layout_height="@dimen/ButtonHeight"
+                                      android:focusable="false"
+                                      android:clickable="true"
+                                      app:roundCorners="true"
+                                      app:normalText="@string/BasketStartOrdering"
+                                      app:buttonColor="@color/accent"
+                                      app:buttonColorPressed="@color/accentpressed"/>
+
+    <!--<Button style="@style/CustomBorderlessButton"
+            android:id="@+id/BasketScreenStartOrdering"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/abs__action_bar_default_height"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/white"
+            android:text="Start ordering" />-->
+    
+  </LinearLayout>
+  
+  <LinearLayout android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0">
+
+    <View style="@style/LightHorizontalDivider"/>
+
+    <LinearLayout android:orientation="horizontal"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:minHeight="@dimen/MinTouchHeight">
+
+      <TextView style="@style/Subhead"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingLeft="@dimen/BasePadding"
+                android:paddingRight="@dimen/BasePadding"
+                android:gravity="center_vertical|right"
+                android:text="@string/Total"/>
+
+      <TextView style="@style/Subhead"
+                android:id="@+id/BasketScreenTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:paddingRight="@dimen/BasePadding"
+                android:gravity="center"/>
+
+    </LinearLayout>
+
+  </LinearLayout>
+
+  <presentation.views.ColoredButton android:id="@+id/BasketScreenCheckout"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="@dimen/ButtonHeight"
+                                    android:layout_weight="0"
+                                    android:focusable="false"
+                                    android:clickable="true"
+                                    app:normalText="@string/BasketCheckout"
+                                    app:buttonColor="@color/accent"
+                                    app:buttonColorPressed="@color/accentpressed"/>
+
+
+  <!--<Button style="@style/CustomBorderlessButton"
+          android:id="@+id/BasketScreenCheckout"
+          android:layout_width="fill_parent"
+          android:layout_height="@dimen/abs__action_bar_default_height"
+          android:layout_gravity="center_vertical"
+          android:textColor="@color/white"
+          android:text="Go to checkout" />-->
+</LinearLayout>

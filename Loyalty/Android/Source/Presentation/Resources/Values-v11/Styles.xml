@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <!--<style name="BaseStyleLightNoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="android:windowBackground">@color/backgroundcolor</item>
+
+    <item name="android:listChoiceBackgroundIndicator">@drawable/lsandroidlibrary_list_selector_holo_light</item>
+    <item name="android:activatedBackgroundIndicator">@drawable/lsandroidlibrary_activated_background_holo_light</item>
+  </style>
+
+  <style name="ApplicationTheme" parent="@style/BaseApplicationTheme">
+    <item name="actionMenuTextColor">@color/black</item>
+    <item name="android:windowContentOverlay">@null</item>
+    <item name="android:progressBarStyleHorizontal">@style/ProgressBarLoyalty</item>
+  </style>
+
+  <style name="ApplicationThemeFullyTransparent" parent="@style/ApplicationTheme">
+    <item name="windowActionBarOverlay">true</item>
+  </style>
+
+  <style name="CustomDialog" parent="android:Theme.Holo.Light.Dialog">
+  </style>
+
+  <style name="CustomProgressDialog" parent="@android:style/Widget.Holo.Light.ProgressBar">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+  </style>
+
+  <style name="ListItem">
+    <item name="android:layout_width">fill_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:minHeight">?android:attr/listPreferredItemHeight</item>
+    <item name="android:gravity">center_vertical</item>
+    <item name="android:background">?android:attr/activatedBackgroundIndicator</item>
+  </style>-->
+
+  <!--HOLO STYLE-->
+
+  <!--<style name="ProgressBarLoyalty" parent="android:Widget.Holo.Light.ProgressBar.Horizontal">
+    <item name="android:progressDrawable">@drawable/loyalty_progress_horizontal_holo_light</item>
+  </style>-->
+
+  <!--HOLO STYLE END-->
+</resources>

@@ -1,0 +1,113 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2011
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{13B26494-F93B-4DCF-9586-A3F755E29B57}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{699B62D0-C014-4100-8A45-0972D5B8E6EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{095354FE-7C97-4542-AE44-BBC549A36131}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Data.SQLite", "Source\Infrastructure.Linked\Infrastructure.Data.SQLite\Infrastructure.Data.SQLite.csproj", "{748DD107-0F44-469F-8904-59E83A846E5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation.Android", "Source\Presentation\Presentation.Android.csproj", "{3FC3ACB6-4454-4979-9B19-1C0944FF78B2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.DataModel.Base", "..\..\Common\Core\Base\Domain.DataModel.Base\Domain.DataModel.Base.csproj", "{7BCAC03E-3B65-4CF4-9EBB-4EF353276D1C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.Services.Base", "..\..\Common\Core\Base\Domain.Services.Base\Domain.Services.Base.csproj", "{9C38D897-021B-4743-92E4-AE9C0252D17F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.DataModel.Loyalty", "..\..\Common\Core\Loyalty\Domain.DataModel.Loyalty\Domain.DataModel.Loyalty.csproj", "{36A6FDFB-59D3-4618-92DD-0DEB8B6AB501}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.Services.Loyalty", "..\..\Common\Core\Loyalty\Domain.Services.Loyalty\Domain.Services.Loyalty.csproj", "{1BE9DD18-AFAF-4F25-A62D-E6BF109C180F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.Data.Omniservice.Loyalty", "..\..\Common\Core\Loyalty\Infrastructure.Data.Omniservice.Loyalty\Infrastructure.Data.Omniservice.Loyalty.csproj", "{D007C2F6-6B6B-40A7-AF96-1AE94BCC0598}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.Data.Omniservice", "..\..\Common\Core\Base\Infrastructure.Data.Omniservice\Infrastructure.Data.Omniservice.csproj", "{8DD497E3-7563-41C0-8543-0163F5702591}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		PlayStoreRelease|Any CPU = PlayStoreRelease|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{748DD107-0F44-469F-8904-59E83A846E5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{748DD107-0F44-469F-8904-59E83A846E5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{748DD107-0F44-469F-8904-59E83A846E5A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{748DD107-0F44-469F-8904-59E83A846E5A}.PlayStoreRelease|Any CPU.ActiveCfg = PlayStoreRelease|Any CPU
+		{748DD107-0F44-469F-8904-59E83A846E5A}.PlayStoreRelease|Any CPU.Build.0 = PlayStoreRelease|Any CPU
+		{748DD107-0F44-469F-8904-59E83A846E5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{748DD107-0F44-469F-8904-59E83A846E5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FC3ACB6-4454-4979-9B19-1C0944FF78B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FC3ACB6-4454-4979-9B19-1C0944FF78B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FC3ACB6-4454-4979-9B19-1C0944FF78B2}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3FC3ACB6-4454-4979-9B19-1C0944FF78B2}.PlayStoreRelease|Any CPU.ActiveCfg = PlayStoreRelease|Any CPU
+		{3FC3ACB6-4454-4979-9B19-1C0944FF78B2}.PlayStoreRelease|Any CPU.Build.0 = PlayStoreRelease|Any CPU
+		{3FC3ACB6-4454-4979-9B19-1C0944FF78B2}.PlayStoreRelease|Any CPU.Deploy.0 = PlayStoreRelease|Any CPU
+		{3FC3ACB6-4454-4979-9B19-1C0944FF78B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FC3ACB6-4454-4979-9B19-1C0944FF78B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FC3ACB6-4454-4979-9B19-1C0944FF78B2}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{7BCAC03E-3B65-4CF4-9EBB-4EF353276D1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BCAC03E-3B65-4CF4-9EBB-4EF353276D1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BCAC03E-3B65-4CF4-9EBB-4EF353276D1C}.PlayStoreRelease|Any CPU.ActiveCfg = Release|Any CPU
+		{7BCAC03E-3B65-4CF4-9EBB-4EF353276D1C}.PlayStoreRelease|Any CPU.Build.0 = Release|Any CPU
+		{7BCAC03E-3B65-4CF4-9EBB-4EF353276D1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BCAC03E-3B65-4CF4-9EBB-4EF353276D1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C38D897-021B-4743-92E4-AE9C0252D17F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C38D897-021B-4743-92E4-AE9C0252D17F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C38D897-021B-4743-92E4-AE9C0252D17F}.PlayStoreRelease|Any CPU.ActiveCfg = Release|Any CPU
+		{9C38D897-021B-4743-92E4-AE9C0252D17F}.PlayStoreRelease|Any CPU.Build.0 = Release|Any CPU
+		{9C38D897-021B-4743-92E4-AE9C0252D17F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C38D897-021B-4743-92E4-AE9C0252D17F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36A6FDFB-59D3-4618-92DD-0DEB8B6AB501}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36A6FDFB-59D3-4618-92DD-0DEB8B6AB501}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36A6FDFB-59D3-4618-92DD-0DEB8B6AB501}.PlayStoreRelease|Any CPU.ActiveCfg = Release|Any CPU
+		{36A6FDFB-59D3-4618-92DD-0DEB8B6AB501}.PlayStoreRelease|Any CPU.Build.0 = Release|Any CPU
+		{36A6FDFB-59D3-4618-92DD-0DEB8B6AB501}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36A6FDFB-59D3-4618-92DD-0DEB8B6AB501}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BE9DD18-AFAF-4F25-A62D-E6BF109C180F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BE9DD18-AFAF-4F25-A62D-E6BF109C180F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BE9DD18-AFAF-4F25-A62D-E6BF109C180F}.PlayStoreRelease|Any CPU.ActiveCfg = Release|Any CPU
+		{1BE9DD18-AFAF-4F25-A62D-E6BF109C180F}.PlayStoreRelease|Any CPU.Build.0 = Release|Any CPU
+		{1BE9DD18-AFAF-4F25-A62D-E6BF109C180F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BE9DD18-AFAF-4F25-A62D-E6BF109C180F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D007C2F6-6B6B-40A7-AF96-1AE94BCC0598}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D007C2F6-6B6B-40A7-AF96-1AE94BCC0598}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D007C2F6-6B6B-40A7-AF96-1AE94BCC0598}.PlayStoreRelease|Any CPU.ActiveCfg = Release|Any CPU
+		{D007C2F6-6B6B-40A7-AF96-1AE94BCC0598}.PlayStoreRelease|Any CPU.Build.0 = Release|Any CPU
+		{D007C2F6-6B6B-40A7-AF96-1AE94BCC0598}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D007C2F6-6B6B-40A7-AF96-1AE94BCC0598}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DD497E3-7563-41C0-8543-0163F5702591}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DD497E3-7563-41C0-8543-0163F5702591}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DD497E3-7563-41C0-8543-0163F5702591}.PlayStoreRelease|Any CPU.ActiveCfg = Release|Any CPU
+		{8DD497E3-7563-41C0-8543-0163F5702591}.PlayStoreRelease|Any CPU.Build.0 = Release|Any CPU
+		{8DD497E3-7563-41C0-8543-0163F5702591}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DD497E3-7563-41C0-8543-0163F5702591}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{699B62D0-C014-4100-8A45-0972D5B8E6EE} = {13B26494-F93B-4DCF-9586-A3F755E29B57}
+		{095354FE-7C97-4542-AE44-BBC549A36131} = {13B26494-F93B-4DCF-9586-A3F755E29B57}
+		{748DD107-0F44-469F-8904-59E83A846E5A} = {095354FE-7C97-4542-AE44-BBC549A36131}
+		{3FC3ACB6-4454-4979-9B19-1C0944FF78B2} = {13B26494-F93B-4DCF-9586-A3F755E29B57}
+		{7BCAC03E-3B65-4CF4-9EBB-4EF353276D1C} = {699B62D0-C014-4100-8A45-0972D5B8E6EE}
+		{9C38D897-021B-4743-92E4-AE9C0252D17F} = {699B62D0-C014-4100-8A45-0972D5B8E6EE}
+		{36A6FDFB-59D3-4618-92DD-0DEB8B6AB501} = {699B62D0-C014-4100-8A45-0972D5B8E6EE}
+		{1BE9DD18-AFAF-4F25-A62D-E6BF109C180F} = {699B62D0-C014-4100-8A45-0972D5B8E6EE}
+		{D007C2F6-6B6B-40A7-AF96-1AE94BCC0598} = {095354FE-7C97-4542-AE44-BBC549A36131}
+		{8DD497E3-7563-41C0-8543-0163F5702591} = {095354FE-7C97-4542-AE44-BBC549A36131}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {10AC51AF-85C2-440C-A664-A70062662262}
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Source\Presentation\Presentation.csproj
+	EndGlobalSection
+EndGlobal

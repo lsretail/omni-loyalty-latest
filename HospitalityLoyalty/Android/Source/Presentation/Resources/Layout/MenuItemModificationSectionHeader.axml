@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+          style="@style/Body2"
+          android:id="@+id/MenuItemModificationSectionHeaderDescription"
+          android:background="@color/white"
+          android:paddingLeft="@dimen/BasePadding"
+          android:paddingRight="@dimen/BasePadding"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:minHeight="@dimen/OneLineListItemHeight"
+          android:gravity="center_vertical"/>

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>12.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CA9F29C3-F220-4A7A-8CC3-5A32CAEA022A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Infrastructure.Data.SQLite2</RootNamespace>
+    <AssemblyName>Infrastructure.Data.SQLite2</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;NET4,USE_CSHARP_SQLITE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="Baskets\BasketRepository.cs" />
+    <Compile Include="DB\SqliteHelper.cs" />
+    <Compile Include="DB\DB.cs" />
+    <Compile Include="DB\SqliteExtensions.cs" />
+    <Compile Include="DB\Scripts\CreateDB\CreateTables.cs" />
+    <Compile Include="DB\DTO\WebserviceData.cs" />
+    <Compile Include="Favorites\FavoriteRepository.cs" />
+    <Compile Include="MemberContacts\ContactRepository.cs" />
+    <Compile Include="Menus\MenuRepository.cs" />
+    <Compile Include="Transactions\TransactionRepository.cs" />
+    <Compile Include="Webservice\WebserviceRepository.cs" />
+    <Compile Include="SQLException.cs" />
+    <Compile Include="SQLStatusCode.cs" />
+    <Compile Include="DB\Scripts\ClearDB\DropTables.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Community.CsharpSqlite">
+      <HintPath>..\..\..\..\3rdPartyComponents\Community.CSharpSqlite\Windows\Community.CsharpSqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="Community.CsharpSqlite.SQLiteClient">
+      <HintPath>..\..\..\..\3rdPartyComponents\Community.CSharpSqlite\Windows\Community.CsharpSqlite.SQLiteClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup />
+</Project>
