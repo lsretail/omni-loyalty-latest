@@ -166,15 +166,8 @@ namespace Presentation
 					return;
 				}
 			}
-				
-			List<Profile> selectedProfiles = new List<Profile>();
-			foreach(var profile in profiles)
-			{
-				if(profile.ContactValue)
-					selectedProfiles.Add(profile);
-			}
 
-			CreateContact(username, email, password, name, address1, address2, city, state, postCode, country, phone, selectedProfiles);
+			CreateContact(username, email, password, name, address1, address2, city, state, postCode, country, phone, profiles);
 		}
 
 		private async void CreateContact(string username, string email, string password, string name, string address1, string address2, string city, string state, string postCode, string country, string phone, List<Profile> profiles)

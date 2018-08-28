@@ -207,14 +207,7 @@ namespace Presentation
 			contact.LoggedOnToDevice = new Device("");
 			Util.FillDeviceInfo(contact.LoggedOnToDevice);
 
-			List<Profile> selectedProfiles = new List<Profile>();
-			foreach(var profile in profiles)
-			{
-				if(profile.ContactValue)
-					selectedProfiles.Add(profile);
-			}
-
-			contact.Profiles = selectedProfiles;
+			contact.Profiles = profiles;
 
 			Utils.UI.ShowLoadingIndicator();
             bool success = await new ContactModel().UpdateMemberContact(contact);

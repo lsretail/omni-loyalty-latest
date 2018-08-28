@@ -92,28 +92,12 @@ namespace Presentation
         {
             if (MemberContactAttributes.Manage.Profiles)
             {
-                List<Profile> allProfiles = await new Models.ProfileModel().GetAllProfiles();
                 List<Profile> selectedProfiles = await profileService.ProfilesGetByContactIdAsync(AppData.Device.UserLoggedOnToDevice.Id);
 
-                if (allProfiles != null)
+                if (selectedProfiles != null)
                 {
                     Utils.UI.HideLoadingIndicator();
-
-                    //Assing correct values to the profiles before being displayed
-                    foreach (var profile in allProfiles)
-                    {
-                        foreach (var selectedProfile in selectedProfiles)
-                        {
-                            if (profile.Id == selectedProfile.Id)
-                            {
-                                profile.ContactValue = true;
-                                break;
-                            }
-                            profile.ContactValue = false;
-                        }
-                    }
-
-                    this.NavigationController.PushViewController(new ManageAccountController(allProfiles), true);
+                    this.NavigationController.PushViewController(new ManageAccountController(selectedProfiles), true);
                 }
                 else
                 {
