@@ -134,14 +134,12 @@ namespace Presentation.Activities.Account
 
             if (LoadAccountProfiles)
             {
-                var userProfiles = AppData.Device.UserLoggedOnToDevice.Profiles;
+                AppData.Device.UserLoggedOnToDevice.Profiles = profiles;
 
                 for (int i = 0; i < profiles.Count; i++)
                 {
-                    if (userProfiles.Find(p => p.Id == profiles[i].Id) != null)
-                        headers.SetItemChecked(i, true);
+                    headers.SetItemChecked(i, profiles[i].ContactValue);
                 }
-
                 LoadAccountProfiles = false;
             }
 
@@ -153,18 +151,11 @@ namespace Presentation.Activities.Account
             get
             {
                 var selectedList = headers.CheckedItemPositions;
-                var checkedProfiles = new List<Profile>();
-
                 for (int i = 0; i < profiles.Count; i++)
                 {
-                    if (selectedList.Get(i))
-                        checkedProfiles.Add(profiles[i].ShallowCopy());
+                    profiles[i].ContactValue = (selectedList.Get(i)) ? true : false;
                 }
-                foreach (var checkedProfile in checkedProfiles)
-                {
-                    checkedProfile.ContactValue = true;
-                }
-                return checkedProfiles;
+                return profiles;
             }
         }
 
