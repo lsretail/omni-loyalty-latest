@@ -118,7 +118,6 @@ namespace Presentation.Activities.Account
             }
         }
 
-
         private void LoadProfiles()
         {
             if (profiles == null)

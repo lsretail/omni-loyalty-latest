@@ -92,8 +92,8 @@ namespace LSRetail.Omni.Infrastructure.Data.Omniservice.Base
             client.DefaultRequestHeaders.Add("user-agent", "LSOmniServicePCL-" + this.version); //  
 
             //basic auth
-            string basicauth = Convert.ToBase64String(Encoding.UTF8.GetBytes(string.Format("{0}:{1}", this.authUser, this.authPwd)));
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", basicauth);
+            //string basicauth = Convert.ToBase64String(Encoding.UTF8.GetBytes(string.Format("{0}:{1}", this.authUser, this.authPwd)));
+            //client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", basicauth);
 
             return client;
         }
