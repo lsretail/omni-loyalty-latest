@@ -54,8 +54,6 @@
     <MtouchI18n>
     </MtouchI18n>
     <MtouchArch>i386, x86_64</MtouchArch>
-    <CodesignProvision>
-    </CodesignProvision>
     <CodesignKey>iPhone Developer</CodesignKey>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
@@ -89,8 +87,7 @@
     <WarningLevel>4</WarningLevel>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <ConsolePause>false</ConsolePause>
-    <CodesignKey>iPhone Distribution: LS Retail ehf</CodesignKey>
-    <CodesignProvision>7c73ad84-b840-42ba-9e86-c6088b677971</CodesignProvision>
+    <CodesignKey>iPhone Developer</CodesignKey>
     <BuildIpa>true</BuildIpa>
     <IpaPackageName>
     </IpaPackageName>
@@ -153,8 +150,7 @@
     <MtouchI18n>
     </MtouchI18n>
     <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
-    <CodesignProvision>LSOmniDistProfile2</CodesignProvision>
-    <CodesignKey>iPhone Distribution: LS Retail ehf</CodesignKey>
+    <CodesignKey>iPhone Developer</CodesignKey>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchExtraArgs>-linkskip=System.Threading.Tasks</MtouchExtraArgs>
@@ -172,11 +168,23 @@
     <MtouchI18n>
     </MtouchI18n>
     <MtouchArch>i386, x86_64</MtouchArch>
-    <CodesignProvision>LSOmniDistProfile2</CodesignProvision>
-    <CodesignKey>iPhone Distribution: LS Retail ehf</CodesignKey>
+    <CodesignKey>iPhone Developer</CodesignKey>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchExtraArgs>-linkskip=System.Threading.Tasks</MtouchExtraArgs>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <DefineConstants></DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+    <AssemblyName>Presentation</AssemblyName>
+    <MtouchVerbosity></MtouchVerbosity>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -472,10 +480,6 @@
     <Folder Include="Resources\Images.xcassets\DoneIcon.imageset\" />
     <Folder Include="Resources\Images.xcassets\CancelIcon.imageset\" />
     <Folder Include="Resources\Images.xcassets\AddShoppingCart.imageset\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ITunesArtwork Include="iTunesArtwork" />
-    <ITunesArtwork Include="iTunesArtwork%402x" />
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Contents.json">

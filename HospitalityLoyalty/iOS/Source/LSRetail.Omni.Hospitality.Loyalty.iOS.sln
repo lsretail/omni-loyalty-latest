@@ -9,23 +9,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{52C35F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{369F67E3-9F92-4585-A72F-97BC32BD4309}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.DataModel.Base", "..\..\..\Common\Core\Base\Domain.DataModel.Base\Domain.DataModel.Base.csproj", "{7BCAC03E-3B65-4CF4-9EBB-4EF353276D1C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.DataModel.Base", "..\..\..\Common\Core\Base\Domain.DataModel.Base\Domain.DataModel.Base.csproj", "{7BCAC03E-3B65-4CF4-9EBB-4EF353276D1C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.Services.Base", "..\..\..\Common\Core\Base\Domain.Services.Base\Domain.Services.Base.csproj", "{9C38D897-021B-4743-92E4-AE9C0252D17F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Services.Base", "..\..\..\Common\Core\Base\Domain.Services.Base\Domain.Services.Base.csproj", "{9C38D897-021B-4743-92E4-AE9C0252D17F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.Data.Omniservice", "..\..\..\Common\Core\Base\Infrastructure.Data.Omniservice\Infrastructure.Data.Omniservice.csproj", "{8DD497E3-7563-41C0-8543-0163F5702591}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Data.Omniservice", "..\..\..\Common\Core\Base\Infrastructure.Data.Omniservice\Infrastructure.Data.Omniservice.csproj", "{8DD497E3-7563-41C0-8543-0163F5702591}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.Data.OmniService.Loyalty.Hospitality", "..\..\..\Common\Core\Loyalty.Hospitality\Infrastructure.Data.OmniService.Loyalty.Hospitality\Infrastructure.Data.OmniService.Loyalty.Hospitality.csproj", "{35497EC6-8E89-44A0-8531-827470002765}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Data.OmniService.Loyalty.Hospitality", "..\..\..\Common\Core\Loyalty.Hospitality\Infrastructure.Data.OmniService.Loyalty.Hospitality\Infrastructure.Data.OmniService.Loyalty.Hospitality.csproj", "{35497EC6-8E89-44A0-8531-827470002765}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.DataModel.Loyalty", "..\..\..\Common\Core\Loyalty\Domain.DataModel.Loyalty\Domain.DataModel.Loyalty.csproj", "{36A6FDFB-59D3-4618-92DD-0DEB8B6AB501}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.DataModel.Loyalty", "..\..\..\Common\Core\Loyalty\Domain.DataModel.Loyalty\Domain.DataModel.Loyalty.csproj", "{36A6FDFB-59D3-4618-92DD-0DEB8B6AB501}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.Services.Loyalty", "..\..\..\Common\Core\Loyalty\Domain.Services.Loyalty\Domain.Services.Loyalty.csproj", "{1BE9DD18-AFAF-4F25-A62D-E6BF109C180F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Services.Loyalty", "..\..\..\Common\Core\Loyalty\Domain.Services.Loyalty\Domain.Services.Loyalty.csproj", "{1BE9DD18-AFAF-4F25-A62D-E6BF109C180F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.Data.Omniservice.Loyalty", "..\..\..\Common\Core\Loyalty\Infrastructure.Data.Omniservice.Loyalty\Infrastructure.Data.Omniservice.Loyalty.csproj", "{D007C2F6-6B6B-40A7-AF96-1AE94BCC0598}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Data.Omniservice.Loyalty", "..\..\..\Common\Core\Loyalty\Infrastructure.Data.Omniservice.Loyalty\Infrastructure.Data.Omniservice.Loyalty.csproj", "{D007C2F6-6B6B-40A7-AF96-1AE94BCC0598}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.Services.Loyalty.Hospitality", "..\..\..\Common\Core\Loyalty.Hospitality\Domain.Services.Loyalty.Hospitality\Domain.Services.Loyalty.Hospitality.csproj", "{090F2121-340C-482E-ADAA-E5DF8440CF6C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Services.Loyalty.Hospitality", "..\..\..\Common\Core\Loyalty.Hospitality\Domain.Services.Loyalty.Hospitality\Domain.Services.Loyalty.Hospitality.csproj", "{090F2121-340C-482E-ADAA-E5DF8440CF6C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.DataModel.Loyalty.Hospitality", "..\..\..\Common\Core\Loyalty.Hospitality\Domain.DataModel.Loyalty.Hospitality\Domain.DataModel.Loyalty.Hospitality.csproj", "{539F8620-B7D5-4925-8038-45412674E776}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.DataModel.Loyalty.Hospitality", "..\..\..\Common\Core\Loyalty.Hospitality\Domain.DataModel.Loyalty.Hospitality\Domain.DataModel.Loyalty.Hospitality.csproj", "{539F8620-B7D5-4925-8038-45412674E776}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Data.SQLite2", "Infrastructure.Data.SQLite2\Infrastructure.Data.SQLite2.csproj", "{2F10081D-2A32-43D0-A7B5-8B4B5205E523}"
 EndProject
@@ -74,6 +74,8 @@ Global
 		{75E0EB27-C23E-4CE9-A5D3-D8C77178204D}.Release|iPhone.Build.0 = Release|iPhone
 		{75E0EB27-C23E-4CE9-A5D3-D8C77178204D}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{75E0EB27-C23E-4CE9-A5D3-D8C77178204D}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{75E0EB27-C23E-4CE9-A5D3-D8C77178204D}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
+		{75E0EB27-C23E-4CE9-A5D3-D8C77178204D}.Release|Any CPU.Build.0 = Release|iPhoneSimulator
 		{7BCAC03E-3B65-4CF4-9EBB-4EF353276D1C}.Ad-Hoc|Any CPU.ActiveCfg = Debug|Any CPU
 		{7BCAC03E-3B65-4CF4-9EBB-4EF353276D1C}.Ad-Hoc|Any CPU.Build.0 = Debug|Any CPU
 		{7BCAC03E-3B65-4CF4-9EBB-4EF353276D1C}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
@@ -401,122 +403,6 @@ Global
 		$0.NameConventionPolicy = $3
 		$3.Rules = $4
 		$4.NamingRule = $24
-		$5.Name = Type Parameters
-		$5.AffectedEntity = TypeParameter
-		$5.VisibilityMask = VisibilityMask
-		$5.NamingStyle = PascalCase
-		$5.IncludeInstanceMembers = True
-		$5.IncludeStaticEntities = True
-		$5.RequiredPrefixes = $29
-		$29.String = T
-		$5.RequiredSuffixes = $30
-		$30.String = Exception
-		$6.Name = Types
-		$6.AffectedEntity = Class, Struct, Enum, Delegate
-		$6.VisibilityMask = Public
-		$6.NamingStyle = PascalCase
-		$6.IncludeInstanceMembers = True
-		$6.IncludeStaticEntities = True
-		$7.Name = Interfaces
-		$7.RequiredPrefixes = $8
-		$8.String = I
-		$7.AffectedEntity = Interface
-		$7.VisibilityMask = Public
-		$7.NamingStyle = PascalCase
-		$7.IncludeInstanceMembers = True
-		$7.IncludeStaticEntities = True
-		$9.Name = Attributes
-		$9.RequiredSuffixes = $10
-		$10.String = Attribute
-		$9.AffectedEntity = CustomAttributes
-		$9.VisibilityMask = Public
-		$9.NamingStyle = PascalCase
-		$9.IncludeInstanceMembers = True
-		$9.IncludeStaticEntities = True
-		$11.Name = Event Arguments
-		$11.RequiredSuffixes = $12
-		$12.String = EventArgs
-		$11.AffectedEntity = CustomEventArgs
-		$11.VisibilityMask = Public
-		$11.NamingStyle = PascalCase
-		$11.IncludeInstanceMembers = True
-		$11.IncludeStaticEntities = True
-		$13.Name = Exceptions
-		$13.RequiredSuffixes = $14
-		$14.String = Exception
-		$13.AffectedEntity = CustomExceptions
-		$13.VisibilityMask = VisibilityMask
-		$13.NamingStyle = PascalCase
-		$13.IncludeInstanceMembers = True
-		$13.IncludeStaticEntities = True
-		$15.Name = Methods
-		$15.AffectedEntity = Methods
-		$15.VisibilityMask = Protected, Public
-		$15.NamingStyle = PascalCase
-		$15.IncludeInstanceMembers = True
-		$15.IncludeStaticEntities = True
-		$16.Name = Static Readonly Fields
-		$16.AffectedEntity = ReadonlyField
-		$16.VisibilityMask = Protected, Public
-		$16.NamingStyle = PascalCase
-		$16.IncludeInstanceMembers = False
-		$16.IncludeStaticEntities = True
-		$17.Name = Fields
-		$17.AffectedEntity = Field
-		$17.VisibilityMask = Protected, Public
-		$17.NamingStyle = PascalCase
-		$17.IncludeInstanceMembers = True
-		$17.IncludeStaticEntities = True
-		$18.Name = ReadOnly Fields
-		$18.AffectedEntity = ReadonlyField
-		$18.VisibilityMask = Protected, Public
-		$18.NamingStyle = PascalCase
-		$18.IncludeInstanceMembers = True
-		$18.IncludeStaticEntities = False
-		$19.Name = Constant Fields
-		$19.AffectedEntity = ConstantField
-		$19.VisibilityMask = Protected, Public
-		$19.NamingStyle = PascalCase
-		$19.IncludeInstanceMembers = True
-		$19.IncludeStaticEntities = True
-		$20.Name = Properties
-		$20.AffectedEntity = Property
-		$20.VisibilityMask = Protected, Public
-		$20.NamingStyle = PascalCase
-		$20.IncludeInstanceMembers = True
-		$20.IncludeStaticEntities = True
-		$21.Name = Events
-		$21.AffectedEntity = Event
-		$21.VisibilityMask = Protected, Public
-		$21.NamingStyle = PascalCase
-		$21.IncludeInstanceMembers = True
-		$21.IncludeStaticEntities = True
-		$22.Name = Enum Members
-		$22.AffectedEntity = EnumMember
-		$22.VisibilityMask = VisibilityMask
-		$22.NamingStyle = PascalCase
-		$22.IncludeInstanceMembers = True
-		$22.IncludeStaticEntities = True
-		$23.Name = Parameters
-		$23.AffectedEntity = Parameter
-		$23.VisibilityMask = VisibilityMask
-		$23.NamingStyle = CamelCase
-		$23.IncludeInstanceMembers = True
-		$23.IncludeStaticEntities = True
-		$24.Name = Type Parameters
-		$24.RequiredPrefixes = $25
-		$25.String = T
-		$24.AffectedEntity = TypeParameter
-		$24.VisibilityMask = VisibilityMask
-		$24.NamingStyle = PascalCase
-		$24.IncludeInstanceMembers = True
-		$24.IncludeStaticEntities = True
-		$0.VersionControlPolicy = $26
-		$0.ChangeLogPolicy = $27
-		$27.UpdateMode = None
-		$27.MessageStyle = $28
-		$28.LineAlign = 0
-		$27.inheritsSet = Mono
 		StartupItem = Presentation\Presentation.csproj
 	EndGlobalSection
 EndGlobal
