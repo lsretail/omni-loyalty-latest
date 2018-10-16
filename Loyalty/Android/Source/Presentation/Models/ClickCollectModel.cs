@@ -48,13 +48,16 @@ namespace Presentation.Models
             List<OrderLineAvailability> list = new List<OrderLineAvailability>();
             foreach (OrderLineAvailabilityResponse line in orderLineAvailabilities.Lines)
             {
-                list.Add(new OrderLineAvailability()
+                if(orderLineAvailabilities.PreferredSourcingLocation == orderLineAvailabilities.Lines[orderLineAvailabilities.Lines.IndexOf(line)].LocationCode)
                 {
-                    ItemId = line.ItemId,
-                    UomId = line.UnitOfMeasureId,
-                    VariantId = line.VariantId,
-                    Quantity = line.Quantity
-                });
+                    list.Add(new OrderLineAvailability()
+                    {
+                        ItemId = line.ItemId,
+                        UomId = line.UnitOfMeasureId,
+                        VariantId = line.VariantId,
+                        Quantity = line.Quantity
+                    });
+                }
             }
             return list;
         }
