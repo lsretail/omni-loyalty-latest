@@ -7,7 +7,7 @@
                 android:title="Set a base url"
                 android:summary="The app has to be restarted after changing the web service"
                 android:dialogTitle="Enter new webservice base url"
-                android:dialogMessage="Example path: 'http://lsretail.cloudapp.net/'"/>
+                android:dialogMessage="Example path: 'http://mobiledemo.lsretail.com/'"/>
     <EditTextPreference
                 android:key="WebserviceResource"
                 android:title="Set a custom web service"
