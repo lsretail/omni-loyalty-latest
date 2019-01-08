@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="internalOnly" package="lsretail.omni.loyalty.android" android:versionCode="224" android:versionName="3.1.2">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="internalOnly" package="lsretail.omni.loyalty.android" android:versionCode="225" android:versionName="3.1.2">
 	<uses-sdk android:minSdkVersion="19" android:targetSdkVersion="28" />
 	<application android:largeHeap="true" android:label="@string/ApplicationTitle" android:theme="@style/ApplicationTheme" android:icon="@drawable/ic_launcher" android:allowBackup="false" android:fullBackupOnly="false">
 		<!-- See https://developers.google.com/maps/documentation/android/start#obtaining_an_api_key -->
-		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="[Please enter the API KEY here]" />
+		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyCD4aqzIYDbAjKnyYygcsKEKajJPLwjRJk" /> <!-- REPLACE KEY WITH YOUR OWN KEY -->
 		<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
 		<meta-data android:name="net.hockeyapp.android.appIdentifier" android:value="@string/HockeyAppId" />
 		<receiver android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver" android:exported="false" />
@@ -13,6 +13,9 @@
 				<category android:name="${applicationId}" />
 			</intent-filter>
 		</receiver>
+    
+	  <!-- Fix for maps, required when targetting Android 9.0 -->
+	  <uses-library android:name="org.apache.http.legacy" android:required="false" />
 	</application>
 	<!--PROTECTION LEVEL NORMAL-->
 	<uses-permission android:name="android.permission.INTERNET" />
@@ -48,4 +51,5 @@
 	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 	<permission android:name="com.lsretail.omni.loyalty.android.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+  
 </manifest>
