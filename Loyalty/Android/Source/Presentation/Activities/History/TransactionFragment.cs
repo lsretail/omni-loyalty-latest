@@ -63,7 +63,7 @@ namespace Presentation.Activities.History
             refreshLayout.SetColorSchemeResources(Resource.Color.transactions, Resource.Color.accent, Resource.Color.transactions, Resource.Color.accent);
             refreshLayout.SetOnRefreshListener(this);
 
-            if (AppData.Device.UserLoggedOnToDevice.Transactions?.Count > 0)
+            if (AppData.Device.UserLoggedOnToDevice.SalesEntries?.Count > 0)
             {
                 adapter.SetTransactions(AppData.Device.UserLoggedOnToDevice.TransactionOrderedByDate);
             }
@@ -115,7 +115,7 @@ namespace Presentation.Activities.History
 
             if (loadedTransactions != null)
             {
-                AppData.Device.UserLoggedOnToDevice.Transactions = loadedTransactions;
+                AppData.Device.UserLoggedOnToDevice.SalesEntries = loadedTransactions;
                 UpdateTransaction();
             }
         }
@@ -146,7 +146,7 @@ namespace Presentation.Activities.History
 
         public void ItemClicked(int type, string id, string id2, View view)
         {
-            var transaction = AppData.Device.UserLoggedOnToDevice.Transactions.FirstOrDefault(x => x.Id == id);
+            var transaction = AppData.Device.UserLoggedOnToDevice.SalesEntries.FirstOrDefault(x => x.Id == id);
 
             var intent = new Intent();
 

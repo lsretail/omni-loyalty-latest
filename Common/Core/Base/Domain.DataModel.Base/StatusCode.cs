@@ -122,6 +122,11 @@ namespace LSRetail.Omni.Domain.DataModel.Base
         /// </summary>
         [EnumMember]
         OrderQueueIdNotFound  = 23,
+        /// <summary>
+        /// Config not found. 
+        /// </summary>
+        [EnumMember]
+        ConfigNotFound = 24,
 
         [EnumMember]
         OneAccountInvalid = 30,
@@ -167,7 +172,12 @@ namespace LSRetail.Omni.Domain.DataModel.Base
         /// User is not logged in. SecurityToken used is valid but user is not longer logged into system
         /// </summary>
         [EnumMember]
-        UserNotLoggedIn = 102,       
+        UserNotLoggedIn = 102,
+        /// <summary>
+        /// User is not logged in. SecurityToken used is valid but user is not longer logged into system
+        /// </summary>
+        [EnumMember]
+        LSKeyInvalid = 103,
         //security related status codes, enum range end at 149
         //security related status codes ends.
 

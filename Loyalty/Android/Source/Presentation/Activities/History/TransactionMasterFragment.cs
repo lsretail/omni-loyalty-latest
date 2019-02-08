@@ -103,7 +103,7 @@ namespace Presentation.Activities.History
 
             if (loadedTransactions != null)
             {
-                AppData.Device.UserLoggedOnToDevice.Transactions = loadedTransactions;
+                AppData.Device.UserLoggedOnToDevice.SalesEntries = loadedTransactions;
                 UpdateTransaction();
             }
         }

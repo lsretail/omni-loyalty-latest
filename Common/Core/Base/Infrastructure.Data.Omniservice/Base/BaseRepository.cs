@@ -246,10 +246,27 @@ namespace LSRetail.Omni.Infrastructure.Data.Omniservice.Base
                 }
                 else if (agex.InnerException != null)
                 {
-                    string msg = string.Format("HTTP Status: {0} - Reason: {1} ",
-                        "AggregateException unknown 1 " + agex.InnerException.GetType().ToString(), agex.Message);
+                    int i = 1; //just in case 
+                    string msg = msg = string.Format("HTTP Status: {0} - Reason: {1} ",
+                        "AggregateException unknown 1 " + agex.InnerException.GetType().ToString(), agex.InnerException.Message);
+                    foreach (Exception exInnerException in agex.Flatten().InnerExceptions)
+                    {
+                        //Get message from all aggregated exceptions
+                        Exception exNestedInnerException = exInnerException;
+                        do
+                        {
+                            if (exNestedInnerException != null && !string.IsNullOrEmpty(exNestedInnerException.Message))
+                            {
+                                msg += " *" + i.ToString() + "* " + exNestedInnerException.Message;
+                            }
+                            exNestedInnerException = exNestedInnerException.InnerException;
+                            i++;
+                        }
+                        while (exNestedInnerException != null && i <= 10);
+                    }
+
                     throw new LSOmniException(StatusCode.CommunicationFailure, msg, agex);
-                }
+                }              
                 else
                 {
                     string msg = string.Format("HTTP Status: {0} - Reason: {1} ", "AggregateException unknown 2 " + agex.InnerException.GetType().ToString(), agex.Message);

@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using LSRetail.Omni.Domain.DataModel.Loyalty.Orders;
-using LSRetail.Omni.Domain.DataModel.Loyalty.Transactions;
+using LSRetail.Omni.Domain.DataModel.Base.SalesEntries;
 
 namespace LSRetail.Omni.Domain.Services.Loyalty.Transactions
 {
@@ -14,54 +13,24 @@ namespace LSRetail.Omni.Domain.Services.Loyalty.Transactions
             iTransactionRepository = iRepo;
         }
 
-        public List<LoyTransaction> GetSalesEntries(string contactId, int numerOfTransactionsToReturn)
+        public List<SalesEntry> GetSalesEntries(string cardId, int numerOfTransactionsToReturn)
         {
-            return iTransactionRepository.GetSalesEntries(contactId, numerOfTransactionsToReturn);
+            return iTransactionRepository.GetSalesEntries(cardId, numerOfTransactionsToReturn);
         }
 
-        public LoyTransaction GetTransactionByReceiptNo(string receiptNo)
+        public SalesEntry SalesEntryGetById(string entryId, SourceType type)
         {
-            return iTransactionRepository.GetTransactionByReceiptNo(receiptNo);
+            return iTransactionRepository.SalesEntryGetById(entryId, type);
         }
 
-        public List<LoyTransaction> GetTransactionSearch(string contactId, string itemSerach, int numerOfTransactionsToReturn, bool includeLines)
+        public async Task<List<SalesEntry>> GetSalesEntriesAsync(string cardId, int numerOfTransactionsToReturn)
         {
-            return iTransactionRepository.GetTransactionSearch(contactId, itemSerach, numerOfTransactionsToReturn, includeLines);
+            return await Task.Run(() => GetSalesEntries(cardId, numerOfTransactionsToReturn));
         }
 
-        public LoyTransaction SalesEntryGetById(string entryId)
+        public async Task<SalesEntry> SalesEntryGetByIdAsync(string entryId, SourceType type)
         {
-            return iTransactionRepository.SalesEntryGetById(entryId);
-        }
-
-        public Order OrderGetById(string orderId)
-        {
-            return iTransactionRepository.OrderGetById(orderId, true);
-        }
-
-        public async Task<List<LoyTransaction>> GetSalesEntriesAsync(string contactId, int numerOfTransactionsToReturn)
-        {
-            return await Task.Run(() => GetSalesEntries(contactId, numerOfTransactionsToReturn));
-        }
-
-        public async Task<LoyTransaction> GetTransactionByReceiptNoAsync(string receiptNo)
-        {
-            return await Task.Run(() => GetTransactionByReceiptNo(receiptNo));
-        }
-
-        public async Task<List<LoyTransaction>> GetTransactionSearchAsync(string contactId, string itemSerach, int numerOfTransactionsToReturn, bool includeLines)
-        {
-            return await Task.Run(() => GetTransactionSearch(contactId, itemSerach, numerOfTransactionsToReturn, includeLines));
-        }
-
-        public async Task<LoyTransaction> SalesEntryGetByIdAsync(string entryId)
-        {
-            return await Task.Run(() => SalesEntryGetById(entryId));
-        }
-
-        public async Task<Order> OrderGetByIdAsync(string orderId)
-        {
-            return await Task.Run(() => OrderGetById(orderId));
+            return await Task.Run(() => SalesEntryGetById(entryId, type));
         }
     }
 }

@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Runtime.Serialization;
 using LSRetail.Omni.Domain.DataModel.Base.Base;
-using LSRetail.Omni.Domain.DataModel.Base.SalesEntries;
-using LSRetail.Omni.Domain.DataModel.Loyalty.Baskets;
 
-namespace LSRetail.Omni.Domain.DataModel.Loyalty.Orders
+namespace LSRetail.Omni.Domain.DataModel.Base.SalesEntries
 {
     [DataContract(Namespace = "http://lsretail.com/LSOmniService/Loy/2017")]
-    public class OrderLine : Entity, IDisposable
+    public class SalesEntryLine : Entity, IDisposable
     {
-        public OrderLine(string id) : base(id)
+        public SalesEntryLine(string id) : base(id)
         {
-            OrderId = string.Empty;
             LineNumber = 1;
             ItemId = string.Empty;
             VariantId = string.Empty;
@@ -31,7 +28,7 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Orders
             Amount = 0.0M;
         }
 
-        public OrderLine() : this(string.Empty)
+        public SalesEntryLine() : this(string.Empty)
         {
         }
 
@@ -48,11 +45,6 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Orders
             }
         }
 
-        /// <summary>
-        /// Order Document Id
-        /// </summary>
-        [DataMember]
-        public string OrderId { get; set; }
         [DataMember]
         public int LineNumber { get; set; }
         [DataMember]
@@ -67,12 +59,6 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Orders
         public string UomId { get; set; }
         [DataMember]
         public decimal Quantity { get; set; }
-        [DataMember]
-        public decimal QuantityOutstanding { get; set; }
-        [DataMember]
-        public decimal QuantityToInvoice { get; set; }
-        [DataMember]
-        public decimal QuantityToShip { get; set; }
         [DataMember]
         public LineType LineType { get; set; }
         [DataMember]

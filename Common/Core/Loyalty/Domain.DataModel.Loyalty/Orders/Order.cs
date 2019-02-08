@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using LSRetail.Omni.Domain.DataModel.Base.Retail;
 using LSRetail.Omni.Domain.DataModel.Loyalty.Baskets;
 using LSRetail.Omni.Domain.DataModel.Base.Base;
+using LSRetail.Omni.Domain.DataModel.Base.SalesEntries;
 
 namespace LSRetail.Omni.Domain.DataModel.Loyalty.Orders
 {
@@ -14,7 +15,7 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Orders
         public Order(string id) : base(id)
         {
             SourceType = SourceType.LSOmni;
-            OrderStatus = OrderStatus.Pending;
+            OrderStatus = SalesEntryStatus.Pending;
             ShippingStatus = ShippingStatus.ShippigNotRequired;
             PaymentStatus = PaymentStatus.PreApproved;
 
@@ -71,7 +72,7 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Orders
         [DataMember]
         public SourceType SourceType { get; set; }
         [DataMember]
-        public OrderStatus OrderStatus { get; set; }
+        public SalesEntryStatus OrderStatus { get; set; }
         [DataMember]
         public PaymentStatus PaymentStatus { get; set; }
         [DataMember]

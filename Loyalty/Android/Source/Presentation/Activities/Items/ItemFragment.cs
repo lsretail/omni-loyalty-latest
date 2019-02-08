@@ -59,7 +59,6 @@ namespace Presentation.Activities.Items
         private string barcode;
         public LoyItem Item { get; private set; }
 
-        private VariantRegistration selectedVariant;
         private List<PublishedOffer> relatedPublishedOffers; 
 
         private TextView itemTitle;
@@ -68,7 +67,7 @@ namespace Presentation.Activities.Items
         private TextView selectVariant;
         private View itemDetailsHeader;
         private Button shoppingListQty;
-        private Android.Support.Design.Widget.FloatingActionButton wishListButton;
+        private FloatingActionButton wishListButton;
         private ProgressButton addToBasketButton;
 
         private View relatedPublishedOffersSpinner;
@@ -97,7 +96,7 @@ namespace Presentation.Activities.Items
             if(string.IsNullOrEmpty(itemId))
                 barcode = data.GetString(BundleConstants.Barcode);
 
-            View view = Util.Utils.ViewUtils.Inflate(inflater, Resource.Layout.Item);
+            View view = Utils.ViewUtils.Inflate(inflater, Resource.Layout.Item);
 
             toolbar = view.FindViewById<Toolbar>(Resource.Id.ItemScreenToolbar);
             (Activity as LoyaltyFragmentActivity).SetSupportActionBar(toolbar);
@@ -157,7 +156,7 @@ namespace Presentation.Activities.Items
                 shoppingListQty.Text = bundle.GetDouble(BundleConstants.ItemAddToShoppingQty).ToString();
             }
 
-            Util.Utils.ViewUtils.AddOnGlobalLayoutListener(view, this);
+            Utils.ViewUtils.AddOnGlobalLayoutListener(view, this);
 
             return view;
         }
@@ -186,7 +185,7 @@ namespace Presentation.Activities.Items
         {
             StartLoadingItem();
 
-            Util.Utils.ViewUtils.RemoveOnGlobalLayoutListener(View, this);
+            Utils.ViewUtils.RemoveOnGlobalLayoutListener(View, this);
         }
 
         public void BroadcastReceived(string action)
@@ -240,20 +239,14 @@ namespace Presentation.Activities.Items
             }
             else
             {
-                ItemLoadSuccess(item);
+                this.Item = item;
+                LoadItem();
             }
         }
 
         private void GoBackOnNetworkError()
         {
             Activity.OnBackPressed();
-        }
-
-        private void ItemLoadSuccess(LoyItem item)
-        {
-            this.Item = item;
-
-            LoadItem();
         }
 
         public void ShowIndicator(bool show)
@@ -306,34 +299,26 @@ namespace Presentation.Activities.Items
                 itemDetailsHeader.Visibility = ViewStates.Gone;
             }
 
-            if (Item.Prices.Count > 0)
-                itemPrice.Text = Item.Prices[0].Amount;
-            else
-                itemPrice.Visibility = ViewStates.Gone;
-
             Bundle data = Arguments;
-
             string selectedVariantId = data.GetString(BundleConstants.SelectedVariantId);
 
-            
             if (Item.VariantsRegistration.Count > 0)
             {
-                if (selectedVariant == null)
+                if (Item.SelectedVariant == null)
                 {
                     if (Item.VariantsRegistration?.Count > 0)
                     {
                         selectedVariantId = Item.VariantsRegistration[0].Id;
-
                     }
 
                     if (!string.IsNullOrEmpty(selectedVariantId))
                     {
-                        selectedVariant = Item.VariantsRegistration.FirstOrDefault(x => x.Id == selectedVariantId);
+                        Item.SelectedVariant = Item.VariantsRegistration.FirstOrDefault(x => x.Id == selectedVariantId);
 
-                        if (selectedVariant != null)
+                        if (Item.SelectedVariant != null)
                         {
-                            VariantExt.SetIsSelectedFromVariantReg(Item.VariantsExt, selectedVariant);
-                            selectVariant.Text = selectedVariant.ToString();
+                            VariantExt.SetIsSelectedFromVariantReg(Item.VariantsExt, Item.SelectedVariant);
+                            selectVariant.Text = Item.SelectedVariant.ToString();
                         }
                     }
                 }
@@ -343,10 +328,13 @@ namespace Presentation.Activities.Items
                 selectVariant.Visibility = ViewStates.Gone;
             }
 
+            if (Item.Prices.Count > 0)
+                itemPrice.Text = Item.PriceFromVariantsAndUOM(Item.SelectedVariant?.Id, Item.SelectedUnitOfMeasure?.Id);
+            else
+                itemPrice.Visibility = ViewStates.Gone;
+
             SetWishListButton();
-
             LoadImage();
-
             LoadRelatedPublishedOffers();
         }
 
@@ -416,8 +404,8 @@ namespace Presentation.Activities.Items
                 Quantity = qty
             };
 
-            if (selectedVariant != null)
-                basketItem.VariantReg = selectedVariant;
+            if (Item.SelectedVariant != null)
+                basketItem.VariantReg = Item.SelectedVariant;
 
             if (basketItem.VariantReg == null && Item.VariantsRegistration != null && Item.VariantsRegistration.Count > 0)
             {
@@ -447,8 +435,8 @@ namespace Presentation.Activities.Items
             {
                 var line = new OneListItem() {Item = Item.ShallowCopy(), Quantity = 1};
 
-                if (selectedVariant != null)
-                    line.VariantReg = selectedVariant;
+                if (Item.SelectedVariant != null)
+                    line.VariantReg = Item.SelectedVariant;
 
                 if (line.VariantReg == null && Item.VariantsRegistration != null && Item.VariantsRegistration.Count > 0)
                 {
@@ -473,10 +461,10 @@ namespace Presentation.Activities.Items
 
             var itemDescription = Item.Description;
             var variantId = "";
-            if (selectedVariant != null)
+            if (Item.SelectedVariant != null)
             {
-                itemDescription += " - " + selectedVariant;
-                variantId = selectedVariant.Id;
+                itemDescription += " - " + Item.SelectedVariant.ToString();
+                variantId = Item.SelectedVariant.Id;
             }
 
             if (string.IsNullOrEmpty(variantId) && Item.VariantsRegistration != null && Item.VariantsRegistration.Count > 0)
@@ -497,33 +485,13 @@ namespace Presentation.Activities.Items
 
         private void CalculatePrice()
         {
-            string selectedUomId = "";
-            string selectedVariantId = "";
-            
-            if (selectedVariant != null)
-                selectedVariantId = selectedVariant.Id;
-
-            itemPrice.Text = Item.PriceFromVariantsAndUOM(selectedVariantId, selectedUomId);
-
+            itemPrice.Text = Item.PriceFromVariantsAndUOM(Item.SelectedVariant?.Id, Item.SelectedUnitOfMeasure?.Id);
             if(!string.IsNullOrEmpty(itemPrice.Text))
                 itemPrice.Visibility = ViewStates.Visible;
             else
                 itemPrice.Visibility = ViewStates.Gone;
 
             SetWishListButton();
-        }
-
-        private bool ItemIsInWishList()
-        {
-            VariantRegistration selectedVar = null;
-            UnitOfMeasure selectedUnitOfMeasure = null;
-
-            if (selectedVariant != null)
-            {
-                selectedVar = selectedVariant;
-            }
-
-            return shoppingListModel.ItemIsInWishList(Item, selectedVar, selectedUnitOfMeasure);
         }
 
         private void ReverseWishListButton()
@@ -540,7 +508,7 @@ namespace Presentation.Activities.Items
 
         private void SetWishListButton()
         {
-            if (ItemIsInWishList())
+            if (shoppingListModel.ItemIsInWishList(Item, Item.SelectedVariant, Item.SelectedUnitOfMeasure))
             {
                 currentAddToWishListImage = Resource.Drawable.ic_favorite_24dp;
                 wishListButton.SetImageResource(Resource.Drawable.ic_favorite_24dp);
@@ -554,12 +522,12 @@ namespace Presentation.Activities.Items
 
         private void SelectVariant()
         {
-            var varDialog = new VariantDialog(Activity, Item, selectedVariant, (newSelectedVariant, qty) =>
+            var varDialog = new VariantDialog(Activity, Item, Item.SelectedVariant, (newSelectedVariant, qty) =>
             {
                 if (newSelectedVariant != null)
                 {
-                    selectedVariant = newSelectedVariant;
-                    selectVariant.Text = selectedVariant.ToString();
+                    Item.SelectedVariant = newSelectedVariant;
+                    selectVariant.Text = Item.SelectedVariant.ToString();
                     CalculatePrice();
                     LoadImage();
                 }
@@ -633,7 +601,13 @@ namespace Presentation.Activities.Items
                 return;
             }
 
-            if (!ItemIsInWishList())
+            if (shoppingListModel.ItemIsInWishList(Item, Item.SelectedVariant, Item.SelectedUnitOfMeasure))
+            {
+                var existingItem = AppData.Device.UserLoggedOnToDevice.WishList.ItemGetByIds(Item.Id, Item.SelectedVariant?.Id, Item.SelectedUnitOfMeasure?.Id);
+                if (existingItem != null)
+                    await shoppingListModel.DeleteWishListLine(existingItem.Id);
+            }
+            else
             {
                 if (await AddToWishList())
                 {
@@ -657,33 +631,14 @@ namespace Presentation.Activities.Items
 
                 ReverseWishListButton();
             }
-            else
-            {
-                VariantRegistration selectedVar = null;
-                UnitOfMeasure selectedUnitOfMeasure = null;
-
-                if (selectedVariant != null)
-                {
-                    selectedVar = selectedVariant;
-                }
-
-                var existingItem = AppData.Device.UserLoggedOnToDevice.WishList.ItemGetByIds(Item.Id, selectedVar?.Id, selectedUnitOfMeasure?.Id);
-                if (existingItem != null)
-                    await shoppingListModel.DeleteWishListLine(existingItem.Id);
-            }
         }
 
         private void LoadImage()
         {
-            VariantRegistration variant = null;
-            if (selectedVariant != null)
-                variant = selectedVariant;
-
             var images = new List<LSRetail.Omni.Domain.DataModel.Base.Retail.ImageView>();
-            
-            if (variant != null)
+            if (Item.SelectedVariant != null)
             {
-                variant.Images.ForEach(images.Add);
+                Item.SelectedVariant.Images.ForEach(images.Add);
             }
 
             Item.Images.ForEach(imageView =>

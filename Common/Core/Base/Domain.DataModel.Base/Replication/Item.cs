@@ -55,6 +55,19 @@ namespace LSRetail.Omni.Domain.DataModel.Base.Replication
             IsDeleted = false;
             DateBlocked = new DateTime(1900, 1, 1);
             DateToActivateItem = new DateTime(1900, 1, 1);
+            Description = string.Empty;
+            Details = string.Empty;
+            ProductGroupId = string.Empty;
+            BaseUnitOfMeasure = string.Empty;
+            SalseUnitOfMeasure = string.Empty;
+            PurchUnitOfMeasure = string.Empty;
+            TaxItemGroupId = string.Empty;
+            VendorId = string.Empty;
+            VendorItemId = string.Empty;
+            SeasonCode = string.Empty;
+            ItemCategoryCode = string.Empty;
+            ItemFamilyCode = string.Empty;
+            MustKeyInComment = 0;
         }
 
         public ReplItem() : this(string.Empty)
@@ -107,7 +120,19 @@ namespace LSRetail.Omni.Domain.DataModel.Base.Replication
         [DataMember]
         public DateTime DateBlocked { get; set; }
         [DataMember]
+        public int Blocked { get; set; }
+        [DataMember]
         public int BlockedOnPos { get; set; }
+        [DataMember]
+        public int BlockDiscount { get; set; }
+        [DataMember]
+        public int BlockManualPriceChange { get; set; }
+        [DataMember]
+        public int BlockNegativeAdjustment { get; set; }
+        [DataMember]
+        public int BlockPositiveAdjustment { get; set; }
+        [DataMember]
+        public int BlockPurchaseReturn { get; set; }
         [DataMember]
         public DateTime DateToActivateItem { get; set; }
         [DataMember]
@@ -127,8 +152,6 @@ namespace LSRetail.Omni.Domain.DataModel.Base.Replication
         public string ItemCategoryCode { get; set; }
         [DataMember]
         public string ItemFamilyCode { get; set; }
-        [DataMember]
-        public decimal UnitCost { get; set; }
         [DataMember]
         public decimal UnitsPerParcel { get; set; }
         [DataMember]

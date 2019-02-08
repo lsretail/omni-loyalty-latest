@@ -19,6 +19,7 @@ using LSRetail.Omni.Domain.DataModel.Loyalty.Items;
 using LSRetail.Omni.Domain.DataModel.Loyalty.Transactions;
 using LSRetail.Omni.Domain.DataModel.Loyalty.Baskets;
 using LSRetail.Omni.Domain.DataModel.Base.Setup;
+using LSRetail.Omni.Domain.DataModel.Base.SalesEntries;
 
 namespace Presentation.Adapters
 {
@@ -130,7 +131,7 @@ namespace Presentation.Adapters
             {
                 return 4;
             }
-            else if (item is LoyTransaction)
+            else if (item is SalesEntry)
             {
                 return 5;
             }
@@ -249,20 +250,17 @@ namespace Presentation.Adapters
             else if (holder is TransactionAdapter.TransactionViewHolder)
             {
                 var transactionViewHolder = holder as TransactionAdapter.TransactionViewHolder;
-                var transaction = items[position] as LoyTransaction;
+                var transaction = items[position] as SalesEntry;
 
                 if (transactionViewHolder == null || transaction == null)
                 {
                     return;
                 }
 
-                if (transaction.Date.HasValue)
-                {
-                    transactionViewHolder.Title.Text = transaction.Date.Value.ToString("f");
-                }
+                transactionViewHolder.Title.Text = transaction.DocumentRegTime.ToString("f");
 
-                transactionViewHolder.Subtitle.Text = transaction.Store.Description;
-                transactionViewHolder.Price.Text = transaction.Amount;
+                transactionViewHolder.Subtitle.Text = transaction.StoreName;
+                transactionViewHolder.Price.Text = transaction.TotalAmount.ToString("N02");
             }
             else if (holder is ShoppingListDetailAdapter.ShoppingListLineViewHolder)
             {
@@ -401,7 +399,7 @@ namespace Presentation.Adapters
                     view,
                     (type, position) =>
                     {
-                        var item = items[position] as LoyTransaction;
+                        var item = items[position] as SalesEntry;
 
                         if (item != null)
                         {

@@ -4,13 +4,8 @@
 #endif
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Infrastructure.Data.SQLite;
 using Infrastructure.Data.SQLite.DB.DTO;
 using SQLite;
-
 
 namespace Infrastructure.Data.SQLite.DB
 {

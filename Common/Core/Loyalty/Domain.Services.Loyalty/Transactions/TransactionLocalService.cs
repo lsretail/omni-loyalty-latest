@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using LSRetail.Omni.Domain.DataModel.Loyalty.Transactions;
+using LSRetail.Omni.Domain.DataModel.Base.SalesEntries;
 
 namespace LSRetail.Omni.Domain.Services.Loyalty.Transactions
 {
@@ -12,12 +12,12 @@ namespace LSRetail.Omni.Domain.Services.Loyalty.Transactions
             iRepository = iRep;
         }
 
-        public List<LoyTransaction> GetLocalTransactions()
+        public List<SalesEntry> GetLocalTransactions()
         {
             return iRepository.GetLocalTransactions();
         }
 
-        public void SaveTransactions(List<LoyTransaction> transactions)
+        public void SaveTransactions(List<SalesEntry> transactions)
         {
             iRepository.SaveTransactions(transactions);
         }

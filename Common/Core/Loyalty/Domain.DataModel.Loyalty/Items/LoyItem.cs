@@ -88,9 +88,13 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Items
         [DataMember]
         public List<VariantExt> VariantsExt { get; set; }
         [DataMember]
+        public VariantRegistration SelectedVariant { get; set; }
+        [DataMember]
         public List<VariantRegistration> VariantsRegistration { get; set; }
         [DataMember]
         public List<RetailAttribute> ItemAttributes { get; set; }
+        [DataMember]
+        public UnitOfMeasure SelectedUnitOfMeasure { get; set; }
         [DataMember]
         public List<UnitOfMeasure> UnitOfMeasures { get; set; }
         [DataMember]
@@ -103,6 +107,25 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Items
         public string Price { get; set; }
         [DataMember]
         public bool AllowedToSell { get; set; } // Blocked on POS
+        [DataMember]
+        public bool Blocked { get; set; }
+        [DataMember]
+        public bool BlockDiscount { get; set; }
+        [DataMember]
+        public bool BlockManualPriceChange { get; set; }
+
+        [DataMember]
+        public decimal GrossWeight { get; set; }
+        [DataMember]
+        public string SeasonCode { get; set; }
+        [DataMember]
+        public string ItemCategoryCode { get; set; }
+        [DataMember]
+        public string ItemFamilyCode { get; set; }
+        [DataMember]
+        public decimal UnitsPerParcel { get; set; }
+        [DataMember]
+        public decimal UnitVolume { get; set; }
 
 #if WCFSERVER
         //not all data goes to wcf clients
@@ -113,11 +136,6 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Items
         public ImageView DefaultImage
         {
             get { return (Images != null && Images.Count > 0) ? Images[0] : null; }
-        }
-
-        public string PriceFromVariantsAndUOM(VariantRegistration variant, UnitOfMeasure uom)
-        {
-            return PriceFromVariantsAndUOM(variant?.Id, uom?.Id);
         }
 
         public string PriceFromVariantsAndUOM(string variant, string uom)
@@ -141,11 +159,11 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Items
                     {
                         return price.Amount;
                     }
-                    if ((variant.Equals(price.VariantId) && price.UomId.Equals("")) || (price.VariantId.Equals("") && uom.Equals(price.UomId)))
+                    if ((variant.Equals(price.VariantId) && string.IsNullOrEmpty(price.UomId)) || (string.IsNullOrEmpty(price.VariantId) && uom.Equals(price.UomId)))
                     {
                         return price.Amount;
                     }
-                    if (price.VariantId.Equals("") && price.UomId.Equals(""))
+                    if (string.IsNullOrEmpty(price.VariantId) && string.IsNullOrEmpty(price.UomId))
                     {
                         return price.Amount;
                     }
@@ -190,7 +208,7 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Items
 
         public string FormatQty(decimal qty)
         {
-            string returnString = "";
+            string returnString = string.Empty;
             if (UnitOfMeasures.Count == 0)
                 returnString += qty.ToString("N0");
             else

@@ -10,6 +10,7 @@ using LSRetail.Omni.Domain.DataModel.Loyalty.Transactions;
 using LSRetail.Omni.Domain.DataModel.Base.Utils;
 using LSRetail.Omni.Domain.DataModel.Loyalty.Members.SpecialCase;
 using LSRetail.Omni.Domain.DataModel.Loyalty.Baskets;
+using LSRetail.Omni.Domain.DataModel.Base.SalesEntries;
 
 namespace LSRetail.Omni.Domain.DataModel.Loyalty.Members
 {
@@ -127,11 +128,11 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Members
         [DataMember]
         public List<Profile> Profiles { get; set; }
         [DataMember]
-        public List<LoyTransaction> Transactions { get; set; }
+        public List<SalesEntry> SalesEntries { get; set; }
         [IgnoreDataMember]
-        public List<LoyTransaction> TransactionOrderedByDate
+        public List<SalesEntry> TransactionOrderedByDate
         {
-            get { return Transactions?.OrderByDescending(x => x.Date).ToList(); }//
+            get { return SalesEntries?.OrderByDescending(x => x.DocumentRegTime).ToList(); }//
         }
 
         [DataMember]
@@ -206,7 +207,7 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Members
             notifications = new List<Notification>();
             PublishedOffers = new List<PublishedOffer>();
             Profiles = new List<Profile>();
-            Transactions = new List<LoyTransaction>();
+            SalesEntries = new List<SalesEntry>();
         }
 
         public void Dispose()

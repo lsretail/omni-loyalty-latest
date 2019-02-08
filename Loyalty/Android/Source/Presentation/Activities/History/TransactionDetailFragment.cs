@@ -11,14 +11,14 @@ using Presentation.Activities.Items;
 using Presentation.Adapters;
 using Presentation.Models;
 using Presentation.Util;
-using LSRetail.Omni.Domain.DataModel.Loyalty.Transactions;
+using LSRetail.Omni.Domain.DataModel.Base.SalesEntries;
 
 namespace Presentation.Activities.History
 {
     public class TransactionDetailFragment : LoyaltyFragment, IRefreshableActivity, IItemClickListener
     {
         private string transactionId;
-        private LoyTransaction transaction;
+        private SalesEntry transaction;
         private TransactionModel model;
 
         private RecyclerView transactionDetailRecyclerView;
@@ -66,7 +66,7 @@ namespace Presentation.Activities.History
             adapter = new TransactionDetailAdapter(Activity, this);
             transactionDetailRecyclerView.SetAdapter(adapter);
 
-            transaction = AppData.Device.UserLoggedOnToDevice.Transactions.FirstOrDefault(x => x.Id == transactionId);
+            transaction = AppData.Device.UserLoggedOnToDevice.SalesEntries.FirstOrDefault(x => x.Id == transactionId);
 
             LoadTransaction();
 
@@ -75,7 +75,7 @@ namespace Presentation.Activities.History
 
         private async void LoadTransaction()
         {
-            var loadedTransation = await model.GetTransactionByReceiptNo(transaction.ReceiptNumber);
+            var loadedTransation = await model.GetTransactionByReceiptNo(transaction.Id);
 
             if (loadedTransation == null)
             {
@@ -117,7 +117,7 @@ namespace Presentation.Activities.History
             }
             else
             {
-                dateHeader.Text = transaction.Date.Value.ToString("D");
+                dateHeader.Text = transaction.DocumentRegTime.ToString("D");
             }
 
             adapter.SetTransaction(Activity, transaction);
@@ -142,11 +142,11 @@ namespace Presentation.Activities.History
         {
             var intent = new Intent();
 
-            var saleLine = transaction.SaleLines.FirstOrDefault(x => x.Id == id);
+            var saleLine = transaction.Lines.FirstOrDefault(x => x.Id == id);
 
-            if (saleLine != null && saleLine.Item != null)
+            if (saleLine != null)
             {
-                intent.PutExtra(BundleConstants.ItemId, saleLine.Item.Id);
+                intent.PutExtra(BundleConstants.ItemId, saleLine.ItemId);
 
                 if (AppData.IsDualScreen)
                     intent.PutExtra(BundleConstants.LoadContainer, true);

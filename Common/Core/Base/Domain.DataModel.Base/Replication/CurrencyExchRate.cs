@@ -47,6 +47,8 @@ namespace LSRetail.Omni.Domain.DataModel.Base.Replication
         {
             IsDeleted = false;
             StartingDate = DateTime.Now;
+            CurrencyCode = string.Empty;
+            RelationalCurrencyCode = string.Empty;
         }
 
         public void Dispose()
@@ -70,5 +72,7 @@ namespace LSRetail.Omni.Domain.DataModel.Base.Replication
         public DateTime StartingDate { get; set; }
         [DataMember]
         public decimal CurrencyFactor { get; set; }
+        [DataMember]
+        public string RelationalCurrencyCode { get; set; }
     }
 }
