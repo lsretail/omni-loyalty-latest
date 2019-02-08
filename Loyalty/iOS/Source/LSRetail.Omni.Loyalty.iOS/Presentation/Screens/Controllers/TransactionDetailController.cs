@@ -1,15 +1,16 @@
 ﻿using UIKit;
 using LSRetail.Omni.GUIExtensions.iOS;
-using LSRetail.Omni.Domain.DataModel.Loyalty.Transactions;
+using LSRetail.Omni.Domain.DataModel.Base.SalesEntries;
+using LSRetail.Omni.Domain.DataModel.Loyalty.Items;
 
 namespace Presentation
 {
     public class TransactionDetailController : UIViewController
     {
         public TransactionDetailView rootView;
-        private LoyTransaction transaction;
+        private SalesEntry transaction;
 
-        public TransactionDetailController(LoyTransaction transaction)
+        public TransactionDetailController(SalesEntry transaction)
         {
             this.transaction = transaction;
             rootView = new TransactionDetailView();
@@ -18,10 +19,10 @@ namespace Presentation
             Title = LocalizationUtilities.LocalizedString("TransactionDetails_Transaction", "Transaction");
         }
 
-        private void PushToItemDetail(LoySaleLine line)
+        private void PushToItemDetail(SalesEntryLine line)
         {
             UINavigationController nc = this.NavigationController;
-            ItemDetailsController itemDetailsController = new ItemDetailsController(line.Item, line.VariantReg.Id, line.Uom.Id);
+            ItemDetailsController itemDetailsController = new ItemDetailsController(new LoyItem(line.ItemId), line.VariantId, line.UomId);
             //nc.PopToRootViewController(false);
             nc.PushViewController(itemDetailsController, false);
         }
@@ -39,7 +40,7 @@ namespace Presentation
         private async void GetTransaction()
         {
             Utils.UI.ShowLoadingIndicator();
-            LoyTransaction trans = await new Models.TransactionModel().GetTransaction(this.transaction);
+            SalesEntry trans = await new Models.TransactionModel().GetTransaction(this.transaction);
             if (trans != null)
             {
                 GetTransactionSuccess(trans);
@@ -50,7 +51,7 @@ namespace Presentation
             }
         }
 
-        public void GetTransactionSuccess(LoyTransaction transaction)
+        public void GetTransactionSuccess(SalesEntry transaction)
         {
             Utils.UI.HideLoadingIndicator();
             this.transaction = transaction;
@@ -65,4 +66,3 @@ namespace Presentation
         }
     }
 }
-

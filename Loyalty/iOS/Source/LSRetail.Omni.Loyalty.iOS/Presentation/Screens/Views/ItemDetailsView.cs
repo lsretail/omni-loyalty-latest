@@ -709,7 +709,7 @@ namespace Presentation
         public void UpdateView(LoyItem item, decimal selectedQuantity, VariantRegistration selectedVariant, UnitOfMeasure selectedUom, List<PublishedOffer> relatedPublishedOffers)
         {
             this.lblTitle.Text = item.Description;
-            this.lblPrice.Text = item.PriceFromVariantsAndUOM(selectedVariant, selectedUom);
+            this.lblPrice.Text = item.PriceFromVariantsAndUOM(selectedVariant.Id, selectedUom.Id);
 
             if (selectedUom != null)
                 this.lblPrice.Text += " " + LocalizationUtilities.LocalizedString("ItemDetails_Per", "per") + " " + selectedUom.Id.ToLower();
@@ -802,4 +802,3 @@ namespace Presentation
         }
     }
 }
-
