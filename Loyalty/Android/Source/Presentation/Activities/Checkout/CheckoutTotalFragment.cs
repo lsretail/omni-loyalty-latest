@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 using System.Xml.Serialization;
 
 using Android.Content;
@@ -20,7 +21,6 @@ using Utils = Presentation.Util.Utils;
 using LSRetail.Omni.Domain.DataModel.Loyalty.Baskets;
 using LSRetail.Omni.Domain.DataModel.Base.Retail;
 using LSRetail.Omni.Domain.DataModel.Loyalty.Orders;
-using System.Threading.Tasks;
 
 namespace Presentation.Activities.Checkout
 {
@@ -355,7 +355,7 @@ namespace Presentation.Activities.Checkout
 
             if (success)
             {
-                await memberContactModel.MemberContactGetPointBalance(AppData.Device.UserLoggedOnToDevice.Id);
+                await memberContactModel.MemberContactGetPointBalance(AppData.Device.UserLoggedOnToDevice.Card.Id);
 
                 var upIntent = new Intent();
                 upIntent.SetClass(Activity, typeof(HomeActivity));
@@ -377,7 +377,7 @@ namespace Presentation.Activities.Checkout
 
             if (success)
             {
-                await memberContactModel.MemberContactGetPointBalance(AppData.Device.UserLoggedOnToDevice.Id);
+                await memberContactModel.MemberContactGetPointBalance(AppData.Device.UserLoggedOnToDevice.Card.Id);
 
                 var upIntent = new Intent();
                 upIntent.SetClass(Activity, typeof(HomeActivity));

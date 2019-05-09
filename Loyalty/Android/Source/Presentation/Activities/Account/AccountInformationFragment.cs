@@ -251,7 +251,7 @@ namespace Presentation.Activities.Account
 
         private async void LoadAppsettings()
         {
-            var results = await searchModel.AppSettings(AppSettingsKey.Password_Policy);
+            var results = await searchModel.AppSettings(ConfigKey.Password_Policy);
 
             passwordRules = results;
             ValidateTextFields();

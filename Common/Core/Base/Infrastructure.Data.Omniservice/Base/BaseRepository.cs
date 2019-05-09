@@ -41,6 +41,7 @@ namespace LSRetail.Omni.Infrastructure.Data.Omniservice.Base
         protected string languageCode = string.Empty; //"en-US";
 
         private string baseUrl { get; set; }   //http://mobiledemo.lsretail.com
+        private string lsKey;
         private string resource { get; set; }  //LSOmniService/json.svc
 
         //basic auth
@@ -56,14 +57,15 @@ namespace LSRetail.Omni.Infrastructure.Data.Omniservice.Base
         private void SetConfigProperties()
         {
             //get values from config 
-            this.SecurityToken = ConfigStatic.SecurityToken; //null not allowed
-            this.Timeout = ConfigStatic.Timeout; //default sec
-            this.Url = ConfigStatic.Url;
-            this.version = ConfigStatic.Version;
-            this.languageCode = ConfigStatic.LanguageCode;
-            this.UniqueDeviceId = ConfigStatic.UniqueDeviceId;
-            this.authUser = ConfigStatic.AuthUser;
-            this.authPwd = ConfigStatic.AuthPassword;
+            SecurityToken = ConfigStatic.SecurityToken; //null not allowed
+            Timeout = ConfigStatic.Timeout; //default sec
+            Url = ConfigStatic.Url;
+            lsKey = ConfigStatic.LsKey;
+            version = ConfigStatic.Version;
+            languageCode = ConfigStatic.LanguageCode;
+            UniqueDeviceId = ConfigStatic.UniqueDeviceId;
+            authUser = ConfigStatic.AuthUser;
+            authPwd = ConfigStatic.AuthPassword;
         }
 
         private HttpClient BuildHttpClient(int timeout = 0)
@@ -78,6 +80,7 @@ namespace LSRetail.Omni.Infrastructure.Data.Omniservice.Base
             client.DefaultRequestHeaders.Add("LSRETAIL-VERSION", this.version);
             client.DefaultRequestHeaders.Add("LSRETAIL-LANGCODE", this.languageCode);
             client.DefaultRequestHeaders.Add("LSRETAIL-DEVICEID", this.UniqueDeviceId);
+            client.DefaultRequestHeaders.Add("LSRETAIL-KEY", lsKey);
 
             if (timeout == 0)
             {

@@ -1,5 +1,4 @@
 using System;
-using System.ComponentModel;
 using System.Threading.Tasks;
 using Android.Content;
 using Android.OS;
@@ -60,7 +59,7 @@ namespace Presentation.Models
             ProgressDialog.Dismiss();
         }
 
-        public async void Logout()
+        public void Logout()
         {
             LogoutOnServer(AppData.Device);
 
@@ -135,9 +134,9 @@ namespace Presentation.Models
             return success;
         }
 
-        public async Task<bool> ForgotPasswordForDeviceAsync(string userName)
+        public async Task<string> ForgotPasswordForDeviceAsync(string userName)
         {
-            bool success = false;
+            string success = string.Empty;
 
             ShowIndicator(true);
 
@@ -145,7 +144,7 @@ namespace Presentation.Models
 
             try
             {
-                success = await service.ForgotPasswordForDeviceAsync(repository, userName);
+                success = await service.ForgotPasswordAsync(repository, userName);
             }
             catch (Exception ex)
             {
@@ -178,7 +177,7 @@ namespace Presentation.Models
             return success;
         }
 
-        public async Task UserGetById(string contactId, IRefreshableActivity refreshableActivity, int retryCounter = 3)
+        public async Task UserGetByCardId(string cardId, IRefreshableActivity refreshableActivity, int retryCounter = 3)
         {
             ShowIndicator(true);
 
@@ -186,7 +185,7 @@ namespace Presentation.Models
 
             try
             {
-                MemberContact contact = await service.MemberContactByIdAsync(repository, contactId);
+                MemberContact contact = await service.MemberContactByCardIdAsync(repository, cardId);
                 contact.Basket.CalculateBasket();
 
                 AppData.Device.UserLoggedOnToDevice = contact;
@@ -209,7 +208,7 @@ namespace Presentation.Models
                 }
                 else
                 {
-                    await UserGetById(contactId, refreshableActivity, --retryCounter);
+                    await UserGetByCardId(cardId, refreshableActivity, --retryCounter);
                 }
             }
             
@@ -278,13 +277,13 @@ namespace Presentation.Models
             return true;
         }
 
-        public async Task MemberContactGetPointBalance(string contactId)
+        public async Task MemberContactGetPointBalance(string cardId)
         {
             BeginWsCall();
 
             try
             {
-                var points = await service.MemberContactGetPointBalanceAsync(repository, contactId);
+                var points = await service.MemberContactGetPointBalanceAsync(repository, cardId);
 
                 AppData.Device.UserLoggedOnToDevice.Account.PointBalance = points;
 

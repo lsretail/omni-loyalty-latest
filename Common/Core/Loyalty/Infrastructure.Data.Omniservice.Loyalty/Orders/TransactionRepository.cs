@@ -15,9 +15,9 @@ namespace LSRetail.Omni.Infrastructure.Data.Omniservice.Loyalty.Orders
             return base.PostData<List<SalesEntry>>(jObject, methodName);
         }
 
-        public SalesEntry SalesEntryGetById(string entryId, SourceType type)
+        public SalesEntry SalesEntryGetById(string entryId, DocumentIdType type)
         {
-            string methodName = "SalesEntryGetById";
+            string methodName = "SalesEntryGet";
             var jObject = new { entryId = entryId, type = type };
             return base.PostData<SalesEntry>(jObject, methodName);
         }

@@ -213,7 +213,7 @@ namespace Presentation.Activities.Offers
 
             SetOfferData();
 
-            Activity.SupportInvalidateOptionsMenu();
+            Activity.InvalidateOptionsMenu();
         }
 
         public void OnClick(View v)

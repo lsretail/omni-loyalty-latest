@@ -16,7 +16,7 @@ namespace LSRetail.Omni.Domain.Services.Base.Loyalty
 
         OmniEnvironment GetEnvironment();
 
-        string AppSettingsGetByKey(AppSettingsKey key, string languageCode);
+        string AppSettingsGetByKey(ConfigKey key, string languageCode);
 
         bool PushNotificationSave(PushNotificationRequest pushNotificationRequest);
         void PushNotificationDelete(string deviceId);

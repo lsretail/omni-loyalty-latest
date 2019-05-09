@@ -286,7 +286,7 @@ namespace Presentation.Activities.Items
 
         private void LoadItem()
         {
-            Activity.SupportInvalidateOptionsMenu();
+            Activity.InvalidateOptionsMenu();
 
             itemTitle.Text = Item.Description;
             if (!string.IsNullOrEmpty(Item.Details))

@@ -31,6 +31,7 @@ namespace Presentation.Service
             Utils.LogUtils.Log("Refreshed token: " + refreshedToken);
             SendRegistrationToServer(refreshedToken);
         }
+
         void SendRegistrationToServer(string token)
         {
             // Add custom implementation, as needed.

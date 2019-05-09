@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 
 using Android.Content;
 using LSRetail.Omni.Domain.DataModel.Base.SalesEntries;
-using LSRetail.Omni.Domain.DataModel.Loyalty.Transactions;
 using LSRetail.Omni.Domain.Services.Loyalty.Transactions;
 using LSRetail.Omni.Infrastructure.Data.Omniservice.Loyalty.Orders;
 using Presentation.Util;
@@ -31,7 +30,7 @@ namespace Presentation.Models
 
             try
             {
-                transaction = await service.SalesEntryGetByIdAsync(receiptNo, SourceType.Standard);
+                transaction = await service.SalesEntryGetByIdAsync(receiptNo, DocumentIdType.Receipt);
             }
             catch (Exception ex)
             {

@@ -15,6 +15,7 @@ namespace LSRetail.Omni.Infrastructure.Data.Omniservice.Base
 
         private static int timeout;
         private static string url;
+        private static string lsKey;
         private static string uniqueDeviceId;
         private static string languageCode;
         private static string securityToken;
@@ -64,6 +65,52 @@ namespace LSRetail.Omni.Infrastructure.Data.Omniservice.Base
                     }
                 }
                 url = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the LS Key, it´s used to define the LS Central instance to use if multi-tenant is in use
+        /// </summary>
+        /// <value>
+        /// The LS Key
+        /// </value>
+        public static string LsKey
+        {
+            get
+            {
+                //get from storage (if possible), else return url 
+                try
+                {
+                    lsKey = Plugin.Settings.CrossSettings.Current.GetValueOrDefault("LsKey", "");
+                }
+                catch (Exception ex)
+                {
+                    //not implemented for Windows desktop !
+                    if (ex.GetType() != typeof(NotImplementedException))
+                    {
+                        throw;
+                    }
+                }
+                return lsKey;
+            }
+            set
+            {
+                //save to storage before setting the static url
+                try
+                {
+                    lsKey = value;
+                    // Helpers.Settings.GeneralSettings = "kk";
+                    Plugin.Settings.CrossSettings.Current.AddOrUpdateValue("LsKey", value);
+                }
+                catch (Exception ex)
+                {
+                    //not implemented for Windows desktop !
+                    if (ex.GetType() != typeof(NotImplementedException))
+                    {
+                        throw;
+                    }
+                }
+                lsKey = value;
             }
         }
 

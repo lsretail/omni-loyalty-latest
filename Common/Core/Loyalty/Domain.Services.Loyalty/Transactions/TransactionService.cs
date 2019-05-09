@@ -18,7 +18,7 @@ namespace LSRetail.Omni.Domain.Services.Loyalty.Transactions
             return iTransactionRepository.GetSalesEntries(cardId, numerOfTransactionsToReturn);
         }
 
-        public SalesEntry SalesEntryGetById(string entryId, SourceType type)
+        public SalesEntry SalesEntryGetById(string entryId, DocumentIdType type)
         {
             return iTransactionRepository.SalesEntryGetById(entryId, type);
         }
@@ -28,7 +28,7 @@ namespace LSRetail.Omni.Domain.Services.Loyalty.Transactions
             return await Task.Run(() => GetSalesEntries(cardId, numerOfTransactionsToReturn));
         }
 
-        public async Task<SalesEntry> SalesEntryGetByIdAsync(string entryId, SourceType type)
+        public async Task<SalesEntry> SalesEntryGetByIdAsync(string entryId, DocumentIdType type)
         {
             return await Task.Run(() => SalesEntryGetById(entryId, type));
         }

@@ -65,7 +65,7 @@ namespace Presentation.Models
             return searchRs;
         }
 
-        public async Task<string> AppSettings(AppSettingsKey key)
+        public async Task<string> AppSettings(ConfigKey key)
         {
             string result = string.Empty;
 

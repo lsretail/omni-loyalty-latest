@@ -56,7 +56,6 @@ namespace LSRetail.Omni.Domain.Services.Loyalty.Baskets
                 Order order = new Order()
                 {
                     CardId = cardId,
-                    SourceType = SourceType.LSOmni,
                     ClickAndCollectOrder = true,
                     AnonymousOrder = (string.IsNullOrWhiteSpace(contactId)),
                     StoreId = storeId,

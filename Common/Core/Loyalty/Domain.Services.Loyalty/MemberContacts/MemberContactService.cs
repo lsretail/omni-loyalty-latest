@@ -1,6 +1,5 @@
 using System.Threading.Tasks;
 
-using LSRetail.Omni.Domain.DataModel.Base.Utils;
 using LSRetail.Omni.Domain.DataModel.Loyalty.Members;
 
 namespace LSRetail.Omni.Domain.Services.Loyalty.MemberContacts
@@ -12,9 +11,9 @@ namespace LSRetail.Omni.Domain.Services.Loyalty.MemberContacts
             return memberContactRepository.UserLogon(userName, password, deviceId);
         }
 
-        public MemberContact MemberContactById(IMemberContactRepository memberContactRepository, string contactId)
+        public MemberContact MemberContactByCardId(IMemberContactRepository memberContactRepository, string cardId)
         {
-            return memberContactRepository.GetById(contactId);
+            return memberContactRepository.ContactGetByCardId(cardId);
         }
 
 		public MemberContact CreateMemberContact(IMemberContactRepository memberContactRepository, MemberContact memberContact)
@@ -27,9 +26,9 @@ namespace LSRetail.Omni.Domain.Services.Loyalty.MemberContacts
             return memberContactRepository.UpdateMemberContact(memberContact);
         }
 
-		public long MemberContactGetPointBalance(IMemberContactRepository memberContactRepository, string contactId)
+		public long MemberContactGetPointBalance(IMemberContactRepository memberContactRepository, string cardId)
 		{
-			return memberContactRepository.MemberContactGetPointBalance(contactId);
+			return memberContactRepository.MemberContactGetPointBalance(cardId);
 		}
 
         public bool ChangePassword(IMemberContactRepository memberContactRepository, string userName, string newPassword, string oldPassword)
@@ -52,9 +51,9 @@ namespace LSRetail.Omni.Domain.Services.Loyalty.MemberContacts
             return memberContactRepository.DeviceSave(deviceId, deviceFriendlyName, platform, osVersion, manufacturer, model);
         }
 
-		public bool ForgotPasswordForDevice(IMemberContactRepository memberContactRepository, string userName)
+		public string ForgotPassword(IMemberContactRepository memberContactRepository, string userName)
 		{
-			return memberContactRepository.ForgotPasswordForDevice(userName);
+			return memberContactRepository.ForgotPassword(userName);
 		}
 
 		public bool ResetPassword(IMemberContactRepository memberContactRepository, string userName, string resetCode, string newPassword)
@@ -72,9 +71,9 @@ namespace LSRetail.Omni.Domain.Services.Loyalty.MemberContacts
             return await Task.Run(() => MemberContactLogon(memberContactRepository, userName, password, deviceId));
         }
 
-        public async Task<MemberContact> MemberContactByIdAsync(IMemberContactRepository memberContactRepository, string contactId)
+        public async Task<MemberContact> MemberContactByCardIdAsync(IMemberContactRepository memberContactRepository, string cardId)
         {
-            return await Task.Run(() => MemberContactById(memberContactRepository, contactId));
+            return await Task.Run(() => MemberContactByCardId(memberContactRepository, cardId));
         }
 
         public async Task<MemberContact> UpdateMemberContactAsync(IMemberContactRepository memberContactRepository, MemberContact memberContact)
@@ -82,9 +81,9 @@ namespace LSRetail.Omni.Domain.Services.Loyalty.MemberContacts
             return await Task.Run( () => UpdateMemberContact(memberContactRepository, memberContact));
         }
 
-        public async Task<long> MemberContactGetPointBalanceAsync(IMemberContactRepository memberContactRepository, string contactId) 
+        public async Task<long> MemberContactGetPointBalanceAsync(IMemberContactRepository memberContactRepository, string cardId) 
         {
-            return await Task.Run( () => MemberContactGetPointBalance(memberContactRepository, contactId));
+            return await Task.Run( () => MemberContactGetPointBalance(memberContactRepository, cardId));
         }
 
         public async Task<bool> ChangePasswordAsync(IMemberContactRepository memberContactRepository, string userName, string newPassword, string oldPassword)
@@ -102,9 +101,9 @@ namespace LSRetail.Omni.Domain.Services.Loyalty.MemberContacts
             return await Task.Run(() => DeviceSave(memberContactRepository, deviceId, deviceFriendlyName, platform, osVersion, manufacturer, model));
         }
         
-        public async Task<bool> ForgotPasswordForDeviceAsync(IMemberContactRepository memberContactRepository, string userName)
+        public async Task<string> ForgotPasswordAsync(IMemberContactRepository memberContactRepository, string userName)
         {
-            return await Task.Run(() => ForgotPasswordForDevice(memberContactRepository, userName));
+            return await Task.Run(() => ForgotPassword(memberContactRepository, userName));
         }
 
         public async Task<bool> ResetPasswordAsync(IMemberContactRepository memberContactRepository, string userName, string resetCode, string newPassword)

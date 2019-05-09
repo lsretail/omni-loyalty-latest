@@ -81,7 +81,7 @@ namespace Presentation.Activities.Base
                     ShowAsList = !ShowAsList;
                     Util.Utils.PreferenceUtils.SetBool(Activity, Util.Utils.PreferenceUtils.ShowListAsList, ShowAsList);
 
-                    Activity.SupportInvalidateOptionsMenu();
+                    Activity.InvalidateOptionsMenu();
 
                     var headers = ChildFragmentManager.FindFragmentByTag(MasterLayoutFragmentTag);
                     var detail = ChildFragmentManager.FindFragmentByTag(DetailLayoutFragmentTag);

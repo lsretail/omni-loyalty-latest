@@ -16,6 +16,6 @@ namespace LSRetail.Omni.Domain.Services.Loyalty.Transactions
         /// </returns>
         List<SalesEntry> GetSalesEntries(string contactId, int numerOfTransactionsToReturn);
 
-        SalesEntry SalesEntryGetById(string entryId, SourceType type);
+        SalesEntry SalesEntryGetById(string entryId, DocumentIdType type);
     }
 }

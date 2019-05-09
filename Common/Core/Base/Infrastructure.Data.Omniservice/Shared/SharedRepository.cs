@@ -46,7 +46,7 @@ namespace LSRetail.Omni.Infrastructure.Data.Omniservice.Shared
             return base.PostData<OmniEnvironment>(jObject, methodName);
         }
 
-        public string AppSettingsGetByKey(AppSettingsKey key, string languageCode)
+        public string AppSettingsGetByKey(ConfigKey key, string languageCode)
         {
             string methodName = "AppSettingsGetByKey";
             var jObject = new { key = (int)key, languageCode = languageCode };

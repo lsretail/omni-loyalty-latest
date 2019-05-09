@@ -27,15 +27,14 @@ namespace LSRetail.Omni.Domain.DataModel.Base.SalesEntries
     }
 
     [DataContract(Namespace = "http://lsretail.com/LSOmniService/Loy/2017")]
-    public enum SourceType
+    public enum DocumentIdType
     {
-        //NAV POS Transaction "Stationary,Mobile POS,eCommerce,Mobile Loyalty,Mobile Hospitality"
         [EnumMember]
-        Standard = 0,
+        Order = 0,
         [EnumMember]
-        LSOmni = 1,
+        External = 1,
         [EnumMember]
-        eCommerce = 2,
+        Receipt = 2,
     }
 
     [DataContract(Namespace = "http://lsretail.com/LSOmniService/Loy/2017")]

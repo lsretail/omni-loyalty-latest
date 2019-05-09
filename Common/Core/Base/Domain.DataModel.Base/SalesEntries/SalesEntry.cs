@@ -4,6 +4,7 @@ using System.Runtime.Serialization;
 
 using LSRetail.Omni.Domain.DataModel.Base.Retail;
 using LSRetail.Omni.Domain.DataModel.Base.Base;
+using Newtonsoft.Json;
 
 namespace LSRetail.Omni.Domain.DataModel.Base.SalesEntries
 {
@@ -12,7 +13,7 @@ namespace LSRetail.Omni.Domain.DataModel.Base.SalesEntries
     {
         public SalesEntry(string id) : base(id)
         {
-            SourceType = SourceType.LSOmni;
+            IdType = DocumentIdType.Order;
             Status = SalesEntryStatus.Pending;
             ShippingStatus = ShippingStatus.ShippigNotRequired;
             PaymentStatus = PaymentStatus.PreApproved;
@@ -20,7 +21,6 @@ namespace LSRetail.Omni.Domain.DataModel.Base.SalesEntries
             Lines = new List<SalesEntryLine>();
             DiscountLines = new List<SalesEntryDiscountLine>();
             Payments = new List<SalesEntryPayment>();
-            ShipToAddress = new Address();
         }
 
         public SalesEntry() : this(string.Empty)
@@ -66,7 +66,7 @@ namespace LSRetail.Omni.Domain.DataModel.Base.SalesEntries
         public string CardId { get; set; }
 
         [DataMember]
-        public SourceType SourceType { get; set; }
+        public DocumentIdType IdType { get; set; }
         [DataMember]
         public SalesEntryStatus Status { get; set; }
         [DataMember]
@@ -80,6 +80,9 @@ namespace LSRetail.Omni.Domain.DataModel.Base.SalesEntries
         public decimal TotalAmount { get; set; }
         [DataMember]
         public decimal TotalDiscount { get; set; }
+        [JsonIgnore]
+        public decimal VatAmount => TotalAmount - TotalNetAmount;
+
         [DataMember]
         public int LineItemCount { get; set; }
 
@@ -146,7 +149,7 @@ namespace LSRetail.Omni.Domain.DataModel.Base.SalesEntries
             }
 
             string s = string.Format("Id: {0} StoreId: {1} CardId: {2} SourceType: {3}  SalesEntryLineCreateRequests: {4}  SalesEntryDiscountLineCreateRequests: {5}",
-                Id, StoreId, CardId, SourceType.ToString(), req, osldreq);
+                Id, StoreId, CardId, IdType.ToString(), req, osldreq);
             return s;
         }
     }

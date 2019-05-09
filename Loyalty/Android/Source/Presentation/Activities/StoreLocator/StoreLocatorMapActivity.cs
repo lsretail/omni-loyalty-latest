@@ -408,7 +408,7 @@ namespace Presentation.Activities.StoreLocator
 
             ShowDirectionsButton();
 
-            SupportInvalidateOptionsMenu();
+            InvalidateOptionsMenu();
 
             return true;
         }

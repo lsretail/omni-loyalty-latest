@@ -31,7 +31,7 @@ namespace Presentation.Activities.Contact
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            var view = Util.Utils.ViewUtils.Inflate(inflater, Resource.Layout.ContactUs);
+            var view = Utils.ViewUtils.Inflate(inflater, Resource.Layout.ContactUs);
             
             var toolbar = view.FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.ContactUsScreenToolbar);
             (Activity as LoyaltyFragmentActivity).SetSupportActionBar(toolbar);
@@ -49,8 +49,7 @@ namespace Presentation.Activities.Contact
 
         private async void LoadAppsettings()
         {
-            var results = await searchModel.AppSettings(AppSettingsKey.ContactUs);
-
+            var results = await searchModel.AppSettings(ConfigKey.Password_Policy);
             AppSettingsSuccess(results);
         }
 

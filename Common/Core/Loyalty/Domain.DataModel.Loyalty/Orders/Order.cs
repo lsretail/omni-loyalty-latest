@@ -14,7 +14,6 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Orders
     { 
         public Order(string id) : base(id)
         {
-            SourceType = SourceType.LSOmni;
             OrderStatus = SalesEntryStatus.Pending;
             ShippingStatus = ShippingStatus.ShippigNotRequired;
             PaymentStatus = PaymentStatus.PreApproved;
@@ -69,8 +68,6 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Orders
         [DataMember]
         public string ReceiptNo { get; set; }
 
-        [DataMember]
-        public SourceType SourceType { get; set; }
         [DataMember]
         public SalesEntryStatus OrderStatus { get; set; }
         [DataMember]
@@ -198,8 +195,8 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Orders
             {
             }
 
-            string s = string.Format("Id: {0} StoreId: {1} CardId: {2} ContactId: {3} SourceType: {4}  OrderLineCreateRequests: {5}  OrderDiscountLineCreateRequests: {6}",
-                Id, StoreId, CardId, ContactId, SourceType.ToString(), req, osldreq);
+            string s = string.Format("Id: {0} StoreId: {1} CardId: {2} ContactId: {3}  OrderLineCreateRequests: {4}  OrderDiscountLineCreateRequests: {6}",
+                Id, StoreId, CardId, ContactId, req, osldreq);
             return s;
         }
     }

@@ -113,10 +113,10 @@ namespace LSRetail.Omni.Domain.DataModel.Base
         [EnumMember]
         MissingStoreId = 21,
         /// <summary>
-        /// AppSettings not found. 
+        /// TenantConfig not found. 
         /// </summary>
         [EnumMember]
-        AppSettingsNotFound = 22,
+        TenantConfigNotFound = 22,
         /// <summary>
         /// Order in Queue not found. 
         /// </summary>

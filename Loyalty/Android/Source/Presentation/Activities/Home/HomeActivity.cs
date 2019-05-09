@@ -149,7 +149,7 @@ namespace Presentation.Activities.Home
 
         private async void RefreshMemberContact()
         {
-            await memberContactModel.UserGetById(AppData.Device.UserLoggedOnToDevice.Id, null);
+            await memberContactModel.UserGetByCardId(AppData.Device.UserLoggedOnToDevice.Card.Id, null);
         }
 
         public override void OnItemClick(AdapterView parent, View view, int position, long id)
@@ -307,7 +307,7 @@ namespace Presentation.Activities.Home
             
             DrawerLayout.CloseDrawer(DrawerLeft);
 
-            SupportInvalidateOptionsMenu();
+            InvalidateOptionsMenu();
         }
 
         public override void OnBackPressed()
