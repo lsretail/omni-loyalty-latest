@@ -31,11 +31,11 @@ namespace Presentation.Models
             this.sharedSevice = new SharedService(sharedRepository);
         }
 
-        public async void GetMemberContact(string contactId)
+        public async void GetMemberContact(string cardId)
         {
             try
             {
-                MemberContact memberContact = await this.memberContactService.MemberContactByIdAsync(memberRepository, contactId);
+                MemberContact memberContact = await this.memberContactService.MemberContactByCardIdAsync(memberRepository, cardId);
                 if (memberContact != null)
                 {
                     AppData.Device = memberContact.LoggedOnToDevice;
@@ -196,16 +196,16 @@ namespace Presentation.Models
             }
         }
 
-        public async Task<bool> ForgotPasswordForDevice(string username)
+        public async Task<string> ForgotPasswordForDevice(string username)
         {
             try
             {
-                return await this.memberContactService.ForgotPasswordForDeviceAsync(memberRepository, username);
+                return await this.memberContactService.ForgotPasswordAsync(memberRepository, username);
             }
             catch (Exception ex)
             {
                 HandleException(ex, "MemberContactModel.ForgotPasswordForDevice()", true);
-                return false;
+                return string.Empty;
             }
         }
 
@@ -249,4 +249,3 @@ namespace Presentation.Models
         }
     }
 }
-

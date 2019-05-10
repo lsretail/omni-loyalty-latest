@@ -55,6 +55,8 @@ namespace LSRetail.Omni.Domain.DataModel.Base
         URL_Displayed_On_Client = 625,
 
         [EnumMember]
+        ContactUs = 630,
+        [EnumMember]
         OfflinePrintTemplate = 650,
 
         [EnumMember]
@@ -72,7 +74,7 @@ namespace LSRetail.Omni.Domain.DataModel.Base
         Timezone_HoursOffset_DD = 1111,
         Timezone_DayOfWeekOffset = 1117,
         Cache_Image_DurationInMinutes = 1200,
-        
+
         TenderType_Mapping = 1280,
 
         LSReccomend_AzureAccountKey = 1301,
@@ -93,5 +95,4 @@ namespace LSRetail.Omni.Domain.DataModel.Base
         POS_System_Inventory_Lookup = 1352,
 #endif
     }
-
 } 

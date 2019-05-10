@@ -13,11 +13,10 @@ namespace LSRetail.Omni.Infrastructure.Data.Omniservice.Utils
             HospitalityLoyalty
         };
 
-		public const string DefaultUrl = @"http://mobiledemo.lsretail.com/LSOmniService/appjson.svc";
+        public const string DefaultUrl = @"http://mobiledemo.lsretail.com/LSOmniService/appjson.svc";
         public const string DefaultUrlLoyalty = @"http://mobiledemo.lsretail.com/LSOmniService/ucjson.svc";
 
-
-		public static void InitWebService(string deviceId, AppType appType, string url = "", string lsKey = "", int timeOut = 0, string languageCode = "en")
+        public static void InitWebService(string deviceId, AppType appType, string url = "", string lsKey = "", int timeOut = 0, string languageCode = "en")
         {
             if (string.IsNullOrEmpty(url))
             {

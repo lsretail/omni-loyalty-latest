@@ -13,7 +13,6 @@ using LSRetail.Omni.Domain.DataModel.Loyalty.Setup.SpecialCase;
 using LSRetail.Omni.Domain.DataModel.Loyalty.Setup;
 using Firebase.CloudMessaging;
 using UserNotifications;
-using Firebase.Core;
 using Firebase.InstanceID;
 
 namespace Presentation
@@ -27,7 +26,7 @@ namespace Presentation
 
         private const string XAMARIN_INSIGHTS_API_KEY = "[Please enter the API KEY here]";
 
-		public override UIWindow Window
+        public override UIWindow Window
         {
             get
             {
@@ -44,7 +43,7 @@ namespace Presentation
         public bool UsePushNotifications { get { return true; } }
         public bool GetItemDetailsAtItemListScreen { get { return true; } }
 
-        public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+        public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
             // Create a new window instance based on the screen size
             window = new UIWindow(UIScreen.MainScreen.Bounds);
@@ -55,7 +54,7 @@ namespace Presentation
             //Initialize Web Service
             InitWebService();
 
-			// Google firebase cloud messaging
+            // Google firebase cloud messaging
             /*
             if (UIDevice.CurrentDevice.CheckSystemVersion(10, 0))
             {
@@ -109,7 +108,7 @@ namespace Presentation
             // Make the window visible
             window.MakeKeyAndVisible();
 
-#region Xamarin Insights
+            #region Xamarin Insights
 
             // See: https://insights.xamarin.com/docs
 
@@ -125,19 +124,19 @@ namespace Presentation
                     Xamarin.Insights.PurgePendingCrashReports().Wait(); // This is a blocking call		
             };
 
-#endregion
+            #endregion
 
-#region Push notifications
+            #region Push notifications
 
             // Process push notification that arrives when app is not running
-            if (options != null && options.ContainsKey(new NSString("UIApplicationLaunchOptionsRemoteNotificationKey")))
+            if (launchOptions != null && launchOptions.ContainsKey(new NSString("UIApplicationLaunchOptionsRemoteNotificationKey")))
             {
-                NSDictionary pushNotification = options.ObjectForKey(new NSString("UIApplicationLaunchOptionsRemoteNotificationKey")) as NSDictionary;
+                NSDictionary pushNotification = launchOptions.ObjectForKey(new NSString("UIApplicationLaunchOptionsRemoteNotificationKey")) as NSDictionary;
                 if (pushNotification != null)
                     HandlePushNotification(false, pushNotification);
             }
 
-#endregion
+            #endregion
 
             // We only display the Welcome PopUp View for the first time the app is runned
             if (!NSUserDefaults.StandardUserDefaults.BoolForKey(new NSString("WelcomeMsgPresentedLoyalty")))
@@ -162,14 +161,11 @@ namespace Presentation
                         this.window.Frame.Height - 2 * popupMargin
                     )
                 );
-
                 welcomePopUp.ShowWithAnimation();
             }
 
-
             //Display the launch image for a little while longer - or just until the Login modal view controller is visable
             // - otherwise, the rootview appears for a little while, and then the login screen appears
-
             LaunchImageView launchImageView = new LaunchImageView();
             launchImageView.Frame = new CGRect(0f, 0f, this.window.Frame.Width, this.window.Frame.Height);
             this.window.AddSubview(launchImageView);
@@ -193,8 +189,7 @@ namespace Presentation
             return true;
         }
 
-#region Push notifications 
-
+        #region Push notifications 
 
         public override void ReceivedRemoteNotification(UIApplication application, NSDictionary userInfo)
         {
@@ -284,7 +279,8 @@ namespace Presentation
         }
         public void DidRefreshRegistrationToken(Messaging messaging, string fcmToken)
         {
-            if(AppData.Device.UserLoggedOnToDevice != null){
+            if (AppData.Device.UserLoggedOnToDevice != null)
+            {
                 SendFcmToServer(fcmToken);
             }
         }
@@ -317,7 +313,7 @@ namespace Presentation
             // Do your magic to handle the notification data
             HandlePushNotification(application.ApplicationState.ToString() == "Active", userInfo);
         }
-#endregion
+        #endregion
 
         public UIInterfaceOrientation DeviceOrientation { get { return UIApplication.SharedApplication.StatusBarOrientation; } }
 
@@ -335,10 +331,11 @@ namespace Presentation
             var languageCode = NSLocale.CurrentLocale.CountryCode;
 
             LSRetail.Omni.Infrastructure.Data.Omniservice.Utils.Utils.InitWebService(
-                uniqueId, 
-                LSRetail.Omni.Infrastructure.Data.Omniservice.Utils.Utils.AppType.Loyalty, 
-                url, 
-                0, 
+                uniqueId,
+                LSRetail.Omni.Infrastructure.Data.Omniservice.Utils.Utils.AppType.Loyalty,
+                url,
+                "0",
+                0,
                 languageCode);
         }
 
@@ -374,4 +371,3 @@ namespace Presentation
         }
     }
 }
-

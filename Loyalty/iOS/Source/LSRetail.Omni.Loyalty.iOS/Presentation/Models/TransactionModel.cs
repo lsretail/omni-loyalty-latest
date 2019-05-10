@@ -23,7 +23,7 @@ namespace Presentation.Models
         {
             try
             {
-                return await this.transactionService.SalesEntryGetByIdAsync(transaction.Id, SourceType.Standard);
+                return await this.transactionService.SalesEntryGetByIdAsync(transaction.Id, DocumentIdType.Receipt);
             }
             catch (Exception ex)
             {

@@ -96,7 +96,7 @@ namespace Presentation
             return true;
         }
 
-        public async void PushToSearchDetails(object searchObj)
+        public void PushToSearchDetails(object searchObj)
         {
             if (searchObj is PublishedOffer)
             {
@@ -121,21 +121,8 @@ namespace Presentation
             else if (searchObj is SalesEntry)
             {
                 var transaction = (SalesEntry)searchObj;
-
-                if (transaction.SourceType == SourceType.Standard)
-                {
-                    TransactionDetailController transactionDetailController = new TransactionDetailController(transaction);
-                    this.NavigationController.PushViewController(transactionDetailController, true);
-                }
-                else
-                {
-                    await AlertView.ShowAlert(
-                        this,
-                        LocalizationUtilities.LocalizedString("TransactionView_TransactionUnavailable", "Transaction unavailable"),
-                        LocalizationUtilities.LocalizedString("TransactionView_TransactionUnavailableMsg", "This transaction is unavailable at the moment"),
-                        LocalizationUtilities.LocalizedString("General_OK", "OK")
-                    );
-                }
+                TransactionDetailController transactionDetailController = new TransactionDetailController(transaction);
+                this.NavigationController.PushViewController(transactionDetailController, true);
             }
         }
 
