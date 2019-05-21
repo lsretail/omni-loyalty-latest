@@ -351,11 +351,11 @@ namespace Presentation.Activities.Checkout
 
         private async Task<bool> HomeDelivery()
         {
-            var success = await basketModel.SendOrder(basket, AppData.Device, billingAddress, shippingAddress, paymentType, AppData.Device.UserLoggedOnToDevice.Environment.Currency.Id, AppData.Device.UserLoggedOnToDevice.Card.Id, cardCVV, AppData.Device.UserLoggedOnToDevice.Name);
+            var success = await basketModel.SendOrder(basket, AppData.Device, billingAddress, shippingAddress, paymentType, AppData.Device.UserLoggedOnToDevice.Environment.Currency.Id, AppData.Device.CardId, cardCVV, AppData.Device.UserLoggedOnToDevice.Name);
 
             if (success)
             {
-                await memberContactModel.MemberContactGetPointBalance(AppData.Device.UserLoggedOnToDevice.Card.Id);
+                await memberContactModel.MemberContactGetPointBalance(AppData.Device.CardId);
 
                 var upIntent = new Intent();
                 upIntent.SetClass(Activity, typeof(HomeActivity));
@@ -373,11 +373,11 @@ namespace Presentation.Activities.Checkout
 
         private async Task<bool> ClickAndCollect()
         {
-            var success = await clickCollectModel.ClickCollectOrderCreate(basket, AppData.Device.UserLoggedOnToDevice.Id, AppData.Device.UserLoggedOnToDevice.Card.Id, storeId, email.Text);
+            var success = await clickCollectModel.ClickCollectOrderCreate(basket, AppData.Device.UserLoggedOnToDevice.Id, AppData.Device.CardId, storeId, email.Text);
 
             if (success)
             {
-                await memberContactModel.MemberContactGetPointBalance(AppData.Device.UserLoggedOnToDevice.Card.Id);
+                await memberContactModel.MemberContactGetPointBalance(AppData.Device.CardId);
 
                 var upIntent = new Intent();
                 upIntent.SetClass(Activity, typeof(HomeActivity));

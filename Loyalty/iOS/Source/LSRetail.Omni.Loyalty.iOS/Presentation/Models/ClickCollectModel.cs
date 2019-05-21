@@ -27,7 +27,7 @@ namespace Presentation.Models
 
             OneList basket = AppData.Device.UserLoggedOnToDevice.Basket;
             basket.StoreId = storeId;
-            basket.CardId = AppData.Device.UserLoggedOnToDevice.Card.Id;
+            basket.CardId = AppData.Device.CardId;
 
             try
             {
@@ -39,7 +39,7 @@ namespace Presentation.Models
                     //if not all items are available, we will return new basket - with updated quantity
                     OneList newBasket = new OneList();
                     newBasket.State = BasketState.Dirty;
-                    newBasket.CardId = AppData.Device.UserLoggedOnToDevice.Card.Id;
+                    newBasket.CardId = AppData.Device.CardId;
 
                     List<OneListItem> unavailableItems = new List<OneListItem>();
                     foreach (var orderLine in orderAvailability.Lines)
@@ -116,7 +116,7 @@ namespace Presentation.Models
             string guid = Guid.NewGuid().ToString();
             try
             {
-                Order order = await this.clickCollectService.OrderCreateAsync(this.clickCollectService.CreateOrderForCAC(basket, AppData.Device.UserLoggedOnToDevice.Id, AppData.Device.UserLoggedOnToDevice.Card.Id, storeId, email));
+                Order order = await this.clickCollectService.OrderCreateAsync(this.clickCollectService.CreateOrderForCAC(basket, AppData.Device.UserLoggedOnToDevice.Id, AppData.Device.CardId, storeId, email));
                 return order;
             }
             catch (Exception ex)

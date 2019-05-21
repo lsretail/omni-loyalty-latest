@@ -1,4 +1,5 @@
 ﻿using LSRetail.Omni.Domain.DataModel.Base.Base;
+using LSRetail.Omni.Domain.DataModel.Base.Retail;
 using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;

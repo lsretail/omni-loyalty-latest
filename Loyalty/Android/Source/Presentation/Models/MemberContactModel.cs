@@ -88,7 +88,7 @@ namespace Presentation.Models
             {
                 //supress
             }
-        } 
+        }
 
         public async Task<bool> Login(string username, string password, Action<string> onError)
         {
@@ -105,9 +105,10 @@ namespace Presentation.Models
                 var contact = await service.MemberContactLogonAsync(repository, username, password, AppData.Device.Id);
 
                 AppData.Device.UserLoggedOnToDevice = contact;
-                AppData.Device.UserLoggedOnToDevice.Card.Id = contact.Card.Id;
+                AppData.Basket = contact.Basket;
+                AppData.Device.UserLoggedOnToDevice.Cards = contact.Cards;
                 AppData.Device.SecurityToken = contact.LoggedOnToDevice.SecurityToken;
-                
+                AppData.Device.CardId = contact.Cards[0].Id;
 
                 SaveLocalMemberContact(contact);
 
@@ -128,7 +129,7 @@ namespace Presentation.Models
 
                 onError(errorMessage);
             }
-            
+
             ProgressDialog.Dismiss();
 
             return success;
@@ -189,6 +190,7 @@ namespace Presentation.Models
                 contact.Basket.CalculateBasket();
 
                 AppData.Device.UserLoggedOnToDevice = contact;
+                AppData.Basket = contact.Basket;
                 AppData.Device.SecurityToken = contact.LoggedOnToDevice.SecurityToken;
 
                 SendBroadcast(Utils.BroadcastUtils.DomainModelUpdated);
@@ -201,17 +203,16 @@ namespace Presentation.Models
             }
             catch (Exception ex)
             {
-
                 if (retryCounter == 0)
                 {
-                    await HandleUIExceptionAsync(ex, showAsToast:true);
+                    await HandleUIExceptionAsync(ex, showAsToast: true);
                 }
                 else
                 {
                     await UserGetByCardId(cardId, refreshableActivity, --retryCounter);
                 }
             }
-            
+
             ShowIndicator(false);
         }
 
@@ -228,13 +229,11 @@ namespace Presentation.Models
                 var contact = await service.CreateMemberContactAsync(repository, newContact);
 
                 contact.LoggedOnToDevice.UserLoggedOnToDevice = contact;
-
                 AppData.Device = contact.LoggedOnToDevice;
 
                 SaveLocalMemberContact(contact);
 
                 await PushNotificationSave();
-
             }
             finally
             {
@@ -310,7 +309,6 @@ namespace Presentation.Models
             try
             {
                 success = await service.ChangePasswordAsync(repository, username, newPass, oldPass);
-
                 if (success)
                 {
                     ShowToast(Resource.String.ChangePasswordChangePasswordSuccess);
@@ -363,7 +361,6 @@ namespace Presentation.Models
         public async Task PushNotificationSave(PushStatus status = PushStatus.Enabled)
         {
             var token = Utils.PreferenceUtils.GetString(Context, Utils.PreferenceUtils.FcmRegistrationId);
-
             if (string.IsNullOrEmpty(token))
                 return;
 
@@ -387,7 +384,7 @@ namespace Presentation.Models
             }
         }
 
-        private void SaveLocalMemberContact(MemberContact contact)
+        public void SaveLocalMemberContact(MemberContact contact)
         {
             memberContactLocalService.SaveMemberContact(contact);
         }

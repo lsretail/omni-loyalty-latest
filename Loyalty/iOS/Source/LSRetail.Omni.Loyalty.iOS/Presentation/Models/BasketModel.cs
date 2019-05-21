@@ -28,7 +28,7 @@ namespace Presentation.Models
         public async void AddItemToBasket(decimal quantity, LoyItem item, string itemVariant, string itemUOM, Action onSuccess, Action onFailure)
         {
             OneList oneList = AppData.Device.UserLoggedOnToDevice.Basket;
-            oneList.CardId = AppData.Device.UserLoggedOnToDevice.Card.Id;
+            oneList.CardId = AppData.Device.CardId;
             oneList.ContactId = AppData.Device.UserLoggedOnToDevice.Id;
             oneList.AddItem(new OneListItem(item, quantity, itemUOM, itemVariant));
 
@@ -219,7 +219,7 @@ namespace Presentation.Models
         {
             try
             {
-                List<OneList> returnedLists = await OneListGetByContactId(AppData.Device.UserLoggedOnToDevice.Id, ListType.Basket, true);
+                List<OneList> returnedLists = await OneListGetByCardId(AppData.Device.CardId, ListType.Basket, true);
                 if (returnedLists != null)
                 {
                     System.Diagnostics.Debug.WriteLine("BasketModel.Refresh() - Success, number of OneLists returned: " + returnedLists.Count.ToString());

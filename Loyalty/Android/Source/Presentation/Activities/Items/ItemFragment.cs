@@ -346,7 +346,7 @@ namespace Presentation.Activities.Items
                 return;
             }
 
-            relatedPublishedOffers = await offerModel.GetPublishedOffersByItemId(Item.Id, AppData.Device.UserLoggedOnToDevice.Card.Id);
+            relatedPublishedOffers = await offerModel.GetPublishedOffersByItemId(Item.Id, AppData.Device.CardId);
 
             if (relatedPublishedOffers != null && relatedPublishedOffers.Count > 0)
             {

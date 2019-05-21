@@ -98,7 +98,7 @@ namespace Presentation.Activities.AccountTier
 
         private async void UpdatePointBalance()
         {
-            await new MemberContactModel(Activity).MemberContactGetPointBalance(AppData.Device.UserLoggedOnToDevice.Card.Id);
+            await new MemberContactModel(Activity).MemberContactGetPointBalance(AppData.Device.CardId);
         }
 
         public void BroadcastReceived(string action)

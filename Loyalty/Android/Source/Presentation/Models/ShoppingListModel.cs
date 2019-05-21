@@ -74,13 +74,13 @@ namespace Presentation.Models
             ShowIndicator(false);
         }
 
-        public async Task GetShoppingListsByContactId(string contactId)
+        public async Task GetShoppingListsByCardId(string cardId)
         {
             ShowIndicator(true);
 
             try
             {
-                var list = await OneListGetByContactId(contactId, ListType.Wish, true);
+                var list = await OneListGetByCardId(cardId, ListType.Wish, true);
 
                 AppData.Device.UserLoggedOnToDevice.WishList = list.FirstOrDefault();
 

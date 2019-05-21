@@ -27,7 +27,6 @@ namespace Infrastructure.Data.SQLite.MemberContacts
                 var factory = new MemberContactFactory();
 
                 var contactData = DBHelper.DBConnection.Table<MemberContactData>().FirstOrDefault();
-
                 MemberContact contact = null;
 
                 if (contactData != null)
@@ -42,7 +41,6 @@ namespace Infrastructure.Data.SQLite.MemberContacts
                     contact.PublishedOffers = offerRepository.GetLocalPublishedOffers();                                           
                     contact.SalesEntries = transactionRepository.GetLocalTransactions();
                 }
-
                 return contact;
             }
         }

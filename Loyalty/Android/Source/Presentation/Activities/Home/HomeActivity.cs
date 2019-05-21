@@ -149,7 +149,7 @@ namespace Presentation.Activities.Home
 
         private async void RefreshMemberContact()
         {
-            await memberContactModel.UserGetByCardId(AppData.Device.UserLoggedOnToDevice.Card.Id, null);
+            await memberContactModel.UserGetByCardId(AppData.Device.CardId, null);
         }
 
         public override void OnItemClick(AdapterView parent, View view, int position, long id)

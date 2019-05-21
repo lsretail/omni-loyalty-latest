@@ -32,7 +32,7 @@ namespace Presentation.Models
 
             OneList basket = AppData.Device.UserLoggedOnToDevice.Basket;
             basket.StoreId = storeId;
-            basket.CardId = AppData.Device.UserLoggedOnToDevice.Card.Id;
+            basket.CardId = AppData.Device.CardId;
 
             try
             {
@@ -48,7 +48,7 @@ namespace Presentation.Models
             List<OrderLineAvailability> list = new List<OrderLineAvailability>();
             foreach (OrderLineAvailabilityResponse line in orderLineAvailabilities.Lines)
             {
-                if(orderLineAvailabilities.PreferredSourcingLocation == orderLineAvailabilities.Lines[orderLineAvailabilities.Lines.IndexOf(line)].LocationCode)
+                if (storeId == line.LocationCode)
                 {
                     list.Add(new OrderLineAvailability()
                     {

@@ -76,7 +76,7 @@ namespace LSRetail.Omni.Infrastructure.Data.Omniservice.Loyalty.Members
         public long MemberContactGetPointBalance(string cardId)
         {
             string methodName = "CardGetPointBalance";
-            var jObject = new { contactId = cardId };
+            var jObject = new { cardId = cardId };
             return base.PostData<long>(jObject, methodName);
         }
 

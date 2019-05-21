@@ -58,8 +58,8 @@ namespace Presentation.Models
                 {
                     AppData.Device = memberContact.LoggedOnToDevice;
                     AppData.Device.UserLoggedOnToDevice = memberContact;
-                    if (memberContact.Card != null)
-                        AppData.Device.CardId = memberContact.Card.Id;
+                    if (memberContact.Cards.Count > 0)
+                        AppData.Device.CardId = memberContact.Cards[0].Id;
                     this.deviceService.SaveDevice(AppData.Device);
                 }
                 return true;

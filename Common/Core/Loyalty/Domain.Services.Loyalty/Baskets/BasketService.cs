@@ -116,7 +116,7 @@ namespace LSRetail.Omni.Domain.Services.Loyalty.Baskets
                 StoreId = store,
                 Email = device.UserLoggedOnToDevice.Email,
                 ContactName = device.UserLoggedOnToDevice.Name,
-                CardId = device.UserLoggedOnToDevice.Cards[0].Id,
+                CardId = device.CardId,
                 PhoneNumber = device.UserLoggedOnToDevice.Phone,
                 ShippingAgentServiceCode = "ISP",
                 ShipToAddress = shippingAddress,

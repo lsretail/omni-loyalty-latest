@@ -147,7 +147,7 @@ namespace Presentation
             string xml = string.Format("<mobiledevice><contactid>{0}</contactid><accountid>{1}</accountid><cardid>{2}</cardid>",
                 AppData.Device.UserLoggedOnToDevice.Id,
                 AppData.Device.UserLoggedOnToDevice.Account.Id,
-                AppData.Device.UserLoggedOnToDevice.Card.Id);
+                AppData.Device.CardId);
 
             xml += "<coupons>";
             if (this.publishedOffer.Code == OfferDiscountType.Coupon)

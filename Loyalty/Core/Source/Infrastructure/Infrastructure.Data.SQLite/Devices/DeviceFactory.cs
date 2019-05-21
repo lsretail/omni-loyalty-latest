@@ -23,6 +23,8 @@ namespace Infrastructure.Data.SQLite.Devices
             {
                 entity.UserLoggedOnToDevice = new MemberContact(deviceData.ContactId);
                 entity.UserLoggedOnToDevice.UserName = deviceData.UserName;
+                entity.UserLoggedOnToDevice.Cards = new System.Collections.Generic.List<LSRetail.Omni.Domain.DataModel.Base.Retail.Card>();
+                entity.UserLoggedOnToDevice.Cards.Add(new LSRetail.Omni.Domain.DataModel.Base.Retail.Card(deviceData.CardId));
             }
             else
             {
