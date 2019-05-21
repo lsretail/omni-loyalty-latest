@@ -27,11 +27,47 @@ namespace LSRetail.Omni.Domain.DataModel.Base.Setup
             });
         }
 
-        public bool GetFlagBool(FeatureFlagName flagName)
+        public void AddFlag(string flagCode, string flagValue)
+        {
+            FeatureFlagName flagName = FeatureFlagName.None;
+
+            switch (flagCode)
+            {
+                case "ALLOW AUTO LOGOFF":
+                    flagName = FeatureFlagName.AllowAutoLogoff;
+                    break;
+                case "ALLOW OFFLINE":
+                    flagName = FeatureFlagName.AllowOffline;
+                    break;
+                case "SEND RECEIPT IN EMAIL":
+                    flagName = FeatureFlagName.SendReceiptInEmail;
+                    break;
+                case "USE LOYALITY SYSTEM":
+                    flagName = FeatureFlagName.UseLoyaltySystem;
+                    break;
+                case "POS SHOW INVENTORY":
+                    flagName = FeatureFlagName.PosShowInventory;
+                    break;
+                case "POS INVENTORY LOOKUP":
+                    flagName = FeatureFlagName.PosInventoryLookup;
+                    break;
+                case "SETTINGS PASSWORD":
+                    flagName = FeatureFlagName.SettingsPassword;
+                    break;
+            }
+
+            Flags.Add(new FeatureFlag()
+            {
+                name = flagName,
+                value = flagValue
+            });
+        }
+
+        public bool GetFlagBool(FeatureFlagName flagName, bool defaultValue)
         {
             FeatureFlag flag = Flags.Find(f => f.name == flagName);
             if (flag == null)
-                throw new LSOmniException(StatusCode.NoEntriesFound, string.Format("Flag {0} not found", flagName));
+                return defaultValue;
 
             try
             {
@@ -39,15 +75,22 @@ namespace LSRetail.Omni.Domain.DataModel.Base.Setup
             }
             catch
             {
-                return Convert.ToBoolean(flag.value);
+                try
+                {
+                    return Convert.ToBoolean(flag.value);
+                }
+                catch
+                {
+                    return defaultValue;
+                }
             }
         }
 
-        public int GetFlagInt(FeatureFlagName flagName)
+        public int GetFlagInt(FeatureFlagName flagName, int defaultValue)
         {
             FeatureFlag flag = Flags.Find(f => f.name == flagName);
             if (flag == null)
-                throw new LSOmniException(StatusCode.NoEntriesFound, string.Format("Flag {0} not found", flagName));
+                return defaultValue;
 
             try
             {
@@ -55,15 +98,15 @@ namespace LSRetail.Omni.Domain.DataModel.Base.Setup
             }
             catch
             {
-                return 0;
+                return defaultValue;
             }
         }
 
-        public string GetFlagString(FeatureFlagName flagName)
+        public string GetFlagString(FeatureFlagName flagName, string defaultValue)
         {
             FeatureFlag flag = Flags.Find(f => f.name == flagName);
             if (flag == null)
-                throw new LSOmniException(StatusCode.NoEntriesFound, string.Format("Flag {0} not found", flagName));
+                return defaultValue;
 
             return (flag.value == null) ? string.Empty : flag.value;
         }
@@ -84,6 +127,9 @@ namespace LSRetail.Omni.Domain.DataModel.Base.Setup
         ExitAfterEachTransaction,
         SendReceiptInEmail,
         ShowNumberPad,
-        UseLoyaltySystem
+        UseLoyaltySystem,
+        PosShowInventory,
+        PosInventoryLookup,
+        SettingsPassword
     }
 }

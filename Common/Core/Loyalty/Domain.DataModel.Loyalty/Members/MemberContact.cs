@@ -20,8 +20,8 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Members
         #region Member variables
 
         private OneList basket;
-        private List<Notification> notifications;
         private OneList wishList;
+        private List<Notification> notifications;
 
         #endregion
 
@@ -145,7 +145,7 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Members
                     wishList = new OneList()
                     {
                         ContactId = Id,
-                        CardId = (Card == null) ? string.Empty : Card.Id,
+                        CardId = (Cards.Count == 0) ? string.Empty : Cards[0].Id,
                         ListType = ListType.Wish
                     };
                 }
@@ -163,10 +163,18 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Members
             get
             {
                 if (basket == null)
-                    basket = new OneList();
+                    basket = new OneList()
+                    {
+                        ContactId = Id,
+                        CardId = (Cards.Count == 0) ? string.Empty : Cards[0].Id,
+                        ListType = ListType.Basket
+                    };
                 return basket;
             }
-            set { basket = value; }
+            set
+            {
+                basket = value;
+            }
         }
 
         [DataMember]
@@ -174,7 +182,7 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Members
         [DataMember]
         public string AlternateId { get; set; }
         [DataMember]
-        public Card Card { get; set; }
+        public List<Card> Cards { get; set; }
         [DataMember]
         public Account Account { get; set; }
         [DataMember]
@@ -208,6 +216,7 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Members
             PublishedOffers = new List<PublishedOffer>();
             Profiles = new List<Profile>();
             SalesEntries = new List<SalesEntry>();
+            Cards = new List<Card>();
         }
 
         public void Dispose()
@@ -224,6 +233,11 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Members
         }
 
         #endregion
+
+        public Card GetCard(string id)
+        {
+            return Cards.Find(c => c.Id == id);
+        }
 
         public static bool NameContainsFirstName(string name)
         {

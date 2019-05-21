@@ -90,9 +90,6 @@ namespace LSRetail.Omni.Domain.DataModel.Base
         LSReccomend_StoreNo = 1311,
         LSReccomend_Location = 1312,
         LSReccomend_MinStock = 1313,
-
-        POS_System_Inventory = 1351,
-        POS_System_Inventory_Lookup = 1352,
 #endif
     }
 } 
