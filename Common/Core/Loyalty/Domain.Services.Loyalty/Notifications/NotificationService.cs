@@ -14,9 +14,9 @@ namespace LSRetail.Omni.Domain.Services.Loyalty.Notifications
             iNotificationRepository = iRepo;
         }
 
-        public List<Notification> GetNotifications(string contactId, int numberOfNotifications = Int32.MaxValue)
+        public List<Notification> GetNotifications(string cardId, int numberOfNotifications = Int32.MaxValue)
         {
-            return iNotificationRepository.NotificationsGetByContactId(contactId, numberOfNotifications);
+            return iNotificationRepository.NotificationsGetByCardId(cardId, numberOfNotifications);
         }
 
         public bool UpdateStatus(string contactId, List<string> notificationIds, NotificationStatus status)
@@ -29,9 +29,9 @@ namespace LSRetail.Omni.Domain.Services.Loyalty.Notifications
             return iNotificationRepository.NotificationCountGetUnread(contactId, lastChecked);
         }
 
-        public async Task<List<Notification>> GetNotificationsAsync(string contactId, int numberOfNotifications)
+        public async Task<List<Notification>> GetNotificationsAsync(string cardId, int numberOfNotifications)
         {
-            return await Task.Run(() => GetNotifications(contactId, numberOfNotifications));
+            return await Task.Run(() => GetNotifications(cardId, numberOfNotifications));
         }
 
         public async Task<bool> UpdateStatusAsync(string contactId, List<string> notificationIds, NotificationStatus status)

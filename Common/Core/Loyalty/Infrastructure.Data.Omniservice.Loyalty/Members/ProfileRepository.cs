@@ -15,10 +15,10 @@ namespace LSRetail.Omni.Infrastructure.Data.Omniservice.Loyalty.Members
             return base.PostData<List<Profile>>(jObject, methodName);
         }
 
-        public List<Profile> ProfilesGetByContactId(string contactId)
+        public List<Profile> ProfilesGetByCardId(string cardId)
         {
-            string methodName = "ProfilesGetByContactId";
-            var jObject = new { contactId = contactId };
+            string methodName = "ProfilesGetByCardId";
+            var jObject = new { cardId = cardId };
             return base.PostData<List<Profile>>(jObject, methodName);
         }
     }

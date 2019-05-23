@@ -24,19 +24,9 @@ namespace LSRetail.Omni.Domain.Services.Loyalty.Baskets
             return repository.OrderCreate(request);
         }
 
-        public List<OrderLineAvailability> OrderAvailabilityCheck(OrderAvailabilityRequest request)
-        {
-            return repository.OrderAvailabilityCheck(request);
-        }
-
         public OrderAvailabilityResponse OrderCheckAvailability(OneList request)
         {
             return repository.OrderCheckAvailability(request);
-        }
-
-        public async Task<List<OrderLineAvailability>> OrderAvailabilityCheckAsync(OrderAvailabilityRequest request)
-        {
-            return await Task.Run(() => OrderAvailabilityCheck(request));
         }
 
         public async Task<OrderAvailabilityResponse> OrderCheckAvailabilityAsync(OneList request)

@@ -67,6 +67,7 @@ namespace Presentation.Models
 
             AppData.Basket.Clear();
             AppData.Device.UserLoggedOnToDevice = null;
+            AppData.Device.CardId = string.Empty;
             AppData.Device.SecurityToken = "";
             AppData.ItemCategories = null;
             AppData.Stores = null;

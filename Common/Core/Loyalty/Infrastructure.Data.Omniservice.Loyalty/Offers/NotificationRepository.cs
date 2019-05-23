@@ -9,10 +9,10 @@ namespace LSRetail.Omni.Infrastructure.Data.Omniservice.Loyalty.Offers
 {
     public class NotificationRepository : BaseRepository, INotificationRepository
     {
-        public List<Notification> NotificationsGetByContactId(string contactId, int numberOfNotifications)
+        public List<Notification> NotificationsGetByCardId(string cardId, int numberOfNotifications)
         {
-            string methodName = "NotificationsGetByContactId";
-            var jObject = new { contactId = contactId, numberOfNotifications = numberOfNotifications };
+            string methodName = "NotificationsGetByCardId";
+            var jObject = new { cardId = cardId, numberOfNotifications = numberOfNotifications };
             return base.PostData<List<Notification>>(jObject, methodName);
         }
 

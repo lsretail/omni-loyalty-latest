@@ -103,7 +103,7 @@ namespace Presentation.Activities.Account
             {
                 if (LoadAccountProfiles)
                 {
-                    profiles = await model.ProfilesGetByContactId(AppData.Device.UserLoggedOnToDevice.Id);
+                    profiles = await model.ProfilesGetByCardId(AppData.Device.CardId);
                 }
                 else
                 {

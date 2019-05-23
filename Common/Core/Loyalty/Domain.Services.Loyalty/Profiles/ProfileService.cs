@@ -18,9 +18,10 @@ namespace LSRetail.Omni.Domain.Services.Loyalty.Profiles
         {
             return iProfileRepository.GetAvailableProfiles();
         }
-        public List<Profile> ProfilesGetByContactId(string contactId)
+
+        public List<Profile> ProfilesGetByCardId(string cardId)
         {
-            return iProfileRepository.ProfilesGetByContactId(contactId);
+            return iProfileRepository.ProfilesGetByCardId(cardId);
         }
 
         public async Task<List<Profile>> GetAvailableProfilesAsync()
@@ -28,9 +29,9 @@ namespace LSRetail.Omni.Domain.Services.Loyalty.Profiles
             return await Task.Run(() => GetAvailableProfiles());
         }
 
-        public async Task<List<Profile>> ProfilesGetByContactIdAsync(string contactId)
+        public async Task<List<Profile>> ProfilesGetByCardIdAsync(string cardId)
         {
-            return await Task.Run(() => ProfilesGetByContactId(contactId));
+            return await Task.Run(() => ProfilesGetByCardId(cardId));
         }
     }
 }

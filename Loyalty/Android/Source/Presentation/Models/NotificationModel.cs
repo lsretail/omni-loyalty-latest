@@ -26,7 +26,7 @@ namespace Presentation.Models
 
         public async Task<bool> UpdateNotification(Notification updateNotification, NotificationStatus status)
         {
-            return await UpdateNotifications(new List<Notification>() {updateNotification}, status);
+            return await UpdateNotifications(new List<Notification>() { updateNotification }, status);
         }
 
         public async Task<bool> UpdateNotifications(List<Notification> updateNotifications, NotificationStatus status)
@@ -81,7 +81,6 @@ namespace Presentation.Models
                                     for (int i = 0; i < updateNotifications.Count; i++)
                                     {
                                         var updateNotification = updateNotifications[i];
-
                                         updateNotification.Status = NotificationStatus.Closed;
 
                                         AppData.Device.UserLoggedOnToDevice.Notifications.Insert(updateNotificationIndexes[i], updateNotification);
@@ -96,19 +95,17 @@ namespace Presentation.Models
             {
                 await HandleUIExceptionAsync(ex);
             }
-
             return success;
         }
 
-        public async Task GetNotificationsByContactId()
+        public async Task GetNotificationsByCardId()
         {
             ShowIndicator(true);
-
             BeginWsCall();
 
             try
             {
-                var notifications = await service.GetNotificationsAsync(AppData.Device.UserLoggedOnToDevice.Id, Int32.MaxValue);
+                var notifications = await service.GetNotificationsAsync(AppData.Device.CardId, Int32.MaxValue);
 
                 AppData.Device.UserLoggedOnToDevice.Notifications = notifications;
 
@@ -124,7 +121,7 @@ namespace Presentation.Models
             ShowIndicator(false);
         }
 
-        public void GetNotificationsByContactId(Action<List<Notification>> onSuccess)
+        public void GetNotificationsByCardId(Action<List<Notification>> onSuccess)
         {
             //from background context
 
@@ -136,29 +133,24 @@ namespace Presentation.Models
                 {
                     try
                     {
-                        var notifications = await service.GetNotificationsAsync(AppData.Device.UserLoggedOnToDevice.Id, Int32.MaxValue);
-
+                        var notifications = await service.GetNotificationsAsync(AppData.Device.CardId, Int32.MaxValue);
                         if (notifications == null)
                         {
                             notifications = new List<Notification>();
                         }
-
                         onSuccess(notifications);
                     }
                     catch (Exception)
                     {
                         onSuccess(new List<Notification>());
                     }
-                    
                 });
         }
 
         private void SaveLocalNotifications()
         {
             var worker = new BackgroundWorker();
-
             worker.DoWork += (sender, args) => localService.SaveNotifications(AppData.Device.UserLoggedOnToDevice.Notifications);
-
             worker.RunWorkerAsync();
         }
 

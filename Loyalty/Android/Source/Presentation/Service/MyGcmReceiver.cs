@@ -25,7 +25,7 @@ namespace Presentation.Service
                 return;
 
             var model = new NotificationModel(context, null);
-            model.GetNotificationsByContactId(
+            model.GetNotificationsByCardId(
                 (notifications) =>
                 {
                     if (notifications.Count > 0)

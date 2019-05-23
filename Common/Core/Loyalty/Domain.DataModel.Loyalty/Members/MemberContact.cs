@@ -268,45 +268,6 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Members
         }
     }
 
-    public class ContactRs : IDisposable
-    {
-        public ContactRs()
-        {
-            SchemeId = string.Empty;
-            AccountId = string.Empty;
-            ContactId = string.Empty;
-            CardId = string.Empty;
-            Balance = 0M;
-            ClubId = string.Empty;
-            EMail = string.Empty;
-            FirstName = string.Empty;
-            LastName = string.Empty;
-        }
-
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
-        protected virtual void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-            }
-        }
-
-        public string SchemeId { get; set; }
-        public string AccountId { get; set; }
-        public string ContactId { get; set; }
-        public string CardId { get; set; }
-        public decimal Balance { get; set; }
-        public string ClubId { get; set; }
-        public string EMail { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-    }
-
     [DataContract(Namespace = "http://lsretail.com/LSOmniService/Loy/2017")]
     public enum Gender
     {

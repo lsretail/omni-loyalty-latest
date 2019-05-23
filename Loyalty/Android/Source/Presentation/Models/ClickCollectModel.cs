@@ -24,19 +24,14 @@ namespace Presentation.Models
 
         public async Task<List<OrderLineAvailability>> OrderAvailabilityCheck(string storeId)
         {
-            OrderAvailabilityResponse orderLineAvailabilities = null;
-
             BeginWsCall();
-
             ShowIndicator(true);
 
-            OneList basket = AppData.Device.UserLoggedOnToDevice.Basket;
-            basket.StoreId = storeId;
-            basket.CardId = AppData.Device.CardId;
-
+            OrderAvailabilityResponse orderLineAvailabilities = null;
             try
             {
-                orderLineAvailabilities = await service.OrderCheckAvailabilityAsync(basket);
+                AppData.Device.UserLoggedOnToDevice.Basket.StoreId = storeId;
+                orderLineAvailabilities = await service.OrderCheckAvailabilityAsync(AppData.Device.UserLoggedOnToDevice.Basket);
             }
             catch (Exception ex)
             {
