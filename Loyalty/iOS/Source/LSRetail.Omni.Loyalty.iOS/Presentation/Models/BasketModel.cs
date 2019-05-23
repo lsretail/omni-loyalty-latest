@@ -27,14 +27,11 @@ namespace Presentation.Models
 
         public async void AddItemToBasket(decimal quantity, LoyItem item, string itemVariant, string itemUOM, Action onSuccess, Action onFailure)
         {
-            OneList oneList = AppData.Device.UserLoggedOnToDevice.Basket;
-            oneList.CardId = AppData.Device.CardId;
-            oneList.ContactId = AppData.Device.UserLoggedOnToDevice.Id;
-            oneList.AddItem(new OneListItem(item, quantity, itemUOM, itemVariant));
+            AppData.Device.UserLoggedOnToDevice.Basket.AddItem(new OneListItem(item, quantity, itemUOM, itemVariant));
 
             try
             {
-                OneList returnedList = await OneListSave(oneList, true);
+                OneList returnedList = await OneListSave(AppData.Device.UserLoggedOnToDevice.Basket, true);
                 if (returnedList != null)
                 {
                     // Successfully synced with BO
@@ -60,6 +57,7 @@ namespace Presentation.Models
         public async void AddWishListToBasket(Action onSuccess, Action onFailure)
         {
             var itemsToAdd = new List<OneListItem>();
+
             foreach (var wishListItem in AppData.Device.UserLoggedOnToDevice.WishList.Items)
                 itemsToAdd.Add(
                     new OneListItem(
@@ -75,13 +73,12 @@ namespace Presentation.Models
 
         public async Task AddItemsToBasket(List<OneListItem> items, Action onSuccess, Action onFailure)
         {
-            OneList oneList = AppData.Device.UserLoggedOnToDevice.Basket;
             foreach (OneListItem item in items)
-                oneList.AddItem(item);
+                AppData.Device.UserLoggedOnToDevice.Basket.AddItem(item);
 
             try
             {
-                OneList returnedList = await OneListSave(oneList, false);
+                OneList returnedList = await OneListSave(AppData.Device.UserLoggedOnToDevice.Basket, false);
                 if (returnedList != null)
                 {
                     // Successfully synced with BO
@@ -101,12 +98,11 @@ namespace Presentation.Models
 
         public async void RemoveItemFromBasket(int position, Action onSuccess, Action onFailure)
         {
-            OneList oneList = AppData.Device.UserLoggedOnToDevice.Basket;
-            oneList.RemoveItemAtPosition(position);
+            AppData.Device.UserLoggedOnToDevice.Basket.RemoveItemAtPosition(position);
 
             try
             {
-                OneList returnedList = await OneListSave(oneList, true);
+                OneList returnedList = await OneListSave(AppData.Device.UserLoggedOnToDevice.Basket, true);
                 if (returnedList != null)
                 {
                     // Successfully synced with BO
@@ -128,6 +124,7 @@ namespace Presentation.Models
         {
             try
             {
+                basket.StoreId = "S0013";
                 Order response = await OneListCalculate(basket);
                 if (response != null)
                 {
@@ -225,7 +222,7 @@ namespace Presentation.Models
                     System.Diagnostics.Debug.WriteLine("BasketModel.Refresh() - Success, number of OneLists returned: " + returnedLists.Count.ToString());
 
                     // Only taking the first onelist that is returned
-                    if (returnedLists.Count == 1)
+                    if (returnedLists.Count > 0)
                     {
                         AppData.Device.UserLoggedOnToDevice.Basket = returnedLists[0];
                         onSuccessNotEmpty();
@@ -246,10 +243,9 @@ namespace Presentation.Models
 
         public async void Save(Action onSuccess, Action onFailure)
         {
-            OneList oneList = AppData.Device.UserLoggedOnToDevice.Basket;
             try
             {
-                OneList returnedList = await OneListSave(oneList, false);
+                OneList returnedList = await OneListSave(AppData.Device.UserLoggedOnToDevice.Basket, false);
                 if (returnedList != null)
                 {
                     AppData.Device.UserLoggedOnToDevice.Basket = returnedList;
@@ -268,14 +264,12 @@ namespace Presentation.Models
 
         public async void EditItemAtPosition(int position, OneListItem editedItem, Action onSuccess, Action onFailure)
         {
-            OneList oneList = AppData.Device.UserLoggedOnToDevice.Basket;
-
-            oneList.RemoveItemAtPosition(position);
-            oneList.AddItemAtPosition(position, editedItem);
+            AppData.Device.UserLoggedOnToDevice.Basket.RemoveItemAtPosition(position);
+            AppData.Device.UserLoggedOnToDevice.Basket.AddItemAtPosition(position, editedItem);
 
             try
             {
-                OneList returnedList = await OneListSave(oneList, false);
+                OneList returnedList = await OneListSave(AppData.Device.UserLoggedOnToDevice.Basket, false);
                 if (returnedList != null)
                 {
                     // Successfully synced with BO
@@ -295,13 +289,9 @@ namespace Presentation.Models
 
         public async void ClearBasket(Action onSuccess, Action onFailure)
         {
-            OneList oneList = AppData.Device.UserLoggedOnToDevice.Basket;
-
             try
             {
-                bool success = await OneListDeleteById(
-                    oneList.Id,
-                    ListType.Basket);
+                bool success = await OneListDeleteById(AppData.Device.UserLoggedOnToDevice.Basket.Id, ListType.Basket);
                 if (success)
                 {
                     // Successfully synced with BO

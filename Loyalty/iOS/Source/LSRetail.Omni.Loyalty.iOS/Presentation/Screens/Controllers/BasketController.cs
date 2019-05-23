@@ -79,6 +79,7 @@ namespace Presentation
 
             return formattedTotal;
         }
+
         /*
 		private void BasketItemPressed(int itemPosition, BasketItem item)
 		{			

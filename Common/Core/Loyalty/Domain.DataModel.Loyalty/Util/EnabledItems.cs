@@ -9,7 +9,7 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Util
         public static bool HasItemCatalog = true;
         public static bool HasBarcodeScanner = true;
         public const bool HasSearch = true;
-        public static bool HasNotifications = true;
+        public static bool HasNotifications = false;
         public static bool HasOffers = true;
         public static bool HasCoupons = true;
         public const bool HasWishLists = true;

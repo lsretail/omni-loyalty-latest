@@ -71,11 +71,10 @@ namespace Presentation.Screens
             btnOK.Layer.CornerRadius = 2;
             btnOK.TouchUpInside += async (object sender, EventArgs e) =>
             {
-
-                /*#if DEBUG
-				Login ("tom", "tom.1");
-				return;
-				#endif*/
+#if DEBUG
+                loginEmailElement.Value = "tom";
+                loginPasswordElement.Value = "tom.1";
+#endif
 
                 if (loginEmailElement.Value == string.Empty || loginPasswordElement.Value == string.Empty)
                 {
@@ -87,9 +86,9 @@ namespace Presentation.Screens
                     );
                     return;
                 }
-
                 Login(loginEmailElement, loginPasswordElement);
             };
+
             footerView.AddSubview(btnOK);
 
             UIButton btnForgotPassword = new UIButton();
@@ -119,7 +118,6 @@ namespace Presentation.Screens
             btnCreateAccount.AddSubview(createAccountTitle);
             btnCreateAccount.TouchUpInside += async (object sender, EventArgs e) =>
             {
-
                 Utils.UI.ShowLoadingIndicator();
 
                 OmniEnvironment environment = await new Models.ContactModel().GetEnvironment();
@@ -166,7 +164,6 @@ namespace Presentation.Screens
                                 true
                             );
                         }
-
                     }
                     else
                     {
@@ -262,18 +259,6 @@ namespace Presentation.Screens
 
             this.TableView.ContentInset = new UIEdgeInsets(0, 0, 0, 0);
             this.TableView.ScrollEnabled = true;
-
-            // Back button (in navigation bar)
-            /*
-			UIBarButtonItem backButton = new UIBarButtonItem ();
-			backButton.Title = LocalizationUtilities.LocalizedString("General_Back", "Back");
-			backButton.Clicked += (object sender, EventArgs e) => {
-
-				BuildCreateAccountTable();
-				this.NavigationItem.LeftBarButtonItem = null;
-
-			};
-			this.NavigationItem.LeftBarButtonItem = backButton;*/
         }
 
         public override void ViewDidLoad()
@@ -289,9 +274,7 @@ namespace Presentation.Screens
                 cancelButton.Title = LocalizationUtilities.LocalizedString("General_Cancel", "Cancel");
                 cancelButton.Clicked += (object sender, EventArgs e) =>
                 {
-
                     this.DismissViewController(true, null);
-
                 };
                 this.NavigationItem.RightBarButtonItem = cancelButton;
             }
@@ -304,14 +287,12 @@ namespace Presentation.Screens
                 changeWSButton.Title = "URL";
                 changeWSButton.Clicked += (object sender, EventArgs e) =>
                 {
-
                     this.changeWSButtonPressCounter++;
 
                     if (this.changeWSButtonPressCounter >= 1)
                     {
                         this.PresentViewController(new UINavigationController(new HiddenSettingsController()), true, null);
                     }
-
                 };
                 this.NavigationItem.LeftBarButtonItem = changeWSButton;
             }
@@ -361,7 +342,6 @@ namespace Presentation.Screens
             {
                 if (!string.IsNullOrEmpty(InstanceId.SharedInstance.Token))
                 {
-
                     ContactModel model = new ContactModel();
                     await model.RegisterForPushNotificationsInBackendServer(InstanceId.SharedInstance.Token);
                 }
@@ -379,14 +359,12 @@ namespace Presentation.Screens
                 Utils.UI.HideLoadingIndicator();
                 this.loginPasswordElement.Value = string.Empty;
             }
-
         }
 
         private void RegisterKeyboardNotificationHandling()
         {
             UIKeyboard.Notifications.ObserveWillShow((sender, e) =>
             {
-
                 //var keyboard = UIKeyboard.FrameBeginFromNotification(e.Notification);
                 //var keyboardHeight = keyboard.Height;
 
@@ -397,7 +375,6 @@ namespace Presentation.Screens
 
             UIKeyboard.Notifications.ObserveDidHide((sender, e) =>
             {
-
                 var contentInsets = new UIEdgeInsets(64f, 0, 0, 0);
                 this.TableView.ContentInset = contentInsets;
                 this.TableView.ScrollIndicatorInsets = contentInsets;

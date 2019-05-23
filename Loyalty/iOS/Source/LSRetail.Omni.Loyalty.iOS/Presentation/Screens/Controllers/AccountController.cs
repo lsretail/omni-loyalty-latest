@@ -92,7 +92,7 @@ namespace Presentation
         {
             if (MemberContactAttributes.Manage.Profiles)
             {
-                List<Profile> selectedProfiles = await profileService.ProfilesGetByContactIdAsync(AppData.Device.UserLoggedOnToDevice.Id);
+                List<Profile> selectedProfiles = await profileService.ProfilesGetByCardIdAsync(AppData.Device.CardId);
 
                 if (selectedProfiles != null)
                 {

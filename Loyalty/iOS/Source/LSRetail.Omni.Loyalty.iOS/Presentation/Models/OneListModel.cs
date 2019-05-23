@@ -47,9 +47,9 @@ namespace Presentation
 
         public async Task<OneList> OneListSave(OneList oneList, bool calculate)
         {
-            oneList.StoreId = string.Empty;     // till we set the store id in the app
             try
             {
+                oneList.StoreId = "S0013";
                 return await this.service.OneListSaveAsync(oneList, calculate);
             }
             catch (Exception ex)
