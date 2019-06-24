@@ -14,11 +14,6 @@ namespace LSRetail.Omni.Domain.Services.Loyalty.OneLists
             repository = iRepo;
         }
 
-        public List<OneList> OneListGetByContactId(string contactId, ListType listType, bool includeLines)
-        {
-            return repository.OneListGetByContactId(contactId, listType, includeLines);
-        }
-
         public List<OneList> OneListGetByCardId(string cardId, ListType listType, bool includeLines)
         {
             return repository.OneListGetByCardId(cardId, listType, includeLines);
@@ -42,11 +37,6 @@ namespace LSRetail.Omni.Domain.Services.Loyalty.OneLists
         public bool OneListDeleteById(string oneListId, ListType listType)
         {
             return repository.OneListDeleteById(oneListId, listType);
-        }
-
-        public async Task<List<OneList>> OneListGetByContactIdAsync(string contactId, ListType listType, bool includeLines)
-        {
-            return await Task.Run(() => OneListGetByContactId(contactId, listType, includeLines));
         }
 
         public async Task<List<OneList>> OneListGetByCardIdAsync(string cardId, ListType listType, bool includeLines)

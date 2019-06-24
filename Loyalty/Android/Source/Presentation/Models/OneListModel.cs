@@ -18,10 +18,10 @@ namespace Presentation.Models
         {
         }
 
-        public async Task<List<OneList>> OneListGetByContactId(string contactId, ListType listType, bool includeLines)
+        public async Task<List<OneList>> OneListGetByCardId(string cardId, ListType listType, bool includeLines)
         {
             BeginWsCall();
-            return await oneListService.OneListGetByContactIdAsync(contactId, listType, includeLines);
+            return await oneListService.OneListGetByCardIdAsync(cardId, listType, includeLines);
         }
 
         public async Task<OneList> OneListGetById(string contactId, ListType listType, bool includeLines)
@@ -33,7 +33,7 @@ namespace Presentation.Models
         public async Task<OneList> OneListSave(OneList oneList, bool calculate)
         {
             BeginWsCall();
-            oneList.StoreId = string.Empty;
+            oneList.StoreId = "S0013"; 
             return await oneListService.OneListSaveAsync(oneList, calculate);
         }
 
@@ -47,8 +47,8 @@ namespace Presentation.Models
         {
             ShowIndicator(true);
             AppData.Basket.State = BasketState.Calculating;
-            oneList.StoreId = string.Empty;
-            oneList.CardId = AppData.Device.UserLoggedOnToDevice.Card.Id;
+            oneList.StoreId = "S0013";
+            oneList.CardId = AppData.Device.CardId;
             BeginWsCall();
             Order order = await oneListService.OneListCalculateAsync(oneList);
 

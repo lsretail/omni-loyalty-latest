@@ -33,8 +33,7 @@ namespace Presentation.Models
                 SendBroadcast(Utils.BroadcastUtils.OpenBasket);
 
             OneList newList = AppData.Device.UserLoggedOnToDevice.Basket;
-            newList.CardId = AppData.Device.UserLoggedOnToDevice.Card.Id;
-            newList.ContactId = AppData.Device.UserLoggedOnToDevice.Id;
+            newList.CardId = AppData.Device.CardId;
             newList.AddItem(item);
 
             try
@@ -50,13 +49,13 @@ namespace Presentation.Models
             ShowIndicator(false);
         }
 
-        public async Task GetBasketByContactId(string contactId)
+        public async Task GetBasketByCardId(string cardId)
         {
             ShowIndicator(true);
 
             try
             {
-                List<OneList> list = await OneListGetByContactId(contactId, ListType.Basket, true);
+                List<OneList> list = await OneListGetByCardId(cardId, ListType.Basket, true);
                 OneList basketList = list.FirstOrDefault();
                 if (basketList != null)
                 {

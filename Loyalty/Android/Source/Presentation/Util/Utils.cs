@@ -712,7 +712,7 @@ namespace Presentation.Util
 
             public static string GetQRCodeString(bool includeCoupons = true)
             {
-                var xml = string.Format("<mobiledevice><contactid>{0}</contactid><accountid>{1}</accountid><cardid>{2}</cardid>", AppData.Device.UserLoggedOnToDevice.Id, AppData.Device.UserLoggedOnToDevice.Account.Id, AppData.Device.UserLoggedOnToDevice.Card?.Id);
+                var xml = string.Format("<mobiledevice><contactid>{0}</contactid><accountid>{1}</accountid><cardid>{2}</cardid>", AppData.Device.UserLoggedOnToDevice.Id, AppData.Device.UserLoggedOnToDevice.Account.Id, AppData.Device.CardId);
                 if (includeCoupons && AppData.Device.UserLoggedOnToDevice.PublishedOffers.Count > 0)
                 {
                     xml += "<coupons>";

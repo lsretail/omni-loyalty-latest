@@ -27,7 +27,6 @@ namespace Infrastructure.Data.SQLite.MemberContacts
                 var factory = new MemberContactFactory();
 
                 var contactData = DBHelper.DBConnection.Table<MemberContactData>().FirstOrDefault();
-
                 MemberContact contact = null;
 
                 if (contactData != null)
@@ -40,9 +39,8 @@ namespace Infrastructure.Data.SQLite.MemberContacts
 
                     contact.Notifications = notificationRepository.GetLocalNotifications();
                     contact.PublishedOffers = offerRepository.GetLocalPublishedOffers();                                           
-                    contact.Transactions = transactionRepository.GetLocalTransactions();
+                    contact.SalesEntries = transactionRepository.GetLocalTransactions();
                 }
-
                 return contact;
             }
         }
@@ -68,7 +66,7 @@ namespace Infrastructure.Data.SQLite.MemberContacts
 				                
                 var transactionRepository = new TransactionRepository();
 
-                transactionRepository.SaveTransactions(memberContact.Transactions);
+                transactionRepository.SaveTransactions(memberContact.SalesEntries);
             }
         }
     }

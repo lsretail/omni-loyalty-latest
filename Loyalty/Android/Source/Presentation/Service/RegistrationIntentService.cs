@@ -32,10 +32,11 @@ namespace Presentation.Service
 
         protected override void OnHandleIntent(Intent intent)
         {
+            return;
+
             try
             {
                 var token = FirebaseInstanceId.Instance.Token;
-
                 Utils.PreferenceUtils.SetString(this, Utils.PreferenceUtils.FcmRegistrationId, token);
 
                 if (AppData.Device.UserLoggedOnToDevice != null)

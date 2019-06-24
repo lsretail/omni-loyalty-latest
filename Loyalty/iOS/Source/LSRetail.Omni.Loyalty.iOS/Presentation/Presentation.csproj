@@ -144,7 +144,7 @@
       <HintPath>..\packages\Xamarin.Insights.1.10.6\lib\Xamarin.iOS10\PLCrashReporterUnifiedBinding.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="ZXing.Net.Mobile.Core">
       <HintPath>..\packages\ZXing.Net.Mobile.2.2.9\lib\Xamarin.iOS10\ZXing.Net.Mobile.Core.dll</HintPath>
@@ -346,38 +346,16 @@
     <Compile Include="Helpers\Settings.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
-    <Folder Include="en.lproj\" />
-    <Folder Include="Models\" />
-    <Folder Include="Screens\" />
-    <Folder Include="Utils\" />
-    <Folder Include="Views\" />
-    <Folder Include="Images\" />
-    <Folder Include="Images\Branding\" />
-    <Folder Include="fi.lproj\" />
-    <Folder Include="da.lproj\" />
-    <Folder Include="nb.lproj\" />
-    <Folder Include="Screens\Controllers\" />
-    <Folder Include="Screens\Views\" />
-    <Folder Include="Screens\Tables\" />
-    <Folder Include="Screens\ViewDTOs\" />
-    <Folder Include="de.lproj\" />
-    <Folder Include="Images\IconsForTabBar\" />
-    <Folder Include="Images\IconsForTabBar\Fullsize\" />
-    <Folder Include="Utils\Containers\" />
-    <Folder Include="Screens\Views\Partials\" />
-    <Folder Include="Screens\Views\Partials\DropDown\" />
-    <Folder Include="Resources\Images.xcassets\TrashIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\CancelIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\Directions.imageset\" />
+    <Folder Include="Resources\Images.xcassets\FilterList.imageset\" />
     <Folder Include="Resources\Images.xcassets\MapIcon.imageset\" />
+    <Folder Include="Resources\Images.xcassets\pinDrop.imageset\" />
+    <Folder Include="Resources\Images.xcassets\StoreIcon1.imageset\" />
+    <Folder Include="Resources\Images.xcassets\TrashIcon.imageset\" />
     <Folder Include="Resources\Images.xcassets\VIewGridIcon.imageset\" />
     <Folder Include="Resources\Images.xcassets\ViewLargeCellsIcon.imageset\" />
     <Folder Include="Resources\Images.xcassets\ViewSmallCellsIcon.imageset\" />
-    <Folder Include="Resources\Images.xcassets\ViewGridIcon.imageset\" />
-    <Folder Include="Resources\Images.xcassets\pinDrop.imageset\" />
-    <Folder Include="Resources\Images.xcassets\Directions.imageset\" />
-    <Folder Include="Resources\Images.xcassets\FilterList.imageset\" />
-    <Folder Include="Resources\Images.xcassets\StoreIcon1.imageset\" />
-    <Folder Include="Resources\Images.xcassets\CancelIcon.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="en.lproj\Localizable.strings" />
@@ -475,6 +453,8 @@
     <ProjectReference Include="..\Infrastructure.Data.SQLite2\Infrastructure.Data.SQLite2.csproj">
       <Project>{DFCD9D6A-F3A3-4C99-87BE-F441DA43ACAD}</Project>
       <Name>Infrastructure.Data.SQLite2</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
     <ProjectReference Include="..\..\..\..\..\Common\Core\Base\Domain.DataModel.Base\Domain.DataModel.Base.csproj">
       <Project>{7BCAC03E-3B65-4CF4-9EBB-4EF353276D1C}</Project>

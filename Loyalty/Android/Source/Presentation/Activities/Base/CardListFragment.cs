@@ -66,7 +66,7 @@ namespace Presentation.Activities.Base
                     ShowAsList = !ShowAsList;
                     Util.Utils.PreferenceUtils.SetBool(Activity, Util.Utils.PreferenceUtils.ShowListAsList, ShowAsList);
 
-                    Activity.SupportInvalidateOptionsMenu();
+                    Activity.InvalidateOptionsMenu();
 
                     FragmentManager.BeginTransaction().Detach(this).Attach(this).Commit();
                     return true;

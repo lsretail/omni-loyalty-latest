@@ -11,6 +11,7 @@ using Android.Widget;
 
 using Presentation.Util;
 using LSRetail.Omni.Domain.DataModel.Loyalty.Transactions;
+using LSRetail.Omni.Domain.DataModel.Base.SalesEntries;
 
 namespace Presentation.Adapters
 {
@@ -24,18 +25,18 @@ namespace Presentation.Adapters
             this.listener = listener;
         }
 
-        public void SetTransaction(Context context, LoyTransaction transaction)
+        public void SetTransaction(Context context, SalesEntry transaction)
         {
             transactionLines.Clear();
 
-            foreach (var headerLine in transaction.TransactionHeaders)
-            {
-                transactionLines.Add(headerLine);
-            }
+            //foreach (var headerLine in transaction.TransactionHeaders)
+            //{
+            //    transactionLines.Add(headerLine);
+            //}
 
             transactionLines.Add(new ItemHeaderLine());
 
-            foreach (var saleLine in transaction.SaleLines)
+            foreach (var saleLine in transaction.Lines)
             {
                 transactionLines.Add(saleLine);
             }
@@ -44,15 +45,15 @@ namespace Presentation.Adapters
             var netTotalItem = new TotalItem()
             {
                 Description = context.GetString(Resource.String.TransactionDetailViewTotalWithoutVAT),
-                Total = transaction.NetAmount
+                Total = transaction.TotalNetAmount.ToString("N02")
             };
 
             //TAX
-            foreach (var taxLine in transaction.TaxLines)
-            {
-                netTotalItem.Description += System.Environment.NewLine + taxLine.TaxDesription;
-                netTotalItem.Total += System.Environment.NewLine + taxLine.TaxAmount;
-            }
+            //foreach (var taxLine in transaction)
+            //{
+            //    netTotalItem.Description += System.Environment.NewLine + taxLine.TaxDesription;
+            //    netTotalItem.Total += System.Environment.NewLine + taxLine.TaxAmount;
+            //}
 
             transactionLines.Add(netTotalItem);
 
@@ -60,7 +61,7 @@ namespace Presentation.Adapters
             transactionLines.Add(new TotalItem()
             {
                 Description = context.GetString(Resource.String.TransactionDetailViewTotal),
-                Total = transaction.Amount
+                Total = transaction.TotalAmount.ToString("N02")
             });
 
 
@@ -68,14 +69,13 @@ namespace Presentation.Adapters
             transactionLines.Add(new TotalItem()
             {
                 Description = context.GetString(Resource.String.TransactionDetailViewDiscountTotal),
-                Total = transaction.DiscountAmount
+                Total = transaction.TotalDiscount.ToString("N02")
             });
 
             //TENDERS
             var tenderTotalItem = new TotalItem();
-            foreach (var tenderLine in transaction.TenderLines)
+            foreach (var tenderLine in transaction.Payments)
             {
-                tenderTotalItem.Description = tenderLine.Description + Environment.NewLine;
                 tenderTotalItem.Total = tenderLine.Amount + Environment.NewLine;
             }
 
@@ -84,10 +84,10 @@ namespace Presentation.Adapters
 
             transactionLines.Add(tenderTotalItem);
 
-            foreach (var footerLine in transaction.TransactionFooters)
-            {
-                transactionLines.Add(footerLine);
-            }
+            //foreach (var footerLine in transaction.TransactionFooters)
+            //{
+            //    transactionLines.Add(footerLine);
+            //}
 
             NotifyDataSetChanged();
         }

@@ -24,19 +24,14 @@ namespace Presentation.Models
 
         public async Task<List<OrderLineAvailability>> OrderAvailabilityCheck(string storeId)
         {
-            OrderAvailabilityResponse orderLineAvailabilities = null;
-
             BeginWsCall();
-
             ShowIndicator(true);
 
-            OneList basket = AppData.Device.UserLoggedOnToDevice.Basket;
-            basket.StoreId = storeId;
-            basket.CardId = AppData.Device.UserLoggedOnToDevice.Card.Id;
-
+            OrderAvailabilityResponse orderLineAvailabilities = null;
             try
             {
-                orderLineAvailabilities = await service.OrderCheckAvailabilityAsync(basket);
+                AppData.Device.UserLoggedOnToDevice.Basket.StoreId = storeId;
+                orderLineAvailabilities = await service.OrderCheckAvailabilityAsync(AppData.Device.UserLoggedOnToDevice.Basket);
             }
             catch (Exception ex)
             {
@@ -48,7 +43,7 @@ namespace Presentation.Models
             List<OrderLineAvailability> list = new List<OrderLineAvailability>();
             foreach (OrderLineAvailabilityResponse line in orderLineAvailabilities.Lines)
             {
-                if(orderLineAvailabilities.PreferredSourcingLocation == orderLineAvailabilities.Lines[orderLineAvailabilities.Lines.IndexOf(line)].LocationCode)
+                if (storeId == line.LocationCode)
                 {
                     list.Add(new OrderLineAvailability()
                     {

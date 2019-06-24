@@ -19,11 +19,11 @@ namespace Presentation
             service = new OneListService(new OneListRepository());
         }
 
-        public async Task<List<OneList>> OneListGetByContactId(string contactId, ListType listType, bool includeLines)
+        public async Task<List<OneList>> OneListGetByCardId(string cardId, ListType listType, bool includeLines)
         {
             try
             {
-                return await this.service.OneListGetByContactIdAsync(contactId, listType, includeLines);
+                return await this.service.OneListGetByCardIdAsync(cardId, listType, includeLines);
             }
             catch (Exception ex)
             {
@@ -47,9 +47,9 @@ namespace Presentation
 
         public async Task<OneList> OneListSave(OneList oneList, bool calculate)
         {
-            oneList.StoreId = string.Empty;     // till we set the store id in the app
             try
             {
+                oneList.StoreId = "S0013";
                 return await this.service.OneListSaveAsync(oneList, calculate);
             }
             catch (Exception ex)

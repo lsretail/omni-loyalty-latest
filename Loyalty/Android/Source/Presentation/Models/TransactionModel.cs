@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 
 using Android.Content;
-using LSRetail.Omni.Domain.DataModel.Loyalty.Transactions;
+using LSRetail.Omni.Domain.DataModel.Base.SalesEntries;
 using LSRetail.Omni.Domain.Services.Loyalty.Transactions;
 using LSRetail.Omni.Infrastructure.Data.Omniservice.Loyalty.Orders;
 using Presentation.Util;
@@ -20,9 +20,9 @@ namespace Presentation.Models
             this.localService = new TransactionLocalService(new Infrastructure.Data.SQLite.Transactions.TransactionRepository());
         }
 
-        public async Task<LoyTransaction> GetTransactionByReceiptNo(string receiptNo)
+        public async Task<SalesEntry> GetTransactionByReceiptNo(string receiptNo)
         {
-            LoyTransaction transaction = null;
+            SalesEntry transaction = null;
 
             ShowIndicator(true);
 
@@ -30,7 +30,7 @@ namespace Presentation.Models
 
             try
             {
-                transaction = await service.GetTransactionByReceiptNoAsync(receiptNo);
+                transaction = await service.SalesEntryGetByIdAsync(receiptNo, DocumentIdType.Receipt);
             }
             catch (Exception ex)
             {
@@ -42,9 +42,9 @@ namespace Presentation.Models
             return transaction;
         }
 
-        public async Task<List<LoyTransaction>> GetTransactionsByContactId(string contactId)
+        public async Task<List<SalesEntry>> GetTransactionsByContactId(string contactId)
         {
-            List<LoyTransaction> transactions = null;
+            List<SalesEntry> transactions = null;
 
             BeginWsCall();
 
@@ -65,7 +65,7 @@ namespace Presentation.Models
             return transactions;
         }
 
-        private async Task SaveLocalTransactions(List<LoyTransaction> transactions)
+        private async Task SaveLocalTransactions(List<SalesEntry> transactions)
         {
             await Task.Run(() => localService.SaveTransactions(transactions));
         }

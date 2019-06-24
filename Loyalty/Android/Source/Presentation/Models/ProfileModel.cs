@@ -42,7 +42,7 @@ namespace Presentation.Models
             return profiles;
         }
 
-        public async Task<List<Profile>> ProfilesGetByContactId(string contactId)
+        public async Task<List<Profile>> ProfilesGetByCardId(string cardId)
         {
             List<Profile> allProfiles = null;
 
@@ -52,7 +52,7 @@ namespace Presentation.Models
 
             try
             {
-                var profiles = await profileService.ProfilesGetByContactIdAsync(contactId);
+                var profiles = await profileService.ProfilesGetByCardIdAsync(cardId);
 
                 allProfiles = await profileService.GetAvailableProfilesAsync();
                         

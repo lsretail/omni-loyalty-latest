@@ -225,7 +225,7 @@ namespace Presentation.Activities.Items
 
         public async void OnRefresh()
         {
-            await basketModel.GetBasketByContactId(AppData.Device.UserLoggedOnToDevice.Id);
+            await basketModel.GetBasketByCardId(AppData.Device.CardId);
         }
 
         public void ShowIndicator(bool show)

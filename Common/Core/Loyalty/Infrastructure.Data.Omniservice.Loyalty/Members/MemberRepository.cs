@@ -49,10 +49,10 @@ namespace LSRetail.Omni.Infrastructure.Data.Omniservice.Loyalty.Members
             return base.PostData<bool>(jObject, methodName);
         }
 
-        public MemberContact GetById(string contactId)
+        public MemberContact ContactGetByCardId(string cardId)
         {
-            string methodName = "ContactGetById";
-            var jObject = new { contactId = contactId };
+            string methodName = "ContactGetByCardId";
+            var jObject = new { cardId = cardId };
             return base.PostData<MemberContact>(jObject, methodName);
         }
 
@@ -73,18 +73,18 @@ namespace LSRetail.Omni.Infrastructure.Data.Omniservice.Loyalty.Members
             return base.PostData<MemberContact>(jObject, methodName);
         }
 
-        public long MemberContactGetPointBalance(string contactId)
+        public long MemberContactGetPointBalance(string cardId)
         {
-            string methodName = "ContactGetPointBalance";
-            var jObject = new { contactId = contactId };
+            string methodName = "CardGetPointBalance";
+            var jObject = new { cardId = cardId };
             return base.PostData<long>(jObject, methodName);
         }
 
-        public double ContactAddCard(string contactId, string cardId)
+        public string ForgotPassword(string userNameOrEmail)
         {
-            string methodName = "ContactAddCard";
-            var jObject = new { contactId = contactId, cardId = cardId };
-            return base.PostData<double>(jObject, methodName);
+            string methodName = "ForgotPassword";
+            var jObject = new { userNameOrEmail = userNameOrEmail };
+            return base.PostData<string>(jObject, methodName);
         }
 
         public bool DeviceSave(string deviceId, string deviceFriendlyName, string platform, string osVersion, string manufacturer, string model)
@@ -93,13 +93,5 @@ namespace LSRetail.Omni.Infrastructure.Data.Omniservice.Loyalty.Members
             var jObject = new { deviceId = deviceId, deviceFriendlyName = deviceFriendlyName, platform = platform, osVersion = osVersion, manufacturer = manufacturer, model = model };
             return base.PostData<bool>(jObject, methodName);
         }
-
-        public bool ForgotPasswordForDevice(string userNameOrEmail)
-        {
-            string methodName = "ForgotPasswordForDevice";
-            var jObject = new { userName = userNameOrEmail };
-            return base.PostData<bool>(jObject, methodName);
-        }
-
     }
 }

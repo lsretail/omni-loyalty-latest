@@ -207,7 +207,7 @@ namespace Presentation.Activities.Coupons
 
             SetCouponData();
 
-            Activity.SupportInvalidateOptionsMenu();
+            Activity.InvalidateOptionsMenu();
         }
 
         public void OnClick(View v)

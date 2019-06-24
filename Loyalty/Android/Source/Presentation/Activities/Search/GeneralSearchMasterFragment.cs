@@ -82,7 +82,7 @@ namespace Presentation.Activities.Search
 
                     if (EnabledItems.HasHistory)
                     {
-                        availableTypes.Add(SearchType.Transaction);
+                        availableTypes.Add(SearchType.SalesEntry);
                     }
 
                     if (EnabledItems.HasWishLists)
@@ -129,7 +129,7 @@ namespace Presentation.Activities.Search
                     {
                         typeNames[i] = GetString(Resource.String.GeneralSearchViewNotification);
                     }
-                    else if (availableTypes[i] == SearchType.Transaction)
+                    else if (availableTypes[i] == SearchType.SalesEntry)
                     {
                         typeNames[i] = GetString(Resource.String.GeneralSearchViewTransaction);
                     }

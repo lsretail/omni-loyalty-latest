@@ -92,7 +92,7 @@ namespace LSRetail.Omni.Domain.Services.Base.Loyalty
             return repository.GetEnvironment();
         }
 
-        public string AppSettings(AppSettingsKey key, string languageCode)
+        public string AppSettings(ConfigKey key, string languageCode)
         {
             return repository.AppSettingsGetByKey(key, languageCode);
         }
@@ -134,7 +134,7 @@ namespace LSRetail.Omni.Domain.Services.Base.Loyalty
             return await Task.Run(() => GetEnvironment());
         }
 
-        public async Task<string> AppSettingsAsync(AppSettingsKey key, string languageCode)
+        public async Task<string> AppSettingsAsync(ConfigKey key, string languageCode)
         {
             return await Task.Run(() => AppSettings(key, languageCode));
         }

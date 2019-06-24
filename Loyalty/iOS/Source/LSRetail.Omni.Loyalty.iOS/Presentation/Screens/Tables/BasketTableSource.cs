@@ -23,10 +23,7 @@ namespace Presentation.Tables
         {
             get
             {
-                if (AppData.UserLoggedIn && AppData.Device.UserLoggedOnToDevice.Basket.Items.Count > 0)
-                    return true;
-                else
-                    return false;
+                return (AppData.UserLoggedIn && AppData.Device.UserLoggedOnToDevice.Basket.Items.Count > 0);
             }
         }
 

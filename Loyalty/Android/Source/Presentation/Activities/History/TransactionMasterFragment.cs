@@ -103,7 +103,7 @@ namespace Presentation.Activities.History
 
             if (loadedTransactions != null)
             {
-                AppData.Device.UserLoggedOnToDevice.Transactions = loadedTransactions;
+                AppData.Device.UserLoggedOnToDevice.SalesEntries = loadedTransactions;
                 UpdateTransaction();
             }
         }
@@ -122,7 +122,7 @@ namespace Presentation.Activities.History
                 case Resource.Id.MenuViewSearch:
                     var intent = new Intent();
                     intent.SetClass(Activity, typeof (GeneralSearchActivity));
-                    intent.PutExtra(BundleConstants.SearchType, (int) SearchType.Transaction);
+                    intent.PutExtra(BundleConstants.SearchType, (int) SearchType.SalesEntry);
 
                     StartActivity(intent);
 

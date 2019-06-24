@@ -152,7 +152,7 @@ namespace Presentation.Activities.Offers
 
         private async void RefreshOffers()
         {
-            await model.GetOffersByCardId(AppData.Device.UserLoggedOnToDevice.Card.Id);
+            await model.GetOffersByCardId(AppData.Device.CardId);
         }
 
         public void ShowIndicator(bool show)

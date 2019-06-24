@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using LSRetail.Omni.Domain.DataModel.Base.Retail;
+using LSRetail.Omni.Domain.DataModel.Base.SalesEntries;
 using LSRetail.Omni.Domain.DataModel.Loyalty.Baskets;
 using LSRetail.Omni.Domain.DataModel.Loyalty.Orders;
 using LSRetail.Omni.Domain.DataModel.Loyalty.Setup;
@@ -23,19 +24,9 @@ namespace LSRetail.Omni.Domain.Services.Loyalty.Baskets
             return repository.OrderCreate(request);
         }
 
-        public List<OrderLineAvailability> OrderAvailabilityCheck(OrderAvailabilityRequest request)
-        {
-            return repository.OrderAvailabilityCheck(request);
-        }
-
         public OrderAvailabilityResponse OrderCheckAvailability(OneList request)
         {
             return repository.OrderCheckAvailability(request);
-        }
-
-        public async Task<List<OrderLineAvailability>> OrderAvailabilityCheckAsync(OrderAvailabilityRequest request)
-        {
-            return await Task.Run(() => OrderAvailabilityCheck(request));
         }
 
         public async Task<OrderAvailabilityResponse> OrderCheckAvailabilityAsync(OneList request)
@@ -55,7 +46,6 @@ namespace LSRetail.Omni.Domain.Services.Loyalty.Baskets
                 Order order = new Order()
                 {
                     CardId = cardId,
-                    SourceType = SourceType.LSOmni,
                     ClickAndCollectOrder = true,
                     AnonymousOrder = (string.IsNullOrWhiteSpace(contactId)),
                     StoreId = storeId,
@@ -116,7 +106,7 @@ namespace LSRetail.Omni.Domain.Services.Loyalty.Baskets
                 StoreId = store,
                 Email = device.UserLoggedOnToDevice.Email,
                 ContactName = device.UserLoggedOnToDevice.Name,
-                CardId = device.UserLoggedOnToDevice.Card.Id,
+                CardId = device.CardId,
                 PhoneNumber = device.UserLoggedOnToDevice.Phone,
                 ShippingAgentServiceCode = "ISP",
                 ShipToAddress = shippingAddress,

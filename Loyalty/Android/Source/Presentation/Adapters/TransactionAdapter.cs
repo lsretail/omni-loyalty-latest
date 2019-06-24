@@ -10,20 +10,21 @@ using Android.Widget;
 using Presentation.Util;
 using Object = Java.Lang.Object;
 using LSRetail.Omni.Domain.DataModel.Loyalty.Transactions;
+using LSRetail.Omni.Domain.DataModel.Base.SalesEntries;
 
 namespace Presentation.Adapters
 {
     public class TransactionAdapter : BaseRecyclerAdapter
     {
         private readonly IItemClickListener listener;
-        private List<LoyTransaction> transactions;
+        private List<SalesEntry> transactions;
 
         public TransactionAdapter(Context context, IItemClickListener listener)
         {
             this.listener = listener;
         }
 
-        public void SetTransactions(List<LoyTransaction> transactions)
+        public void SetTransactions(List<SalesEntry> transactions)
         {
             this.transactions = transactions;
             NotifyDataSetChanged();
@@ -49,13 +50,9 @@ namespace Presentation.Adapters
                 return;
             }
 
-            if (transaction.Date.HasValue)
-            {
-                transactionViewHolder.Title.Text = transaction.Date.Value.ToString("f");
-            }
-
-            transactionViewHolder.Subtitle.Text = transaction.Store.Description;
-            transactionViewHolder.Price.Text = transaction.Amount;
+            transactionViewHolder.Title.Text = transaction.DocumentRegTime.ToString("f");
+            transactionViewHolder.Subtitle.Text = transaction.StoreName;
+            transactionViewHolder.Price.Text = transaction.TotalAmount.ToString("N02");
         }
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)

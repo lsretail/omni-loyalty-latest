@@ -156,7 +156,7 @@ namespace Presentation.Activities.ShoppingLists
 
         public async void OnRefresh()
         {
-            await model.GetShoppingListsByContactId(AppData.Device.UserLoggedOnToDevice.Id);
+            await model.GetShoppingListsByCardId(AppData.Device.CardId);
         }
 
         public void ItemClicked(int type, string id, string id2, View view)

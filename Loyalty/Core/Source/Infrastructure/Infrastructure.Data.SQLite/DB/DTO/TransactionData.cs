@@ -16,10 +16,10 @@ namespace Infrastructure.Data.SQLite.DB.DTO
         public string StoreDescription { get; set; }
         public string Terminal { get; set; }
         public string Staff { get; set; }
-        public string Amount { get; set; }
-        public string NetAmount { get; set; }
-        public string VatAmount { get; set; }
-        public string DiscountAmount { get; set; }
-        public DateTime? Date { get; set; }
+        public decimal Amount { get; set; }
+        public decimal NetAmount { get; set; }
+        public decimal VatAmount { get; set; }
+        public decimal DiscountAmount { get; set; }
+        public DateTime Date { get; set; }
     }
 }

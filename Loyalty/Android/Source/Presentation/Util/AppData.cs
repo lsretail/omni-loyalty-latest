@@ -43,6 +43,8 @@ namespace Presentation.Util
                     var service = new DeviceService(new DeviceRepository());
 
                     device = service.GetDevice();
+                    if (device.UserLoggedOnToDevice == null)
+                        device.CardId = string.Empty;
 
                     if (!(device is UnknownDevice))
                     {

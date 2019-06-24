@@ -186,7 +186,7 @@ namespace Presentation.Activities.Notifications
 
         private async void RefreshNotifications()
         {
-            await model.GetNotificationsByContactId();
+            await model.GetNotificationsByCardId();
         }
 
         public void ShowIndicator(bool show)

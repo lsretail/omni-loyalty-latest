@@ -9,13 +9,6 @@ namespace LSRetail.Omni.Infrastructure.Data.Omniservice.Loyalty.OneLists
 {
     public class OneListRepository : BaseRepository, IOneListRepository
     {
-        public List<OneList> OneListGetByContactId(string contactId, ListType listType, bool includeLines)
-        {
-            string methodName = "OneListGetByContactId";
-            var jObject = new { contactId = contactId, listType = listType, includeLines = includeLines };
-            return base.PostData<List<OneList>>(jObject, methodName);
-        }
-
         public List<OneList> OneListGetByCardId(string cardId, ListType listType, bool includeLines)
         {
             string methodName = "OneListGetByCardId";

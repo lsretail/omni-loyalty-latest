@@ -4,7 +4,7 @@ using Presentation.Utils;
 using CoreGraphics;
 using CoreAnimation;
 using LSRetail.Omni.GUIExtensions.iOS;
-using LSRetail.Omni.Domain.DataModel.Loyalty.Transactions;
+using LSRetail.Omni.Domain.DataModel.Base.SalesEntries;
 
 namespace Presentation
 {
@@ -21,7 +21,7 @@ namespace Presentation
         public delegate void RefreshEventHandler();
         public event RefreshEventHandler refresh;
 
-        public delegate void TransactionSelectedEventHandler(LoyTransaction transaction);
+        public delegate void TransactionSelectedEventHandler(SalesEntry transaction);
         public event TransactionSelectedEventHandler transactionSelected;
 
         public HistoryView()
@@ -32,7 +32,7 @@ namespace Presentation
             this.transactionTableView.Source = new TransactionHistoryTableSource();
             this.transactionTableView.BackgroundColor = AppColors.BackgroundGray;
             this.transactionTableView.SeparatorStyle = UITableViewCellSeparatorStyle.None;
-            (this.transactionTableView.Source as TransactionHistoryTableSource).transactionSelected += (LoyTransaction transaction) =>
+            (this.transactionTableView.Source as TransactionHistoryTableSource).transactionSelected += (SalesEntry transaction) =>
             {
                 if (transactionSelected != null)
                 {
@@ -157,4 +157,3 @@ namespace Presentation
         #endregion
     }
 }
-

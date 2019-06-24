@@ -4,72 +4,69 @@ using System.Collections.Generic;
 using Foundation;
 using CoreGraphics;
 using LSRetail.Omni.GUIExtensions.iOS;
-using LSRetail.Omni.Domain.DataModel.Loyalty.Items;
 using LSRetail.Omni.Domain.DataModel.Loyalty.Transactions;
+using LSRetail.Omni.Domain.DataModel.Base.SalesEntries;
 
 namespace Presentation
 {
     public class TransactionDetailsTableSource : UITableViewSource
     {
-        private List<LoySaleLine> tableSaleLines;
+        private List<SalesEntryLine> tableSaleLines;
         private List<TotalLine> totalLines;
-        private LoyTransaction transaction;
+        private SalesEntry transaction;
         private const string nibName = "TransactionCell";
         private const string cellIdentifier = "TransactionCellID";
         private NSString transactionLineCellIdentifier = (NSString)"TransactionLineCellID";
         private NSString totalLineCellIdentifier = (NSString)"TotalLineCellID";
         private NSString headerFooterCellIdentifier = (NSString)"HeaderFooterLineCellID";
 
-        public delegate void PushToItemDetailEventHandler(LoySaleLine line);
+        public delegate void PushToItemDetailEventHandler(SalesEntryLine line);
         public PushToItemDetailEventHandler PushToItemDetail;
 
-        public TransactionDetailsTableSource(LoyTransaction transaction)
+        public TransactionDetailsTableSource(SalesEntry transaction)
         {
             SetData(transaction);
         }
 
-        public void SetData(LoyTransaction transaction) 
+        public void SetData(SalesEntry transaction) 
         {
             this.transaction = transaction;
-			tableSaleLines = transaction.SaleLines;
+			tableSaleLines = transaction.Lines;
 
 			totalLines = new List<TotalLine>();
 			totalLines.Add(new TotalLine()
 			{
 				Description = LocalizationUtilities.LocalizedString("TransactionView_Net", "Net Total:"),
-				Amount = transaction.Amount,
+				Amount = transaction.TotalAmount.ToString("N02"),
 				DividerAbove = true
 			});
 
-			foreach (var taxLine in transaction.TaxLines)
+			totalLines.Add(new TotalLine()
 			{
-				totalLines.Add(new TotalLine()
-				{
-					Description = string.Format(LocalizationUtilities.LocalizedString("TransactionView_Vat2", "VAT ({0}):"), taxLine.TaxDesription),
-					Amount = taxLine.TaxAmount
-				});
-			}
+				Description = LocalizationUtilities.LocalizedString("TransactionView_Vat2", "VAT:"),
+				Amount = (transaction.TotalAmount - transaction.TotalNetAmount).ToString("N02")
+			});
 
 			totalLines.Add(new TotalLine()
 			{
 				Description = LocalizationUtilities.LocalizedString("TransactionView_Total", "Total:"),
-				Amount = transaction.Amount,
+				Amount = transaction.TotalAmount.ToString("N02"),
 				DividerAbove = true,
 			});
 
 			totalLines.Add(new TotalLine()
 			{
 				Description = LocalizationUtilities.LocalizedString("TransactionView_Discount", "Discount:"),
-				Amount = transaction.DiscountAmount,
+				Amount = transaction.TotalDiscount.ToString("N02"),
 				DividerAbove = true,
 				DividerBelow = true
 			});
-			foreach (var tenderLine in transaction.TenderLines)
+			foreach (var tenderLine in transaction.Payments)
 			{
 				totalLines.Add(new TotalLine()
 				{
-					Description = tenderLine.Description,
-					Amount = tenderLine.Amount,
+					Description = tenderLine.TenderType.ToString(),
+					Amount = tenderLine.Amount.ToString("N02"),
 				});
 			}
 
@@ -91,9 +88,9 @@ namespace Presentation
         {
             if (section == 0)
             {
-                if (transaction.TransactionHeaders != null)
-                    return transaction.TransactionHeaders.Count;
-                else
+                //if (transaction.TransactionHeaders != null)
+                //    return transaction.TransactionHeaders.Count;
+                //else
                     return 0;
             }
             else if (section == 1)
@@ -112,9 +109,9 @@ namespace Presentation
             }
             else if (section == 3)
             {
-                if (transaction.TransactionFooters != null)
-                    return transaction.TransactionFooters.Count;
-                else
+                //if (transaction.TransactionFooters != null)
+                //    return transaction.TransactionFooters.Count;
+                //else
                     return 0;
             }
             else
@@ -128,7 +125,7 @@ namespace Presentation
         {
             if (indexPath.Section == 0)
             {
-                return HeaderFooterCell.CalculateHeight(transaction.TransactionHeaders[indexPath.Row].HeaderDescription);
+                //return HeaderFooterCell.CalculateHeight(transaction.TransactionHeaders[indexPath.Row].HeaderDescription);
             }
             else if (indexPath.Section == 1)
             {
@@ -145,7 +142,7 @@ namespace Presentation
             }
             else if (indexPath.Section == 3)
             {
-                return HeaderFooterCell.CalculateHeight(transaction.TransactionFooters[indexPath.Row].FooterDescription);
+                //return HeaderFooterCell.CalculateHeight(transaction.TransactionFooters[indexPath.Row].FooterDescription);
             }
 
             return 0f;
@@ -156,20 +153,20 @@ namespace Presentation
             UITableViewCell cell = null;
             if (indexPath.Section == 0)      //HEADER
             {
-                var header = transaction.TransactionHeaders[indexPath.Row];
+                //var header = transaction.TransactionHeaders[indexPath.Row];
 
-                cell = tableView.DequeueReusableCell(headerFooterCellIdentifier) as HeaderFooterCell;
+                //cell = tableView.DequeueReusableCell(headerFooterCellIdentifier) as HeaderFooterCell;
 
-                if (cell == null)
-                {
-                    cell = new HeaderFooterCell(headerFooterCellIdentifier);
-                }
+                //if (cell == null)
+                //{
+                //    cell = new HeaderFooterCell(headerFooterCellIdentifier);
+                //}
 
-                (cell as HeaderFooterCell).UpdateCell(header.HeaderDescription);
+                //(cell as HeaderFooterCell).UpdateCell(header.HeaderDescription);
             }
             else if (indexPath.Section == 1)     //SALE LINES
             {
-                LoySaleLine saleLine = this.tableSaleLines[indexPath.Row];
+                SalesEntryLine saleLine = this.tableSaleLines[indexPath.Row];
 
                 cell = tableView.DequeueReusableCell(transactionLineCellIdentifier) as TransactionItemCell;
 
@@ -195,16 +192,16 @@ namespace Presentation
             }
             else if (indexPath.Section == 3)     //FOOTERS
             {
-                var footer = transaction.TransactionFooters[indexPath.Row];
+                //var footer = transaction.TransactionFooters[indexPath.Row];
 
-                cell = tableView.DequeueReusableCell(headerFooterCellIdentifier) as HeaderFooterCell;
+                //cell = tableView.DequeueReusableCell(headerFooterCellIdentifier) as HeaderFooterCell;
 
-                if (cell == null)
-                {
-                    cell = new HeaderFooterCell(headerFooterCellIdentifier);
-                }
+                //if (cell == null)
+                //{
+                //    cell = new HeaderFooterCell(headerFooterCellIdentifier);
+                //}
 
-                (cell as HeaderFooterCell).UpdateCell(footer.FooterDescription);
+                //(cell as HeaderFooterCell).UpdateCell(footer.FooterDescription);
             }
 
             return cell;
@@ -227,7 +224,7 @@ namespace Presentation
             if (section == 0)
             {
                 headerView = new UIView(new CGRect(0, 0, tableView.Frame.Width, 44));
-                headerView.Add(new UILabel(new CGRect(0, 0, tableView.Frame.Width, 42)) { Text = transaction.DateToShortFormat, TextAlignment = UITextAlignment.Center, TextColor = Utils.AppColors.PrimaryColor, BackgroundColor = UIColor.White });
+                headerView.Add(new UILabel(new CGRect(0, 0, tableView.Frame.Width, 42)) { Text = transaction.DocumentRegTime.ToShortDateString(), TextAlignment = UITextAlignment.Center, TextColor = Utils.AppColors.PrimaryColor, BackgroundColor = UIColor.White });
                 headerView.Add(new UIView(new CGRect(0, 42, tableView.Frame.Width, 2)) { BackgroundColor = Utils.AppColors.PrimaryColor });
             }
             else if (section == 1)
@@ -360,7 +357,7 @@ namespace Presentation
 
     public class TransactionItemCell : UITableViewCell
     {
-        private LoySaleLine saleLine;
+        private SalesEntryLine saleLine;
         UILabel description, qty, amount, extraLines;
 
         public TransactionItemCell(NSString cellId) : base(UITableViewCellStyle.Default, cellId)
@@ -368,8 +365,6 @@ namespace Presentation
             SelectionStyle = UITableViewCellSelectionStyle.None;
             ContentView.BackgroundColor = UIColor.FromRGB(255, 255, 255);
             Accessory = UITableViewCellAccessory.DisclosureIndicator;
-
-
 
             description = new UILabel()
             {
@@ -409,13 +404,13 @@ namespace Presentation
             ContentView.Add(extraLines);
         }
 
-        public void UpdateCell(LoySaleLine saleLine)
+        public void UpdateCell(SalesEntryLine saleLine)
         {
             this.saleLine = saleLine;
 
-            description.Text = saleLine.Item.Description;
-            qty.Text = saleLine.FormatQuantity(saleLine.Quantity);
-            amount.Text = saleLine.Amount;
+            description.Text = saleLine.ItemDescription;
+            qty.Text = saleLine.Quantity.ToString();
+            amount.Text = saleLine.Amount.ToString("N02");
 
             extraLines.LineBreakMode = UILineBreakMode.WordWrap;
             extraLines.Lines = 0;
@@ -424,19 +419,19 @@ namespace Presentation
             extraLines.SizeToFit();
         }
 
-        static string GetExtraLines(LoySaleLine saleLine)
+        static string GetExtraLines(SalesEntryLine saleLine)
         {
             //return string.Empty;
             var extraLineText = string.Empty;
 
-            if (saleLine.ExtraInfoLines != null && saleLine.ExtraInfoLines.Count > 0)
-            {
-                extraLineText = saleLine.ExtraInfoLines[0];
-                for (int i = 1; i < saleLine.ExtraInfoLines.Count; i++)
-                {
-                    extraLineText += System.Environment.NewLine + saleLine.ExtraInfoLines[i];
-                }
-            }
+            //if (saleLine.ExtraInfoLines != null && saleLine.ExtraInfoLines.Count > 0)
+            //{
+            //    extraLineText = saleLine.ExtraInfoLines[0];
+            //    for (int i = 1; i < saleLine.ExtraInfoLines.Count; i++)
+            //    {
+            //        extraLineText += System.Environment.NewLine + saleLine.ExtraInfoLines[i];
+            //    }
+            //}
             return extraLineText;
         }
 
@@ -456,7 +451,7 @@ namespace Presentation
             extraLines.SizeToFit();
         }
 
-        public static nfloat CalculateHeight(LoySaleLine saleLine)
+        public static nfloat CalculateHeight(SalesEntryLine saleLine)
         {
             var label = new UILabel()
             {

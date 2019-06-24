@@ -136,7 +136,7 @@ namespace Presentation.Activities.StoreLocator
                 return;
             }
 
-            Activity.SupportInvalidateOptionsMenu();
+            Activity.InvalidateOptionsMenu();
 
             storeName.Text = store.Description;
 
