@@ -79,15 +79,8 @@ namespace Presentation.Adapters
                 tenderTotalItem.Total = tenderLine.Amount + Environment.NewLine;
             }
 
-            tenderTotalItem.Description = tenderTotalItem.Description.TrimEnd(Environment.NewLine.ToCharArray());
             tenderTotalItem.Total = tenderTotalItem.Total.TrimEnd(Environment.NewLine.ToCharArray());
-
             transactionLines.Add(tenderTotalItem);
-
-            //foreach (var footerLine in transaction.TransactionFooters)
-            //{
-            //    transactionLines.Add(footerLine);
-            //}
 
             NotifyDataSetChanged();
         }
@@ -106,7 +99,7 @@ namespace Presentation.Adapters
         {
             var item = transactionLines[position];
 
-            if (item is LoyTransactionHeader)
+            if (item is SalesEntry)
             {
                 return 0;
             }
@@ -116,7 +109,7 @@ namespace Presentation.Adapters
                 return 1;
             }
 
-            if (item is LoySaleLine)
+            if (item is SalesEntryLine)
             {
                 return 2;
             }
@@ -139,62 +132,45 @@ namespace Presentation.Adapters
             if (viewHolder is HeaderLineViewHolder)
             {
                 var headerLineViewHolder = viewHolder as HeaderLineViewHolder;
-                var headerLine = transactionLines[position] as LoyTransactionHeader;
+                var headerLine = transactionLines[position] as SalesEntry;
 
                 if (headerLineViewHolder == null || headerLine == null)
                 {
                     return;
                 }
 
-                headerLineViewHolder.Title.Text = headerLine.HeaderDescription;
+                headerLineViewHolder.Title.Text = headerLine.StoreName;
             }
             if (viewHolder is SaleLineViewHolder)
             {
                 var saleLineViewHolder = viewHolder as SaleLineViewHolder;
-                var saleLine = transactionLines[position] as LoySaleLine;
+                var saleLine = transactionLines[position] as SalesEntryLine;
 
                 if (saleLineViewHolder == null || saleLine == null)
                 {
                     return;
                 }
 
-                saleLineViewHolder.Title.Text = saleLine.Item.Description;
+                saleLineViewHolder.Title.Text = saleLine.ItemDescription;
 
                 string qtyText = saleLine.Quantity.ToString();
-                if (saleLine.Uom != null)
-                    qtyText += " " + saleLine.Uom.ShortDescription;
+                if (string.IsNullOrEmpty(saleLine.UomId) == false)
+                    qtyText += " " + saleLine.UomId;
 
                 saleLineViewHolder.Qty.Text = qtyText;
-                saleLineViewHolder.Price.Text = saleLine.Amount;
+                saleLineViewHolder.Price.Text = saleLine.Amount.ToString();
 
-                
-
-                if (saleLine.VariantReg != null)
+                if (string.IsNullOrEmpty(saleLine.VariantId) == false)
                 {
                     saleLineViewHolder.Variant.Visibility = ViewStates.Visible;
-                    var variantText = string.Empty;
-
-                    if (!string.IsNullOrWhiteSpace(saleLine.VariantReg.Dimension1))
-                        variantText += saleLine.VariantReg.Dimension1;
-                    if (!string.IsNullOrWhiteSpace(saleLine.VariantReg.Dimension2))
-                        variantText += ", " + saleLine.VariantReg.Dimension2;
-                    if (!string.IsNullOrWhiteSpace(saleLine.VariantReg.Dimension3))
-                        variantText += ", " + saleLine.VariantReg.Dimension3;
-                    if (!string.IsNullOrWhiteSpace(saleLine.VariantReg.Dimension4))
-                        variantText += ", " + saleLine.VariantReg.Dimension4;
-                    if (!string.IsNullOrWhiteSpace(saleLine.VariantReg.Dimension5))
-                        variantText += ", " + saleLine.VariantReg.Dimension5;
-                    if (!string.IsNullOrWhiteSpace(saleLine.VariantReg.Dimension6))
-                        variantText += ", " + saleLine.VariantReg.Dimension6;
-
-                    saleLineViewHolder.Variant.Text = variantText;
+                    saleLineViewHolder.Variant.Text = saleLine.VariantDescription;
                 }
                 else
                 {
                     saleLineViewHolder.Variant.Text = string.Empty;
                     saleLineViewHolder.Variant.Visibility = ViewStates.Gone;
                 }
-                if (saleLine.DiscountAmt > 0)
+                if (saleLine.DiscountAmount > 0)
                 {
                     saleLineViewHolder.Discount.Visibility = ViewStates.Visible;
 
@@ -258,7 +234,7 @@ namespace Presentation.Adapters
 
                 vh = new SaleLineViewHolder(view, (type, pos) =>
                 {
-                    var saleLine = transactionLines[pos] as LoySaleLine;
+                    var saleLine = transactionLines[pos] as SalesEntryLine;
 
                     listener.ItemClicked((int)ItemClickType.ShoppingListLine, saleLine.Id, string.Empty, view);
                 });    

@@ -42,7 +42,7 @@ namespace Presentation.Models
             return transaction;
         }
 
-        public async Task<List<SalesEntry>> GetTransactionsByContactId(string contactId)
+        public async Task<List<SalesEntry>> GetTransactionsByCardId(string cardId)
         {
             List<SalesEntry> transactions = null;
 
@@ -52,7 +52,7 @@ namespace Presentation.Models
 
             try
             {
-                transactions = await service.GetSalesEntriesAsync(contactId, Int32.MaxValue);
+                transactions = await service.GetSalesEntriesAsync(cardId, Int32.MaxValue);
                 await SaveLocalTransactions(transactions);
             }
             catch (Exception ex)

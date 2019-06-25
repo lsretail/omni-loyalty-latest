@@ -99,7 +99,7 @@ namespace Presentation.Activities.History
 
         public async void OnRefresh()
         {
-            var loadedTransactions = await model.GetTransactionsByContactId(AppData.Device.UserLoggedOnToDevice.Id);
+            var loadedTransactions = await model.GetTransactionsByCardId(AppData.Device.CardId);
 
             if (loadedTransactions != null)
             {
