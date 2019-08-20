@@ -106,7 +106,7 @@ namespace Presentation.Models
                 var contact = await service.MemberContactLogonAsync(repository, username, password, AppData.Device.Id);
 
                 AppData.Device.UserLoggedOnToDevice = contact;
-                AppData.Basket = contact.Basket;
+                AppData.Basket = contact.GetBasket(AppData.Device.CardId);
                 AppData.Device.UserLoggedOnToDevice.Cards = contact.Cards;
                 AppData.Device.SecurityToken = contact.LoggedOnToDevice.SecurityToken;
                 AppData.Device.CardId = contact.Cards[0].Id;
@@ -188,10 +188,10 @@ namespace Presentation.Models
             try
             {
                 MemberContact contact = await service.MemberContactByCardIdAsync(repository, cardId);
-                contact.Basket.CalculateBasket();
+                contact.GetBasket(AppData.Device.CardId).CalculateBasket();
 
                 AppData.Device.UserLoggedOnToDevice = contact;
-                AppData.Basket = contact.Basket;
+                AppData.Basket = contact.GetBasket(AppData.Device.CardId);
                 AppData.Device.SecurityToken = contact.LoggedOnToDevice.SecurityToken;
 
                 SendBroadcast(Utils.BroadcastUtils.DomainModelUpdated);

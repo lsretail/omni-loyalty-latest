@@ -117,7 +117,7 @@ namespace Presentation.Activities.ShoppingLists
 
         private void LoadShoppingList()
         {
-            WishList = AppData.Device.UserLoggedOnToDevice.WishList;
+            WishList = AppData.Device.UserLoggedOnToDevice.GetWishList(AppData.Device.CardId);
         }
 
         public override void OnResume()

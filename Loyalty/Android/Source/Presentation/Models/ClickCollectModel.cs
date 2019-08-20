@@ -30,8 +30,8 @@ namespace Presentation.Models
             OrderAvailabilityResponse orderLineAvailabilities = null;
             try
             {
-                AppData.Device.UserLoggedOnToDevice.Basket.StoreId = storeId;
-                orderLineAvailabilities = await service.OrderCheckAvailabilityAsync(AppData.Device.UserLoggedOnToDevice.Basket);
+                AppData.Device.UserLoggedOnToDevice.GetBasket(AppData.Device.CardId).StoreId = storeId;
+                orderLineAvailabilities = await service.OrderCheckAvailabilityAsync(AppData.Device.UserLoggedOnToDevice.GetBasket(AppData.Device.CardId));
             }
             catch (Exception ex)
             {

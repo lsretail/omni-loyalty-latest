@@ -26,19 +26,20 @@ namespace Presentation.Models
         public async Task AddItemToBasket(OneListItem item, bool openBasket = false, int index = 0)
         {
             ShowIndicator(true);
-            AppData.Device.UserLoggedOnToDevice.Basket.State = BasketState.Updating;
+            AppData.Device.UserLoggedOnToDevice.GetBasket(AppData.Device.CardId).State = BasketState.Updating;
             SendBroadcast(Utils.BroadcastUtils.BasketStateUpdated);
 
             if (openBasket)
                 SendBroadcast(Utils.BroadcastUtils.OpenBasket);
 
-            OneList newList = AppData.Device.UserLoggedOnToDevice.Basket;
+            OneList newList = AppData.Device.UserLoggedOnToDevice.GetBasket(AppData.Device.CardId);
             newList.CardId = AppData.Device.CardId;
             newList.AddItem(item);
 
             try
             {
-                AppData.Device.UserLoggedOnToDevice.Basket = await OneListSave(newList, true);
+                var list = await OneListSave(newList, true);
+                AppData.Device.UserLoggedOnToDevice.AddList(AppData.Device.CardId, list, ListType.Basket);
                 SendBroadcast(Utils.BroadcastUtils.BasketStateUpdated);
             }
             catch (Exception ex)
@@ -60,7 +61,7 @@ namespace Presentation.Models
                 if (basketList != null)
                 {
                     basketList.CalculateBasket();
-                    AppData.Device.UserLoggedOnToDevice.Basket = basketList;
+                    AppData.Device.UserLoggedOnToDevice.AddList(AppData.Device.CardId, basketList, ListType.Basket);
                 }
                 SendBroadcast(Utils.BroadcastUtils.BasketStateUpdated);
             }
@@ -80,7 +81,7 @@ namespace Presentation.Models
 
             try
             {
-                success = await OneListDeleteById(AppData.Device.UserLoggedOnToDevice.Basket.Id, ListType.Basket);
+                success = await OneListDeleteById(AppData.Device.UserLoggedOnToDevice.GetBasket(AppData.Device.CardId).Id, ListType.Basket);
                 AppData.Basket.Clear();
             }
             catch (Exception ex)
@@ -94,7 +95,7 @@ namespace Presentation.Models
 
         public async Task EditItem(string basketItemId, decimal newQty, VariantRegistration newVariant)
         {
-            var newList = AppData.Device.UserLoggedOnToDevice.Basket;
+            var newList = AppData.Device.UserLoggedOnToDevice.GetBasket(AppData.Device.CardId);
 
             var existingItem = newList.Items.FirstOrDefault(x => x.Id == basketItemId);
             if (existingItem == null)
@@ -108,7 +109,8 @@ namespace Presentation.Models
 
             try
             {
-                AppData.Device.UserLoggedOnToDevice.Basket = await OneListSave(newList, true);
+                var list = await OneListSave(newList, true);
+                AppData.Device.UserLoggedOnToDevice.AddList(AppData.Device.CardId, list, ListType.Basket);
                 SendBroadcast(Utils.BroadcastUtils.BasketStateUpdated);
             }
             catch (Exception ex)
@@ -126,7 +128,7 @@ namespace Presentation.Models
 
         public async Task DeleteItem(OneListItem item)
         {
-            OneList newList = AppData.Device.UserLoggedOnToDevice.Basket;
+            OneList newList = AppData.Device.UserLoggedOnToDevice.GetBasket(AppData.Device.CardId);
 
             OneListItem existingItem = newList.ItemGetByIds(item.Item.Id, item.VariantReg?.Id, item.UnitOfMeasure?.Id);
             if (existingItem == null)
@@ -139,7 +141,8 @@ namespace Presentation.Models
 
             try
             {
-                AppData.Device.UserLoggedOnToDevice.Basket = await OneListSave(newList, true);
+                var list = await OneListSave(newList, true);
+                AppData.Device.UserLoggedOnToDevice.AddList(AppData.Device.CardId, list, ListType.Basket);
                 SendBroadcast(Utils.BroadcastUtils.BasketStateUpdated);
 
                 ShowSnackbar(AddSnackbarAction(CreateSnackbar(Context.GetString(Resource.String.ApplicatioItemDeleted)),

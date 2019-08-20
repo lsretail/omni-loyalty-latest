@@ -625,9 +625,9 @@ namespace Presentation.Activities.Base
             if ((EnabledItems.ForceLogin || AppData.Device.UserLoggedOnToDevice != null) && EnabledItems.HasWishLists)
             {
                 var itemCount = string.Empty;
-                if (AppData.Device.UserLoggedOnToDevice.WishList.Items.Count > 0)
+                if (AppData.Device.UserLoggedOnToDevice.GetWishList(AppData.Device.CardId).Items.Count > 0)
                 {
-                    itemCount = AppData.Device.UserLoggedOnToDevice.WishList.Items.Count.ToString();
+                    itemCount = AppData.Device.UserLoggedOnToDevice.GetWishList(AppData.Device.CardId).Items.Count.ToString();
                 }
 
                 DrawerMenuItems.Add(new SecondaryTextDrawerMenuItem()

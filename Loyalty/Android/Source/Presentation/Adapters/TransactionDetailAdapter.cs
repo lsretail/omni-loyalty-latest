@@ -10,7 +10,6 @@ using Android.Views;
 using Android.Widget;
 
 using Presentation.Util;
-using LSRetail.Omni.Domain.DataModel.Loyalty.Transactions;
 using LSRetail.Omni.Domain.DataModel.Base.SalesEntries;
 
 namespace Presentation.Adapters
@@ -119,11 +118,6 @@ namespace Presentation.Adapters
                 return 3;
             }
 
-            if (item is LoyTransactionFooter)
-            {
-                return 4;
-            }
-
             return -1;
         }
 
@@ -199,18 +193,18 @@ namespace Presentation.Adapters
                 totalItemViewHolder.Title.Text = totalItem.Description;
                 totalItemViewHolder.Amount.Text = totalItem.Total;
             }
-            if (viewHolder is FooterLineViewHolder)
-            {
-                var footerLineViewHolder = viewHolder as FooterLineViewHolder;
-                var footerLine = transactionLines[position] as LoyTransactionFooter;
+            //if (viewHolder is FooterLineViewHolder)
+            //{
+            //    var footerLineViewHolder = viewHolder as FooterLineViewHolder;
+            //    var footerLine = transactionLines[position] as LoyTransactionFooter;
 
-                if (footerLineViewHolder == null || footerLine == null)
-                {
-                    return;
-                }
+            //    if (footerLineViewHolder == null || footerLine == null)
+            //    {
+            //        return;
+            //    }
 
-                footerLineViewHolder.Title.Text = footerLine.FooterDescription;
-            }
+            //    footerLineViewHolder.Title.Text = footerLine.FooterDescription;
+            //}
         }
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)

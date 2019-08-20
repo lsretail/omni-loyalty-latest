@@ -88,14 +88,14 @@ namespace Presentation.Util
                 if (Device == null || Device.UserLoggedOnToDevice == null)
                     return null;
 
-                return Device.UserLoggedOnToDevice.Basket;
+                return Device.UserLoggedOnToDevice.GetBasket(Device.CardId);
             }
             set
             {
                 if (Device == null)
                     return;
 
-                Device.UserLoggedOnToDevice.Basket = value;
+                Device.UserLoggedOnToDevice.AddList(Device.CardId, value, ListType.Basket);
             }
         }
 
