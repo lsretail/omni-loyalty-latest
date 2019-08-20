@@ -603,7 +603,7 @@ namespace Presentation.Activities.Items
 
             if (shoppingListModel.ItemIsInWishList(Item, Item.SelectedVariant, Item.SelectedUnitOfMeasure))
             {
-                var existingItem = AppData.Device.UserLoggedOnToDevice.WishList.ItemGetByIds(Item.Id, Item.SelectedVariant?.Id, Item.SelectedUnitOfMeasure?.Id);
+                var existingItem = AppData.Device.UserLoggedOnToDevice.GetWishList(AppData.Device.CardId).ItemGetByIds(Item.Id, Item.SelectedVariant?.Id, Item.SelectedUnitOfMeasure?.Id);
                 if (existingItem != null)
                     await shoppingListModel.DeleteWishListLine(existingItem.Id);
             }

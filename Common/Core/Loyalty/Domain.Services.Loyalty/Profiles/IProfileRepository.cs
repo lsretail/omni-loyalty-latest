@@ -6,6 +6,6 @@ namespace LSRetail.Omni.Domain.Services.Loyalty.Profiles
     public interface IProfileRepository
     {
         List<Profile> GetAvailableProfiles();
-        List<Profile> ProfilesGetByCardId(string contactId);
+        List<Profile> ProfilesGetByCardId(string cardId);
     }
 }

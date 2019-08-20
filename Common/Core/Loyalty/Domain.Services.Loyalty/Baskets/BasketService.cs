@@ -1,12 +1,9 @@
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using LSRetail.Omni.Domain.DataModel.Base.Retail;
-using LSRetail.Omni.Domain.DataModel.Base.SalesEntries;
 using LSRetail.Omni.Domain.DataModel.Loyalty.Baskets;
 using LSRetail.Omni.Domain.DataModel.Loyalty.Orders;
 using LSRetail.Omni.Domain.DataModel.Loyalty.Setup;
-using LSRetail.Omni.Domain.DataModel.Loyalty.Transactions;
 
 namespace LSRetail.Omni.Domain.Services.Loyalty.Baskets
 {
@@ -47,7 +44,6 @@ namespace LSRetail.Omni.Domain.Services.Loyalty.Baskets
                 {
                     CardId = cardId,
                     ClickAndCollectOrder = true,
-                    AnonymousOrder = (string.IsNullOrWhiteSpace(contactId)),
                     StoreId = storeId,
                     ContactId = contactId,
                     Email = email
@@ -110,8 +106,7 @@ namespace LSRetail.Omni.Domain.Services.Loyalty.Baskets
                 PhoneNumber = device.UserLoggedOnToDevice.Phone,
                 ShippingAgentServiceCode = "ISP",
                 ShipToAddress = shippingAddress,
-                ClickAndCollectOrder = false,
-                AnonymousOrder = (string.IsNullOrWhiteSpace(device.UserLoggedOnToDevice.Id))
+                ClickAndCollectOrder = false
             };
 
             int cnt = 1;
@@ -163,7 +158,7 @@ namespace LSRetail.Omni.Domain.Services.Loyalty.Baskets
                     AuthorisationCode = cardCVV,
                     CardNumber = cardNumber,
                     LineNumber = 1,
-                    TenderType = ((int)TenderType.Card).ToString(),
+                    TenderType = ((int)LoyTenderType.Card).ToString(),
                 });
             }
             else if (paymentType == PaymentType.PayOnDelivery)
@@ -174,7 +169,7 @@ namespace LSRetail.Omni.Domain.Services.Loyalty.Baskets
                     FinalizedAmount = basket.TotalAmount,
                     CurrencyCode = currencyCode,
                     LineNumber = 1,
-                    TenderType = ((int)TenderType.Cash).ToString(),
+                    TenderType = ((int)LoyTenderType.Cash).ToString(),
                 });
             }
             return order;
