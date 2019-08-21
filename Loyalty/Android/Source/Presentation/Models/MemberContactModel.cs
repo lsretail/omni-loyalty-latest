@@ -106,10 +106,10 @@ namespace Presentation.Models
                 var contact = await service.MemberContactLogonAsync(repository, username, password, AppData.Device.Id);
 
                 AppData.Device.UserLoggedOnToDevice = contact;
-                AppData.Basket = contact.GetBasket(AppData.Device.CardId);
                 AppData.Device.UserLoggedOnToDevice.Cards = contact.Cards;
                 AppData.Device.SecurityToken = contact.LoggedOnToDevice.SecurityToken;
                 AppData.Device.CardId = contact.Cards[0].Id;
+                AppData.Basket = contact.GetBasket(AppData.Device.CardId);
 
                 SaveLocalMemberContact(contact);
 

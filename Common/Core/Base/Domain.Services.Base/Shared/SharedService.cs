@@ -69,29 +69,6 @@ namespace LSRetail.Omni.Domain.Services.Base.Loyalty
             return repository.AdvertisementsGetById(id, contactId);
         }
 
-        public ImageView ImageGetById(string id, ImageSize imageSize)
-        {
-            var cachedImages = GetItemFromCache(id, string.Empty, imageSize);
-
-            if (cachedImages?.Count > 0)
-            {
-                cachedImages[0].Crossfade = false;
-                return cachedImages[0];
-            }
-            else
-            {
-                var images = repository.ImageGetById(id, imageSize);
-                AddImageToCache(id, string.Empty, imageSize, images);
-                images.Crossfade = true;
-                return images;
-            }
-        }
-
-        public OmniEnvironment GetEnvironment()
-        {
-            return repository.GetEnvironment();
-        }
-
         public string AppSettings(ConfigKey key, string languageCode)
         {
             return repository.AppSettingsGetByKey(key, languageCode);
@@ -114,11 +91,6 @@ namespace LSRetail.Omni.Domain.Services.Base.Loyalty
             return await Task.Run(() => AdvertisementsGetById(id, contactId));
         }
 
-        public async Task<ImageView> ImageGetByIdAsync(string id, ImageSize imageSize)
-        {
-            return await Task.Run(() => ImageGetById(id, imageSize));
-        }
-
         public async Task<List<PublishedOffer>> GetPublishedOffersByCardIdAsync(string cardId)
         {
             return await Task.Run(() => GetPublishedOffersByCardId(cardId));
@@ -127,11 +99,6 @@ namespace LSRetail.Omni.Domain.Services.Base.Loyalty
         public async Task<List<PublishedOffer>> GetPublishedOffersByItemIdAsync(string itemId, string cardId)
         {
             return await Task.Run(() => GetPublishedOffersByItemId(itemId, cardId));
-        }
-
-        public async Task<OmniEnvironment> GetEnvironmentAsync()
-        {
-            return await Task.Run(() => GetEnvironment());
         }
 
         public async Task<string> AppSettingsAsync(ConfigKey key, string languageCode)

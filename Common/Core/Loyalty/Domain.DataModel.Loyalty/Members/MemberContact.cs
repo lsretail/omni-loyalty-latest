@@ -198,28 +198,40 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Members
 
         public OneList GetWishList(string cardId)
         {
-            if (OneLists.Count == 0)
+            OneList list = null;
+            if (OneLists.Count > 0 && string.IsNullOrEmpty(cardId) == false)
             {
-                return new OneList()
+                list = OneLists.Find(t => t.ListType == ListType.Wish && t.CardId == cardId);
+            }
+            if (list == null)
+            { 
+                list = new OneList()
                 {
                     CardId = (Cards.Count == 0) ? string.Empty : Cards[0].Id,
-                    ListType = ListType.Wish
+                    ListType = ListType.Wish,
+                    Items = new List<OneListItem>()
                 };
             }
-            return OneLists.Find(t => t.ListType == ListType.Wish && t.CardId == cardId);
+            return list;
         }
 
         public OneList GetBasket(string cardId)
         {
-            if (OneLists.Count == 0)
+            OneList list = null;
+            if (OneLists.Count > 0 && string.IsNullOrEmpty(cardId) == false)
             {
-                return new OneList()
+                list = OneLists.Find(t => t.ListType == ListType.Basket && t.CardId == cardId);
+            }
+            if (list == null)
+            {
+                list = new OneList()
                 {
                     CardId = (Cards.Count == 0) ? string.Empty : Cards[0].Id,
-                    ListType = ListType.Basket
+                    ListType = ListType.Basket,
+                    Items = new List<OneListItem>()
                 };
             }
-            return OneLists.Find(t => t.ListType == ListType.Basket && t.CardId == cardId);
+            return list;
         }
 
         public void AddList(string cardId, OneList list, ListType type)

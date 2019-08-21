@@ -259,7 +259,7 @@ namespace LSRetail.Omni.Domain.DataModel.Base
         [EnumMember]
         PriceChangeNotAllowed = 1609,
         [EnumMember]
-        PriceToHigh = 1610,
+        PriceTooHigh = 1610,
         [EnumMember]
         InvalidDiscPercent = 1611,
         [EnumMember]

@@ -17,26 +17,12 @@ namespace LSRetail.Omni.Infrastructure.Data.Omniservice.Shared
             return base.PostData<List<Advertisement>>(jObject, methodName);
         }
 
-        public ImageView ImageGetById(string id, ImageSize imageSize)
-        {
-            string methodName = "ImageGetById";
-            var jObject = new { id = id, imageSize = imageSize };
-            return base.PostData<ImageView>(jObject, methodName);
-        }
-
         public List<PublishedOffer> GetPublishedOffers(string cardId, string itemId)
         {
             //if itemId is empty then no filtering is done.
             string methodName = "PublishedOffersGetByCardId";
             var jObject = new { cardId = cardId, itemId = itemId };
             return base.PostData<List<PublishedOffer>>(jObject, methodName);
-        }
-
-        public void ActivityLogSave(ActivityLog activityLog)
-        {
-            string methodName = "ActivityLogSave";
-            var jObject = new { activityLog = activityLog };
-            base.PostData<bool>(jObject, methodName);
         }
 
         public OmniEnvironment GetEnvironment()
