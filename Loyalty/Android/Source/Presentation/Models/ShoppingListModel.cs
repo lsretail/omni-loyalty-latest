@@ -165,7 +165,7 @@ namespace Presentation.Models
 
             try
             {
-                var success = await this.OneListDeleteById(AppData.Device.UserLoggedOnToDevice.GetWishList(AppData.Device.CardId).Id, ListType.Wish);
+                var success = await this.OneListDeleteById(AppData.Device.UserLoggedOnToDevice.GetWishList(AppData.Device.CardId).Id);
 
                 if (success)
                 {

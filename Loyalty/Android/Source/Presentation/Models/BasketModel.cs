@@ -9,7 +9,7 @@ using Android.Widget;
 using Presentation.Util;
 using LSRetail.Omni.Domain.DataModel.Base.Retail;
 using LSRetail.Omni.Domain.DataModel.Loyalty.Baskets;
-using LSRetail.Omni.Domain.DataModel.Loyalty.Setup;
+using LSRetail.Omni.Domain.DataModel.Loyalty.Orders;
 using LSRetail.Omni.Domain.Services.Loyalty.Baskets;
 using LSRetail.Omni.Infrastructure.Data.Omniservice.Loyalty.Baskets;
 
@@ -81,7 +81,7 @@ namespace Presentation.Models
 
             try
             {
-                success = await OneListDeleteById(AppData.Device.UserLoggedOnToDevice.GetBasket(AppData.Device.CardId).Id, ListType.Basket);
+                success = await OneListDeleteById(AppData.Basket.Id);
                 AppData.Basket.Clear();
             }
             catch (Exception ex)
@@ -103,7 +103,7 @@ namespace Presentation.Models
 
             existingItem.Quantity = newQty;
             if (newVariant != null)
-                existingItem.VariantReg = newVariant;
+                existingItem.VariantId = newVariant.Id;
 
             ShowIndicator(true);
 
@@ -130,7 +130,7 @@ namespace Presentation.Models
         {
             OneList newList = AppData.Device.UserLoggedOnToDevice.GetBasket(AppData.Device.CardId);
 
-            OneListItem existingItem = newList.ItemGetByIds(item.Item.Id, item.VariantReg?.Id, item.UnitOfMeasure?.Id);
+            OneListItem existingItem = newList.ItemGetByIds(item.ItemId, item.VariantId, item.UnitOfMeasureId);
             if (existingItem == null)
                 return;
 
@@ -161,7 +161,7 @@ namespace Presentation.Models
             }
         }
 
-        public async Task<bool> SendOrder(OneList basket, Device device, Address billingAddress, Address shippingAddress, PaymentType paymentType, string currencyCode, string cardNumber, string cardCVV, string cardName)
+        public async Task<bool> SendOrder(Order basket)
         {
             var success = false;
 
@@ -173,7 +173,7 @@ namespace Presentation.Models
 
             try
             {
-                await service.OrderCreateAsync(service.CreateOrderForSale(basket, "S0013", device, billingAddress, shippingAddress, paymentType, currencyCode, cardNumber, cardCVV, cardName));
+                await service.OrderCreateAsync(basket);
                 success = true;
 
                 await ClearBasket();

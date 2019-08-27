@@ -223,15 +223,12 @@ namespace Presentation.Activities.Search
 
                 if (shoppingListLine != null)
                 {
-                    var uomId = shoppingListLine.UnitOfMeasure != null ? shoppingListLine.UnitOfMeasure.Id : "";
-                    var variantId = shoppingListLine.VariantReg != null ? shoppingListLine.VariantReg.Id : "";
-
                     intent.SetClass(Activity, typeof (ItemActivity));
-                    intent.PutExtra(BundleConstants.ItemId, shoppingListLine.Item.Id);
-                    if (!string.IsNullOrEmpty(uomId))
-                        intent.PutExtra(BundleConstants.SelectedUomId, uomId);
-                    if (!string.IsNullOrEmpty(variantId))
-                        intent.PutExtra(BundleConstants.SelectedVariantId, variantId);
+                    intent.PutExtra(BundleConstants.ItemId, shoppingListLine.ItemId);
+                    if (!string.IsNullOrEmpty(shoppingListLine.UnitOfMeasureId))
+                        intent.PutExtra(BundleConstants.SelectedUomId, shoppingListLine.UnitOfMeasureId);
+                    if (!string.IsNullOrEmpty(shoppingListLine.VariantId))
+                        intent.PutExtra(BundleConstants.SelectedVariantId, shoppingListLine.VariantId);
                 }
             }
             else if (itemType == ItemClickType.Store)

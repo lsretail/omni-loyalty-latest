@@ -45,11 +45,11 @@ namespace Presentation.Adapters
                 return;
             }
 
-            basketViewHolder.Title.Text = basketItem.Item.Description;
+            basketViewHolder.Title.Text = basketItem.ItemDescription;
 
-            if (basketItem.VariantReg != null)
+            if (string.IsNullOrEmpty(basketItem.VariantId) == false)
             {
-                basketViewHolder.Subtitle.Text = basketItem.VariantReg.ToString();
+                basketViewHolder.Subtitle.Text = basketItem.VariantDescription;
                 basketViewHolder.Subtitle.Visibility = ViewStates.Visible;
             }
             else
@@ -57,9 +57,9 @@ namespace Presentation.Adapters
                 basketViewHolder.Subtitle.Visibility = ViewStates.Gone;
             }
 
-            if (basketItem.UnitOfMeasure != null)
+            if (string.IsNullOrEmpty(basketItem.UnitOfMeasureId) == false)
             {
-                basketViewHolder.Qty.Text = string.Format(basketViewHolder.Qty.Context.GetString(Resource.String.ApplicationQtyN), basketItem.Quantity.ToString("N" + basketItem.UnitOfMeasure.Decimals) + " " + basketItem.UnitOfMeasure.ShortDescription.ToLower());
+                basketViewHolder.Qty.Text = string.Format(basketViewHolder.Qty.Context.GetString(Resource.String.ApplicationQtyN), basketItem.Quantity.ToString() + " " + basketItem.UnitOfMeasureId);
             }
             else
             {

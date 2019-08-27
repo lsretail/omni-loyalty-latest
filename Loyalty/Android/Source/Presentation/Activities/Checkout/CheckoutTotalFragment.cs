@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
@@ -15,12 +14,13 @@ using Presentation.Activities.Home;
 using Presentation.Adapters;
 using Presentation.Models;
 using Presentation.Util;
-using ColoredButton = Presentation.Views.ColoredButton;
-using IBroadcastObserver = Presentation.Util.IBroadcastObserver;
-using Utils = Presentation.Util.Utils;
 using LSRetail.Omni.Domain.DataModel.Loyalty.Baskets;
 using LSRetail.Omni.Domain.DataModel.Base.Retail;
 using LSRetail.Omni.Domain.DataModel.Loyalty.Orders;
+
+using ColoredButton = Presentation.Views.ColoredButton;
+using IBroadcastObserver = Presentation.Util.IBroadcastObserver;
+using Utils = Presentation.Util.Utils;
 
 namespace Presentation.Activities.Checkout
 {
@@ -62,9 +62,7 @@ namespace Presentation.Activities.Checkout
 
         private bool needsCalculate;
 
-        private OneList basket;
-        private string storeId;
-        private bool localBasket;
+        private Order basketOrder;
 
         public static CheckoutTotalFragment NewInstance()
         {
@@ -122,24 +120,8 @@ namespace Presentation.Activities.Checkout
 
             shippingMedhod = (ShippingMedhod)Arguments.GetInt(BundleConstants.DeliveryType);
 
-            if (shippingMedhod == ShippingMedhod.ClickCollect)
+            if (shippingMedhod == ShippingMedhod.HomeDelivery)
             {
-                storeId = Arguments.GetString(BundleConstants.StoreId);
-                XmlSerializer serializer = new XmlSerializer(typeof(List<OrderLineAvailability>), new Type[] { });
-
-                using (TextReader textReader = new StringReader(Arguments.GetString(BundleConstants.OrderLineAvailabilities)))
-                {
-                    //Console.WriteLine(textReader.ToString());
-
-                    basket = new OneList("", clickCollectModel.CreateBasketItems((List<OrderLineAvailability>)serializer.Deserialize(textReader)), true);
-                }
-
-                localBasket = true;
-            }
-            else if (shippingMedhod == ShippingMedhod.HomeDelivery)
-            {
-                basket = AppData.Basket;
-
                 shippingAddress = new Address();
                 shippingAddress.Address1 = Arguments.GetString(BundleConstants.ShippingAddressOne);
                 shippingAddress.Address2 = Arguments.GetString(BundleConstants.ShippingAddressTwo);
@@ -216,7 +198,7 @@ namespace Presentation.Activities.Checkout
             footerView.AddView(total);
             //headers.AddFooterView(total, null, false);
 
-            adapter.SetItems(Activity, basket.Items, null, footerView);
+            adapter.SetItems(Activity, AppData.Basket.Items, null, footerView);
 
             CalculateBasket();
 
@@ -225,89 +207,72 @@ namespace Presentation.Activities.Checkout
 
         private async void CalculateBasket()
         {
-            Order basketCalcResponse = await oneListModel.OneListCalculate(basket);
-            if (basketCalcResponse == null)
+            basketOrder = await oneListModel.OneListCalculate(AppData.Basket);
+            if (basketOrder == null)
             {
                 needsCalculate = true;
-
                 totalheader.Visibility = ViewStates.Gone;
                 totalViewSwitcher.Visibility = ViewStates.Gone;
-
                 totalOrder.SetText(Resource.String.CheckoutViewCalculateTotal);
             }
             else
             {
-                basket = new OneList(AppData.Basket.Id);
-                basket.TotalNetAmount = basketCalcResponse.TotalNetAmount;
-                basket.TotalAmount = basketCalcResponse.TotalAmount;
-                basket.TotalTaxAmount = basket.TotalAmount - basket.TotalNetAmount;
-                basket.TotalDiscAmount = basketCalcResponse.TotalDiscount;
-
-                foreach (OrderLine basketLineCalcResponse in basketCalcResponse.OrderLines)
-                {
-                    basketLineCalcResponse.UomId = string.Empty;
-
-                    OneListItem item = AppData.Basket.ItemGetByIds(basketLineCalcResponse.ItemId, basketLineCalcResponse.VariantId, basketLineCalcResponse.UomId);
-                    if (item == null)
-                        continue;
-
-                    OneListItem basketItem = new OneListItem()
-                    {
-                        Item = item.Item,
-                        DisplayOrderId = basketLineCalcResponse.LineNumber,
-                        Quantity = basketLineCalcResponse.Quantity,
-                        UnitOfMeasure = item.UnitOfMeasure,
-                        VariantReg = item.VariantReg,
-                        NetAmount = basketLineCalcResponse.NetAmount,
-                        TaxAmount = basketLineCalcResponse.TaxAmount,
-                        Amount = basketLineCalcResponse.NetAmount + basketLineCalcResponse.TaxAmount,
-                        Price = basketLineCalcResponse.Price,
-                        NetPrice = basketLineCalcResponse.NetPrice,
-                        DiscountAmount = basketLineCalcResponse.DiscountAmount,
-                        DiscountPercent = basketLineCalcResponse.DiscountPercent,
-                    };
-                    basket.Items.Add(basketItem);
-                }
-
-                foreach (OrderDiscountLine basketDiscLine in basketCalcResponse.OrderDiscountLines)
-                {
-                    OneListItem item = basket.Items.Find(i => i.DisplayOrderId == basketDiscLine.LineNumber / 10000);
-                    if (item == null)
-                        continue;
-
-                    item.OnelistItemDiscounts.Add(new OneListItemDiscount()
-                    {
-                        DiscountType = basketDiscLine.DiscountType,
-                        No = basketDiscLine.No,
-                        OfferNumber = basketDiscLine.OfferNumber,
-                        Description = basketDiscLine.Description,
-                        DiscountAmount = basketDiscLine.DiscountAmount,
-                        DiscountPercent = basketDiscLine.DiscountPercent,
-                        PeriodicDiscGroup = basketDiscLine.PeriodicDiscGroup,
-                        PeriodicDiscType = basketDiscLine.PeriodicDiscType
-                    });
-                }
-
                 needsCalculate = false;
 
                 totalheader.Visibility = ViewStates.Visible;
                 totalViewSwitcher.Visibility = ViewStates.Visible;
-
                 totalOrder.SetText(Resource.String.CheckoutViewOrder);
 
-                totalSubtotal.Text = AppData.Device.UserLoggedOnToDevice.Environment.Currency.FormatDecimal(basket.TotalNetAmount);
-                totalShipping.Text = AppData.Device.UserLoggedOnToDevice.Environment.Currency.FormatDecimal(basket.ShippingAmount);
-                totalVAT.Text = AppData.Device.UserLoggedOnToDevice.Environment.Currency.FormatDecimal(basket.TotalTaxAmount);
-                totalDiscount.Text = AppData.Device.UserLoggedOnToDevice.Environment.Currency.FormatDecimal(basket.TotalDiscAmount);
-                totalTotal.Text = AppData.Device.UserLoggedOnToDevice.Environment.Currency.FormatDecimal(basket.TotalAmount);
+                basketOrder.Id = Guid.NewGuid().ToString();
+                basketOrder.Email = AppData.Device.UserLoggedOnToDevice.Email;
+                basketOrder.ContactName = AppData.Device.UserLoggedOnToDevice.Name;
+                basketOrder.PhoneNumber = AppData.Device.UserLoggedOnToDevice.Phone;
 
-                if (!localBasket)
+                if (shippingMedhod == ShippingMedhod.ClickCollect)
                 {
-                    AppData.Basket = basket;
+                    basketOrder.ClickAndCollectOrder = true;
                 }
+                else
+                {
+                    basketOrder.ShipToAddress = shippingAddress;
+                    basketOrder.ContactAddress = billingAddress;
+                    basketOrder.ShippingAgentServiceCode = "ISP";
+                    basketOrder.ClickAndCollectOrder = false;
+
+                    if (paymentType == PaymentType.CreditCard)
+                    {
+                        basketOrder.OrderPayments.Add(new OrderPayment()
+                        {
+                            PreApprovedAmount = AppData.Basket.TotalAmount,
+                            FinalizedAmount = AppData.Basket.TotalAmount,
+                            CardType = "VISA",
+                            CurrencyCode = AppData.Device.UserLoggedOnToDevice.Environment.Currency.Id,
+                            AuthorisationCode = cardCVV,
+                            CardNumber = cardNumber,
+                            LineNumber = 1,
+                            TenderType = ((int)LoyTenderType.Card).ToString(),
+                        });
+                    }
+                    else if (paymentType == PaymentType.PayOnDelivery)
+                    {
+                        basketOrder.OrderPayments.Add(new OrderPayment()
+                        {
+                            PreApprovedAmount = AppData.Basket.TotalAmount,
+                            FinalizedAmount = AppData.Basket.TotalAmount,
+                            CurrencyCode = AppData.Device.UserLoggedOnToDevice.Environment.Currency.Id,
+                            LineNumber = 1,
+                            TenderType = ((int)LoyTenderType.Cash).ToString(),
+                        });
+                    }
+                }
+
+                totalSubtotal.Text = AppData.Device.UserLoggedOnToDevice.Environment.Currency.FormatDecimal(basketOrder.TotalNetAmount);
+                totalShipping.Text = AppData.Device.UserLoggedOnToDevice.Environment.Currency.FormatDecimal(AppData.Basket.ShippingAmount);
+                totalVAT.Text = AppData.Device.UserLoggedOnToDevice.Environment.Currency.FormatDecimal(basketOrder.TotalAmount - basketOrder.TotalNetAmount);
+                totalDiscount.Text = AppData.Device.UserLoggedOnToDevice.Environment.Currency.FormatDecimal(basketOrder.TotalDiscount);
+                totalTotal.Text = AppData.Device.UserLoggedOnToDevice.Environment.Currency.FormatDecimal(basketOrder.TotalAmount);
             }
         }
-
 
         public override void OnResume()
         {
@@ -316,7 +281,7 @@ namespace Presentation.Activities.Checkout
             if (Activity is LoyaltyFragmentActivity)
                 (Activity as LoyaltyFragmentActivity).AddObserver(this);
 
-            adapter.SetItems(Activity, basket.Items, null, footerView);
+            adapter.SetItems(Activity, AppData.Basket.Items, null, footerView);
         }
 
         public override void OnPause()
@@ -335,7 +300,6 @@ namespace Presentation.Activities.Checkout
                 {
                     totalViewSwitcher.ShowPrevious();
                 }
-
                 totalOrder.Visibility = ViewStates.Gone;
             }
             else
@@ -344,14 +308,13 @@ namespace Presentation.Activities.Checkout
                 {
                     totalViewSwitcher.ShowNext();
                 }
-
                 totalOrder.Visibility = ViewStates.Visible;
             }
         }
 
         private async Task<bool> HomeDelivery()
         {
-            var success = await basketModel.SendOrder(basket, AppData.Device, billingAddress, shippingAddress, paymentType, AppData.Device.UserLoggedOnToDevice.Environment.Currency.Id, AppData.Device.CardId, cardCVV, AppData.Device.UserLoggedOnToDevice.Name);
+            var success = await basketModel.SendOrder(basketOrder);
 
             if (success)
             {
@@ -373,7 +336,7 @@ namespace Presentation.Activities.Checkout
 
         private async Task<bool> ClickAndCollect()
         {
-            var success = await clickCollectModel.ClickCollectOrderCreate(basket, AppData.Device.UserLoggedOnToDevice.Id, AppData.Device.CardId, storeId, email.Text);
+            var success = await clickCollectModel.ClickCollectOrderCreate(basketOrder);
 
             if (success)
             {
@@ -422,7 +385,7 @@ namespace Presentation.Activities.Checkout
         {
             if (action == Utils.BroadcastUtils.BasketStateUpdated)
             {
-                adapter.SetItems(Activity, basket.Items, null, footerView);
+                adapter.SetItems(Activity, AppData.Basket.Items, null, footerView);
             }
         }
     }

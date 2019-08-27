@@ -129,16 +129,16 @@ namespace Presentation.Adapters
                     return;
                 }
 
-                checkoutViewHolder.PrimaryText.Text = basketItem.Item.Description;
+                checkoutViewHolder.PrimaryText.Text = basketItem.ItemDescription;
 
-                if (basketItem.VariantReg == null)
+                if (string.IsNullOrEmpty(basketItem.VariantId))
                 {
                     checkoutViewHolder.SecondaryText.Visibility = ViewStates.Gone;
                 }
                 else
                 {
                     checkoutViewHolder.SecondaryText.Visibility = ViewStates.Visible;
-                    checkoutViewHolder.SecondaryText.Text = basketItem.VariantReg.ToString();
+                    checkoutViewHolder.SecondaryText.Text = basketItem.VariantDescription;
                 }
 
                 if (basketItem.OnelistItemDiscounts.Count > 0)
@@ -152,9 +152,9 @@ namespace Presentation.Adapters
                     checkoutViewHolder.DiscountText.Visibility = ViewStates.Gone;
                 }
 
-                if (basketItem.UnitOfMeasure != null)
+                if (string.IsNullOrEmpty(basketItem.UnitOfMeasureId))
                 {
-                    checkoutViewHolder.Quantity.Text = checkoutViewHolder.Quantity.Context.GetString(Resource.String.ApplicationQty) + ": " + basketItem.Quantity.ToString("N" + basketItem.UnitOfMeasure.Decimals) + " " + basketItem.UnitOfMeasure.ShortDescription.ToLower();
+                    checkoutViewHolder.Quantity.Text = checkoutViewHolder.Quantity.Context.GetString(Resource.String.ApplicationQty) + ": " + basketItem.Quantity.ToString() + " " + basketItem.UnitOfMeasureId.ToLower();
                 }
                 else
                 {

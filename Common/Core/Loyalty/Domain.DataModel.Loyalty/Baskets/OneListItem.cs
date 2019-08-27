@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Serialization;
 
 using LSRetail.Omni.Domain.DataModel.Base.Retail;
 using LSRetail.Omni.Domain.DataModel.Base.Base;
-using LSRetail.Omni.Domain.DataModel.Loyalty.Items;
 
 namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
 {
@@ -15,13 +13,13 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
         public OneListItem(string id) : base(id)
         {
             OneListId = string.Empty;
-            Quantity = 0M;
-            Item = new LoyItem();
-            CreateDate = DateTime.Now;
-            DisplayOrderId = 1;
-            VariantReg = null;
-            UnitOfMeasure = null;
+            ItemId = string.Empty;
+            VariantId = string.Empty;
+            UnitOfMeasureId = string.Empty;
             BarcodeId = string.Empty;
+            CreateDate = DateTime.Now;
+            Quantity = 0M;
+            DisplayOrderId = 1;
             NetPrice = 0M;
             Price = 0M;
             NetAmount = 0M;
@@ -33,22 +31,12 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
         {
         }
 
-        public OneListItem(LoyItem item, decimal quantity, string uomId, string variantId) : this("")
+        public OneListItem(string itemId, decimal quantity, string uomId, string variantId) : this("")
         {
-            Item = item;
+            ItemId = itemId;
+            VariantId = variantId;
+            UnitOfMeasureId = uomId;
             Quantity = quantity;
-
-            if (!string.IsNullOrEmpty(uomId))
-            {
-                UnitOfMeasure = item.UnitOfMeasures.FirstOrDefault(x => x.Id == uomId);
-            }
-
-            if (!string.IsNullOrEmpty(variantId))
-            {
-                VariantReg = item.VariantsRegistration.FirstOrDefault(x => x.Id == variantId);
-            }
-
-            Price = item.AmtFromVariantsAndUOM(variantId, uomId);
         }
 
         public void Dispose()
@@ -61,29 +49,35 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
         {
             if (disposing)
             {
-                if (Item != null)
-                    Item.Dispose();
-                if (VariantReg != null)
-                    VariantReg.Dispose();
-                if (UnitOfMeasure != null)
-                    UnitOfMeasure.Dispose();
+                if (OnelistItemDiscounts != null)
+                    OnelistItemDiscounts.Clear();
             }
         }
 
         [DataMember(IsRequired = true)]
-        public decimal Quantity { get; set; }
+        public string ItemId { get; set; }
+        [DataMember]
+        public string ItemDescription { get; set; }
+        [DataMember]
+        public string UnitOfMeasureId { get; set; }
+        [DataMember]
+        public string UnitOfMeasureDescription { get; set; }
+        [DataMember]
+        public string VariantId { get; set; }
+        [DataMember]
+        public string VariantDescription { get; set; }
+
         [DataMember(IsRequired = true)]
-        public LoyItem Item { get; set; }
+        public decimal Quantity { get; set; }
+
         [DataMember(IsRequired = false, EmitDefaultValue = false)]
         public DateTime CreateDate { get; set; }
-        [DataMember]
-        public VariantRegistration VariantReg { get; set; }
-        [DataMember]
-        public UnitOfMeasure UnitOfMeasure { get; set; }
+
         [DataMember]
         public string BarcodeId { get; set; }
         [DataMember]
         public int DisplayOrderId { get; set; }
+
         [DataMember]
         public decimal NetPrice { get; set; }
         [DataMember]
@@ -100,48 +94,10 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
         public decimal DiscountPercent { get; set; }
         [DataMember]
         public List<OneListItemDiscount> OnelistItemDiscounts { get; set; } // decimal got truncated
+        [DataMember]
+        public ImageView Image { get; set; }
 
-        //not a data member
         public string OneListId { get; set; }
-        public string ItemId { get; set; }
-        public string UnitOfMeasureId { get; set; }
-        public string VariantId { get; set; }
-
-        public ImageView Image
-        {
-            get
-            {
-                if (VariantReg != null && VariantReg.Images != null && VariantReg.Images.Count > 0)
-                {
-                    return VariantReg.Images[0];
-                }
-                return Item.DefaultImage;
-            }
-        }
-
-        public string FormatQuantity(decimal qty)
-        {
-            string returnString = "";
-
-            if (UnitOfMeasure == null)
-            {
-                returnString += qty.ToString("N0");
-            }
-            else
-            {
-                string formatString = "0";
-                if (UnitOfMeasure.Decimals > 0)
-                {
-                    formatString += ".";
-                    for (int i = 0; i < UnitOfMeasure.Decimals; i++)
-                    {
-                        formatString += "#";
-                    }
-                }
-                returnString = qty.ToString(formatString) + " " + UnitOfMeasure.ShortDescription.ToLower();
-            }
-            return returnString;
-        }
 
         public decimal GetDiscount()
         {
@@ -159,42 +115,17 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
                 return false;
 
             // Compare item
-            if (this.Item.Id != itemToCompare.Item.Id)
+            if (ItemId != itemToCompare.ItemId)
                 return false;
 
             // Compare variants
-            if (this.VariantReg != null && itemToCompare.VariantReg != null)
-            {
-                // Both items have variants, must compare them
-                if (this.VariantReg.Id != itemToCompare.VariantReg.Id)
-                    return false;
-            }
-            else if (this.VariantReg == null && itemToCompare.VariantReg == null)
-            {
-                // Neither has a variant, no need to compare
-            }
-            else
-            {
-                // One item has a variant, the other doesn't
+            if (VariantId != itemToCompare.VariantId)
                 return false;
-            }
 
             // Compare UOMs
-            if (this.UnitOfMeasure != null && itemToCompare.UnitOfMeasure != null)
-            {
-                // Both items have UOMs, must compare them
-                if (this.UnitOfMeasure.Id != itemToCompare.UnitOfMeasure.Id)
-                    return false;
-            }
-            else if (this.UnitOfMeasure == null && itemToCompare.UnitOfMeasure == null)
-            {
-                // Neither has a UOM, no need to compare
-            }
-            else
-            {
-                // One item has a UOM, the other doesn't
+            if (UnitOfMeasureId != itemToCompare.UnitOfMeasureId)
                 return false;
-            }
+
             return true;
         }
 
@@ -211,12 +142,8 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
 
         public override string ToString()
         {
-            string item = (Item != null ? Item.ToString() : "");
-            string variant = (VariantReg != null ? VariantReg.ToString() : "");
-            string uom = (UnitOfMeasure != null ? UnitOfMeasure.ToString() : "");
-
-            return string.Format(@"Id: {0} Quantity: {1}  Item: {2}  CreateDate: {3} Variant: {4}  Uom: {5} BarcodeId: {6}",
-                 Id, Quantity, item, CreateDate, variant, uom, BarcodeId);
+            return string.Format(@"Id:{0}  Qty:{1}  Item:{2}  CreateDate:{3}  Variant:{4}  Uom:{5}  BarcodeId:{6}",
+                 Id, Quantity, ItemId, CreateDate, VariantId, UnitOfMeasureId, BarcodeId);
         }
     }
 

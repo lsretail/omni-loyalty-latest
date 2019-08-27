@@ -306,21 +306,18 @@ namespace Presentation.Activities.Items
             {
                 if (Item.SelectedVariant == null)
                 {
-                    if (Item.VariantsRegistration?.Count > 0)
+                    if (string.IsNullOrEmpty(selectedVariantId) && Item.VariantsRegistration?.Count > 0)
                     {
                         selectedVariantId = Item.VariantsRegistration[0].Id;
                     }
 
-                    if (!string.IsNullOrEmpty(selectedVariantId))
-                    {
-                        Item.SelectedVariant = Item.VariantsRegistration.FirstOrDefault(x => x.Id == selectedVariantId);
+                    Item.SelectedVariant = Item.VariantsRegistration.FirstOrDefault(x => x.Id == selectedVariantId);
+                }
 
-                        if (Item.SelectedVariant != null)
-                        {
-                            VariantExt.SetIsSelectedFromVariantReg(Item.VariantsExt, Item.SelectedVariant);
-                            selectVariant.Text = Item.SelectedVariant.ToString();
-                        }
-                    }
+                if (Item.SelectedVariant != null)
+                {
+                    VariantExt.SetIsSelectedFromVariantReg(Item.VariantsExt, Item.SelectedVariant);
+                    selectVariant.Text = Item.SelectedVariant.ToString();
                 }
             }
             else
@@ -398,16 +395,22 @@ namespace Presentation.Activities.Items
                 return;
             }
 
-            OneListItem basketItem = new OneListItem() 
+            OneListItem basketItem = new OneListItem()
             {
-                Item = Item.ShallowCopy(), 
-                Quantity = qty
+                ItemId = Item.Id,
+                ItemDescription = Item.Description,
+                Image = Item.DefaultImage,
+                Quantity = qty,
+                Price = Item.AmtFromVariantsAndUOM(Item.SelectedVariant?.Id, Item.SelectedUnitOfMeasure?.Id)
             };
 
             if (Item.SelectedVariant != null)
-                basketItem.VariantReg = Item.SelectedVariant;
+            {
+                basketItem.VariantId = Item.SelectedVariant.Id;
+                basketItem.VariantDescription = Item.SelectedVariant.ToString();
+            }
 
-            if (basketItem.VariantReg == null && Item.VariantsRegistration != null && Item.VariantsRegistration.Count > 0)
+            if (string.IsNullOrEmpty(basketItem.VariantId) && Item.VariantsRegistration != null && Item.VariantsRegistration.Count > 0)
             {
                 BaseModel.ShowStaticSnackbar(BaseModel.CreateStaticSnackbar(Activity,GetString(Resource.String.ItemViewPickVariant)));
                 SelectVariant();
@@ -433,12 +436,12 @@ namespace Presentation.Activities.Items
             }
             else
             {
-                var line = new OneListItem() {Item = Item.ShallowCopy(), Quantity = 1};
+                var line = new OneListItem() {ItemId = Item.Id, Quantity = 1};
 
                 if (Item.SelectedVariant != null)
-                    line.VariantReg = Item.SelectedVariant;
+                    line.VariantId = Item.SelectedVariant.Id;
 
-                if (line.VariantReg == null && Item.VariantsRegistration != null && Item.VariantsRegistration.Count > 0)
+                if (string.IsNullOrEmpty(line.VariantId) && Item.VariantsRegistration != null && Item.VariantsRegistration.Count > 0)
                 {
                     BaseModel.ShowStaticSnackbar(BaseModel.CreateStaticSnackbar(Activity, GetString(Resource.String.ItemViewPickVariant)));
                     return false;

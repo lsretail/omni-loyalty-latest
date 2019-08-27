@@ -322,7 +322,7 @@ namespace Presentation.Activities.Checkout
             {
                 if (basketItem.Quantity == 0)
                 {
-                    Toast.MakeText(Activity, string.Format(GetString(Resource.String.CheckoutViewCantHaveZeroQty), basketItem.Item.Description), ToastLength.Short).Show();
+                    Toast.MakeText(Activity, string.Format(GetString(Resource.String.CheckoutViewCantHaveZeroQty), basketItem.ItemDescription), ToastLength.Short).Show();
                     return false;
                 }
             }
@@ -454,21 +454,25 @@ namespace Presentation.Activities.Checkout
                         OneListItem availableBasketItem = new OneListItem()
                         {
                             Id = basketItem.Id,
-                            Item = basketItem.Item,
-                            NetAmount = basketItem.NetAmount,
+                            ItemId = basketItem.ItemId,
+                            ItemDescription = basketItem.ItemDescription,
+                            UnitOfMeasureId = basketItem.UnitOfMeasureId,
+                            VariantId = basketItem.VariantId,
+                            VariantDescription = basketItem.VariantDescription,
+                            Image = basketItem.Image,
+                            Quantity = basketItem.Quantity,
                             NetPrice = basketItem.NetPrice,
                             Price = basketItem.Price,
-                            Quantity = basketItem.Quantity,
-                            UnitOfMeasure = basketItem.UnitOfMeasure,
-                            VariantReg = basketItem.VariantReg,
+                            NetAmount = basketItem.NetAmount,
                             Amount = basketItem.Amount,
-                            TaxAmount = basketItem.TaxAmount
+                            TaxAmount = basketItem.TaxAmount,
+                            DiscountAmount = basketItem.DiscountAmount
                         };
 
                         if (basketItem.Quantity > orderLineAvailability.Quantity)
                         {
                             unavailableItemsId.Add((basketItem.Quantity - orderLineAvailability.Quantity).ToString("G29") + " " +
-                                                 basketItem.Item.Description);
+                                                 basketItem.ItemDescription);
                             availableBasketItem.Quantity = orderLineAvailability.Quantity;
                         }
 
@@ -476,7 +480,7 @@ namespace Presentation.Activities.Checkout
                     }
                     else
                     {
-                        unavailableItemsId.Add(basketItem.Item.Description);
+                        unavailableItemsId.Add(basketItem.ItemDescription);
                     }
                 }
 

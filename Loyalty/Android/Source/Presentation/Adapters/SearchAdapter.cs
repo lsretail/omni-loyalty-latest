@@ -271,12 +271,12 @@ namespace Presentation.Adapters
                     return;
                 }
 
-                shoppingListLineViewHolder.Title.Text = shoppingListLine.Item.Description;
+                shoppingListLineViewHolder.Title.Text = shoppingListLine.ItemDescription;
 
-                if (shoppingListLine.VariantReg != null)
+                if (string.IsNullOrEmpty(shoppingListLine.VariantId) == false)
                 {
                     shoppingListLineViewHolder.Variant.Visibility = ViewStates.Visible;
-                    shoppingListLineViewHolder.Variant.Text = shoppingListLine.VariantReg.ToString();
+                    shoppingListLineViewHolder.Variant.Text = shoppingListLine.VariantDescription;
                 }
                 else
                 {
