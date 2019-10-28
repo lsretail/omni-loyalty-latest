@@ -14,17 +14,17 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
         {
             Description = string.Empty;
             CardId = string.Empty;
-            CustomerId = string.Empty;
             StoreId = string.Empty;
-            IsDefaultList = false;
             CreateDate = DateTime.Now;
             ListType = ListType.Basket; // basket, wish
             Items = new List<OneListItem>();
+            CardLinks = new List<OneListLink>();
             PublishedOffers = new List<OneListPublishedOffer>();
             TotalAmount = 0M;
             TotalNetAmount = 0M;
             TotalTaxAmount = 0M;
             TotalDiscAmount = 0M;
+            PointAmount = 0M;
         }
 
         public OneList(string id, List<OneListItem> items, bool calculate) : this(id)
@@ -60,19 +60,22 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
             }
         }
 
-        [DataMember]
+        [DataMember(IsRequired = true)]
         public string StoreId { get; set; }
         [DataMember]
         public string Description { get; set; }
-        [DataMember]
+        [DataMember(IsRequired = true)]
         public string CardId { get; set; }
         [DataMember]
-        public string CustomerId { get; set; }
+        public List<OneListLink> CardLinks { get; set; }
+        /// <summary>
+        /// Type indicator to use in external system
+        /// </summary>
         [DataMember]
-        public bool IsDefaultList { get; set; } 
-        [DataMember]
+        public int ExternalType { get; set; }
+        [DataMember(IsRequired = false, EmitDefaultValue = false)]
         public DateTime CreateDate { get; set; }
-        [DataMember]
+        [DataMember(IsRequired = true)]
         public ListType ListType { get; set; }
         [DataMember]
         public List<OneListItem> Items { get; set; }
@@ -132,20 +135,15 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
 
             foreach (OneListItem item in Items)
             {
-                if (item.Item != null && item.Item.Id != itemId)
+                if (item.ItemId != itemId)
                     continue;
 
-                if (string.IsNullOrEmpty(variantId) == false)
-                {
-                    if (item.VariantReg != null && item.VariantReg.Id != variantId)
-                        continue;
-                }
+                if (item.VariantId != variantId)
+                    continue;
 
-                if (string.IsNullOrEmpty(uomId) == false)
-                {
-                    if (item.UnitOfMeasure != null && item.UnitOfMeasure.Id != uomId)
-                        continue;
-                }
+                if (item.UnitOfMeasureId != uomId)
+                    continue;
+
                 return item;
             }
             return null;
@@ -156,11 +154,9 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
             TotalAmount = 0m;
             foreach (OneListItem item in Items)
             {
-                if (item.Item.Prices.Count() > 0)
-                    item.Price = item.Item.AmtFromVariantsAndUOM(item.VariantReg?.Id, item.UnitOfMeasure?.Id);
-                
-                item.Amount = item.Price * item.Quantity;
+                item.Amount = (item.Price - item.DiscountAmount) * item.Quantity;
                 TotalAmount += item.Amount;
+                TotalDiscAmount += item.DiscountAmount;
             }
             State = BasketState.Dirty;
         }
@@ -177,6 +173,7 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
 
         public void Clear()
         {
+            Id = string.Empty;
             Items.Clear();
             PublishedOffers.Clear();
         }
@@ -197,9 +194,22 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
 
         public override string ToString()
         {
-            return string.Format(@"Id: {0} Description: {1}  IsDefaultList: {2}  CreateDate: {3}  ",
-                 Id, Description, IsDefaultList, CreateDate);
+            return string.Format(@"Id:{0} Description:{1} ListType:{2} ExtType:{3}", Id, Description, ListType, ExternalType);
         }
+    }
+
+    [DataContract(Namespace = "http://lsretail.com/LSOmniService/Loy/2017")]
+    public class OneListLink
+    {
+        [DataMember]
+        public string CardId { get; set; }
+        [DataMember]
+        public LinkStatus Status { get; set; }
+        [DataMember]
+        public bool Owner { get; set; }
+
+        [DataMember]
+        public string Name { get; set; }
     }
 
     [DataContract(Namespace = "http://lsretail.com/LSOmniService/Loy/2017")]
@@ -210,6 +220,20 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
         Basket = 0,
         [EnumMember]
         Wish = 1,  //Wish list
+    }
+
+    [DataContract(Namespace = "http://lsretail.com/LSOmniService/Loy/2017")]
+    [Flags]
+    public enum LinkStatus
+    {
+        [EnumMember]
+        Requesting = 0,
+        [EnumMember]
+        Active = 1,
+        [EnumMember]
+        Blocked = 2,
+        [EnumMember]
+        Remove = 3
     }
 
     public enum BasketState

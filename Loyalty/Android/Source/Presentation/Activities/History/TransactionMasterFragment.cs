@@ -13,7 +13,6 @@ using Presentation.Adapters;
 using Presentation.Models;
 using Presentation.Util;
 using LSRetail.Omni.Domain.DataModel.Loyalty.Setup;
-using LSRetail.Omni.Domain.DataModel.Loyalty.Transactions;
 
 namespace Presentation.Activities.History
 {

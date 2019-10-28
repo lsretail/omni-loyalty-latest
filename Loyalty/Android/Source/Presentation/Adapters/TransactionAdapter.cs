@@ -9,7 +9,6 @@ using Android.Widget;
 
 using Presentation.Util;
 using Object = Java.Lang.Object;
-using LSRetail.Omni.Domain.DataModel.Loyalty.Transactions;
 using LSRetail.Omni.Domain.DataModel.Base.SalesEntries;
 
 namespace Presentation.Adapters

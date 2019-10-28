@@ -117,7 +117,7 @@ namespace Presentation.Activities.ShoppingLists
 
         private void LoadShoppingList()
         {
-            WishList = AppData.Device.UserLoggedOnToDevice.WishList;
+            WishList = AppData.Device.UserLoggedOnToDevice.GetWishList(AppData.Device.CardId);
         }
 
         public override void OnResume()
@@ -173,16 +173,13 @@ namespace Presentation.Activities.ShoppingLists
                 return;
             }
 
-            var uomId = line.UnitOfMeasure != null ? line.UnitOfMeasure.Id : "";
-            var variantId = line.VariantReg != null ? line.VariantReg.Id : "";
-
             var intent = new Intent();
             intent.SetClass(Activity, typeof(ItemActivity));
-            intent.PutExtra(BundleConstants.ItemId, line.Item.Id);
-            if (!string.IsNullOrEmpty(uomId))
-                intent.PutExtra(BundleConstants.SelectedUomId, uomId);
-            if (!string.IsNullOrEmpty(variantId))
-                intent.PutExtra(BundleConstants.SelectedVariantId, variantId);
+            intent.PutExtra(BundleConstants.ItemId, line.ItemId);
+            if (string.IsNullOrEmpty(line.UnitOfMeasureId) == false)
+                intent.PutExtra(BundleConstants.SelectedUomId, line.UnitOfMeasureId);
+            if (string.IsNullOrEmpty(line.VariantId) == false)
+                intent.PutExtra(BundleConstants.SelectedVariantId, line.VariantId);
 
             if (AppData.IsDualScreen)
                 intent.PutExtra(BundleConstants.LoadContainer, true);
@@ -244,18 +241,10 @@ namespace Presentation.Activities.ShoppingLists
         private async void AddItemToBasket(OneListItem wishListItem, bool refreshList = false)
         {
             // Get the last data for the selected item, including its price
-            var item = await new Models.ItemModel(Activity).GetItemById(wishListItem.Item.Id);
+            var item = await new Models.ItemModel(Activity).GetItemById(wishListItem.ItemId);
+            wishListItem.Price = item.AmtFromVariantsAndUOM(wishListItem.VariantId, wishListItem.UnitOfMeasureId);
 
-            OneListItem basketItem = new OneListItem()
-            {
-                Item = item,
-                Quantity = 1
-            };
-
-            basketItem.UnitOfMeasure = wishListItem.UnitOfMeasure;
-            basketItem.VariantReg = wishListItem.VariantReg;
-
-            await basketModel.AddItemToBasket(basketItem);
+            await basketModel.AddItemToBasket(wishListItem);
 
             if (refreshList)
             {

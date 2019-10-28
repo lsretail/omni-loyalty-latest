@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using LSRetail.Omni.Domain.DataModel.Base.Log;
 
@@ -7,15 +8,51 @@ namespace LSRetail.Omni.Domain.Services.Base.Logs
     public class LogService
     {
         private ILogRepository logRepository;
+        private static SemaphoreSlim semaphore;
 
         public LogService(ILogRepository logRepository)
         {
             this.logRepository = logRepository;
         }
 
-        private void Save(DataModel.Base.Log.Log log)
+        public async Task SaveAsync(DataModel.Base.Log.Log log)
         {
-            logRepository.Save(log);
+            if (semaphore == null)
+            {
+                semaphore = new SemaphoreSlim(1, 1);
+            }
+
+            await semaphore.WaitAsync();
+
+            try
+            {
+                await Task.Run(() => logRepository.Save(log));
+            }
+            finally
+            {
+                semaphore.Release();
+            }
+        }
+
+        public async Task SaveAsync(LogType logType, LogLevel logLevel, string message)
+        {
+            await SaveAsync(new Log() { LogLevel = logLevel, Message = message, LogType = logType });
+        }
+
+        public async Task SaveAsync(LogType logType, LogLevel logLevel, LogLevel allowedLogLevel, string message)
+        {
+            if (logLevel >= allowedLogLevel)
+            {
+                await SaveAsync(new Log() { LogLevel = logLevel, Message = message, LogType = logType });
+            }
+        }
+
+        public async void Save(LogType logType, LogLevel logLevel, LogLevel allowedLogLevel, string message)
+        {
+            if (logLevel <= allowedLogLevel)
+            {
+                await SaveAsync(new Log() { LogLevel = logLevel, Message = message, LogType = logType });
+            }
         }
 
         private void Delete(int id)
@@ -46,11 +83,6 @@ namespace LSRetail.Omni.Domain.Services.Base.Logs
         private List<DataModel.Base.Log.Log> GetAll()
         {
             return logRepository.GetAll();
-        }
-
-        public async Task SaveAsync(DataModel.Base.Log.Log log)
-        {
-            await Task.Run(() => Save(log));
         }
 
         public async Task DeleteAsync(int id)

@@ -20,7 +20,7 @@ namespace Presentation.Models
             this.localService = new TransactionLocalService(new Infrastructure.Data.SQLite.Transactions.TransactionRepository());
         }
 
-        public async Task<SalesEntry> GetTransactionByReceiptNo(string receiptNo)
+        public async Task<SalesEntry> GetTransactionByReceiptNo(string documentId, DocumentIdType documentType)
         {
             SalesEntry transaction = null;
 
@@ -30,7 +30,7 @@ namespace Presentation.Models
 
             try
             {
-                transaction = await service.SalesEntryGetByIdAsync(receiptNo, DocumentIdType.Receipt);
+                transaction = await service.SalesEntryGetByIdAsync(documentId, documentType);
             }
             catch (Exception ex)
             {

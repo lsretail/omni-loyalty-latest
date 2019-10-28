@@ -64,12 +64,12 @@ namespace Presentation.Adapters
                 return;
             }
 
-            shoppingListLineViewHolder.Title.Text = wishListLine.Item.Description;
+            shoppingListLineViewHolder.Title.Text = wishListLine.ItemDescription;
 
-            if (wishListLine.VariantReg != null)
+            if (string.IsNullOrEmpty(wishListLine.VariantId) == false)
             {
                 shoppingListLineViewHolder.Variant.Visibility = ViewStates.Visible;
-                shoppingListLineViewHolder.Variant.Text = wishListLine.VariantReg.ToString();
+                shoppingListLineViewHolder.Variant.Text = wishListLine.VariantDescription;
             }
             else
             {

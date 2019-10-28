@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
+
 using LSRetail.Omni.Domain.DataModel.Base.Base;
 using LSRetail.Omni.Domain.DataModel.Base.Retail.SpecialCase;
 
@@ -57,6 +58,18 @@ namespace LSRetail.Omni.Domain.DataModel.Base.Retail
         public string ShortDescription { get; set; }
         [DataMember]
         public decimal Price { get; set; }
+
+        public string DisplayString
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(ShortDescription))
+                {
+                    return ShortDescription;
+                }
+                return Id;
+            }
+        }
 
         public virtual UnitOfMeasure Clone()
         {

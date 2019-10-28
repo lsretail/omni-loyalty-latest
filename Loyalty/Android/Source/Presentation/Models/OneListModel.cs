@@ -24,10 +24,10 @@ namespace Presentation.Models
             return await oneListService.OneListGetByCardIdAsync(cardId, listType, includeLines);
         }
 
-        public async Task<OneList> OneListGetById(string contactId, ListType listType, bool includeLines)
+        public async Task<OneList> OneListGetById(string contactId, bool includeLines)
         {
             BeginWsCall();
-            return await oneListService.OneListGetByIdAsync(contactId, listType, includeLines);
+            return await oneListService.OneListGetByIdAsync(contactId, includeLines);
         }
 
         public async Task<OneList> OneListSave(OneList oneList, bool calculate)
@@ -37,10 +37,10 @@ namespace Presentation.Models
             return await oneListService.OneListSaveAsync(oneList, calculate);
         }
 
-        public async Task<bool> OneListDeleteById(string oneListId, ListType listType)
+        public async Task<bool> OneListDeleteById(string oneListId)
         {
             BeginWsCall();
-            return await oneListService.OneListDeleteByIdAsync(oneListId, listType);
+            return await oneListService.OneListDeleteByIdAsync(oneListId);
         }
 
         public async Task<Order> OneListCalculate(OneList oneList)

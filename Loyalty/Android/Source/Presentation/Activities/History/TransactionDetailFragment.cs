@@ -75,7 +75,7 @@ namespace Presentation.Activities.History
 
         private async void LoadTransaction()
         {
-            var loadedTransation = await model.GetTransactionByReceiptNo(transaction.Id);
+            var loadedTransation = await model.GetTransactionByReceiptNo(transaction.Id, transaction.IdType);
 
             if (loadedTransation == null)
             {

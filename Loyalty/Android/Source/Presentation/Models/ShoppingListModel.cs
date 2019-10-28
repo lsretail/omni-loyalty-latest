@@ -22,7 +22,7 @@ namespace Presentation.Models
             if (AppData.Device.UserLoggedOnToDevice == null)
                 return false;
 
-            var existingItem = AppData.Device.UserLoggedOnToDevice.WishList.ItemGetByIds(item.Id, variant?.Id, uom?.Id);
+            var existingItem = AppData.Device.UserLoggedOnToDevice.GetWishList(AppData.Device.CardId).ItemGetByIds(item.Id, variant?.Id, uom?.Id);
 
             return existingItem != null;
         }
@@ -37,7 +37,7 @@ namespace Presentation.Models
             {
                 var list = await OneListSave(wishList, false);
 
-                AppData.Device.UserLoggedOnToDevice.WishList = list;
+                AppData.Device.UserLoggedOnToDevice.AddList(AppData.Device.CardId, list, ListType.Wish);
 
                 SendBroadcast(Utils.BroadcastUtils.ShoppingListUpdated);
             }
@@ -55,14 +55,14 @@ namespace Presentation.Models
 
             BeginWsCall();
 
-            var newList = AppData.Device.UserLoggedOnToDevice.WishList.Clone();
+            var newList = AppData.Device.UserLoggedOnToDevice.GetWishList(AppData.Device.CardId).Clone();
             newList.Items.Insert(index, line);
 
             try
             {
                 var list = await OneListSave(newList, false);
 
-                AppData.Device.UserLoggedOnToDevice.WishList = list;
+                AppData.Device.UserLoggedOnToDevice.AddList(AppData.Device.CardId, list, ListType.Wish);
 
                 SendBroadcast(Utils.BroadcastUtils.ShoppingListUpdated);
             }
@@ -82,7 +82,7 @@ namespace Presentation.Models
             {
                 var list = await OneListGetByCardId(cardId, ListType.Wish, true);
 
-                AppData.Device.UserLoggedOnToDevice.WishList = list.FirstOrDefault();
+                AppData.Device.UserLoggedOnToDevice.AddList(AppData.Device.CardId, list.FirstOrDefault(), ListType.Wish);
 
                 SendBroadcast(Utils.BroadcastUtils.ShoppingListsUpdated);
             }
@@ -102,7 +102,7 @@ namespace Presentation.Models
 
             BeginWsCall();
             
-            var newList = AppData.Device.UserLoggedOnToDevice.WishList.Clone();
+            var newList = AppData.Device.UserLoggedOnToDevice.GetWishList(AppData.Device.CardId).Clone();
 
             var deletedItem = newList.Items.FirstOrDefault(x => x.Id == wishListLineId);
             var deletedItemIndex = newList.Items.IndexOf(deletedItem);
@@ -113,7 +113,7 @@ namespace Presentation.Models
             {
                 var list = await OneListSave(newList, false);
 
-                AppData.Device.UserLoggedOnToDevice.WishList = list;
+                AppData.Device.UserLoggedOnToDevice.AddList(AppData.Device.CardId, list, ListType.Wish);
 
                 SendBroadcast(Utils.BroadcastUtils.ShoppingListUpdated);
 
@@ -153,9 +153,9 @@ namespace Presentation.Models
 
         public async void DeleteWishList()
         {
-            if (string.IsNullOrEmpty(AppData.Device.UserLoggedOnToDevice.WishList.Id))
+            if (string.IsNullOrEmpty(AppData.Device.UserLoggedOnToDevice.GetWishList(AppData.Device.CardId).Id))
             {
-                AppData.Device.UserLoggedOnToDevice.WishList.Items.Clear();
+                AppData.Device.UserLoggedOnToDevice.GetWishList(AppData.Device.CardId).Items.Clear();
                 return;
             }
 
@@ -165,12 +165,10 @@ namespace Presentation.Models
 
             try
             {
-                var success = await this.OneListDeleteById(AppData.Device.UserLoggedOnToDevice.WishList.Id, ListType.Wish);
+                var success = await this.OneListDeleteById(AppData.Device.UserLoggedOnToDevice.GetWishList(AppData.Device.CardId).Id);
 
                 if (success)
                 {
-                    AppData.Device.UserLoggedOnToDevice.WishList = null;
-
                     SendBroadcast(Utils.BroadcastUtils.ShoppingListUpdated);
                 }
             }

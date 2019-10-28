@@ -16,10 +16,10 @@ namespace LSRetail.Omni.Infrastructure.Data.Omniservice.Loyalty.OneLists
             return base.PostData<List<OneList>>(jObject, methodName);
         }
 
-        public OneList OneListGetById(string oneListId, ListType listType, bool includeLines)
+        public OneList OneListGetById(string oneListId, bool includeLines)
         {
             string methodName = "OneListGetById";
-            var jObject = new { oneListId = oneListId, listType = listType, includeLines = includeLines };
+            var jObject = new { oneListId = oneListId, includeLines = includeLines };
             return base.PostData<OneList>(jObject, methodName);
         }
 
@@ -37,11 +37,25 @@ namespace LSRetail.Omni.Infrastructure.Data.Omniservice.Loyalty.OneLists
             return base.PostData<Order>(jObject, methodName);
         }
 
-        public bool OneListDeleteById(string oneListId, ListType listType)
+        public bool OneListDeleteById(string oneListId)
         {
             string methodName = "OneListDeleteById";
-            var jObject = new { oneListId = oneListId, listType = listType };
-            return base.PostData<bool>(jObject, methodName); //ignore the bool
+            var jObject = new { oneListId = oneListId };
+            return base.PostData<bool>(jObject, methodName);
+        }
+
+        public OneList OneListItemModify(string onelistId, OneListItem item, bool remove, bool calculate)
+        {
+            string methodName = "OneListItemModify";
+            var jObject = new { onelistId = onelistId, item = item, remove = remove, calculate = calculate };
+            return base.PostData<OneList>(jObject, methodName);
+        }
+
+        public bool OneListLinking(string oneListId, string cardId, string email, LinkStatus status)
+        {
+            string methodName = "OneListLinking";
+            var jObject = new { oneListId = oneListId, cardId = cardId, email = email, status = status };
+            return base.PostData<bool>(jObject, methodName);
         }
     }
 }

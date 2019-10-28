@@ -348,11 +348,11 @@ namespace Presentation.Activities.Checkout
 
                 if (View.FindViewById<RadioButton>(Resource.Id.CheckoutViewPayCreditCard).Checked)
                 {
-                    intent.PutExtra(BundleConstants.PaymentType, (int) PaymentType.CreditCard);
+                    intent.PutExtra(BundleConstants.PaymentType, (int) LoyPaymentType.CreditCard);
                 }
                 else if (View.FindViewById<RadioButton>(Resource.Id.CheckoutViewPayOnDelivery).Checked)
                 {
-                    intent.PutExtra(BundleConstants.PaymentType, (int)PaymentType.PayOnDelivery);
+                    intent.PutExtra(BundleConstants.PaymentType, (int)LoyPaymentType.PayOnDelivery);
                 }
 
                 if (useShippingAddress.Checked)

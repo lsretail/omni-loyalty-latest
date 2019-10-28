@@ -10,11 +10,7 @@ namespace LSRetail.Omni.Domain.Services.Base.Loyalty
     {
         List<Advertisement> AdvertisementsGetById(string id, string contactId);
 
-        ImageView ImageGetById(string id, ImageSize imageSize);
-
         List<PublishedOffer> GetPublishedOffers(string itemId, string cardId);
-
-        OmniEnvironment GetEnvironment();
 
         string AppSettingsGetByKey(ConfigKey key, string languageCode);
 

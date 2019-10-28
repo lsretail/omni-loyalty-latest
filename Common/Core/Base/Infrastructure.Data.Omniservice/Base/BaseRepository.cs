@@ -92,7 +92,7 @@ namespace LSRetail.Omni.Infrastructure.Data.Omniservice.Base
                 client.Timeout = TimeSpan.FromMilliseconds(timeout * 1000);// new TimeSpan(0, 0, 0, 0, this.Timeout * 1000); //millisecs
                 client.DefaultRequestHeaders.Add("LSRETAIL-TIMEOUT", timeout.ToString()); //timeout in seconds
             }
-            client.DefaultRequestHeaders.Add("user-agent", "LSOmniServicePCL-" + this.version); //  
+            client.DefaultRequestHeaders.Add("user-agent", "AppVer-" + this.version); //  
 
             //basic auth
             //string basicauth = Convert.ToBase64String(Encoding.UTF8.GetBytes(string.Format("{0}:{1}", this.authUser, this.authPwd)));

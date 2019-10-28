@@ -249,11 +249,13 @@ namespace Presentation.Activities.Items
             return false;
         }
 
-        public void ItemClicked(int type, string id, string id2, View view)
+        public async void ItemClicked(int type, string id, string id2, View view)
         {
             var item = AppData.Basket.Items.FirstOrDefault(x => x.Id == id);
 
-            var editDialog = new VariantDialog(Activity, item, (variant, arg2) => { });
+            var litem = await new Models.ItemModel(Context).GetItemById(item.ItemId);
+
+            var editDialog = new VariantDialog(Activity, item, litem, (variant, arg2) => { });
             editDialog.Show();
         }
 

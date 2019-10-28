@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 
 using Android.Content;
 using Android.Views;
@@ -46,18 +44,18 @@ namespace Presentation.Dialogs
 
         private Action<VariantRegistration, decimal> onOkButtonClicked;
 
-        public VariantDialog(Context context, OneListItem basketItem, Action<VariantRegistration, decimal> onOkButtonClicked) : base(context)
+        public VariantDialog(Context context, OneListItem basketItem, LoyItem item, Action<VariantRegistration, decimal> onOkButtonClicked) : base(context)
         {
             this.basketItem = basketItem;
-            Initialize(basketItem.Item, basketItem.VariantReg, basketItem.Quantity, onOkButtonClicked);
+            Initialize(item, basketItem.VariantId, basketItem.Quantity, onOkButtonClicked);
         }
 
         public VariantDialog(Context context, LoyItem item, VariantRegistration selectedvariant, Action<VariantRegistration, decimal> onOkButtonClicked) : base(context)
         {
-            Initialize(item, selectedvariant, 1, onOkButtonClicked);
+            Initialize(item, selectedvariant.Id, 1, onOkButtonClicked);
         }
 
-        private void Initialize(LoyItem item, VariantRegistration selectedvariant, decimal qty, Action<VariantRegistration, decimal> onOkButtonClicked)
+        private void Initialize(LoyItem item, string variantId, decimal qty, Action<VariantRegistration, decimal> onOkButtonClicked)
         {
             basketModel = new BasketModel(Context, this);
 
@@ -111,14 +109,20 @@ namespace Presentation.Dialogs
             this.SetNegativeButton(Context.GetString(Resource.String.ApplicationCancel), () => { });
             this.SetPositiveButton(Context.GetString(Resource.String.ApplicationOk), ChangeVariant);
 
-            if (basketItem == null)
+            VariantRegistration varreg = null;
+            if (string.IsNullOrEmpty(variantId))
             {
-                if (selectedvariant == null)
-                {
-                    selectedvariant = this.item.VariantsRegistration[0];
-                }
+                if (this.item.VariantsRegistration.Count > 0)
+                    varreg = this.item.VariantsRegistration[0];
+            }
+            else
+            {
+                varreg = item.VariantsRegistration.Find(v => v.Id == variantId);
+            }
 
-                VariantExt.SetIsSelectedFromVariantReg(this.item.VariantsExt, selectedvariant);
+            if (varreg != null)
+            {
+                VariantExt.SetIsSelectedFromVariantReg(this.item.VariantsExt, varreg);
 
                 if (this.item.VariantsExt.Count > 0)
                 {

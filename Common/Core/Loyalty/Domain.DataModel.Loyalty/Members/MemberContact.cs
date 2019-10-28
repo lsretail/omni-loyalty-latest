@@ -6,11 +6,11 @@ using System.Runtime.Serialization;
 using LSRetail.Omni.Domain.DataModel.Base.Base;
 using LSRetail.Omni.Domain.DataModel.Loyalty.Setup;
 using LSRetail.Omni.Domain.DataModel.Base.Retail;
-using LSRetail.Omni.Domain.DataModel.Loyalty.Transactions;
 using LSRetail.Omni.Domain.DataModel.Base.Utils;
 using LSRetail.Omni.Domain.DataModel.Loyalty.Members.SpecialCase;
 using LSRetail.Omni.Domain.DataModel.Loyalty.Baskets;
 using LSRetail.Omni.Domain.DataModel.Base.SalesEntries;
+using LSRetail.Omni.Domain.DataModel.Loyalty.Items;
 
 namespace LSRetail.Omni.Domain.DataModel.Loyalty.Members
 {
@@ -19,28 +19,26 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Members
     {
         #region Member variables
 
-        private OneList basket;
-        private OneList wishList;
         private List<Notification> notifications;
 
         #endregion
 
         #region Properties
 
-        [DataMember]
+        [DataMember(IsRequired = true)]
         public string UserName { get; set; }
         [DataMember]
         public string Password { get; set; }
-        [DataMember]
+        [DataMember(IsRequired = true)]
         public string Email { get; set; }
 
         [DataMember]
         public string Initials { get; set; }
-        [DataMember]
+        [DataMember(IsRequired = true)]
         public string FirstName { get; set; }
         [DataMember]
         public string MiddleName { get; set; }
-        [DataMember]
+        [DataMember(IsRequired = true)]
         public string LastName { get; set; }
 
         [DataMember]
@@ -53,7 +51,7 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Members
         public Gender Gender { get; set; }
         [DataMember]
         public MaritalStatus MaritalStatus { get; set; }
-        [DataMember]
+        [DataMember(IsRequired = false, EmitDefaultValue = false)]
         public DateTime BirthDay { get; set; }
 
         //Due to circular reference
@@ -129,51 +127,8 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Members
         public List<Profile> Profiles { get; set; }
         [DataMember]
         public List<SalesEntry> SalesEntries { get; set; }
-        [IgnoreDataMember]
-        public List<SalesEntry> TransactionOrderedByDate
-        {
-            get { return SalesEntries?.OrderByDescending(x => x.DocumentRegTime).ToList(); }//
-        }
-
         [DataMember]
-        public OneList WishList
-        {
-            get
-            {
-                if (wishList == null)
-                {
-                    wishList = new OneList()
-                    {
-                        CardId = (Cards.Count == 0) ? string.Empty : Cards[0].Id,
-                        ListType = ListType.Wish
-                    };
-                }
-                return wishList;
-            }
-            set 
-            { 
-                wishList = value; 
-            }
-        }
-
-        [DataMember]
-        public OneList Basket
-        {
-            get
-            {
-                if (basket == null)
-                    basket = new OneList()
-                    {
-                        CardId = (Cards.Count == 0) ? string.Empty : Cards[0].Id,
-                        ListType = ListType.Basket
-                    };
-                return basket;
-            }
-            set
-            {
-                basket = value;
-            }
-        }
+        public List<OneList> OneLists { get; set; }
 
         [DataMember]
         public OmniEnvironment Environment { get; set; }
@@ -183,8 +138,12 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Members
         public List<Card> Cards { get; set; }
         [DataMember]
         public Account Account { get; set; }
-        [DataMember]
-        public long RV { get; set; }
+
+        [IgnoreDataMember]
+        public List<SalesEntry> TransactionOrderedByDate
+        {
+            get { return SalesEntries?.OrderByDescending(x => x.DocumentRegTime).ToList(); }//
+        }
 
         #endregion
 
@@ -215,6 +174,7 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Members
             Profiles = new List<Profile>();
             SalesEntries = new List<SalesEntry>();
             Cards = new List<Card>();
+            OneLists = new List<OneList>();
         }
 
         public void Dispose()
@@ -235,6 +195,77 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Members
         public Card GetCard(string id)
         {
             return Cards.Find(c => c.Id == id);
+        }
+
+        public OneList GetWishList(string cardId)
+        {
+            return GetWishList(cardId, null);
+        }
+
+        public OneList GetWishList(string cardId, OneList list)
+        {
+            if (OneLists.Count > 0 && string.IsNullOrEmpty(cardId) == false)
+            {
+                if (list == null)
+                    list = OneLists.Find(t => t.ListType == ListType.Wish && t.CardId == cardId);
+                else
+                    list = OneLists.Find(t => t.ListType == ListType.Wish && t.CardId == cardId && t.Id == list.Id);
+            }
+
+            if (list == null)
+            {
+                list = new OneList()
+                {
+                    CardId = (Cards.Count == 0) ? string.Empty : Cards[0].Id,
+                    ListType = ListType.Wish,
+                    Items = new List<OneListItem>()
+                };
+            }
+            return list;
+        }
+
+        public OneList CreateOneListWithDescription(string description)
+        {
+            OneList list = null;
+
+            list = new OneList()
+            {
+                CardId = (Cards.Count == 0) ? string.Empty : Cards[0].Id,
+                ListType = ListType.Wish,
+                Description = description,
+                Items = new List<OneListItem>()
+            };
+
+            return list;
+        }
+
+        public OneList GetBasket(string cardId)
+        {
+            OneList list = null;
+            if (OneLists.Count > 0 && string.IsNullOrEmpty(cardId) == false)
+            {
+                list = OneLists.Find(t => t.ListType == ListType.Basket && t.CardId == cardId);
+            }
+            if (list == null)
+            {
+                list = new OneList()
+                {
+                    CardId = (Cards.Count == 0) ? string.Empty : Cards[0].Id,
+                    ListType = ListType.Basket,
+                    Items = new List<OneListItem>()
+                };
+            }
+            return list;
+        }
+
+        public void AddList(string cardId, OneList list, ListType type)
+        {            
+            OneList mylist = OneLists.Find(t => t.ListType == type && t.CardId == cardId && t.Id == list.Id);
+            if (mylist != null)
+            {
+                OneLists.Remove(mylist);
+            }
+            OneLists.Add(list);
         }
 
         public static bool NameContainsFirstName(string name)

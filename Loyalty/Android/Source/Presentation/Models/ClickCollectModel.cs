@@ -4,11 +4,12 @@ using System.Threading.Tasks;
 
 using Android.Content;
 using Android.Widget;
+using Presentation.Util;
 using LSRetail.Omni.Domain.DataModel.Loyalty.Baskets;
 using LSRetail.Omni.Domain.DataModel.Loyalty.Orders;
 using LSRetail.Omni.Domain.Services.Loyalty.Baskets;
 using LSRetail.Omni.Infrastructure.Data.Omniservice.Loyalty.Baskets;
-using Presentation.Util;
+using LSRetail.Omni.Domain.DataModel.Base.Requests;
 
 namespace Presentation.Models
 {
@@ -27,11 +28,19 @@ namespace Presentation.Models
             BeginWsCall();
             ShowIndicator(true);
 
-            OrderAvailabilityResponse orderLineAvailabilities = null;
+            List<InventoryResponse> orderLineAvailabilities = null;
             try
             {
-                AppData.Device.UserLoggedOnToDevice.Basket.StoreId = storeId;
-                orderLineAvailabilities = await service.OrderCheckAvailabilityAsync(AppData.Device.UserLoggedOnToDevice.Basket);
+                List<InventoryRequest> items = new List<InventoryRequest>();
+                foreach (OneListItem item in AppData.Basket.Items)
+                {
+                    items.Add(new InventoryRequest()
+                    {
+                        ItemId = item.ItemId,
+                        VariantId = item.VariantId
+                    });
+                }
+                orderLineAvailabilities = await service.ItemsInStoreGetAsync(items, storeId);
             }
             catch (Exception ex)
             {
@@ -41,27 +50,21 @@ namespace Presentation.Models
             ShowIndicator(false);
 
             List<OrderLineAvailability> list = new List<OrderLineAvailability>();
-            foreach (OrderLineAvailabilityResponse line in orderLineAvailabilities.Lines)
+            foreach (InventoryResponse line in orderLineAvailabilities)
             {
-                if (storeId == line.LocationCode)
+                list.Add(new OrderLineAvailability()
                 {
-                    list.Add(new OrderLineAvailability()
-                    {
-                        ItemId = line.ItemId,
-                        UomId = line.UnitOfMeasureId,
-                        VariantId = line.VariantId,
-                        Quantity = line.Quantity
-                    });
-                }
+                    ItemId = line.ItemId,
+                    VariantId = line.VariantId,
+                    Quantity = line.QtyInventory
+                });
             }
             return list;
         }
 
-        public async Task<bool> ClickCollectOrderCreate(OneList basket, string contactId, string cardId, string storeId, string email)
+        public async Task<bool> ClickCollectOrderCreate(Order basket)
         {
             bool success = false;
-            Order result = null;
-
             BeginWsCall();
 
             ShowIndicator(true);
@@ -69,9 +72,7 @@ namespace Presentation.Models
             try
             {
                 //success = await service.OrderCreateAsync(service.CreateOrderForCAC(basket, contactId, cardId, storeId, email));
-                result = await service.OrderCreateAsync(service.CreateOrderForCAC(basket, contactId, cardId, storeId, email));
-
-                //if (success)
+                Order result = await service.OrderCreateAsync(basket);
                 if (result != null)
                 {
                     await basketModel.ClearBasket();
@@ -85,7 +86,6 @@ namespace Presentation.Models
             }
 
             ShowIndicator(false);
-
             return success;
         }
 
@@ -105,20 +105,20 @@ namespace Presentation.Models
                     var availableBasketItem = new OneListItem()
                     {
                         Id = basketItem.Id,
-                        Item = basketItem.Item,
+                        ItemId = basketItem.ItemId,
                         Amount = basketItem.Amount,
                         NetAmount = basketItem.NetAmount,
                         NetPrice = basketItem.NetPrice,
                         Price = basketItem.Price,
                         TaxAmount = basketItem.TaxAmount,
                         Quantity = basketItem.Quantity,
-                        UnitOfMeasure = basketItem.UnitOfMeasure,
-                        VariantReg = basketItem.VariantReg,
+                        UnitOfMeasureId = basketItem.UnitOfMeasureId,
+                        VariantId = basketItem.VariantId,
                     };
 
                     if (basketItem.Quantity > orderLineAvailability.Quantity)
                     {
-                        unavailableItems.Add("-" + (basketItem.Quantity - orderLineAvailability.Quantity) + " " + basketItem.Item.Description);
+                        unavailableItems.Add("-" + (basketItem.Quantity - orderLineAvailability.Quantity) + " " + basketItem.ItemDescription);
                         availableBasketItem.Quantity = orderLineAvailability.Quantity;
                     }
 
@@ -127,7 +127,7 @@ namespace Presentation.Models
                 else
                 {
                     if (basketItem != null)
-                        unavailableItems.Add("-" + (basketItem.Quantity) + " " + basketItem.Item.Description);
+                        unavailableItems.Add("-" + (basketItem.Quantity) + " " + basketItem.ItemDescription);
                 }
             }
 

@@ -16,7 +16,6 @@ using ImageView = Android.Widget.ImageView;
 using LSRetail.Omni.Domain.DataModel.Base.Retail;
 using LSRetail.Omni.Domain.DataModel.Loyalty.Setup;
 using LSRetail.Omni.Domain.DataModel.Loyalty.Items;
-using LSRetail.Omni.Domain.DataModel.Loyalty.Transactions;
 using LSRetail.Omni.Domain.DataModel.Loyalty.Baskets;
 using LSRetail.Omni.Domain.DataModel.Base.Setup;
 using LSRetail.Omni.Domain.DataModel.Base.SalesEntries;
@@ -272,12 +271,12 @@ namespace Presentation.Adapters
                     return;
                 }
 
-                shoppingListLineViewHolder.Title.Text = shoppingListLine.Item.Description;
+                shoppingListLineViewHolder.Title.Text = shoppingListLine.ItemDescription;
 
-                if (shoppingListLine.VariantReg != null)
+                if (string.IsNullOrEmpty(shoppingListLine.VariantId) == false)
                 {
                     shoppingListLineViewHolder.Variant.Visibility = ViewStates.Visible;
-                    shoppingListLineViewHolder.Variant.Text = shoppingListLine.VariantReg.ToString();
+                    shoppingListLineViewHolder.Variant.Text = shoppingListLine.VariantDescription;
                 }
                 else
                 {

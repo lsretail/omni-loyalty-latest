@@ -4,15 +4,15 @@ using Android.Content;
 
 using Presentation.Util;
 using LSRetail.Omni.Domain.DataModel.Base.Retail;
-using LSRetail.Omni.Domain.Services.Base.Loyalty;
-using LSRetail.Omni.Infrastructure.Data.Omniservice.Shared;
+using LSRetail.Omni.Domain.Services.Base.Image;
+using LSRetail.Omni.Infrastructure.Data.Omniservice.Base;
 
 namespace Presentation.Models
 {
     public class ImageModel : BaseModel
     {
         private readonly IRefreshableActivity refreshableActivity;
-        private SharedService service;
+        private ImageService service;
 
         public ImageModel(Context context, IRefreshableActivity refreshableActivity) : base(context)
         {
@@ -49,7 +49,7 @@ namespace Presentation.Models
 
         protected override void CreateService()
         {
-            service = new SharedService(new SharedRepository());
+            service = new ImageService(new ImageRepository());
         }
     }
 }
