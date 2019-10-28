@@ -51,7 +51,7 @@ namespace Presentation.Activities.Checkout
         private EditText email;
 
         private ShippingMedhod shippingMedhod;
-        private PaymentType paymentType;
+        private LoyPaymentType paymentType;
         private Address shippingAddress;
         private Address billingAddress;
 
@@ -142,9 +142,9 @@ namespace Presentation.Activities.Checkout
                 footerView.AddView(information);
                 //headers.AddFooterView(information, null, false);
 
-                paymentType = (PaymentType)Arguments.GetInt(BundleConstants.PaymentType);
+                paymentType = (LoyPaymentType)Arguments.GetInt(BundleConstants.PaymentType);
 
-                if (paymentType == PaymentType.CreditCard)
+                if (paymentType == LoyPaymentType.CreditCard)
                 {
                     var informationPayment = Util.Utils.ViewUtils.Inflate(inflater, Resource.Layout.CheckoutInformationCard);
 
@@ -239,26 +239,24 @@ namespace Presentation.Activities.Checkout
                     basketOrder.ShippingAgentServiceCode = "ISP";
                     basketOrder.ClickAndCollectOrder = false;
 
-                    if (paymentType == PaymentType.CreditCard)
+                    if (paymentType == LoyPaymentType.CreditCard)
                     {
                         basketOrder.OrderPayments.Add(new OrderPayment()
                         {
-                            PreApprovedAmount = AppData.Basket.TotalAmount,
-                            FinalizedAmount = AppData.Basket.TotalAmount,
+                            Amount = AppData.Basket.TotalAmount,
                             CardType = "VISA",
                             CurrencyCode = AppData.Device.UserLoggedOnToDevice.Environment.Currency.Id,
-                            AuthorisationCode = cardCVV,
+                            AuthorizationCode = cardCVV,
                             CardNumber = cardNumber,
                             LineNumber = 1,
                             TenderType = ((int)LoyTenderType.Card).ToString(),
                         });
                     }
-                    else if (paymentType == PaymentType.PayOnDelivery)
+                    else if (paymentType == LoyPaymentType.PayOnDelivery)
                     {
                         basketOrder.OrderPayments.Add(new OrderPayment()
                         {
-                            PreApprovedAmount = AppData.Basket.TotalAmount,
-                            FinalizedAmount = AppData.Basket.TotalAmount,
+                            Amount = AppData.Basket.TotalAmount,
                             CurrencyCode = AppData.Device.UserLoggedOnToDevice.Environment.Currency.Id,
                             LineNumber = 1,
                             TenderType = ((int)LoyTenderType.Cash).ToString(),

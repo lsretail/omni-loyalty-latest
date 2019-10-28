@@ -43,9 +43,9 @@ namespace LSRetail.Omni.Domain.Services.Loyalty.OneLists
             return repository.OneListDeleteById(oneListId);
         }
 
-        public OneList OneListItemModify(OneListItem item, bool remove, bool calculate)
+        public OneList OneListItemModify(string onelistId, OneListItem item, bool remove, bool calculate)
         {
-            return repository.OneListItemModify(item, remove, calculate);
+            return repository.OneListItemModify(onelistId, item, remove, calculate);
         }
 
         public bool OneListLinking(string oneListId, string cardId, string email, LinkStatus status)
@@ -53,25 +53,25 @@ namespace LSRetail.Omni.Domain.Services.Loyalty.OneLists
             return repository.OneListLinking(oneListId, cardId, email, status);
         }
 
-        public OneList OneListAddItem(MemberContact contact, ListType type, string cardId, LoyItem item, string variantId, string uomId, decimal qty)
+        public OneList OneListAddItem(MemberContact contact, ListType type, string cardId, LoyItem item, decimal qty, string oneListId)
         {
-            var list = OneListGetByCardId(cardId, type, true).FirstOrDefault();
+            var list = OneListGetByCardId(cardId, type, true).Where(x => x.Id == oneListId).FirstOrDefault();
 
             if (list == null)
             {
                 return null;
             }
 
-            list.AddItem(new OneListItem(item.Id, qty, uomId, variantId));
+            list.AddItem(new OneListItem(item, qty));
 
             OneListSave(list, false);
 
             return list;
         }
 
-        public bool OneListRemoveItem(MemberContact contact, ListType type, string cardId, OneListItem oneListItem)
+        public bool OneListRemoveItem(MemberContact contact, ListType type, string cardId, OneListItem oneListItem, string oneListId)
         {
-            var list = OneListGetByCardId(cardId, type, true).FirstOrDefault();
+            var list = OneListGetByCardId(cardId, type, true).Where(x => x.Id == oneListId).FirstOrDefault();
 
             if (list == null)
             {
@@ -111,9 +111,9 @@ namespace LSRetail.Omni.Domain.Services.Loyalty.OneLists
             return await Task.Run(() => OneListDeleteById(oneListId));
         }
 
-        public async Task<OneList> OneListItemModifyAsync(OneListItem item, bool remove, bool calculate)
+        public async Task<OneList> OneListItemModifyAsync(string onelistId, OneListItem item, bool remove, bool calculate)
         {
-            return await Task.Run(() => OneListItemModify(item, remove, calculate));
+            return await Task.Run(() => OneListItemModify(onelistId, item, remove, calculate));
         }
 
         public async Task<bool> OneListLinkingAsync(string oneListId, string cardId, string email, LinkStatus status)
@@ -121,14 +121,14 @@ namespace LSRetail.Omni.Domain.Services.Loyalty.OneLists
             return await Task.Run(() => OneListLinking(oneListId, cardId, email, status));
         }
 
-        public async Task<OneList> OneListAddItemAsync(MemberContact contact, ListType type, string cardId, LoyItem item, string variantId, string uomId, decimal qty)
+        public async Task<OneList> OneListAddItemAsync(MemberContact contact, ListType type, string cardId, LoyItem item, decimal qty, string oneListId)
         {
-            return await Task.Run(() => OneListAddItem(contact, type, cardId, item, variantId, uomId, qty));
+            return await Task.Run(() => OneListAddItem(contact, type, cardId, item, qty, oneListId));
         }
 
-        public async Task<bool> OneListRemoveItemAsync(MemberContact contact, ListType type, string cardId, OneListItem oneListItem)
+        public async Task<bool> OneListRemoveItemAsync(MemberContact contact, ListType type, string cardId, OneListItem oneListItem, string oneListId)
         {
-            return await Task.Run(() => OneListRemoveItem(contact, type, cardId, oneListItem));
+            return await Task.Run(() => OneListRemoveItem(contact, type, cardId, oneListItem, oneListId));
         }
     }
 }

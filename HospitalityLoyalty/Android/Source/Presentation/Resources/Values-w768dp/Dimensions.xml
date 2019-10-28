@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<resources>
-  <integer name="GridColumnCount">4</integer>
-  <dimen name="BigScreenListPadding">48dp</dimen>
-  <dimen name="BigScreenPanePadding">96dp</dimen>
-  <dimen name="HeaderImageHeight">270dp</dimen>
-
-  <dimen name="MaxLogoHeight">200dp</dimen>
-</resources>

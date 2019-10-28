@@ -4,6 +4,7 @@ using System.Runtime.Serialization;
 
 using LSRetail.Omni.Domain.DataModel.Base.Retail;
 using LSRetail.Omni.Domain.DataModel.Base.Base;
+using LSRetail.Omni.Domain.DataModel.Loyalty.Items;
 
 namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
 {
@@ -18,6 +19,7 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
             UnitOfMeasureId = string.Empty;
             BarcodeId = string.Empty;
             CreateDate = DateTime.Now;
+            Detail = string.Empty;
             Quantity = 0M;
             DisplayOrderId = 1;
             NetPrice = 0M;
@@ -25,18 +27,28 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
             NetAmount = 0M;
             TaxAmount = 0M;
             OnelistItemDiscounts = new List<OneListItemDiscount>();
+            VariantRegistration = new VariantRegistration();
         }
 
         public OneListItem() : this(string.Empty)
         {
         }
 
-        public OneListItem(string itemId, decimal quantity, string uomId, string variantId) : this("")
+        public OneListItem(LoyItem item, decimal qty) : this("")
         {
-            ItemId = itemId;
-            VariantId = variantId;
-            UnitOfMeasureId = uomId;
-            Quantity = quantity;
+            ItemId = item.Id;
+            ItemDescription = item.Description;
+            UnitOfMeasureId = item.SelectedUnitOfMeasure?.Id;
+            Image = item.DefaultImage;
+            Quantity = qty;
+            Price = item.AmtFromVariantsAndUOM(item.SelectedVariant?.Id, item.SelectedUnitOfMeasure?.Id);
+            Detail = item.Details;
+            VariantRegistration = item.SelectedVariant;
+            if (item.SelectedVariant != null)
+            {
+                VariantId = item.SelectedVariant.Id;
+                VariantDescription = item.SelectedVariant.ToString();
+            }
         }
 
         public void Dispose()
@@ -56,6 +68,8 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
 
         [DataMember(IsRequired = true)]
         public string ItemId { get; set; }
+        [DataMember]
+        public string Detail { get; set; }
         [DataMember]
         public string ItemDescription { get; set; }
         [DataMember]
@@ -96,6 +110,8 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
         public List<OneListItemDiscount> OnelistItemDiscounts { get; set; } // decimal got truncated
         [DataMember]
         public ImageView Image { get; set; }
+        [DataMember]
+        public VariantRegistration VariantRegistration { get; set; }
 
         public string OneListId { get; set; }
 

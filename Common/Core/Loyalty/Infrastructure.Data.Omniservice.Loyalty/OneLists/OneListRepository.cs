@@ -44,10 +44,10 @@ namespace LSRetail.Omni.Infrastructure.Data.Omniservice.Loyalty.OneLists
             return base.PostData<bool>(jObject, methodName);
         }
 
-        public OneList OneListItemModify(OneListItem item, bool remove, bool calculate)
+        public OneList OneListItemModify(string onelistId, OneListItem item, bool remove, bool calculate)
         {
             string methodName = "OneListItemModify";
-            var jObject = new { item = item, remove = remove, calculate = calculate };
+            var jObject = new { onelistId = onelistId, item = item, remove = remove, calculate = calculate };
             return base.PostData<OneList>(jObject, methodName);
         }
 

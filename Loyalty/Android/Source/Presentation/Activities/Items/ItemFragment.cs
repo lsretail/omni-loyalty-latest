@@ -410,6 +410,12 @@ namespace Presentation.Activities.Items
                 basketItem.VariantDescription = Item.SelectedVariant.ToString();
             }
 
+            if (Item.SelectedUnitOfMeasure != null)
+            {
+                basketItem.UnitOfMeasureId = Item.SelectedUnitOfMeasure.Id;
+                basketItem.UnitOfMeasureDescription = Item.SelectedUnitOfMeasure.Description;
+            }
+
             if (string.IsNullOrEmpty(basketItem.VariantId) && Item.VariantsRegistration != null && Item.VariantsRegistration.Count > 0)
             {
                 BaseModel.ShowStaticSnackbar(BaseModel.CreateStaticSnackbar(Activity,GetString(Resource.String.ItemViewPickVariant)));
@@ -436,10 +442,25 @@ namespace Presentation.Activities.Items
             }
             else
             {
-                var line = new OneListItem() {ItemId = Item.Id, Quantity = 1};
+                OneListItem line = new OneListItem()
+                {
+                    ItemId = Item.Id,
+                    ItemDescription = Item.Description,
+                    Image = Item.DefaultImage,
+                    Quantity = 1
+                };
 
                 if (Item.SelectedVariant != null)
+                {
                     line.VariantId = Item.SelectedVariant.Id;
+                    line.VariantDescription = Item.SelectedVariant.ToString();
+                }
+
+                if (Item.SelectedUnitOfMeasure != null)
+                {
+                    line.UnitOfMeasureId = Item.SelectedUnitOfMeasure.Id;
+                    line.UnitOfMeasureDescription = Item.SelectedUnitOfMeasure.Description;
+                }
 
                 if (string.IsNullOrEmpty(line.VariantId) && Item.VariantsRegistration != null && Item.VariantsRegistration.Count > 0)
                 {

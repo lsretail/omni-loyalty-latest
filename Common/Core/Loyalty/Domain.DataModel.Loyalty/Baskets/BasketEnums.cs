@@ -94,7 +94,7 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
     }
 
     [DataContract(Namespace = "http://lsretail.com/LSOmniService/Loy/2017")]
-    public enum PaymentType
+    public enum LoyPaymentType
     {
         [EnumMember]
         PayOnDelivery = 0,

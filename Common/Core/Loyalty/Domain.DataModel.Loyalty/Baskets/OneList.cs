@@ -207,6 +207,9 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
         public LinkStatus Status { get; set; }
         [DataMember]
         public bool Owner { get; set; }
+
+        [DataMember]
+        public string Name { get; set; }
     }
 
     [DataContract(Namespace = "http://lsretail.com/LSOmniService/Loy/2017")]

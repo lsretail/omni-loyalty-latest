@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              style="@style/CardLayout">
-  <include android:id="@+id/CardLayoutMediumAndSmallCardOne" layout="@layout/CardMediumSmall"/>
-  <include android:id="@+id/CardLayoutMediumAndSmallCardTwo" layout="@layout/CardSmall"/>
-</LinearLayout>
