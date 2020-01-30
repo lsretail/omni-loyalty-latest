@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using LSRetail.Omni.Domain.DataModel.Base.Requests;
+using LSRetail.Omni.Domain.DataModel.Base.SalesEntries;
 using LSRetail.Omni.Domain.DataModel.Loyalty.Baskets;
 using LSRetail.Omni.Domain.DataModel.Loyalty.Orders;
 
@@ -16,7 +17,7 @@ namespace LSRetail.Omni.Domain.Services.Loyalty.Baskets
             repository = iRepo;
         }
 
-        public Order OrderCreate(Order request)
+        public SalesEntry OrderCreate(Order request)
         {
             return repository.OrderCreate(request);
         }
@@ -36,7 +37,7 @@ namespace LSRetail.Omni.Domain.Services.Loyalty.Baskets
             return await Task.Run(() => OrderCheckAvailability(request));
         }
 
-        public async Task<Order> OrderCreateAsync(Order request)
+        public async Task<SalesEntry> OrderCreateAsync(Order request)
         {
             return await Task.Run(() => OrderCreate(request));
         }

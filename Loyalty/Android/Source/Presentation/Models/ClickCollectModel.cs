@@ -10,6 +10,7 @@ using LSRetail.Omni.Domain.DataModel.Loyalty.Orders;
 using LSRetail.Omni.Domain.Services.Loyalty.Baskets;
 using LSRetail.Omni.Infrastructure.Data.Omniservice.Loyalty.Baskets;
 using LSRetail.Omni.Domain.DataModel.Base.Requests;
+using LSRetail.Omni.Domain.DataModel.Base.SalesEntries;
 
 namespace Presentation.Models
 {
@@ -72,7 +73,7 @@ namespace Presentation.Models
             try
             {
                 //success = await service.OrderCreateAsync(service.CreateOrderForCAC(basket, contactId, cardId, storeId, email));
-                Order result = await service.OrderCreateAsync(basket);
+                SalesEntry result = await service.OrderCreateAsync(basket);
                 if (result != null)
                 {
                     await basketModel.ClearBasket();

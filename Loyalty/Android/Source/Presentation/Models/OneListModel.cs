@@ -33,7 +33,8 @@ namespace Presentation.Models
         public async Task<OneList> OneListSave(OneList oneList, bool calculate)
         {
             BeginWsCall();
-            oneList.StoreId = "S0013"; 
+            if (string.IsNullOrEmpty(oneList.StoreId))
+                oneList.StoreId = "S0013";
             return await oneListService.OneListSaveAsync(oneList, calculate);
         }
 
@@ -47,7 +48,6 @@ namespace Presentation.Models
         {
             ShowIndicator(true);
             AppData.Basket.State = BasketState.Calculating;
-            oneList.StoreId = "S0013";
             oneList.CardId = AppData.Device.CardId;
             BeginWsCall();
             Order order = await oneListService.OneListCalculateAsync(oneList);
