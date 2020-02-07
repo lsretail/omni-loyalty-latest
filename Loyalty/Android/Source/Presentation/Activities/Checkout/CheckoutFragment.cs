@@ -420,11 +420,9 @@ namespace Presentation.Activities.Checkout
             if (orderAvailability != null)
             {
                 orderLineAvailabilities = orderAvailability;
-
+                AppData.Basket.StoreId = storeId;
                 var basketItems = CreateBasketItems();
-
                 adapter.SetItems(Activity, basketItems, total);
-
                 UpdatePayment(basketItems);
             }
         }

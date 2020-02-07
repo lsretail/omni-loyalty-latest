@@ -230,14 +230,14 @@ namespace Presentation.Activities.Checkout
 
                 if (shippingMedhod == ShippingMedhod.ClickCollect)
                 {
-                    basketOrder.ClickAndCollectOrder = true;
+                    basketOrder.OrderType = OrderType.ClickAndCollect;
                 }
                 else
                 {
                     basketOrder.ShipToAddress = shippingAddress;
                     basketOrder.ContactAddress = billingAddress;
                     basketOrder.ShippingAgentServiceCode = "ISP";
-                    basketOrder.ClickAndCollectOrder = false;
+                    basketOrder.OrderType = OrderType.Sale;
 
                     if (paymentType == LoyPaymentType.CreditCard)
                     {

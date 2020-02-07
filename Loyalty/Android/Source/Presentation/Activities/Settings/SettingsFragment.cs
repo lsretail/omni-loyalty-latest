@@ -1,20 +1,10 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using Android.App;
-using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Util;
 using Android.Views;
 using Android.Widget;
-using Infrastructure.Data.SQLite.DB.DTO;
-using Infrastructure.Data.SQLite.Webservice;
 using Presentation.Activities.Base;
 using Presentation.Dialogs;
-using Presentation.Models;
 using Presentation.Util;
 using ColoredButton = Presentation.Views.ColoredButton;
 

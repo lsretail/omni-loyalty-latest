@@ -75,7 +75,7 @@ namespace Presentation.Activities.History
 
         private async void LoadTransaction()
         {
-            var loadedTransation = await model.GetTransactionByReceiptNo(transaction.Id, transaction.IdType);
+            var loadedTransation = await model.GetTransactionByReceiptNo((transaction.IdType == DocumentIdType.Receipt) ? transaction.ReceiptNo : transaction.Id, transaction.IdType);
 
             if (loadedTransation == null)
             {
@@ -117,7 +117,7 @@ namespace Presentation.Activities.History
             }
             else
             {
-                dateHeader.Text = transaction.DocumentRegTime.ToString("D");
+                dateHeader.Text = string.IsNullOrEmpty(transaction.ReceiptNo) ? transaction.Id : transaction.ReceiptNo;
             }
 
             adapter.SetTransaction(Activity, transaction);

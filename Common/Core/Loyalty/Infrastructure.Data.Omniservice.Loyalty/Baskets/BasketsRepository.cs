@@ -6,6 +6,7 @@ using LSRetail.Omni.Domain.DataModel.Loyalty.Orders;
 using LSRetail.Omni.Domain.Services.Loyalty.Baskets;
 using LSRetail.Omni.Domain.DataModel.Loyalty.Baskets;
 using LSRetail.Omni.Domain.DataModel.Base.Requests;
+using LSRetail.Omni.Domain.DataModel.Base.SalesEntries;
 
 namespace LSRetail.Omni.Infrastructure.Data.Omniservice.Loyalty.Baskets
 {
@@ -25,11 +26,11 @@ namespace LSRetail.Omni.Infrastructure.Data.Omniservice.Loyalty.Baskets
             return base.PostData<List<InventoryResponse>>(jObject, methodName);
         }
 
-        public Order OrderCreate(Order request)
+        public SalesEntry OrderCreate(Order request)
 		{
 			string methodName = "OrderCreate";
 			var jObject = new { request = request };
-			Order order = base.PostData<Order>(jObject, methodName);
+			SalesEntry order = base.PostData<SalesEntry>(jObject, methodName);
             return order;
 		}
 	}
