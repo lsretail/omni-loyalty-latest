@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="internalOnly" package="lsretail.omni.loyalty.android" android:versionCode="232" android:versionName="4.7.0">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="internalOnly" package="lsretail.omni.loyalty.android" android:versionCode="235" android:versionName="4.8.0">
 	<uses-sdk android:minSdkVersion="19" android:targetSdkVersion="28" />
 	<application android:largeHeap="true" android:label="@string/ApplicationTitle" android:theme="@style/ApplicationTheme" android:icon="@drawable/ic_launcher" android:allowBackup="false" android:fullBackupOnly="false">
 		<!-- See https://developers.google.com/maps/documentation/android/start#obtaining_an_api_key -->
