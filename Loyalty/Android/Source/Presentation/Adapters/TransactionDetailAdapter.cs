@@ -72,15 +72,17 @@ namespace Presentation.Adapters
             });
 
             //TENDERS
-            var tenderTotalItem = new TotalItem();
-            foreach (var tenderLine in transaction.Payments)
+            if (transaction.Payments.Count > 0)
             {
-                tenderTotalItem.Total = tenderLine.Amount + Environment.NewLine;
+                var tenderTotalItem = new TotalItem();
+                foreach (var tenderLine in transaction.Payments)
+                {
+                    tenderTotalItem.Total = tenderLine.Amount + Environment.NewLine;
+                }
+
+                tenderTotalItem.Total = tenderTotalItem.Total.TrimEnd(Environment.NewLine.ToCharArray());
+                transactionLines.Add(tenderTotalItem);
             }
-
-            tenderTotalItem.Total = tenderTotalItem.Total.TrimEnd(Environment.NewLine.ToCharArray());
-            transactionLines.Add(tenderTotalItem);
-
             NotifyDataSetChanged();
         }
 

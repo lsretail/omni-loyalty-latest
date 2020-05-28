@@ -136,6 +136,8 @@ namespace Presentation.Models
 
             var existinItemIndex = newList.Items.IndexOf(existingItem);
             newList.Items.Remove(existingItem);
+            if (newList.Items.Count == 0)
+                newList.StoreId = string.Empty;     // remove store in case it invalid from previous operations with basket
 
             ShowIndicator(true);
 
