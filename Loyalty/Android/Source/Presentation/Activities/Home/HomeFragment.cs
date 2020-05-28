@@ -99,6 +99,9 @@ namespace Presentation.Activities.Home
 
         private void NextPage()
         {
+            if (Activity == null)
+                return;
+
             Activity.RunOnUiThread(() =>
             {
                 if (pager != null)
