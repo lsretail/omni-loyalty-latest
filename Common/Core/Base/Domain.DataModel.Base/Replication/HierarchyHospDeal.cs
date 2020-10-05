@@ -5,14 +5,14 @@ using System.Runtime.Serialization;
 namespace LSRetail.Omni.Domain.DataModel.Base.Replication
 {
     [DataContract(Namespace = "http://lsretail.com/LSOmniService/Base/2017")]
-    public class ReplHierarchyNodeResponse : IDisposable
+    public class ReplHierarchyHospDealResponse : IDisposable
     {
-        public ReplHierarchyNodeResponse()
+        public ReplHierarchyHospDealResponse()
         {
             LastKey = string.Empty;
             MaxKey = string.Empty;
             RecordsRemaining = 0;
-            Nodes = new List<ReplHierarchyNode>();
+            Items = new List<ReplHierarchyHospDeal>();
         }
 
         public void Dispose()
@@ -25,8 +25,8 @@ namespace LSRetail.Omni.Domain.DataModel.Base.Replication
         {
             if (disposing)
             {
-                if (Nodes != null)
-                    Nodes.Clear();
+                if (Items != null)
+                    Items.Clear();
             }
         }
 
@@ -37,17 +37,20 @@ namespace LSRetail.Omni.Domain.DataModel.Base.Replication
         [DataMember]
         public int RecordsRemaining { get; set; }
         [DataMember]
-        public List<ReplHierarchyNode> Nodes { get; set; }
+        public List<ReplHierarchyHospDeal> Items { get; set; }
     }
 
     [DataContract(Namespace = "http://lsretail.com/LSOmniService/Base/2017")]
-    public class ReplHierarchyNode : IDisposable
+    public class ReplHierarchyHospDeal : IDisposable
     {
-        public ReplHierarchyNode()
+        public ReplHierarchyHospDeal()
         {
             HierarchyCode = string.Empty;
             ParentNode = string.Empty;
+            DealNo = string.Empty;
             Description = string.Empty;
+            VariantCode = string.Empty;
+            UnitOfMeasure = string.Empty;
             ImageId = string.Empty;
         }
 
@@ -67,20 +70,38 @@ namespace LSRetail.Omni.Domain.DataModel.Base.Replication
         [DataMember]
         public bool IsDeleted { get; set; }
         [DataMember]
-        public string Id { get; set; }
-        [DataMember]
         public string HierarchyCode { get; set; }
         [DataMember]
         public string ParentNode { get; set; }
         [DataMember]
+        public string DealNo { get; set; }
+        [DataMember]
         public string Description { get; set; }
         [DataMember]
+        public int LineNo { get; set; }
+
+        [DataMember]
+        public string ModifierCode { get; set; }
+        [DataMember]
+        public string VariantCode { get; set; }
+        [DataMember]
+        public string UnitOfMeasure { get; set; }
+        [DataMember]
         public string ImageId { get; set; }
+
         [DataMember]
-        public int Indentation { get; set; }
+        public int MinSelection { get; set; }
         [DataMember]
-        public int PresentationOrder { get; set; }
+        public int MaxSelection { get; set; }
+        /// <summary>
+        /// Amount to add to a deal price
+        /// </summary>
         [DataMember]
-        public int ChildrenOrder { get; set; }
+        public decimal AddedAmount { get; set; }
+        /// <summary>
+        /// Used to group deals together, f.ex. if Medium Fries goes with Medium Soda.
+        /// </summary>
+        [DataMember]
+        public int DealModSizeGroupIndex { get; set; }
     }
 }

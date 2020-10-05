@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 
 namespace LSRetail.Omni.Domain.DataModel.Base.Replication
 {
     [DataContract(Namespace = "http://lsretail.com/LSOmniService/Base/2017")]
-    public class ReplHierarchyNodeResponse : IDisposable
+    public class ReplHierarchyHospModifierResponse : IDisposable
     {
-        public ReplHierarchyNodeResponse()
+        public ReplHierarchyHospModifierResponse()
         {
             LastKey = string.Empty;
             MaxKey = string.Empty;
             RecordsRemaining = 0;
-            Nodes = new List<ReplHierarchyNode>();
+            Modifiers = new List<ReplHierarchyHospModifier>();
         }
 
         public void Dispose()
@@ -25,8 +26,8 @@ namespace LSRetail.Omni.Domain.DataModel.Base.Replication
         {
             if (disposing)
             {
-                if (Nodes != null)
-                    Nodes.Clear();
+                if (Modifiers != null)
+                    Modifiers.Clear();
             }
         }
 
@@ -37,18 +38,21 @@ namespace LSRetail.Omni.Domain.DataModel.Base.Replication
         [DataMember]
         public int RecordsRemaining { get; set; }
         [DataMember]
-        public List<ReplHierarchyNode> Nodes { get; set; }
+        public List<ReplHierarchyHospModifier> Modifiers { get; set; }
     }
 
     [DataContract(Namespace = "http://lsretail.com/LSOmniService/Base/2017")]
-    public class ReplHierarchyNode : IDisposable
+    public class ReplHierarchyHospModifier : IDisposable
     {
-        public ReplHierarchyNode()
+        public ReplHierarchyHospModifier()
         {
             HierarchyCode = string.Empty;
             ParentNode = string.Empty;
+            ParentItem = string.Empty;
+            ItemNo = string.Empty;
+            SubCode = string.Empty;
             Description = string.Empty;
-            ImageId = string.Empty;
+            UnitOfMeasure = string.Empty;
         }
 
         public void Dispose()
@@ -67,20 +71,49 @@ namespace LSRetail.Omni.Domain.DataModel.Base.Replication
         [DataMember]
         public bool IsDeleted { get; set; }
         [DataMember]
-        public string Id { get; set; }
-        [DataMember]
         public string HierarchyCode { get; set; }
         [DataMember]
         public string ParentNode { get; set; }
         [DataMember]
+        public string ParentItem { get; set; }
+        [DataMember]
+        public ModifierType Type { get; set; }
+
+        [DataMember]
+        public string Code { get; set; }
+        [DataMember]
+        public string SubCode { get; set; }
+        [DataMember]
+        public string ItemNo { get; set; }
+        [DataMember]
         public string Description { get; set; }
         [DataMember]
-        public string ImageId { get; set; }
+        public string UnitOfMeasure { get; set; }
+
         [DataMember]
-        public int Indentation { get; set; }
+        public int MinSelection { get; set; }
         [DataMember]
-        public int PresentationOrder { get; set; }
+        public int MaxSelection { get; set; }
         [DataMember]
-        public int ChildrenOrder { get; set; }
+        public ModifierPriceType PriceType { get; set; }
+        [DataMember]
+        public bool AlwaysCharge { get; set; }
+        [DataMember]
+        public decimal AmountPercent { get; set; }
+    }
+
+    public enum ModifierType
+    {
+        Item,
+        Time,
+        Text
+    }
+
+    public enum ModifierPriceType
+    {
+        None,
+        FromItem,
+        Amount,
+        Percent
     }
 }

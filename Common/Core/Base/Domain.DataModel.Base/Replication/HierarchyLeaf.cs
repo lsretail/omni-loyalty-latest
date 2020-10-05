@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Runtime.Serialization;
 
-using LSRetail.Omni.Domain.DataModel.Base.Base;
 using LSRetail.Omni.Domain.DataModel.Base.Hierarchies;
 
 namespace LSRetail.Omni.Domain.DataModel.Base.Replication
@@ -52,6 +52,7 @@ namespace LSRetail.Omni.Domain.DataModel.Base.Replication
             NodeId = string.Empty;
             ImageId = string.Empty;
             Description = string.Empty;
+            MemberValue = string.Empty;
         }
 
         public void Dispose()
@@ -81,5 +82,22 @@ namespace LSRetail.Omni.Domain.DataModel.Base.Replication
         public string Description { get; set; }
         [DataMember]
         public HierarchyLeafType Type { get; set; }
+
+        /// <summary>
+        /// Default Member Value is Member Scheme, if true, Member Value is Member Club
+        /// </summary>
+        [DataMember]
+        public bool IsMemberClub { get; set; }
+        /// <summary>
+        /// Member Scheme or Member Club
+        /// </summary>
+        [DataMember]
+        public string MemberValue { get; set; }
+        [DataMember]
+        public decimal DealPrice { get; set; }
+        [DataMember]
+        public int ValidationPeriod { get; set; }
+        [DataMember]
+        public bool IsActive { get; set; }
     }
 }
