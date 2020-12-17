@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
@@ -220,7 +221,7 @@ namespace Presentation.Activities.Checkout
             }
         }
 
-        private void UpdatePayment(List<OneListItem> basketItems = null)
+        private void UpdatePayment(ObservableCollection<OneListItem> basketItems = null)
         {
             if (basketItems == null)
             {
@@ -382,7 +383,7 @@ namespace Presentation.Activities.Checkout
                 this.paymentContainer.Visibility = ViewStates.Gone;
                 this.totalOrder.Visibility = ViewStates.Gone;
 
-                adapter.SetItems(Activity, new List<OneListItem>(), total);
+                adapter.SetItems(Activity, new ObservableCollection<OneListItem>(), total);
                 //(Util.Utils.ListUtils.GetBaseAdapter(headers.Adapter) as CheckoutAdapter).Clear();
 
                 if (clickCollectStores != null && clickCollectStores.Count > 0)
@@ -405,7 +406,7 @@ namespace Presentation.Activities.Checkout
 
         private void ClickAndCollectStoreChanged(int position)
         {
-            adapter.SetItems(Activity, new List<OneListItem>(), total);
+            adapter.SetItems(Activity, new ObservableCollection<OneListItem>(), total);
             //(Util.Utils.ListUtils.GetBaseAdapter(headers.Adapter) as CheckoutAdapter).Clear();
             this.clickCollectAdapter.setSelectedPosition(position);
             var store = clickCollectStores[position];
@@ -431,11 +432,11 @@ namespace Presentation.Activities.Checkout
         {
         }
 
-        public List<OneListItem> CreateBasketItems()
+        public ObservableCollection<OneListItem> CreateBasketItems()
         {
             if (currentShippingMedhod == ShippingMedhod.ClickCollect)
             {
-                var basketItems = new List<OneListItem>();
+                var basketItems = new ObservableCollection<OneListItem>();
                 var unavailableItemsId = new List<string>();
 
                 if (orderLineAvailabilities == null)

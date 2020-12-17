@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 using Android.Support.V7.Widget;
 using Android.Views;
@@ -12,14 +13,14 @@ namespace Presentation.Adapters
     public class BasketAdapter : BaseRecyclerAdapter
     {
         private readonly IItemClickListener listener;
-        private List<OneListItem> basketItems;
+        private ObservableCollection<OneListItem> basketItems;
 
         public BasketAdapter(IItemClickListener listener)
         {
             this.listener = listener;
         }
 
-        public void SetBasketItems(List<OneListItem> basketItems)
+        public void SetBasketItems(ObservableCollection<OneListItem> basketItems)
         {
             this.basketItems = basketItems;
             NotifyDataSetChanged();

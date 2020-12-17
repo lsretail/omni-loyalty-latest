@@ -107,7 +107,14 @@ namespace Presentation.Models
             var deletedItem = newList.Items.FirstOrDefault(x => x.Id == wishListLineId);
             var deletedItemIndex = newList.Items.IndexOf(deletedItem);
 
-            newList.Items.RemoveAll(x => x.Id == wishListLineId);
+            foreach (OneListItem i in newList.Items)
+            {
+                if (i.Id == wishListLineId)
+                {
+                    newList.Items.Remove(i);
+                    break;
+                }
+            }
 
             try
             {

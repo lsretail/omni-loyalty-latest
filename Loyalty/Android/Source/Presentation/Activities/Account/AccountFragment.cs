@@ -187,14 +187,17 @@ namespace Presentation.Activities.Account
             {
                 MemberContact memberContact;
                 if (editAccount)
+                {
                     memberContact = new MemberContact(AppData.Device.UserLoggedOnToDevice.Id);
+                }
                 else
+                {
                     memberContact = new MemberContact();
+                    memberContact.Id = string.Empty;
+                }
 
                 memberContact.Email = informationFragment.Email.Text;
                 memberContact.Name = informationFragment.Name.Text;
-                memberContact.Phone = informationFragment.Phone.Text;
-
                 var address = new Address()
                 {
                     Address1 = informationFragment.AddressOne.Text,
@@ -203,6 +206,7 @@ namespace Presentation.Activities.Account
                     StateProvinceRegion = informationFragment.State.Text,
                     PostCode = informationFragment.PostCode.Text,
                     Country = informationFragment.Country.Text,
+                    PhoneNumber = informationFragment.Phone.Text
                 };
 
                 memberContact.Addresses.Add(address);

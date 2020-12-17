@@ -617,7 +617,6 @@ namespace Presentation.Activities.Account
                     userName.Text = contact.UserName;
                     email.Text = contact.Email;
                     name.Text = contact.Name;
-                    phone.Text = contact.Phone;
                     if (contact.Addresses != null && contact.Addresses.Count > 0)
                     {
                         addressOne.Text = contact.Addresses[0].Address1;
@@ -626,6 +625,7 @@ namespace Presentation.Activities.Account
                         postCode.Text = contact.Addresses[0].PostCode;
                         state.Text = contact.Addresses[0].StateProvinceRegion;
                         country.Text = contact.Addresses[0].Country;
+                        phone.Text = contact.Addresses[0].PhoneNumber;
                     }
 
                     valueSet = true;

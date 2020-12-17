@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 using Android.Content;
 using Android.Graphics.Drawables;
@@ -24,7 +25,7 @@ namespace Presentation.Adapters
         private readonly IItemClickListener listener;
         private readonly Action<string, View> onOverFlowClicked;
         private ImageModel imageModel;
-        private List<OneListItem> wishListLines;
+        private ObservableCollection<OneListItem> wishListLines;
         private ImageSize imageSize;
 
         public ShoppingListDetailAdapter(Context context, IItemClickListener listener, Action<string, View> onOverFlowClicked)
@@ -38,7 +39,7 @@ namespace Presentation.Adapters
             imageSize = new ImageSize(imgHeight, imgHeight);
         }
 
-        public void SetWishListLines(List<OneListItem> wishListLines)
+        public void SetWishListLines(ObservableCollection<OneListItem> wishListLines)
         {
             this.wishListLines = wishListLines;
             NotifyDataSetChanged();

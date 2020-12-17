@@ -20,7 +20,6 @@ namespace Infrastructure.Data.SQLite.MemberContacts
                     Initials = memberContact.Initials,
                     LastName = memberContact.LastName,
                     MiddleName = memberContact.MiddleName,
-                    Phone = memberContact.Phone,
                     UserName = memberContact.UserName,
                     Addresses = new List<Address>()
                         {
@@ -31,6 +30,7 @@ namespace Infrastructure.Data.SQLite.MemberContacts
                                 StateProvinceRegion = memberContact.State,
                                 PostCode = memberContact.PostCode,
                                 Country = memberContact.Country,
+                                PhoneNumber = memberContact.Phone
                             }
                         },
                     Account = new Account(memberContact.MemberAccountId)
@@ -77,16 +77,15 @@ namespace Infrastructure.Data.SQLite.MemberContacts
                                  Initials = memberContact.Initials,
                                  LastName = memberContact.LastName,
                                  MiddleName = memberContact.MiddleName,
-                                 Phone = memberContact.Phone,
                                  UserName = memberContact.UserName,
                                  ContactId = memberContact.Id,
                                  MemberAccountId = memberContact.Account.Id,
                                  MemberSchemeDescription = memberContact.Account.Scheme.Description,
                                  MemberSchemePerks = memberContact.Account.Scheme.Perks,
                                  MemberSchemePointsNeeded = memberContact.Account.Scheme.PointsNeeded,
-                                 NextMemberSchemeDescription = memberContact.Account.Scheme.NextScheme.Description,
-                                 NextMemberSchemePerks = memberContact.Account.Scheme.NextScheme.Perks,
-                                 NextMemberSchemePointsNeeded = memberContact.Account.Scheme.NextScheme.PointsNeeded,
+                                 NextMemberSchemeDescription = memberContact.Account.Scheme.NextScheme?.Description,
+                                 NextMemberSchemePerks = memberContact.Account.Scheme.NextScheme?.Perks,
+                                 NextMemberSchemePointsNeeded = (memberContact.Account.Scheme.NextScheme == null) ? 0 : memberContact.Account.Scheme.NextScheme.PointsNeeded,
                                  PointBalance = memberContact.Account.PointBalance,
                              };
 
@@ -98,6 +97,7 @@ namespace Infrastructure.Data.SQLite.MemberContacts
                 entity.State = memberContact.Addresses[0].StateProvinceRegion;
                 entity.PostCode = memberContact.Addresses[0].PostCode;
                 entity.Country = memberContact.Addresses[0].Country;
+                entity.Phone = memberContact.Addresses[0].PhoneNumber;
             }
 
             if (memberContact.Environment != null)

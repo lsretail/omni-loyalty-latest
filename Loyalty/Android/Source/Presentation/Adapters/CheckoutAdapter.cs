@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 using Android.Content;
 using Android.Runtime;
@@ -40,7 +41,7 @@ namespace Presentation.Adapters
             imageSize = new ImageSize(imageHeight, imageHeight);
         }
 
-        public void SetItems(Context context, List<OneListItem> basketItems, View header = null, View footer = null)
+        public void SetItems(Context context, ObservableCollection<OneListItem> basketItems, View header = null, View footer = null)
         {
             this.items.Clear();
 

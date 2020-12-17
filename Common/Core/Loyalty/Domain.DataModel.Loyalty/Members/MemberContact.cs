@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 
 using LSRetail.Omni.Domain.DataModel.Base.Base;
@@ -10,7 +11,6 @@ using LSRetail.Omni.Domain.DataModel.Base.Utils;
 using LSRetail.Omni.Domain.DataModel.Loyalty.Members.SpecialCase;
 using LSRetail.Omni.Domain.DataModel.Loyalty.Baskets;
 using LSRetail.Omni.Domain.DataModel.Base.SalesEntries;
-using LSRetail.Omni.Domain.DataModel.Loyalty.Items;
 
 namespace LSRetail.Omni.Domain.DataModel.Loyalty.Members
 {
@@ -43,10 +43,6 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Members
 
         [DataMember]
         public List<Address> Addresses { get; set; }
-        [DataMember]
-        public string Phone { get; set; }
-        [DataMember]
-        public string MobilePhone { get; set; }
         [DataMember]
         public Gender Gender { get; set; }
         [DataMember]
@@ -218,7 +214,7 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Members
                 {
                     CardId = (Cards.Count == 0) ? string.Empty : Cards[0].Id,
                     ListType = ListType.Wish,
-                    Items = new List<OneListItem>()
+                    Items = new ObservableCollection<OneListItem>()
                 };
             }
             return list;
@@ -233,7 +229,7 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Members
                 CardId = (Cards.Count == 0) ? string.Empty : Cards[0].Id,
                 ListType = ListType.Wish,
                 Description = description,
-                Items = new List<OneListItem>()
+                Items = new ObservableCollection<OneListItem>()
             };
 
             return list;
@@ -252,7 +248,7 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Members
                 {
                     CardId = (Cards.Count == 0) ? string.Empty : Cards[0].Id,
                     ListType = ListType.Basket,
-                    Items = new List<OneListItem>()
+                    Items = new ObservableCollection<OneListItem>()
                 };
             }
             return list;

@@ -68,7 +68,7 @@ namespace Presentation.Activities.AccountTier
             nextTier.Text = string.Format(GetString(Resource.String.AccountTierViewNextTier),
                                           userLoggedOn.Scheme.PointsNeeded.ToString("N0"),
                                           points.ToString("N0"),
-                                          userLoggedOn.Scheme.NextScheme.Description);
+                                          userLoggedOn.Scheme.NextScheme?.Description);
             return view;
         }
 

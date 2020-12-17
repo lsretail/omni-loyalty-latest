@@ -226,7 +226,7 @@ namespace Presentation.Activities.Checkout
                 basketOrder.Id = Guid.NewGuid().ToString();
                 basketOrder.Email = AppData.Device.UserLoggedOnToDevice.Email;
                 basketOrder.ContactName = AppData.Device.UserLoggedOnToDevice.Name;
-                basketOrder.PhoneNumber = AppData.Device.UserLoggedOnToDevice.Phone;
+                basketOrder.DayPhoneNumber = AppData.Device.UserLoggedOnToDevice.Addresses[0]?.PhoneNumber;
 
                 if (shippingMedhod == ShippingMedhod.ClickCollect)
                 {
