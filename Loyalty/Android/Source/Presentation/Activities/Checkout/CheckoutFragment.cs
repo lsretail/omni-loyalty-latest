@@ -230,7 +230,7 @@ namespace Presentation.Activities.Checkout
 
             Activity.RunOnUiThread(() =>
             {
-                totalTotal.Text = GetString(Resource.String.CheckoutViewTotal) + " ~" + AppData.Device.UserLoggedOnToDevice.Environment.Currency.FormatDecimal(OneList.CalculateBasket(basketItems));
+                totalTotal.Text = GetString(Resource.String.CheckoutViewTotal) + " ~" + AppData.Device.UserLoggedOnToDevice.Environment.Currency.FormatDecimal(OneList.CalculateBasket(basketItems.ToList()));
             });
         }
 

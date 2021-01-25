@@ -175,7 +175,7 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
             State = BasketState.Dirty;
         }
 
-        public static decimal CalculateBasket(ObservableCollection<OneListItem> basketItems)
+        public static decimal CalculateBasket(List<OneListItem> basketItems)
         {
             decimal basketAmount = 0m;
             foreach (OneListItem item in basketItems)
