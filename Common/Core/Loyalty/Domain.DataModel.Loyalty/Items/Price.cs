@@ -16,6 +16,7 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Items
             UomId = uomId;
             Amount = string.Empty;
             Amt = 0M;
+            NetAmt = 0M;
         }
 
         public Price()
