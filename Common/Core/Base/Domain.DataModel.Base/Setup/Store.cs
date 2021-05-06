@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.Serialization;
 
 using LSRetail.Omni.Domain.DataModel.Base.Base;
@@ -74,6 +75,14 @@ namespace LSRetail.Omni.Domain.DataModel.Base.Setup
         [DataMember]
         public bool IsClickAndCollect { get; set; }
         [DataMember]
+        public bool IsLoyalty { get; set; }
+        [DataMember]
+        public bool IsWebStore { get; set; }
+        [DataMember]
+        public string WebOmniTerminal { get; set; }
+        [DataMember]
+        public string WebOmniStaff { get; set; }
+        [DataMember]
         public Currency Currency { get; set; }
         [DataMember]
         public string CultureName { get; set; }
@@ -114,6 +123,27 @@ namespace LSRetail.Omni.Domain.DataModel.Base.Setup
                 return address;
             }
         }
+
+        public string FormatStoreHours
+        {
+            get
+            {
+                if (StoreHours == null || !StoreHours.Any())
+                {
+                    return string.Empty;
+                }
+
+                var storeHours = string.Empty;
+
+                foreach (var storeHour in StoreHours)
+                {
+                    storeHours += $"{storeHour.NameOfDay} {storeHour.OpenFrom:t} - {storeHour.OpenTo:t}" + System.Environment.NewLine;
+                }
+                
+                return storeHours.TrimEnd(System.Environment.NewLine.ToCharArray());
+            }
+        }
+        
 
         public ImageView DefaultImage
         {

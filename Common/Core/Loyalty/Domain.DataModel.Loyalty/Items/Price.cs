@@ -55,6 +55,8 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Items
         /// </summary>
         [DataMember]
         public decimal Amt { get; set; }
+        [DataMember]
+        public decimal NetAmt { get; set; }
     }
 }
  
