@@ -2,17 +2,19 @@
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
+using LSRetail.Omni.Domain.DataModel.Base.Setup;
+
 namespace LSRetail.Omni.Domain.DataModel.Base.Replication
 {
     [DataContract(Namespace = "http://lsretail.com/LSOmniService/Base/2017")]
-    public class ReplBarcodeMaskResponse : IDisposable
+    public class ReplStaffPermissionResponse : IDisposable
     {
-        public ReplBarcodeMaskResponse()
+        public ReplStaffPermissionResponse()
         {
             LastKey = string.Empty;
             MaxKey = string.Empty;
             RecordsRemaining = 0;
-            BarcodeMasks = new List<ReplBarcodeMask>();
+            Permissions = new List<ReplStaffPermission>();
         }
 
         public void Dispose()
@@ -25,8 +27,8 @@ namespace LSRetail.Omni.Domain.DataModel.Base.Replication
         {
             if (disposing)
             {
-                if (BarcodeMasks != null)
-                    BarcodeMasks.Clear();
+                if (Permissions != null)
+                    Permissions.Clear();
             }
         }
 
@@ -37,19 +39,18 @@ namespace LSRetail.Omni.Domain.DataModel.Base.Replication
         [DataMember]
         public int RecordsRemaining { get; set; }
         [DataMember]
-        public List<ReplBarcodeMask> BarcodeMasks { get; set; }
+        public List<ReplStaffPermission> Permissions { get; set; }
     }
 
     [DataContract(Namespace = "http://lsretail.com/LSOmniService/Base/2017")]
-    public class ReplBarcodeMask : IDisposable
+    public class ReplStaffPermission : IDisposable
     {
-        public ReplBarcodeMask()
+        public ReplStaffPermission()
         {
             IsDeleted = false;
-            Mask = string.Empty;
-            Description = string.Empty;
-            Prefix = string.Empty;
-            NumberSeries = string.Empty;
+            Value = string.Empty;
+            StaffId = string.Empty;
+            Id = PermissionEntry.Unknown;
         }
 
         public void Dispose()
@@ -66,22 +67,14 @@ namespace LSRetail.Omni.Domain.DataModel.Base.Replication
         }
 
         [DataMember]
-        public int Id { get; set; }
-        [DataMember]
         public bool IsDeleted { get; set; }
         [DataMember]
-        public string Mask { get; set; }
+        public PermissionEntry Id { get; set; }
         [DataMember]
-        public string Description { get; set; }
+        public string StaffId { get; set; }
         [DataMember]
-        public int MaskType { get; set; }
+        public PermissionType Type { get; set; }
         [DataMember]
-        public string Prefix { get; set; }
-        [DataMember]
-        public int Symbology { get; set; }
-        [DataMember]
-        public string NumberSeries { get; set; }
-        [DataMember]
-        public List<ReplBarcodeMaskSegment> Segments { get; set; }
+        public string Value { get; set; }
     }
 }

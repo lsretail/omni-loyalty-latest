@@ -5,14 +5,10 @@ using System.Runtime.Serialization;
 namespace LSRetail.Omni.Domain.DataModel.Base.Replication
 {
     [DataContract(Namespace = "http://lsretail.com/LSOmniService/Base/2017")]
-    public class ReplBarcodeMaskResponse : IDisposable
+    public class ReplGS1BarcodeResponse : IDisposable
     {
-        public ReplBarcodeMaskResponse()
+        public ReplGS1BarcodeResponse()
         {
-            LastKey = string.Empty;
-            MaxKey = string.Empty;
-            RecordsRemaining = 0;
-            BarcodeMasks = new List<ReplBarcodeMask>();
         }
 
         public void Dispose()
@@ -25,8 +21,8 @@ namespace LSRetail.Omni.Domain.DataModel.Base.Replication
         {
             if (disposing)
             {
-                if (BarcodeMasks != null)
-                    BarcodeMasks.Clear();
+                if (Setups != null)
+                    Setups.Clear();
             }
         }
 
@@ -37,19 +33,16 @@ namespace LSRetail.Omni.Domain.DataModel.Base.Replication
         [DataMember]
         public int RecordsRemaining { get; set; }
         [DataMember]
-        public List<ReplBarcodeMask> BarcodeMasks { get; set; }
+        public List<ReplGS1BarcodeSetup> Setups { get; set; }
     }
 
-    [DataContract(Namespace = "http://lsretail.com/LSOmniService/Base/2017")]
-    public class ReplBarcodeMask : IDisposable
+    public class ReplGS1BarcodeSetup : IDisposable
     {
-        public ReplBarcodeMask()
+        public ReplGS1BarcodeSetup()
         {
-            IsDeleted = false;
-            Mask = string.Empty;
-            Description = string.Empty;
-            Prefix = string.Empty;
-            NumberSeries = string.Empty;
+            Identifier = string.Empty;
+            Value = string.Empty;
+            ValueDate = DateTime.MinValue;
         }
 
         public void Dispose()
@@ -66,22 +59,32 @@ namespace LSRetail.Omni.Domain.DataModel.Base.Replication
         }
 
         [DataMember]
-        public int Id { get; set; }
-        [DataMember]
         public bool IsDeleted { get; set; }
         [DataMember]
-        public string Mask { get; set; }
+        public int Type { get; set; }
         [DataMember]
-        public string Description { get; set; }
+        public string Identifier { get; set; }
         [DataMember]
-        public int MaskType { get; set; }
+        public int SectionType { get; set; }
         [DataMember]
-        public string Prefix { get; set; }
+        public int SectionSize { get; set; }
         [DataMember]
-        public int Symbology { get; set; }
+        public int IdentifierSize { get; set; }
         [DataMember]
-        public string NumberSeries { get; set; }
+        public int SectionMapping { get; set; }
         [DataMember]
-        public List<ReplBarcodeMaskSegment> Segments { get; set; }
+        public int MappingStartingChar { get; set; }
+        [DataMember]
+        public int PreferredSequence { get; set; }
+        [DataMember]
+        public decimal Decimals { get; set; }
+        [DataMember]
+        public int ValueType { get; set; }
+        [DataMember]
+        public string Value { get; set; }
+        [DataMember]
+        public decimal ValueDec { get; set; }
+        [DataMember]
+        public DateTime ValueDate { get; set; }
     }
 }

@@ -18,6 +18,8 @@ namespace LSRetail.Omni.Domain.DataModel.Base
         public List<TenantSetting> Settings { get; set; }
 
         public bool IsJson { get; set; }
+        public string AppId { get; set; }
+        public LSRecommendToken LSRecommToken { get; set; }
 
         public BOConfiguration() : this(string.Empty)
         {
@@ -34,7 +36,7 @@ namespace LSRetail.Omni.Domain.DataModel.Base
         public string SettingsGetByKey(ConfigKey key)
         {
             TenantSetting setting = Settings.FirstOrDefault(x => x.Key == key.ToString());
-            return setting == null ? "" : setting.Value;
+            return setting == null ? string.Empty : setting.Value;
         }
 
         public int SettingsIntGetByKey(ConfigKey key)

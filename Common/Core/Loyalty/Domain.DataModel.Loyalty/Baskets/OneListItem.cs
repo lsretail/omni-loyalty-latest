@@ -14,7 +14,6 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
         private decimal quantity;
         private decimal amount;
         private bool qtyIsVisible = false;
-
         public OneListItem(string id) : base(id)
         {
             OneListId = string.Empty;
@@ -23,6 +22,8 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
             VariantId = string.Empty;
             VariantDescription = string.Empty;
             UnitOfMeasureId = string.Empty;
+            ProductGroup = string.Empty;
+            ItemCategory = string.Empty;
             Location = string.Empty;
             BarcodeId = string.Empty;
             CreateDate = DateTime.Now;
@@ -37,11 +38,11 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
             VariantRegistration = new VariantRegistration();
         }
 
-        public OneListItem() : this(string.Empty)
+        public OneListItem() : this(null)
         {
         }
 
-        public OneListItem(LoyItem item, decimal qty) : this("")
+        public OneListItem(LoyItem item, decimal qty, bool isManualItem) : this(null)
         {
             ItemId = item.Id;
             ItemDescription = item.Description;
@@ -52,6 +53,7 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
             Price = item.AmtFromVariantsAndUOM(item.SelectedVariant?.Id, item.SelectedUnitOfMeasure?.Id);
             Detail = item.Details;
             VariantRegistration = item.SelectedVariant;
+            IsManualItem = isManualItem;
             if (item.Locations.Count != 0)
             {
                 Location = item.Locations[0].ShelfCode;
@@ -60,6 +62,9 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
             {
                 Location = string.Empty;
             }
+
+            ProductGroup = item.ProductGroupId;
+            
             if (item.SelectedVariant != null)
             {
                 VariantId = item.SelectedVariant.Id;
@@ -105,6 +110,10 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
         public string VariantId { get; set; }
         [DataMember]
         public string VariantDescription { get; set; }
+        [DataMember]
+        public string ProductGroup { get; set; }
+        [DataMember]
+        public string ItemCategory { get; set; }
 
         [DataMember(IsRequired = true)]
         public decimal Quantity
@@ -153,7 +162,6 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
                 NotifyPropertyChanged();
             }
         }
-
         [DataMember]
         public decimal TaxAmount { get; set; }
         [DataMember]
@@ -161,12 +169,14 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
         [DataMember]
         public decimal DiscountPercent { get; set; }
         [DataMember]
-        public List<OneListItemDiscount> OnelistItemDiscounts { get; set; }
+        public virtual List<OneListItemDiscount> OnelistItemDiscounts { get; set; }
         [DataMember]
         public ImageView Image { get; set; }
         [DataMember]
         public VariantRegistration VariantRegistration { get; set; }
 
+        [DataMember]
+        public bool IsManualItem { get; set; }
         /// <summary>
         /// Hospitality Deal (Hierarchy Leaf Type=Deal)
         /// </summary>
@@ -177,6 +187,38 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
         /// </summary>
         [DataMember]
         public List<OneListItemSubLine> OnelistSubLines { get; set; }
+
+        [IgnoreDataMember]
+        public bool ItemHasDiscount
+        {
+            get
+            {
+                if (DiscountAmount > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
+        [IgnoreDataMember]
+        public bool ItemHasVariant
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(VariantId))
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+        }
 
         public string OneListId { get; set; }
 

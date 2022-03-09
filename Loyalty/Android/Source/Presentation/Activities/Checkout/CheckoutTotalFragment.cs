@@ -249,7 +249,7 @@ namespace Presentation.Activities.Checkout
                             AuthorizationCode = cardCVV,
                             CardNumber = cardNumber,
                             LineNumber = 1,
-                            TenderType = ((int)LoyTenderType.Card).ToString(),
+                            TenderType = "1", // card
                         });
                     }
                     else if (paymentType == LoyPaymentType.PayOnDelivery)
@@ -259,7 +259,7 @@ namespace Presentation.Activities.Checkout
                             Amount = AppData.Basket.TotalAmount,
                             CurrencyCode = AppData.Device.UserLoggedOnToDevice.Environment.Currency.Id,
                             LineNumber = 1,
-                            TenderType = ((int)LoyTenderType.Cash).ToString(),
+                            TenderType = "0", // cash
                         });
                     }
                 }

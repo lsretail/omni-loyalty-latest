@@ -27,6 +27,7 @@ namespace LSRetail.Omni.Domain.DataModel.Base.Setup
             Currency = new UnknownCurrency();
             StoreHours = new List<StoreHours>();
             StoreServices = new List<StoreServices>();
+            HospSalesTypes = new List<SalesType>();
         }
 
         public Store()
@@ -78,6 +79,12 @@ namespace LSRetail.Omni.Domain.DataModel.Base.Setup
         public bool IsLoyalty { get; set; }
         [DataMember]
         public bool IsWebStore { get; set; }
+        [DataMember]
+        public bool UseSourcingLocation { get; set; }
+        [DataMember]
+        public List<SalesType> HospSalesTypes { get; set; }
+        [DataMember]
+        public List<SourcingLocation> SourcingLocations { get; set; }
         [DataMember]
         public string WebOmniTerminal { get; set; }
         [DataMember]
@@ -137,13 +144,53 @@ namespace LSRetail.Omni.Domain.DataModel.Base.Setup
 
                 foreach (var storeHour in StoreHours)
                 {
-                    storeHours += $"{storeHour.NameOfDay} {storeHour.OpenFrom:t} - {storeHour.OpenTo:t}" + System.Environment.NewLine;
+                    storeHours += $"{storeHour.NameOfDay} {storeHour.OpenFrom:t} - {storeHour.OpenTo:t}" + Environment.NewLine;
                 }
                 
-                return storeHours.TrimEnd(System.Environment.NewLine.ToCharArray());
+                return storeHours.TrimEnd(Environment.NewLine.ToCharArray());
             }
         }
-        
+
+        public string FormatStoreHoursName
+        {
+            get
+            {
+                if (StoreHours == null || !StoreHours.Any())
+                {
+                    return string.Empty;
+                }
+
+                var storeHours = string.Empty;
+
+                foreach (var storeHour in StoreHours)
+                {
+                    storeHours += $"{storeHour.NameOfDay}" + Environment.NewLine;
+                }
+
+                return storeHours.TrimEnd(Environment.NewLine.ToCharArray());
+            }
+        }
+
+        public string FormatStoreHoursOpen
+        {
+            get
+            {
+                if (StoreHours == null || !StoreHours.Any())
+                {
+                    return string.Empty;
+                }
+
+                var storeHours = string.Empty;
+
+                foreach (var storeHour in StoreHours)
+                {
+                    storeHours += $"{storeHour.OpenFrom:t} - {storeHour.OpenTo:t}" + Environment.NewLine;
+                }
+
+                return storeHours.TrimEnd(Environment.NewLine.ToCharArray());
+            }
+        }
+
 
         public ImageView DefaultImage
         {
@@ -296,5 +343,27 @@ namespace LSRetail.Omni.Domain.DataModel.Base.Setup
         }
 
         #endregion
+    }
+
+    [DataContract(Namespace = "http://lsretail.com/LSOmniService/Base/2017")]
+    public class SalesType
+    {
+        [DataMember]
+        public string Code { get; set; }
+        [DataMember]
+        public string Description { get; set; }
+    }
+
+    [DataContract(Namespace = "http://lsretail.com/LSOmniService/Base/2017")]
+    public class SourcingLocation : Entity
+    {
+        [DataMember]
+        public int Priority { get; set; }
+        [DataMember]
+        public bool CanShip { get; set; }
+        [DataMember]
+        public bool CanCollect { get; set; }
+        [DataMember]
+        public string Description { get; set; }
     }
 }

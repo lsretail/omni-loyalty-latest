@@ -62,7 +62,7 @@ namespace LSRetail.Omni.Domain.Services.Loyalty.OneLists
                 return null;
             }
 
-            list.AddItem(new OneListItem(item, qty));
+            list.AddItem(new OneListItem(item, qty, false));
 
             OneListSave(list, false);
 

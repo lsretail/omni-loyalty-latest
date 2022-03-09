@@ -5,7 +5,6 @@ using System.Linq;
 using System.Runtime.Serialization;
 
 using LSRetail.Omni.Domain.DataModel.Base.Base;
-using LSRetail.Omni.Domain.DataModel.Base.Retail;
 
 namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
 {
@@ -32,7 +31,7 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
             PointAmount = 0M;
 
             //Added for SPG
-            IsChecked = false;
+            IsChecked = true;
         }
 
         public OneList(string id, ObservableCollection<OneListItem> items, bool calculate) : this(id)
@@ -75,7 +74,7 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
         [DataMember(IsRequired = true)]
         public string CardId { get; set; }
         [DataMember]
-        public List<OneListLink> CardLinks { get; set; }
+        public virtual List<OneListLink> CardLinks { get; set; }
 
         [IgnoreDataMember]
         public string GetNamesFromCardLinks
@@ -121,11 +120,15 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
         [DataMember(IsRequired = true)]
         public ListType ListType { get; set; }
         [DataMember]
-        public HospMode HospitalityMode { get; set; }
+        public bool IsHospitality { get; set; }
         [DataMember]
-        public ObservableCollection<OneListItem> Items { get; set; }
+        public string SalesType { get; set; }
         [DataMember]
-        public List<OneListPublishedOffer> PublishedOffers { get; set; }
+        public string ShipToCountryCode { get; set; }
+        [DataMember]
+        public virtual ObservableCollection<OneListItem> Items { get; set; }
+        [DataMember]
+        public virtual List<OneListPublishedOffer> PublishedOffers { get; set; }
 
         [DataMember]
         public decimal TotalAmount
@@ -151,6 +154,19 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
 
         public BasketState State { get; set; }
 
+        [IgnoreDataMember]
+        public int NumberOfItems {
+            get
+            {
+                if (Items == null)
+                {
+                    return 0;
+                }
+
+                return Items.Count;
+            }
+        }
+
         public OneList Clone()
         {
             OneList clone = (OneList)MemberwiseClone();
@@ -158,7 +174,7 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
             return clone;
         }
 
-        public void AddItem(OneListItem itemToAdd)
+        public void AddItem(OneListItem itemToAdd, bool moveExistingItemToTop = false)
         {
             OneListItem existingItem = this.Items.FirstOrDefault(x => x.HaveTheSameItemAndVariant(itemToAdd));
             if (existingItem == null)
@@ -168,6 +184,12 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
             else
             {
                 existingItem.Quantity += itemToAdd.Quantity;
+
+                if (moveExistingItemToTop)
+                {
+                    Items.Remove(existingItem);
+                    Items.Insert(0, existingItem);
+                }
             }
             CalculateBasket();
         }
@@ -179,14 +201,13 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
 
         public void RemoveItem(OneListItem itemToRemove)
         {
-            if (itemToRemove == null || itemToRemove.Quantity == 1)
+            if (itemToRemove == null)
             {
-                this.Items.Remove(itemToRemove);
+                return;
             }
-            else
-            {
-                itemToRemove.Quantity -= 1;
-            }
+
+            this.Items.Remove(itemToRemove);
+
             CalculateBasket();
         }
 
@@ -221,7 +242,7 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
             TotalAmount = 0m;
             foreach (OneListItem item in Items)
             {
-                item.Amount = (item.Price - item.DiscountAmount) * item.Quantity;
+                item.Amount = (item.Price * item.Quantity) - item.DiscountAmount;
                 TotalAmount += item.Amount;
                 TotalDiscAmount += item.DiscountAmount;
             }
@@ -268,7 +289,7 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
     }
 
     [DataContract(Namespace = "http://lsretail.com/LSOmniService/Loy/2017")]
-    public class OneListLink
+    public class OneListLink : Entity, IDisposable
     {
         [DataMember]
         public string CardId { get; set; }
@@ -279,6 +300,19 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
 
         [DataMember]
         public string Name { get; set; }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+            }
+        }
     }
 
     [DataContract(Namespace = "http://lsretail.com/LSOmniService/Loy/2017")]
@@ -303,20 +337,6 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Baskets
         Blocked = 2,
         [EnumMember]
         Remove = 3
-    }
-
-    [DataContract(Namespace = "http://lsretail.com/LSOmniService/Loy/2021")]
-    [Flags]
-    public enum HospMode
-    {
-        [EnumMember]
-        None = 0,
-        [EnumMember]
-        DineIn = 1,
-        [EnumMember]
-        Takeaway = 2,
-        [EnumMember]
-        Delivery = 3
     }
 
     public enum BasketState

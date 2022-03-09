@@ -60,6 +60,104 @@ namespace LSRetail.Omni.Domain.DataModel.Base.Setup
                 case "HIDE VOIDED TRANSACTION":
                     flagName = FeatureFlagName.HideVoidedTransaction;
                     break;
+                //SPG
+                case "ALLOW ANONYMOUS":
+                    flagName = FeatureFlagName.AllowAnonymousUser;
+                    break;
+                case "ALLOW SHOP HOME":
+                    flagName = FeatureFlagName.AllowShopHome;
+                    break;
+                case "DEVICE TYPE":
+                    flagName = FeatureFlagName.DeviceType;
+                    break;
+                case "CATALOG TYPE":
+                    flagName = FeatureFlagName.CatalogType;
+                    break;
+                case "DEFAULT WEB STORE":
+                    flagName = FeatureFlagName.DefaultWebStore;
+                    break;
+                case "ALLOWED PAYMENT WITH POS":
+                    flagName = FeatureFlagName.AllowedPaymentWithPOS;
+                    break;
+                case "ALLOWED PAYMENT WITH CARD":
+                    flagName = FeatureFlagName.AllowedPaymentWithCard;
+                    break;
+                case "ALLOWED PAYMENT WITH LOYALTY":
+                    flagName = FeatureFlagName.AllowedPaymentWithLoyalty;
+                    break;
+                case "CARD PAYMENT TYPE":
+                    flagName = FeatureFlagName.CardPaymentType;
+                    break;
+                case "CHECK STATUS TIMER":
+                    flagName = FeatureFlagName.CheckStatusTimer;
+                    break;
+                case "TERMS AND CONDITION URL":
+                    flagName = FeatureFlagName.TermsAndConditionURL;
+                    break;
+                case "TERMS AND CONDITION VERSION":
+                    flagName = FeatureFlagName.TermsAndConditionVersion;
+                    break;
+                case "ENABLE PLATFORM PAYMENT":
+                    flagName = FeatureFlagName.EnablePlatformPayment;
+                    break;
+                case "PLATFORM PAYMENT CURRENCY CODE":
+                    flagName = FeatureFlagName.PlatformPaymentCurrencyCode;
+                    break;
+                case "PLATFORM PAYMENT COUNTRY CODE":
+                    flagName = FeatureFlagName.PlatformPaymentCountryCode;
+                    break;
+                case "GOOGLE PAY GATEWAYJSON":
+                    flagName = FeatureFlagName.GooglePayGatewayJson;
+                    break;
+                case "GOOGLE PAY ALLOWED AUTH METHODSJSON":
+                    flagName = FeatureFlagName.GooglePayAllowedAuthMethodsJson;
+                    break;
+                case "GOOGLE PAY ALLOWED CARD NETWORKJSON":
+                    flagName = FeatureFlagName.GooglePayAllowedCardNetworksJson;
+                    break;
+                case "GOOGLE PAY MERCHANT NAME":
+                    flagName = FeatureFlagName.GooglePayMerchantName;
+                    break;
+                case "APPLE PAY MERCHANT NAME":
+                    flagName = FeatureFlagName.GooglePayMerchantName;
+                    break;
+                    //AUDKENNI SPG
+                case "AUDKENNI BASE URL":
+                    flagName = FeatureFlagName.AudkenniBaseURL;
+                    break;
+                case "AUDKENNI CLIENT ID":
+                    flagName = FeatureFlagName.AudkenniClientId;
+                    break;
+                case "AUDKENNI REDIRECT URL":
+                    flagName = FeatureFlagName.AudkenniRedirectURL;
+                    break;
+                case "AUDKENNI SECRET":
+                    flagName = FeatureFlagName.AudkenniSecret;
+                    break;
+                case "AUDKENNI MESSAGE TO USER":
+                    flagName = FeatureFlagName.AudkenniMessageToUser;
+                    break;
+                case "AUDKENNI LOGIN ENABLED":
+                    flagName = FeatureFlagName.AudkenniLoginEnabled;
+                    break;
+                case "FACEBOOK LOGIN ENABLED":
+                    flagName = FeatureFlagName.FacebookLoginEnabled;
+                    break;
+                case "GOOGLE LOGIN ENABLED":
+                    flagName = FeatureFlagName.GoogleLoginEnabled;
+                    break;
+                case "GOOGLE IOS CLIENT ID":
+                    flagName = FeatureFlagName.GoogleIosClientId;
+                    break;
+                case "APPLE LOGIN ENABLED":
+                    flagName = FeatureFlagName.AppleLoginEnabled;
+                    break;
+                case "OPEN GATE":
+                    flagName = FeatureFlagName.OpenGate;
+                    break;
+                case "CLOSE GATE":
+                    flagName = FeatureFlagName.CloseGate;
+                    break;
             }
 
             Flags.Add(new FeatureFlag()
@@ -133,18 +231,62 @@ namespace LSRetail.Omni.Domain.DataModel.Base.Setup
 
     public enum FeatureFlagName
     {
-        None,
-        AllowAutoLogoff,
-        AutoLogOffAfterMin,
-        AllowOffline,
-        ExitAfterEachTransaction,
-        SendReceiptInEmail,
-        ShowNumberPad,
-        UseLoyaltySystem,
-        PosShowInventory,
-        PosInventoryLookup,
-        SettingsPassword,
-        HideVoidedTransaction,
-        AllowCentralLogin
+        None = 100,
+        AllowAutoLogoff = 101,
+        AutoLogOffAfterMin = 102,
+        AllowOffline = 103,
+        ExitAfterEachTransaction = 104,
+        SendReceiptInEmail = 105,
+        ShowNumberPad = 106,
+        UseLoyaltySystem = 107,
+        PosShowInventory = 108,
+        PosInventoryLookup = 109,
+        SettingsPassword = 110,
+        HideVoidedTransaction = 111,
+        AllowCentralLogin = 112,
+
+        //ScanPayGo
+        AllowAnonymousUser = 200,
+        AllowShopHome = 201,
+        DeviceType = 202,
+        CatalogType = 203,
+        DefaultWebStore = 204,
+        AllowedPaymentWithPOS = 205,
+        AllowedPaymentWithCard = 206,
+        AllowedPaymentWithLoyalty = 207,
+        CardPaymentType = 208,
+        CheckStatusTimer = 209,
+        TermsAndConditionURL = 210,
+        TermsAndConditionVersion = 211,
+        OpenGate = 212,
+        CloseGate = 213,
+
+        //ScanPayGoPaymentFlags
+        EnablePlatformPayment = 300,
+        PlatformPaymentCurrencyCode = 301,
+        PlatformPaymentCountryCode = 302,
+        GooglePayGatewayJson = 303,
+        GooglePayAllowedAuthMethodsJson = 304,
+        GooglePayAllowedCardNetworksJson = 305,
+        GooglePayMerchantName = 306,
+
+        //Alternate Logins
+        //AudkenniFlags
+        AudkenniBaseURL = 400,
+        AudkenniClientId = 401,
+        AudkenniRedirectURL = 402,
+        AudkenniSecret = 403,
+        AudkenniMessageToUser = 404,
+        AudkenniLoginEnabled = 405,
+
+        //Google
+        GoogleLoginEnabled = 410,
+        GoogleIosClientId = 411,
+
+        //Facebook
+        FacebookLoginEnabled = 420,
+
+        //Apple
+        AppleLoginEnabled = 430,
     }
 }

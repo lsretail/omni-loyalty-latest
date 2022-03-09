@@ -104,6 +104,24 @@ namespace LSRetail.Omni.Domain.DataModel.Loyalty.Orders
         /// </summary>
         [DataMember]
         public decimal Amount { get; set; }
+        [DataMember]
+        public bool ValidateTax { get; set; }
+
+        [IgnoreDataMember]
+        public bool ItemHasVariant
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(VariantId))
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+        }
 
         public List<int> LineNumbers { get; set; }
 

@@ -16,7 +16,6 @@ namespace LSRetail.Omni.Domain.DataModel.Base.SalesEntries
             IdType = DocumentIdType.Order;
             Status = SalesEntryStatus.Pending;
             ShippingStatus = ShippingStatus.ShippigNotRequired;
-            PaymentStatus = PaymentStatus.PreApproved;
 
             Lines = new List<SalesEntryLine>();
             DiscountLines = new List<SalesEntryDiscountLine>();
@@ -86,13 +85,13 @@ namespace LSRetail.Omni.Domain.DataModel.Base.SalesEntries
         public Address ShipToAddress { get; set; }
         [DataMember]
         public string ShipToEmail { get; set; }
+        [DataMember]
+        public DateTime RequestedDeliveryDate { get; set; }
 
         [DataMember]
         public DocumentIdType IdType { get; set; }
         [DataMember]
         public SalesEntryStatus Status { get; set; }
-        [DataMember]
-        public PaymentStatus PaymentStatus { get; set; }
         [DataMember]
         public ShippingStatus ShippingStatus { get; set; }
 
@@ -129,6 +128,16 @@ namespace LSRetail.Omni.Domain.DataModel.Base.SalesEntries
         /// </summary>
         [DataMember]
         public bool AnonymousOrder { get; set; }
+        /// <summary>
+        /// Transaction is return sale
+        /// </summary>
+        [DataMember]
+        public bool ReturnSale { get; set; }
+        /// <summary>
+        /// Transaction has return sale transaction
+        /// </summary>
+        [DataMember]
+        public bool HasReturnSale { get; set; }
 
         [DataMember]
         public List<SalesEntryLine> Lines { get; set; }
